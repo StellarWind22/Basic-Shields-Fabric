@@ -18,10 +18,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.github.crimsondawn45.VanillaPlusShields"
+      "com.github.crimsondawn45.vanillaplusshields.VanillaPlusShields"
     ],
     "client": [
-      "com.github.crimsondawn45.VanillaPlusShieldsClient"
+      "com.github.crimsondawn45.vanillaplusshields.VanillaPlusShieldsClient"
     ]
   },
   "mixins": [

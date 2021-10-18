@@ -15,14 +15,32 @@ public class VanillaPlusShieldsClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(VanillaPlusShields.wood_shield_model_layer, ShieldEntityModel::getTexturedModelData);
 
         ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
-            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/test_shield_base"));
-            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/test_shield_base_nopattern"));
+            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/wood_shield_base"));
+            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/wood_shield_base_nopattern"));
         });
 
         //Gold
+        EntityModelLayerRegistry.registerModelLayer(VanillaPlusShields.gold_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+
+        ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/gold_shield_base"));
+            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/gold_shield_base_nopattern"));
+        });
 
         //Diamond
+        EntityModelLayerRegistry.registerModelLayer(VanillaPlusShields.diamond_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+
+        ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/diamond_shield_base"));
+            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/diamond_shield_base_nopattern"));
+        });
 
         //Netherrite
+        EntityModelLayerRegistry.registerModelLayer(VanillaPlusShields.netherrite_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+
+        ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/netherrite_shield_base"));
+            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/netherrite_shield_base_nopattern"));
+        });
     }
 }

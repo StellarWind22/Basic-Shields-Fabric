@@ -21,21 +21,21 @@ public class VanillaPlusShields implements ModInitializer {
 	public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
 	//Wood
-	public static final Item wood_shield = new FabricBannerShieldItem(new FabricItemSettings().maxDamage(2500).group(ItemGroup.COMBAT), 80, 15, Items.OAK_PLANKS);
+	public static final Item wood_shield = new FabricBannerShieldItem(new FabricItemSettings().maxDamage(80).group(ItemGroup.COMBAT), 110, 15, Items.OAK_PLANKS);
 	public static final EntityModelLayer wood_shield_model_layer = new EntityModelLayer(new Identifier(MOD_ID, "wood_shield"),"main");
 
 	//Gold
-	public static final Item gold_shield = new FabricBannerShieldItem(new FabricItemSettings().maxDamage(2500).group(ItemGroup.COMBAT), 43, 22, Items.GOLD_INGOT);
+	public static final Item gold_shield = new FabricBannerShieldItem(new FabricItemSettings().maxDamage(43).group(ItemGroup.COMBAT), 90, 22, Items.GOLD_INGOT);
 	public static final EntityModelLayer gold_shield_model_layer = new EntityModelLayer(new Identifier(MOD_ID, "gold_shield"),"main");
 
 
 	//Diamond
-	public static final Item diamond_shield = new FabricBannerShieldItem(new FabricItemSettings().maxDamage(2500).group(ItemGroup.COMBAT), 2097, 10, Items.DIAMOND);
+	public static final Item diamond_shield = new FabricBannerShieldItem(new FabricItemSettings().maxDamage(2097).group(ItemGroup.COMBAT), 90, 10, Items.DIAMOND);
 	public static final EntityModelLayer diamond_shield_model_layer = new EntityModelLayer(new Identifier(MOD_ID, "diamond_shield"),"main");
 
 
 	//Netherite
-	public static final Item netherite_shield = new FabricBannerShieldItem(new FabricItemSettings().maxDamage(2500).group(ItemGroup.COMBAT).fireproof(), 2709, 15, Items.NETHERITE_INGOT);
+	public static final Item netherite_shield = new FabricBannerShieldItem(new FabricItemSettings().maxDamage(2709).group(ItemGroup.COMBAT).fireproof(), 80, 15, Items.NETHERITE_INGOT);
 	public static final EntityModelLayer netherite_shield_model_layer = new EntityModelLayer(new Identifier(MOD_ID, "netherite_shield"),"main");
 
 	

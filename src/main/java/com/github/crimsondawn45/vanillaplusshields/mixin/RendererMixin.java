@@ -26,20 +26,20 @@ public class RendererMixin {
 	private ShieldEntityModel modelTestShield;
 
 	//Wood
-	private static final SpriteIdentifier WOOD_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier("examplemod","entity/wood_shield_base"));
-	private static final SpriteIdentifier WOOD_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier("examplemod","entity/wood_shield_base_nopattern"));
+	private static final SpriteIdentifier WOOD_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/wood_shield_base"));
+	private static final SpriteIdentifier WOOD_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/wood_shield_base_nopattern"));
 
 	//Gold
-	private static final SpriteIdentifier GOLD_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier("examplemod","entity/gold_shield_base"));
-	private static final SpriteIdentifier GOLD_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier("examplemod","entity/gold_shield_base_nopattern"));
+	private static final SpriteIdentifier GOLD_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/gold_shield_base"));
+	private static final SpriteIdentifier GOLD_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/gold_shield_base_nopattern"));
 
 	//Diamond
-	private static final SpriteIdentifier DIAMOND_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier("examplemod","entity/diamond_shield_base"));
-	private static final SpriteIdentifier DIAMOND_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier("examplemod","entity/diamond_shield_base_nopattern"));
+	private static final SpriteIdentifier DIAMOND_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/diamond_shield_base"));
+	private static final SpriteIdentifier DIAMOND_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/diamond_shield_base_nopattern"));
 
 	//Netherrite
-	private static final SpriteIdentifier NETHERRITE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier("examplemod","entity/netherrite_shield_base"));
-	private static final SpriteIdentifier NETHERRITE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier("examplemod","entity/netherrite_shield_base_nopattern"));
+	private static final SpriteIdentifier NETHERRITE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/netherrite_shield_base"));
+	private static final SpriteIdentifier NETHERRITE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/netherrite_shield_base_nopattern"));
 
 	@Final
 	@Shadow

@@ -1,41 +1,38 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "vanillaplusshields",
   "version": "${version}",
 
-  "name": "Example Mod",
+  "name": "Vanilla+ Shields",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
-    "Me!"
+    "CrimsonDawn45"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/CrimsonDawn45/VanillaPlus-Shields"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/examplemod/icon.png",
+  "icon": "assets/vanillaplusshields/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "com.github.crimsondawn45.VanillaPlusShields"
     ],
     "client": [
-      "net.fabricmc.example.ExampleModClient"
+      "com.github.crimsondawn45.VanillaPlusShieldsClient"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "vanillaplusshields.mixins.json"
   ],
 
   "depends": {
+    "fabricshieldlib": "1.4.1",
     "fabricloader": ">=0.11.3",
     "fabric": "*",
     "minecraft": "1.17.x",
     "java": ">=16"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }

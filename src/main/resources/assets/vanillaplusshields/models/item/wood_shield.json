@@ -5,7 +5,7 @@
       "predicate": {
         "blocking": 1
       },
-      "model": "examplemod:item/test_shield_with_banner_support_blocking"
+      "model": "vanillaplusshields:item/wood_shield_blocking"
     }
   ]
 }

@@ -35,12 +35,12 @@ public class VanillaPlusShieldsClient implements ClientModInitializer {
             registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/diamond_shield_base_nopattern"));
         });
 
-        //Netherrite
-        EntityModelLayerRegistry.registerModelLayer(VanillaPlusShields.netherrite_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+        //Netherite
+        EntityModelLayerRegistry.registerModelLayer(VanillaPlusShields.netherite_shield_model_layer, ShieldEntityModel::getTexturedModelData);
 
         ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
-            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/netherrite_shield_base"));
-            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/netherrite_shield_base_nopattern"));
+            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/netherite_shield_base"));
+            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/netherite_shield_base_nopattern"));
         });
     }
 }

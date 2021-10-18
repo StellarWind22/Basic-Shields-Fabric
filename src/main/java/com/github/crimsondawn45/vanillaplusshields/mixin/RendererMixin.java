@@ -38,10 +38,10 @@ public class RendererMixin {
 	private static final SpriteIdentifier DIAMOND_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/diamond_shield_base"));
 	private static final SpriteIdentifier DIAMOND_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/diamond_shield_base_nopattern"));
 
-	//Netherrite
-	private ShieldEntityModel netherriteShieldModel;
-	private static final SpriteIdentifier NETHERRITE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/netherrite_shield_base"));
-	private static final SpriteIdentifier NETHERRITE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/netherrite_shield_base_nopattern"));
+	//Netherite
+	private ShieldEntityModel netheriteShieldModel;
+	private static final SpriteIdentifier NETHERITE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/netherite_shield_base"));
+	private static final SpriteIdentifier NETHERITE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/netherite_shield_base_nopattern"));
 
 	@Final
 	@Shadow
@@ -60,8 +60,8 @@ public class RendererMixin {
 		//Diamond
 		diamondShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(VanillaPlusShields.diamond_shield_model_layer));
 
-		//Netherrite
-		netherriteShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(VanillaPlusShields.netherrite_shield_model_layer));
+		//Netherite
+		netheriteShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(VanillaPlusShields.netherite_shield_model_layer));
 	}
 
 	@Inject(method = "render", at = @At("HEAD"))
@@ -82,9 +82,9 @@ public class RendererMixin {
 			FabricShieldLib.renderBanner(stack, matrices, vertexConsumers, light, overlay, diamondShieldModel, DIAMOND_SHIELD_BASE, DIAMOND_SHIELD_BASE_NO_PATTERN);
 		}
 
-		//Netherrite
-		if (stack.isOf(VanillaPlusShields.netherrite_shield)) {
-			FabricShieldLib.renderBanner(stack, matrices, vertexConsumers, light, overlay, netherriteShieldModel, NETHERRITE_SHIELD_BASE, NETHERRITE_SHIELD_BASE_NO_PATTERN);
+		//Netherite
+		if (stack.isOf(VanillaPlusShields.netherite_shield)) {
+			FabricShieldLib.renderBanner(stack, matrices, vertexConsumers, light, overlay, netheriteShieldModel, NETHERITE_SHIELD_BASE, NETHERITE_SHIELD_BASE_NO_PATTERN);
 		}
 	}
 }

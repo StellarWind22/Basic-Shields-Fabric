@@ -34,9 +34,9 @@ public class VanillaPlusShields implements ModInitializer {
 	public static final EntityModelLayer diamond_shield_model_layer = new EntityModelLayer(new Identifier(MOD_ID, "diamond_shield"),"main");
 
 
-	//Netherrite
-	public static final Item netherrite_shield = new FabricBannerShieldItem(new FabricItemSettings().maxDamage(2500).group(ItemGroup.COMBAT), 2709, 15, Items.NETHERITE_INGOT);
-	public static final EntityModelLayer netherrite_shield_model_layer = new EntityModelLayer(new Identifier(MOD_ID, "netherrite_shield"),"main");
+	//Netherite
+	public static final Item netherite_shield = new FabricBannerShieldItem(new FabricItemSettings().maxDamage(2500).group(ItemGroup.COMBAT), 2709, 15, Items.NETHERITE_INGOT);
+	public static final EntityModelLayer netherite_shield_model_layer = new EntityModelLayer(new Identifier(MOD_ID, "netherite_shield"),"main");
 
 	
 
@@ -52,8 +52,8 @@ public class VanillaPlusShields implements ModInitializer {
 		//Diamond
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "diamond_shield"), diamond_shield);
 
-		//Netherrite
-		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "netherrite_shield"), netherrite_shield);
+		//Netherite
+		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "netherite_shield"), netherite_shield);
 
 		LOGGER.info("VanillaPlus shields initialized!");
 	}

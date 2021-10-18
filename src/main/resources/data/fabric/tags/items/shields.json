@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+      "minecraft:shield",
+      "vanillaplusshields:wood_shield",
+      "vanillaplusshields:gold_shield",
+      "vanillaplusshields:diamond_shield",
+      "vanillaplusshields:netherrite_shield"
+    ]
+}

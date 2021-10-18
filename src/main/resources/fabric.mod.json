@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "Vanilla+ Shields",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "Adds shields for all the vanilla materials with full banner support!",
   "authors": [
     "CrimsonDawn45"
   ],

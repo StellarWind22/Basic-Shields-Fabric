@@ -5,7 +5,7 @@
       "predicate": {
         "blocking": 1
       },
-      "model": "vanillaplusshields:item/netherrite_shield_blocking"
+      "model": "vanillaplusshields:item/netherite_shield_blocking"
     }
   ]
 }

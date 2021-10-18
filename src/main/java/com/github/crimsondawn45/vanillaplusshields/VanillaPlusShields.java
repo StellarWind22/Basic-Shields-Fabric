@@ -35,7 +35,7 @@ public class VanillaPlusShields implements ModInitializer {
 
 
 	//Netherite
-	public static final Item netherite_shield = new FabricBannerShieldItem(new FabricItemSettings().maxDamage(2500).group(ItemGroup.COMBAT), 2709, 15, Items.NETHERITE_INGOT);
+	public static final Item netherite_shield = new FabricBannerShieldItem(new FabricItemSettings().maxDamage(2500).group(ItemGroup.COMBAT).fireproof(), 2709, 15, Items.NETHERITE_INGOT);
 	public static final EntityModelLayer netherite_shield_model_layer = new EntityModelLayer(new Identifier(MOD_ID, "netherite_shield"),"main");
 
 	

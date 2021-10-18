@@ -1,0 +1,21 @@
+{
+  "item.examplemod.test_shield": "Test Shield",
+  "item.examplemod.test_shield_with_banner_support": "Test Shield With Banner Support",
+  "item.examplemod.test_shield_with_banner_support.red": "Red Test Shield",
+  "item.examplemod.test_shield_with_banner_support.orange": "Orange Test Shield",
+  "item.examplemod.test_shield_with_banner_support.yellow": "Yellow Test Shield",
+  "item.examplemod.test_shield_with_banner_support.lime": "Lime Test Shield",
+  "item.examplemod.test_shield_with_banner_support.green": "Green Test Shield",
+  "item.examplemod.test_shield_with_banner_support.light_blue": "Light Blue Test Shield",
+  "item.examplemod.test_shield_with_banner_support.cyan": "Cyan Test Shield",
+  "item.examplemod.test_shield_with_banner_support.blue": "Blue Test Shield",
+  "item.examplemod.test_shield_with_banner_support.purple": "Purple Test Shield",
+  "item.examplemod.test_shield_with_banner_support.magenta": "Magenta Test Shield",
+  "item.examplemod.test_shield_with_banner_support.pink": "Pink Test Shield",
+  "item.examplemod.test_shield_with_banner_support.brown": "Brown Test Shield",
+  "item.examplemod.test_shield_with_banner_support.white": "White Test Shield",
+  "item.examplemod.test_shield_with_banner_support.light_gray": "Light Gray Test Shield",
+  "item.examplemod.test_shield_with_banner_support.gray": "Gray Test Shield",
+  "item.examplemod.test_shield_with_banner_support.dark_gray": "Dark Gray Test Shield",
+  "item.examplemod.test_shield_with_banner_support.black": "Black Test Shield"
+}

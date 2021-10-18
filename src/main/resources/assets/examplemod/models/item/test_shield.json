@@ -1,0 +1,14 @@
+{
+  "parent":"fabricshieldlib:item/fabric_shield_template",
+  "textures":{
+    "shield":"examplemod:item/test_shield"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "blocking": 1
+      },
+      "model": "examplemod:item/test_shield_blocking"
+    }
+  ]
+}

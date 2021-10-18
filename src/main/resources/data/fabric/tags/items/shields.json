@@ -2,8 +2,8 @@
     "replace": false,
     "values": [
       "minecraft:shield",
-      "vanillaplusshields:wood_shield",
-      "vanillaplusshields:gold_shield",
+      "vanillaplusshields:wooden_shield",
+      "vanillaplusshields:golden_shield",
       "vanillaplusshields:diamond_shield",
       "vanillaplusshields:netherite_shield"
     ]

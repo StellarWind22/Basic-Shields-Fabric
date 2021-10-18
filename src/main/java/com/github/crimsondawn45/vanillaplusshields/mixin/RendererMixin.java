@@ -23,15 +23,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(BuiltinModelItemRenderer.class)
 public class RendererMixin {
 
-	//Wood
-	private ShieldEntityModel woodShieldModel;
-	private static final SpriteIdentifier WOOD_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/wood_shield_base"));
-	private static final SpriteIdentifier WOOD_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/wood_shield_base_nopattern"));
+	//Wooden
+	private ShieldEntityModel woodenShieldModel;
+	private static final SpriteIdentifier WOODEN_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/wooden_shield_base"));
+	private static final SpriteIdentifier WOODEN_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/wooden_shield_base_nopattern"));
 
-	//Gold
-	private ShieldEntityModel goldShieldModel;
-	private static final SpriteIdentifier GOLD_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/gold_shield_base"));
-	private static final SpriteIdentifier GOLD_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/gold_shield_base_nopattern"));
+	//Golden
+	private ShieldEntityModel goldenShieldModel;
+	private static final SpriteIdentifier GOLDEN_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/golden_shield_base"));
+	private static final SpriteIdentifier GOLDEN_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(VanillaPlusShields.MOD_ID,"entity/golden_shield_base_nopattern"));
 
 	//Diamond
 	private ShieldEntityModel diamondShieldModel;
@@ -51,11 +51,11 @@ public class RendererMixin {
 	@Inject(method = "reload", at = @At("HEAD"))
 	private void setModels(CallbackInfo ci){
 
-		//Wood
-		woodShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(VanillaPlusShields.wood_shield_model_layer));
+		//Wooden
+		woodenShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(VanillaPlusShields.wooden_shield_model_layer));
 
-		//Gold
-		goldShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(VanillaPlusShields.gold_shield_model_layer));
+		//Golden
+		goldenShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(VanillaPlusShields.golden_shield_model_layer));
 
 		//Diamond
 		diamondShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(VanillaPlusShields.diamond_shield_model_layer));
@@ -67,14 +67,14 @@ public class RendererMixin {
 	@Inject(method = "render", at = @At("HEAD"))
 	private void mainRender(ItemStack stack, ModelTransformation.Mode mode, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay, CallbackInfo ci) {
 
-		//Wood
-		if (stack.isOf(VanillaPlusShields.wood_shield)) {
-			FabricShieldLib.renderBanner(stack, matrices, vertexConsumers, light, overlay, woodShieldModel, WOOD_SHIELD_BASE, WOOD_SHIELD_BASE_NO_PATTERN);
+		//Wooden
+		if (stack.isOf(VanillaPlusShields.wooden_shield)) {
+			FabricShieldLib.renderBanner(stack, matrices, vertexConsumers, light, overlay, woodenShieldModel, WOODEN_SHIELD_BASE, WOODEN_SHIELD_BASE_NO_PATTERN);
 		}
 
-		//Gold
-		if (stack.isOf(VanillaPlusShields.gold_shield)) {
-			FabricShieldLib.renderBanner(stack, matrices, vertexConsumers, light, overlay, goldShieldModel, GOLD_SHIELD_BASE, GOLD_SHIELD_BASE_NO_PATTERN);
+		//Golden
+		if (stack.isOf(VanillaPlusShields.golden_shield)) {
+			FabricShieldLib.renderBanner(stack, matrices, vertexConsumers, light, overlay, goldenShieldModel, GOLDEN_SHIELD_BASE, GOLDEN_SHIELD_BASE_NO_PATTERN);
 		}
 
 		//Diamond

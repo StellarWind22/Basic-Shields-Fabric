@@ -11,20 +11,20 @@ public class VanillaPlusShieldsClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
-        //Wood
-        EntityModelLayerRegistry.registerModelLayer(VanillaPlusShields.wood_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+        //Wooden
+        EntityModelLayerRegistry.registerModelLayer(VanillaPlusShields.wooden_shield_model_layer, ShieldEntityModel::getTexturedModelData);
 
         ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
-            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/wood_shield_base"));
-            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/wood_shield_base_nopattern"));
+            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/wooden_shield_base"));
+            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/wooden_shield_base_nopattern"));
         });
 
-        //Gold
-        EntityModelLayerRegistry.registerModelLayer(VanillaPlusShields.gold_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+        //Golden
+        EntityModelLayerRegistry.registerModelLayer(VanillaPlusShields.golden_shield_model_layer, ShieldEntityModel::getTexturedModelData);
 
         ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
-            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/gold_shield_base"));
-            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/gold_shield_base_nopattern"));
+            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/golden_shield_base"));
+            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/golden_shield_base_nopattern"));
         });
 
         //Diamond

@@ -20,13 +20,13 @@ public class VanillaPlusShields implements ModInitializer {
 
 	public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
-	//Wood
-	public static final Item wood_shield = new FabricBannerShieldItem(new FabricItemSettings().maxDamage(80).group(ItemGroup.COMBAT), 110, 15, Items.OAK_PLANKS);
-	public static final EntityModelLayer wood_shield_model_layer = new EntityModelLayer(new Identifier(MOD_ID, "wood_shield"),"main");
+	//Wooden
+	public static final Item wooden_shield = new FabricBannerShieldItem(new FabricItemSettings().maxDamage(80).group(ItemGroup.COMBAT), 110, 15, Items.OAK_PLANKS);
+	public static final EntityModelLayer wooden_shield_model_layer = new EntityModelLayer(new Identifier(MOD_ID, "wooden_shield"),"main");
 
-	//Gold
-	public static final Item gold_shield = new FabricBannerShieldItem(new FabricItemSettings().maxDamage(43).group(ItemGroup.COMBAT), 90, 22, Items.GOLD_INGOT);
-	public static final EntityModelLayer gold_shield_model_layer = new EntityModelLayer(new Identifier(MOD_ID, "gold_shield"),"main");
+	//Golden
+	public static final Item golden_shield = new FabricBannerShieldItem(new FabricItemSettings().maxDamage(43).group(ItemGroup.COMBAT), 90, 22, Items.GOLD_INGOT);
+	public static final EntityModelLayer golden_shield_model_layer = new EntityModelLayer(new Identifier(MOD_ID, "golden_shield"),"main");
 
 
 	//Diamond
@@ -43,11 +43,11 @@ public class VanillaPlusShields implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
-		//Wood
-		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "wood_shield"), wood_shield);
+		//Wooden
+		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "wooden_shield"), wooden_shield);
 
-		//Gold
-		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "gold_shield"), gold_shield);
+		//Golden
+		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "golden_shield"), golden_shield);
 
 		//Diamond
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "diamond_shield"), diamond_shield);

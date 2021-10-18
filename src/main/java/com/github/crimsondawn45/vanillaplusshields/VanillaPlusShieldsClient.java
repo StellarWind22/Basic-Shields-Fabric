@@ -16,7 +16,7 @@ public class VanillaPlusShieldsClient implements ClientModInitializer {
 
         ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
             registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/wood_shield_base"));
-            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/wood_shield_base_no_pattern"));
+            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/wood_shield_base_nopattern"));
         });
 
         //Gold
@@ -24,7 +24,7 @@ public class VanillaPlusShieldsClient implements ClientModInitializer {
 
         ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
             registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/gold_shield_base"));
-            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/gold_shield_base_no_pattern"));
+            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/gold_shield_base_nopattern"));
         });
 
         //Diamond
@@ -32,7 +32,7 @@ public class VanillaPlusShieldsClient implements ClientModInitializer {
 
         ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
             registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/diamond_shield_base"));
-            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/diamond_shield_base_no_pattern"));
+            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/diamond_shield_base_nopattern"));
         });
 
         //Netherrite
@@ -40,7 +40,7 @@ public class VanillaPlusShieldsClient implements ClientModInitializer {
 
         ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
             registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/netherrite_shield_base"));
-            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/netherrite_shield_base_no_pattern"));
+            registry.register(new Identifier(VanillaPlusShields.MOD_ID, "entity/netherrite_shield_base_nopattern"));
         });
     }
 }

@@ -10,10 +10,10 @@
       "tag": "minecraft:planks"
     },
     "o": {
-      "item": "minecraft:gold_ingot"
+      "item": "minecraft:stick"
     }
   },
   "result": {
-    "item": "vanillaplusshields:golden_shield"
+    "item": "basicshields:wooden_shield"
   }
 }

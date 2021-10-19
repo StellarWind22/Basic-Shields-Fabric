@@ -5,7 +5,7 @@
       "predicate": {
         "blocking": 1
       },
-      "model": "vanillaplusshields:item/wooden_shield_blocking"
+      "model": "basicshields:item/netherite_shield_blocking"
     }
   ]
 }

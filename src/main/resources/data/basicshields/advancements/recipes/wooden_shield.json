@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "vanillaplusshields:netherite_shield_smithing"
+      "basicshields:wooden_shield"
     ]
   },
   "criteria": {
-    "has_netherite_ingot": {
+    "has_stick": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:netherite_ingot"
+              "minecraft:stick"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "vanillaplusshields:netherite_shield_smithing"
+        "recipe": "basicshields:wooden_shield"
       }
     }
   },
   "requirements": [
     [
-      "has_netherite_ingot",
+      "has_stick",
       "has_the_recipe"
     ]
   ]

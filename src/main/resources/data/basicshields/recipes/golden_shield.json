@@ -10,10 +10,10 @@
       "tag": "minecraft:planks"
     },
     "o": {
-      "item": "minecraft:diamond"
+      "item": "minecraft:gold_ingot"
     }
   },
   "result": {
-    "item": "vanillaplusshields:diamond_shield"
+    "item": "basicshields:golden_shield"
   }
 }

@@ -5,7 +5,7 @@
       "predicate": {
         "blocking": 1
       },
-      "model": "vanillaplusshields:item/diamond_shield_blocking"
+      "model": "basicshields:item/diamond_shield_blocking"
     }
   ]
 }

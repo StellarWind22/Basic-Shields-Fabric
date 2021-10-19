@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "vanillaplusshields:diamond_shield"
+      "basicshields:diamond_shield"
     ]
   },
   "criteria": {
@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "vanillaplusshields:diamond_shield"
+        "recipe": "basicshields:diamond_shield"
       }
     }
   },

@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "vanillaplusshields:golden_shield"
+      "basicshields:golden_shield"
     ]
   },
   "criteria": {
@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "vanillaplusshields:golden_shield"
+        "recipe": "basicshields:golden_shield"
       }
     }
   },

@@ -10,10 +10,10 @@
       "tag": "minecraft:planks"
     },
     "o": {
-      "item": "minecraft:stick"
+      "item": "minecraft:diamond"
     }
   },
   "result": {
-    "item": "vanillaplusshields:wooden_shield"
+    "item": "basicshields:diamond_shield"
   }
 }

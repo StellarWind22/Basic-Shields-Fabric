@@ -1,4 +1,4 @@
-package com.github.crimsondawn45.vanillaplusshields;
+package com.github.crimsondawn45.basicshields;
 
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 
@@ -13,9 +13,9 @@ import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-public class VanillaPlusShields implements ModInitializer {
+public class BasicShields implements ModInitializer {
 
-	public static final String MOD_ID = "vanillaplusshields";
+	public static final String MOD_ID = "basicshields";
 
 	public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
@@ -48,6 +48,6 @@ public class VanillaPlusShields implements ModInitializer {
 		//Netherite
 		Registry.register(Registry.ITEM, new Identifier(MOD_ID, "netherite_shield"), netherite_shield);
 
-		LOGGER.info("VanillaPlus shields initialized!");
+		LOGGER.info("Basic Shields initialized!");
 	}
 }

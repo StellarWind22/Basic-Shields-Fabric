@@ -6,7 +6,7 @@
     ]
   },
   "criteria": {
-    "has_gold_ingot": {
+    "has_diamond": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [

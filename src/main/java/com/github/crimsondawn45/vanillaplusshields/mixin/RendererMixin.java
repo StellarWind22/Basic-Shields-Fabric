@@ -1,7 +1,15 @@
 package com.github.crimsondawn45.vanillaplusshields.mixin;
 
-import com.github.crimsondawn45.fabricshieldlib.initializers.FabricShieldLib;
+import com.github.crimsondawn45.fabricshieldlib.initializers.FabricShieldLibClient;
 import com.github.crimsondawn45.vanillaplusshields.VanillaPlusShields;
+import com.github.crimsondawn45.vanillaplusshields.VanillaPlusShieldsClient;
+
+import org.spongepowered.asm.mixin.Final;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.model.EntityModelLoader;
@@ -13,12 +21,6 @@ import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
-import org.spongepowered.asm.mixin.Final;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(BuiltinModelItemRenderer.class)
 public class RendererMixin {
@@ -52,16 +54,16 @@ public class RendererMixin {
 	private void setModels(CallbackInfo ci){
 
 		//Wooden
-		woodenShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(VanillaPlusShields.wooden_shield_model_layer));
+		woodenShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(VanillaPlusShieldsClient.wooden_shield_model_layer));
 
 		//Golden
-		goldenShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(VanillaPlusShields.golden_shield_model_layer));
+		goldenShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(VanillaPlusShieldsClient.golden_shield_model_layer));
 
 		//Diamond
-		diamondShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(VanillaPlusShields.diamond_shield_model_layer));
+		diamondShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(VanillaPlusShieldsClient.diamond_shield_model_layer));
 
 		//Netherite
-		netheriteShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(VanillaPlusShields.netherite_shield_model_layer));
+		netheriteShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(VanillaPlusShieldsClient.netherite_shield_model_layer));
 	}
 
 	@Inject(method = "render", at = @At("HEAD"))
@@ -69,22 +71,22 @@ public class RendererMixin {
 
 		//Wooden
 		if (stack.isOf(VanillaPlusShields.wooden_shield)) {
-			FabricShieldLib.renderBanner(stack, matrices, vertexConsumers, light, overlay, woodenShieldModel, WOODEN_SHIELD_BASE, WOODEN_SHIELD_BASE_NO_PATTERN);
+			FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, woodenShieldModel, WOODEN_SHIELD_BASE, WOODEN_SHIELD_BASE_NO_PATTERN);
 		}
 
 		//Golden
 		if (stack.isOf(VanillaPlusShields.golden_shield)) {
-			FabricShieldLib.renderBanner(stack, matrices, vertexConsumers, light, overlay, goldenShieldModel, GOLDEN_SHIELD_BASE, GOLDEN_SHIELD_BASE_NO_PATTERN);
+			FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, goldenShieldModel, GOLDEN_SHIELD_BASE, GOLDEN_SHIELD_BASE_NO_PATTERN);
 		}
 
 		//Diamond
 		if (stack.isOf(VanillaPlusShields.diamond_shield)) {
-			FabricShieldLib.renderBanner(stack, matrices, vertexConsumers, light, overlay, diamondShieldModel, DIAMOND_SHIELD_BASE, DIAMOND_SHIELD_BASE_NO_PATTERN);
+			FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, diamondShieldModel, DIAMOND_SHIELD_BASE, DIAMOND_SHIELD_BASE_NO_PATTERN);
 		}
 
 		//Netherite
 		if (stack.isOf(VanillaPlusShields.netherite_shield)) {
-			FabricShieldLib.renderBanner(stack, matrices, vertexConsumers, light, overlay, netheriteShieldModel, NETHERITE_SHIELD_BASE, NETHERITE_SHIELD_BASE_NO_PATTERN);
+			FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, netheriteShieldModel, NETHERITE_SHIELD_BASE, NETHERITE_SHIELD_BASE_NO_PATTERN);
 		}
 	}
 }

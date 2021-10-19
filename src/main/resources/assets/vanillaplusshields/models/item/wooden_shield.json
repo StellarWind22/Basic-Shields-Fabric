@@ -1,5 +1,5 @@
 {
-  "parent":"fabricshieldlib:item/fabric_shield_banner_support_template",
+  "parent":"fabricshieldlib:item/fabric_banner_shield",
   "overrides": [
     {
       "predicate": {

@@ -1,4 +1,4 @@
-package com.github.crimsondawn45.basicshields.objects;
+package com.github.crimsondawn45.basicshields.registry;
 
 import com.github.crimsondawn45.basicshields.BasicShields;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;

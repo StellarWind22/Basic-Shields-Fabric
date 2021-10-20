@@ -1,6 +1,6 @@
 package com.github.crimsondawn45.basicshields;
 
-import com.github.crimsondawn45.basicshields.objects.ModItems;
+import com.github.crimsondawn45.basicshields.registry.ModItems;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

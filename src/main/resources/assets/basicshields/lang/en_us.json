@@ -73,5 +73,7 @@
   "item.basicshields.netherite_shield.light_gray": "Light Gray Netherite Shield",
   "item.basicshields.netherite_shield.gray": "Gray Netherite Shield",
   "item.basicshields.netherite_shield.dark_gray": "Dark Gray Netherite Shield",
-  "item.basicshields.netherite_shield.black": "Black Netherite Shield"
+  "item.basicshields.netherite_shield.black": "Black Netherite Shield",
+
+  "itemGroup.basicshields.shields": "Basic Shields"
 }

@@ -2,6 +2,7 @@ package com.github.crimsondawn45.basicshields.mixin;
 
 import com.github.crimsondawn45.basicshields.BasicShields;
 import com.github.crimsondawn45.basicshields.BasicShieldsClient;
+import com.github.crimsondawn45.basicshields.objects.ModItems;
 import com.github.crimsondawn45.fabricshieldlib.initializers.FabricShieldLibClient;
 
 import org.spongepowered.asm.mixin.Final;
@@ -70,22 +71,22 @@ public class RendererMixin {
 	private void mainRender(ItemStack stack, ModelTransformation.Mode mode, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay, CallbackInfo ci) {
 
 		//Wooden
-		if (stack.isOf(BasicShields.wooden_shield)) {
+		if (stack.isOf(ModItems.wooden_shield.getItem())) {
 			FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, woodenShieldModel, WOODEN_SHIELD_BASE, WOODEN_SHIELD_BASE_NO_PATTERN);
 		}
 
 		//Golden
-		if (stack.isOf(BasicShields.golden_shield)) {
+		if (stack.isOf(ModItems.golden_shield.getItem())) {
 			FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, goldenShieldModel, GOLDEN_SHIELD_BASE, GOLDEN_SHIELD_BASE_NO_PATTERN);
 		}
 
 		//Diamond
-		if (stack.isOf(BasicShields.diamond_shield)) {
+		if (stack.isOf(ModItems.diamond_shield.getItem())) {
 			FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, diamondShieldModel, DIAMOND_SHIELD_BASE, DIAMOND_SHIELD_BASE_NO_PATTERN);
 		}
 
 		//Netherite
-		if (stack.isOf(BasicShields.netherite_shield)) {
+		if (stack.isOf(ModItems.netherite_shield.getItem())) {
 			FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, netheriteShieldModel, NETHERITE_SHIELD_BASE, NETHERITE_SHIELD_BASE_NO_PATTERN);
 		}
 	}

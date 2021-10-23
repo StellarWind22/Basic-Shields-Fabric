@@ -55,25 +55,6 @@
   "item.basicshields.diamond_shield.gray": "Gray Diamond Shield",
   "item.basicshields.diamond_shield.dark_gray": "Dark Gray Diamond Shield",
   "item.basicshields.diamond_shield.black": "Black Diamond Shield",
-
-  "item.basicshields.netherite_shield": "Netherite Shield",
-  "item.basicshields.netherite_shield.red": "Red Netherite Shield",
-  "item.basicshields.netherite_shield.orange": "Orange Netherite Shield",
-  "item.basicshields.netherite_shield.yellow": "Yellow Netherite Shield",
-  "item.basicshields.netherite_shield.lime": "Lime Netherite Shield",
-  "item.basicshields.netherite_shield.green": "Green Netherite Shield",
-  "item.basicshields.netherite_shield.light_blue": "Light Blue Netherite Shield",
-  "item.basicshields.netherite_shield.cyan": "Cyan Netherite Shield",
-  "item.basicshields.netherite_shield.blue": "Blue Netherite Shield",
-  "item.basicshields.netherite_shield.purple": "Purple Netherite Shield",
-  "item.basicshields.netherite_shield.magenta": "Magenta Netherite Shield",
-  "item.basicshields.netherite_shield.pink": "Pink Netherite Shield",
-  "item.basicshields.netherite_shield.brown": "Brown Netherite Shield",
-  "item.basicshields.netherite_shield.white": "White Netherite Shield",
-  "item.basicshields.netherite_shield.light_gray": "Light Gray Netherite Shield",
-  "item.basicshields.netherite_shield.gray": "Gray Netherite Shield",
-  "item.basicshields.netherite_shield.dark_gray": "Dark Gray Netherite Shield",
-  "item.basicshields.netherite_shield.black": "Black Netherite Shield",
-
+  
   "itemGroup.basicshields.shields": "Basic Shields"
 }

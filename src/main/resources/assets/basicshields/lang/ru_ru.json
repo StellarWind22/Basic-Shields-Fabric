@@ -56,24 +56,5 @@
     "item.basicshields.diamond_shield.dark_gray": "Тёмно-серый алмазный щит",
     "item.basicshields.diamond_shield.black": "Чёрный алмазный щит",
 
-    "item.basicshields.netherite_shield": "Незеритовый щит",
-    "item.basicshields.netherite_shield.red": "Красный незеритовый щит",
-    "item.basicshields.netherite_shield.orange": "Оранжевый незеритовый щит",
-    "item.basicshields.netherite_shield.yellow": "Жёлтый незеритовый щит",
-    "item.basicshields.netherite_shield.lime": "Лаймовый незеритовый щит",
-    "item.basicshields.netherite_shield.green": "Зелёный незеритовый щит",
-    "item.basicshields.netherite_shield.light_blue": "Голубой незеритовый щит",
-    "item.basicshields.netherite_shield.cyan": "Бирюзовый незеритовый щит",
-    "item.basicshields.netherite_shield.blue": "Синий незеритовый щит",
-    "item.basicshields.netherite_shield.purple": "Фиолетовый незеритовый щит",
-    "item.basicshields.netherite_shield.magenta": "Пурпурный незеритовый щит",
-    "item.basicshields.netherite_shield.pink": "Розовый незеритовый щит",
-    "item.basicshields.netherite_shield.brown": "Коричневый незеритовый щит",
-    "item.basicshields.netherite_shield.white": "Белый незеритовый щит",
-    "item.basicshields.netherite_shield.light_gray": "Светло-серый незеритовый щит",
-    "item.basicshields.netherite_shield.gray": "Серый незеритовый щит",
-    "item.basicshields.netherite_shield.dark_gray": "Тёмно-серый незеритовый щит",
-    "item.basicshields.netherite_shield.black": "Чёрный незеритовый щит",
-
     "itemGroup.basicshields.shields": "Основные щиты"
 }

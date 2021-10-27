@@ -12,6 +12,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.model.EntityModelLoader;
 import net.minecraft.client.render.entity.model.ShieldEntityModel;
@@ -46,6 +47,17 @@ public class RendererMixin {
 	private static final SpriteIdentifier NETHERITE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/netherite_shield_base"));
 	private static final SpriteIdentifier NETHERITE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/netherite_shield_base_nopattern"));
 
+	/**
+	 * Tech Reborn
+	 */
+	//Bronze
+
+	//Ruby
+
+	//Peridot
+
+	//Sapphire
+
 	@Final
 	@Shadow
 	private EntityModelLoader entityModelLoader;
@@ -65,6 +77,10 @@ public class RendererMixin {
 
 		//Netherite
 		netheriteShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.netherite_shield_model_layer));
+
+		if(FabricLoader.getInstance().isModLoaded("techreborn")) {
+
+		}
 	}
 
 	@Inject(method = "render", at = @At("HEAD"))
@@ -88,6 +104,10 @@ public class RendererMixin {
 		//Netherite
 		if (stack.isOf(ModItems.netherite_shield.getItem())) {
 			FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, netheriteShieldModel, NETHERITE_SHIELD_BASE, NETHERITE_SHIELD_BASE_NO_PATTERN);
+		}
+
+		if(FabricLoader.getInstance().isModLoaded("techreborn")) {
+
 		}
 	}
 }

@@ -51,12 +51,24 @@ public class RendererMixin {
 	 * Tech Reborn
 	 */
 	//Bronze
+	private ShieldEntityModel bronzeShieldModel;
+	private static final SpriteIdentifier BRONZE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base"));
+	private static final SpriteIdentifier BRONZE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base_nopattern"));
 
 	//Ruby
+	private ShieldEntityModel rubyShieldModel;
+	private static final SpriteIdentifier RUBY_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base"));
+	private static final SpriteIdentifier RUBY_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base_nopattern"));
 
 	//Peridot
+	private ShieldEntityModel peridotShieldModel;
+	private static final SpriteIdentifier PERIDOT_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base"));
+	private static final SpriteIdentifier PERIDOT_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base_nopattern"));
 
 	//Sapphire
+	private ShieldEntityModel sapphireShieldModel;
+	private static final SpriteIdentifier SAPPHIRE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base"));
+	private static final SpriteIdentifier SAPPHIRE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base_nopattern"));
 
 	@Final
 	@Shadow
@@ -80,6 +92,17 @@ public class RendererMixin {
 
 		if(FabricLoader.getInstance().isModLoaded("techreborn")) {
 
+			//Bronze
+			bronzeShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.bronze_shield_model_layer));
+
+			//Ruby
+			rubyShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.ruby_shield_model_layer));
+
+			//Peridot
+			peridotShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.peridot_shield_model_layer));
+
+			//Sapphire
+			sapphireShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.sapphire_shield_model_layer));
 		}
 	}
 
@@ -107,7 +130,25 @@ public class RendererMixin {
 		}
 
 		if(FabricLoader.getInstance().isModLoaded("techreborn")) {
+			//Bronze
+			if (stack.isOf(ModItems.bronze_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, bronzeShieldModel, BRONZE_SHIELD_BASE, BRONZE_SHIELD_BASE_NO_PATTERN);
+			}
 
+			//Ruby
+			if (stack.isOf(ModItems.ruby_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, rubyShieldModel, RUBY_SHIELD_BASE, RUBY_SHIELD_BASE_NO_PATTERN);
+			}
+
+			//Peridot
+			if (stack.isOf(ModItems.peridot_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, peridotShieldModel, PERIDOT_SHIELD_BASE, PERIDOT_SHIELD_BASE_NO_PATTERN);
+			}
+
+			//Sapphire
+			if (stack.isOf(ModItems.sapphire_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, sapphireShieldModel, SAPPHIRE_SHIELD_BASE, SAPPHIRE_SHIELD_BASE_NO_PATTERN);
+			}
 		}
 	}
 }

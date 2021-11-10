@@ -61,7 +61,6 @@ public class BasicShieldsClient implements ClientModInitializer {
         /**
          * MOD INTEGRATION STUFF HERE
          */
-        //TODO: make custom textures instead of using wood
         if(FabricLoader.getInstance().isModLoaded("techreborn")) {
 
             //Bronze

@@ -24,6 +24,8 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 
+// TODO: FIND A BETTER WAY OF FIXING DEPRECATION WARNINGS
+@SuppressWarnings( "deprecation" )
 @Mixin(BuiltinModelItemRenderer.class)
 public class RendererMixin {
 

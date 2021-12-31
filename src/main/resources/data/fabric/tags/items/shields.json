@@ -4,7 +4,6 @@
       "minecraft:shield",
       "basicshields:wooden_shield",
       "basicshields:golden_shield",
-      "basicshields:diamond_shield",
-      "basicshields:netherite_shield"
+      "basicshields:diamond_shield"
     ]
 }

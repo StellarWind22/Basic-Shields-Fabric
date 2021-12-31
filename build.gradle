@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.9-SNAPSHOT'
+	id 'fabric-loom' version '0.10-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -23,8 +23,8 @@ dependencies {
 
 	modImplementation "com.github.CrimsonDawn45:Fabric-Shield-Lib:v${project.fabric_shield_lib_version}"
 
-	modImplementation "RebornCore:RebornCore-1.17:${project.reborncore_version}"
-	modImplementation "TechReborn:TechReborn-1.17:${project.techreborn_version}"
+	modImplementation "RebornCore:RebornCore-1.16:${project.reborncore_version}"
+	modImplementation "TechReborn:TechReborn-1.16:${project.techreborn_version}"
 }
 
 processResources {

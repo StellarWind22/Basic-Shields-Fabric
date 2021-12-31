@@ -32,13 +32,14 @@
   ],
 
   "depends": {
-    "fabricshieldlib": ">=1.4.4-1.17.1",
+    "fabricshieldlib": ">=1.4.5-1.16",
     "fabricloader": ">=0.11.3",
     "fabric": "*",
-    "minecraft": "1.17.x",
+    "minecraft": "1.16.x",
     "java": ">=16"
   },
   "suggests": {
-    "flamingo": "*"
+    "techreborn":">=3.8.4+build.236",
+    "reborncore":">=3.8.4+build.236"
   }
 }

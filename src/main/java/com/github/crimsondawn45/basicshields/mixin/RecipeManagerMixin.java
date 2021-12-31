@@ -4,7 +4,7 @@ import java.util.Map;
 
 import com.github.crimsondawn45.basicshields.BasicShields;
 import com.github.crimsondawn45.basicshields.registry.ModItems;
-import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -21,7 +21,7 @@ import net.minecraft.util.profiler.Profiler;
 public class RecipeManagerMixin {
     
     @Inject(at = @At("HEAD"), method = "apply")
-    public void interceptApply(Map<Identifier, JsonElement> map, ResourceManager resourceManager, Profiler profiler, CallbackInfo info) {
+    public void interceptApply(Map<Identifier, JsonObject> map, ResourceManager resourceManager, Profiler profiler, CallbackInfo info) {
         if(FabricLoader.getInstance().isModLoaded("techreborn")) {
             map.put(new Identifier(BasicShields.MOD_ID, ModItems.bronze_shield.getName()), ModItems.bronze_shield_recipe);
             map.put(new Identifier(BasicShields.MOD_ID, ModItems.ruby_shield.getName()), ModItems.ruby_shield_recipe);

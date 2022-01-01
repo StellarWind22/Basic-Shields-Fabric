@@ -3,7 +3,6 @@ package com.github.crimsondawn45.basicshields.initializers;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.render.entity.model.ShieldEntityModel;
 import net.minecraft.client.texture.SpriteAtlasTexture;
@@ -24,45 +23,55 @@ public class BasicShieldsClient implements ClientModInitializer {
     public static final EntityModelLayer peridot_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "peridot_shield"),"main");
     public static final EntityModelLayer sapphire_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "sapphire_shield"),"main");
 
+    //Adabranium
+
+    //Gobber
+
     @Override
     public void onInitializeClient() {
 
-        //Wooden
-        EntityModelLayerRegistry.registerModelLayer(wooden_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+        /**
+         * Vanilla
+         */
+        if(BasicShields.vanilla.isLoaded()) {
 
-        ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
-            registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base"));
-            registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base_nopattern"));
-        });
+            //Wooden
+            EntityModelLayerRegistry.registerModelLayer(wooden_shield_model_layer, ShieldEntityModel::getTexturedModelData);
 
-        //Golden
-        EntityModelLayerRegistry.registerModelLayer(golden_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+            ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base_nopattern"));
+            });
 
-        ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
-            registry.register(new Identifier(BasicShields.MOD_ID, "entity/golden_shield_base"));
-            registry.register(new Identifier(BasicShields.MOD_ID, "entity/golden_shield_base_nopattern"));
-        });
+            //Golden
+            EntityModelLayerRegistry.registerModelLayer(golden_shield_model_layer, ShieldEntityModel::getTexturedModelData);
 
-        //Diamond
-        EntityModelLayerRegistry.registerModelLayer(diamond_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+            ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/golden_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/golden_shield_base_nopattern"));
+            });
 
-        ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
-            registry.register(new Identifier(BasicShields.MOD_ID, "entity/diamond_shield_base"));
-            registry.register(new Identifier(BasicShields.MOD_ID, "entity/diamond_shield_base_nopattern"));
-        });
+            //Diamond
+            EntityModelLayerRegistry.registerModelLayer(diamond_shield_model_layer, ShieldEntityModel::getTexturedModelData);
 
-        //Netherite
-        EntityModelLayerRegistry.registerModelLayer(netherite_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+            ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/diamond_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/diamond_shield_base_nopattern"));
+            });
 
-        ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
-            registry.register(new Identifier(BasicShields.MOD_ID, "entity/netherite_shield_base"));
-            registry.register(new Identifier(BasicShields.MOD_ID, "entity/netherite_shield_base_nopattern"));
-        });
+            //Netherite
+            EntityModelLayerRegistry.registerModelLayer(netherite_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+
+            ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/netherite_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/netherite_shield_base_nopattern"));
+            });
+        }
 
         /**
-         * MOD INTEGRATION STUFF HERE
+         * Techreborn
          */
-        if(FabricLoader.getInstance().isModLoaded("techreborn")) {
+        if(BasicShields.techReborn.isLoaded()) {
 
             //Bronze
             EntityModelLayerRegistry.registerModelLayer(bronze_shield_model_layer, ShieldEntityModel::getTexturedModelData);
@@ -96,5 +105,14 @@ public class BasicShieldsClient implements ClientModInitializer {
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/sapphire_shield_base_nopattern"));
             });
 		}
+
+        /**
+         * Adabranium
+         */
+
+
+        /**
+         * Gobber
+         */
     }
 }

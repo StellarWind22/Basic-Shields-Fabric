@@ -200,13 +200,4 @@ public class RecipeHelper {
 
         return json;
     }
-
-    
-    //TODO: make method "createRecipeAdvancementJson"
-    public JsonObject createRecipeAdvancement() {
-        //Creating a new json object, where we will store our recipe.
-        //JsonObject json = new JsonObject();
-
-        return null;
-    }
 }

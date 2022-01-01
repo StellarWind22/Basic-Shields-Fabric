@@ -1,8 +1,7 @@
 package com.github.crimsondawn45.basicshields.mixin;
 
-import com.github.crimsondawn45.basicshields.BasicShields;
-import com.github.crimsondawn45.basicshields.BasicShieldsClient;
-import com.github.crimsondawn45.basicshields.registry.ModItems;
+import com.github.crimsondawn45.basicshields.initializer.BasicShields;
+import com.github.crimsondawn45.basicshields.initializer.BasicShieldsClient;
 import com.github.crimsondawn45.fabricshieldlib.initializers.FabricShieldLibClient;
 
 import org.spongepowered.asm.mixin.Final;
@@ -12,7 +11,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.model.EntityModelLoader;
 import net.minecraft.client.render.entity.model.ShieldEntityModel;
@@ -79,19 +77,21 @@ public class RendererMixin {
 	@Inject(method = "reload", at = @At("HEAD"))
 	private void setModels(CallbackInfo ci){
 
-		//Wooden
-		woodenShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.wooden_shield_model_layer));
+		if(BasicShields.vanilla.isLoaded()) {
+			//Wooden
+			woodenShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.wooden_shield_model_layer));
 
-		//Golden
-		goldenShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.golden_shield_model_layer));
+			//Golden
+			goldenShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.golden_shield_model_layer));
 
-		//Diamond
-		diamondShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.diamond_shield_model_layer));
+			//Diamond
+			diamondShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.diamond_shield_model_layer));
 
-		//Netherite
-		netheriteShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.netherite_shield_model_layer));
+			//Netherite
+			netheriteShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.netherite_shield_model_layer));
+		}
 
-		if(FabricLoader.getInstance().isModLoaded("techreborn")) {
+		if(BasicShields.techReborn.isLoaded()) {
 
 			//Bronze
 			bronzeShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.bronze_shield_model_layer));
@@ -110,44 +110,46 @@ public class RendererMixin {
 	@Inject(method = "render", at = @At("HEAD"))
 	private void mainRender(ItemStack stack, ModelTransformation.Mode mode, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay, CallbackInfo ci) {
 
-		//Wooden
-		if (stack.isOf(ModItems.wooden_shield.getItem())) {
-			FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, woodenShieldModel, WOODEN_SHIELD_BASE, WOODEN_SHIELD_BASE_NO_PATTERN);
+		if(BasicShields.vanilla.isLoaded()) {
+			//Wooden
+			if (stack.isOf(BasicShields.vanilla.wooden_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, woodenShieldModel, WOODEN_SHIELD_BASE, WOODEN_SHIELD_BASE_NO_PATTERN);
+			}
+
+			//Golden
+			if (stack.isOf(BasicShields.vanilla.golden_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, goldenShieldModel, GOLDEN_SHIELD_BASE, GOLDEN_SHIELD_BASE_NO_PATTERN);
+			}
+
+			//Diamond
+			if (stack.isOf(BasicShields.vanilla.diamond_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, diamondShieldModel, DIAMOND_SHIELD_BASE, DIAMOND_SHIELD_BASE_NO_PATTERN);
+			}
+
+			//Netherite
+			if (stack.isOf(BasicShields.vanilla.netherite_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, netheriteShieldModel, NETHERITE_SHIELD_BASE, NETHERITE_SHIELD_BASE_NO_PATTERN);
+			}
 		}
 
-		//Golden
-		if (stack.isOf(ModItems.golden_shield.getItem())) {
-			FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, goldenShieldModel, GOLDEN_SHIELD_BASE, GOLDEN_SHIELD_BASE_NO_PATTERN);
-		}
-
-		//Diamond
-		if (stack.isOf(ModItems.diamond_shield.getItem())) {
-			FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, diamondShieldModel, DIAMOND_SHIELD_BASE, DIAMOND_SHIELD_BASE_NO_PATTERN);
-		}
-
-		//Netherite
-		if (stack.isOf(ModItems.netherite_shield.getItem())) {
-			FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, netheriteShieldModel, NETHERITE_SHIELD_BASE, NETHERITE_SHIELD_BASE_NO_PATTERN);
-		}
-
-		if(FabricLoader.getInstance().isModLoaded("techreborn")) {
+		if(BasicShields.techReborn.isLoaded()) {
 			//Bronze
-			if (stack.isOf(ModItems.bronze_shield.getItem())) {
+			if (stack.isOf(BasicShields.techReborn.bronze_shield.getItem())) {
 				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, bronzeShieldModel, BRONZE_SHIELD_BASE, BRONZE_SHIELD_BASE_NO_PATTERN);
 			}
 
 			//Ruby
-			if (stack.isOf(ModItems.ruby_shield.getItem())) {
+			if (stack.isOf(BasicShields.techReborn.ruby_shield.getItem())) {
 				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, rubyShieldModel, RUBY_SHIELD_BASE, RUBY_SHIELD_BASE_NO_PATTERN);
 			}
 
 			//Peridot
-			if (stack.isOf(ModItems.peridot_shield.getItem())) {
+			if (stack.isOf(BasicShields.techReborn.peridot_shield.getItem())) {
 				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, peridotShieldModel, PERIDOT_SHIELD_BASE, PERIDOT_SHIELD_BASE_NO_PATTERN);
 			}
 
 			//Sapphire
-			if (stack.isOf(ModItems.sapphire_shield.getItem())) {
+			if (stack.isOf(BasicShields.techReborn.sapphire_shield.getItem())) {
 				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, sapphireShieldModel, SAPPHIRE_SHIELD_BASE, SAPPHIRE_SHIELD_BASE_NO_PATTERN);
 			}
 		}

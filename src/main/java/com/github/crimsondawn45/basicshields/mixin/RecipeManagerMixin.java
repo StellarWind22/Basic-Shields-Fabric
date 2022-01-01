@@ -2,8 +2,7 @@ package com.github.crimsondawn45.basicshields.mixin;
 
 import java.util.Map;
 
-import com.github.crimsondawn45.basicshields.BasicShields;
-import com.github.crimsondawn45.basicshields.registry.ModItems;
+import com.github.crimsondawn45.basicshields.initializer.BasicShields;
 import com.google.gson.JsonElement;
 
 import org.spongepowered.asm.mixin.Mixin;
@@ -23,26 +22,31 @@ public class RecipeManagerMixin {
     public void interceptApply(Map<Identifier, JsonElement> map, ResourceManager resourceManager, Profiler profiler, CallbackInfo info) {
 
         //Vanilla
-        map.put(new Identifier(BasicShields.MOD_ID, ModItems.wooden_shield.getName()), ModItems.wooden_shield_recipe);
-        map.put(new Identifier(BasicShields.MOD_ID, ModItems.golden_shield.getName()), ModItems.golden_shield_recipe);
-        map.put(new Identifier(BasicShields.MOD_ID, ModItems.diamond_shield.getName()), ModItems.diamond_shield_recipe);
-        //map.put(new Identifier(BasicShields.MOD_ID, ModItems.netherite_shield.getName()), ModItems.netherite_shield_recipe);
+        if(BasicShields.vanilla.isLoaded()) {
+            map.put(new Identifier(BasicShields.MOD_ID, BasicShields.vanilla.wooden_shield.getName()), BasicShields.vanilla.wooden_shield_recipe);
+            map.put(new Identifier(BasicShields.MOD_ID, BasicShields.vanilla.golden_shield.getName()), BasicShields.vanilla.golden_shield_recipe);
+            map.put(new Identifier(BasicShields.MOD_ID, BasicShields.vanilla.diamond_shield.getName()), BasicShields.vanilla.diamond_shield_recipe);
+            //map.put(new Identifier(BasicShields.MOD_ID, BasicShields.vanilla.netherite_shield.getName()), BasicShields.vanilla.netherite_shield_recipe);
+        }
 
         //Tech Reborn
-        if(BasicShields.isLoaded("techreborn")) {
-            map.put(new Identifier(BasicShields.MOD_ID, ModItems.bronze_shield.getName()), ModItems.bronze_shield_recipe);
-            map.put(new Identifier(BasicShields.MOD_ID, ModItems.ruby_shield.getName()), ModItems.ruby_shield_recipe);
-            map.put(new Identifier(BasicShields.MOD_ID, ModItems.peridot_shield.getName()), ModItems.peridot_shield_recipe);
-            map.put(new Identifier(BasicShields.MOD_ID, ModItems.sapphire_shield.getName()), ModItems.sapphire_shield_recipe);
+        if(BasicShields.techReborn.isLoaded()) {
+            map.put(new Identifier(BasicShields.MOD_ID, BasicShields.techReborn.bronze_shield.getName()), BasicShields.techReborn.bronze_shield_recipe);
+            map.put(new Identifier(BasicShields.MOD_ID, BasicShields.techReborn.ruby_shield.getName()), BasicShields.techReborn.ruby_shield_recipe);
+            map.put(new Identifier(BasicShields.MOD_ID, BasicShields.techReborn.peridot_shield.getName()), BasicShields.techReborn.peridot_shield_recipe);
+            map.put(new Identifier(BasicShields.MOD_ID, BasicShields.techReborn.sapphire_shield.getName()), BasicShields.techReborn.sapphire_shield_recipe);
 		}
 
         //Adabranium
+        if(BasicShields.adabranium.isLoaded()) {
+
+        }
 
         //Gobber2
-        if(BasicShields.isLoaded("gobber2")) {
-            map.put(new Identifier(BasicShields.MOD_ID, ModItems.gobber_shield.getName()), ModItems.gobber_shield_recipe);
-            map.put(new Identifier(BasicShields.MOD_ID, ModItems.gobber_nether_shield.getName()), ModItems.gobber_nether_shield_recipe);
-            map.put(new Identifier(BasicShields.MOD_ID, ModItems.gobber_end_shield.getName()), ModItems.gobber_end_shield_recipe);
+        if(BasicShields.gobber.isLoaded()) {
+            map.put(new Identifier(BasicShields.MOD_ID, BasicShields.gobber.gobber_shield.getName()), BasicShields.gobber.gobber_shield_recipe);
+            map.put(new Identifier(BasicShields.MOD_ID, BasicShields.gobber.gobber_nether_shield.getName()), BasicShields.gobber.gobber_nether_shield_recipe);
+            map.put(new Identifier(BasicShields.MOD_ID, BasicShields.gobber.gobber_end_shield.getName()), BasicShields.gobber.gobber_end_shield_recipe);
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.github.crimsondawn45.util;
 
-import com.github.crimsondawn45.basicshields.BasicShields;
+import com.github.crimsondawn45.basicshields.initializer.BasicShields;
 
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;

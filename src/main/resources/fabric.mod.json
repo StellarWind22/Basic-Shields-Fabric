@@ -21,10 +21,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.github.crimsondawn45.basicshields.BasicShields"
+      "com.github.crimsondawn45.basicshields.initializer.BasicShields"
     ],
     "client": [
-      "com.github.crimsondawn45.basicshields.BasicShieldsClient"
+      "com.github.crimsondawn45.basicshields.initializer.BasicShieldsClient"
     ]
   },
   "mixins": [

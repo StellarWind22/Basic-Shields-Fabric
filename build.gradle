@@ -26,12 +26,22 @@ dependencies {
 
 	//Integrations
 
-	//Tech Reborn
+	//TechReborn
 	modCompileOnly "RebornCore:RebornCore-1.18:${project.reborncore_version}"
 	modCompileOnly "TechReborn:TechReborn-1.18:${project.techreborn_version}"
 
-	//Gobber
+	//Adabranium
+	modCompileOnly "curse.maven:adabranium-361599:3540158"		//2.2.0
+
+	//Gobber[Fabric]
 	modCompileOnly "curse.maven:gobber-fabric-427177:3587109"	//2.5.57
+
+	//MythicMetals
+	modCompileOnly "curse.maven:mythicmetals-410127:3548273"	//0.11.0
+
+	//DragonLoot
+	modCompileOnly "curse.maven:dragonloot-424480:3543499"		//1.0.9
+
 }
 
 processResources {

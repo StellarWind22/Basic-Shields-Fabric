@@ -37,8 +37,6 @@ public class RecipeHelper {
 			output, 1);
 	}
 
-    //TODO: make method "createSmithingRecipeJson"
-
     //TODO: make method "createRecipeAdvancementJson"
 
     //TODO: find a way to dynamically add an item to a tag
@@ -105,6 +103,7 @@ public class RecipeHelper {
         return json;
     }
 
+    //TODO: finish
     public static JsonObject createSmithingRecipe() {
          //Creating a new json object, where we will store our recipe.
          JsonObject json = new JsonObject();

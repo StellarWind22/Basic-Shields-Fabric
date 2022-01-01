@@ -10,6 +10,17 @@ import net.minecraft.util.Identifier;
 
 public class RecipeHelper {
 
+    /**
+     * * generates a JsonObject for a new shield recipe
+     * 
+     * @param mainItemId    Main Identifier ex.  minecraft:iron_ingot
+     * @param isMainTag     Is main a tag?
+     * @param plankItemId   Plank Identifier ex. minecraft:planks
+     * @param isPlankTag    Are Planks a tag?
+     * @param output        Output item Id.
+     * 
+     * @return Shield recipe in JsonObject form.
+     */
     public static JsonObject createShieldRecipe(Identifier mainItemId, boolean isMainTag, Identifier plankItemId, boolean isPlankTag, Identifier output) {
 		String mainType;
         String plankType;
@@ -43,8 +54,24 @@ public class RecipeHelper {
 			output, 1);
 	}
 
-    //TODO: make method "createRecipeAdvancementJson"
-
+    /**
+     * *generates a JsonObject for any ShapedRecipe with indexes of the arrays being related.
+     * 
+     * (example)
+     * keys = "%, A".
+     * Items = "stick, dirt"
+     * 
+     * Result "% = stick, A = dirt"
+     * 
+     * @param keys  Array of character keys for pattern
+     * @param items Array of items that the keys equal
+     * @param type Array of types. If each key is a item OR tag
+     * @param pattern Pattern made up of keys, either 2x2 or 3x3.
+     * @param output Output item Identifier.
+     * @param count How many?
+     * 
+     * @return Shaped recipe in JsonObject form.
+     */
 	public static JsonObject createShapedRecipe(ArrayList<Character> keys, ArrayList<Identifier> items, ArrayList<String> type, ArrayList<String> pattern, Identifier output, int count) {
         //Creating a new json object, where we will store our recipe.
         JsonObject json = new JsonObject();
@@ -106,6 +133,18 @@ public class RecipeHelper {
  
         return json;
     }
+
+    /**
+     * * generates a JsonObject for a new smithing recipe
+     * 
+     * @param inputId Identifier of the input
+     * @param isInputTag Is input a tag?
+     * @param additionId Identifier of the addition
+     * @param isAdditionTag Is addition a tag?
+     * @param outputId Output item Identifier
+     * 
+     * @return Smithing Recipe in JsonObject Form
+     */
     public static JsonObject createSmithingRecipe(Identifier inputId, boolean isInputTag, Identifier additionId, boolean isAdditionTag, Identifier outputId) {
         //Creating a new json object, where we will store our recipe.
         JsonObject json = new JsonObject();
@@ -160,5 +199,14 @@ public class RecipeHelper {
         json.add("result", result);
 
         return json;
+    }
+
+    
+    //TODO: make method "createRecipeAdvancementJson"
+    public JsonObject createRecipeAdvancement() {
+        //Creating a new json object, where we will store our recipe.
+        JsonObject json = new JsonObject();
+
+        return null;
     }
 }

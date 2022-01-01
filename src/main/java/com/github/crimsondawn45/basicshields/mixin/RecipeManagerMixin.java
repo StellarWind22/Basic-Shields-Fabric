@@ -35,5 +35,14 @@ public class RecipeManagerMixin {
             map.put(new Identifier(BasicShields.MOD_ID, ModItems.peridot_shield.getName()), ModItems.peridot_shield_recipe);
             map.put(new Identifier(BasicShields.MOD_ID, ModItems.sapphire_shield.getName()), ModItems.sapphire_shield_recipe);
 		}
+
+        //Adabranium
+
+        //Gobber2
+        if(BasicShields.isLoaded("gobber2")) {
+            map.put(new Identifier(BasicShields.MOD_ID, ModItems.gobber_shield.getName()), ModItems.gobber_shield_recipe);
+            map.put(new Identifier(BasicShields.MOD_ID, ModItems.gobber_nether_shield.getName()), ModItems.gobber_nether_shield_recipe);
+            map.put(new Identifier(BasicShields.MOD_ID, ModItems.gobber_end_shield.getName()), ModItems.gobber_end_shield_recipe);
+        }
     }
 }

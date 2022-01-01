@@ -41,7 +41,7 @@ public class RecipeManagerMixin {
         if(BasicShields.adabranium.isLoaded()) {
             map.put(new Identifier(BasicShields.MOD_ID, BasicShields.adabranium.adamantium_shield.getName()), BasicShields.adabranium.adamantium_shield_recipe);
             map.put(new Identifier(BasicShields.MOD_ID, BasicShields.adabranium.vibranium_shield.getName()), BasicShields.adabranium.vibranium_shield_recipe);
-            //map.put(new Identifier(BasicShields.MOD_ID, BasicShields.adabranium.nether_shield.getName()), BasicShields.adabranium.nether_shield_recipe);
+            map.put(new Identifier(BasicShields.MOD_ID, BasicShields.adabranium.nether_shield.getName()), BasicShields.adabranium.nether_shield_recipe);
         }
 
         //Gobber2

@@ -9,7 +9,6 @@ import com.google.gson.JsonObject;
 import com.kwpugh.gobber2.init.ItemInit;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.tag.ItemTags;
 import net.minecraft.util.Identifier;
 
 public class GobberModule extends ContentModule {
@@ -27,6 +26,10 @@ public class GobberModule extends ContentModule {
         super(requiredIds);
     }
 
+    //TODO: make overworld gobber INSERT COOL THING HERE
+    //TODO: make nether gobber burn attacking enemies
+    //TODO: make end gobber give attacking enemies levitation
+
     @Override
     public void registerContent() {
         //Gobber
@@ -35,10 +38,10 @@ public class GobberModule extends ContentModule {
 
         //Nether Gobber
         gobber_nether_shield = new ModItem("gobber_nether_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(1111).group(BasicShields.SHIELDS), 100, 111, ItemInit.GOBBER2_INGOT_NETHER));
-        gobber_nether_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("gobber2", "gobber2_ingot_nether"), false, ItemTags.PLANKS.getId(), true, gobber_shield.getIdentifier());
+        gobber_nether_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("minecraft","nether_star"), false, new Identifier("gobber2", "gobber2_ingot_nether"), false, gobber_nether_shield.getIdentifier());
 
         //End Gobber
         gobber_end_shield = new ModItem("gobber_end_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(1111).group(BasicShields.SHIELDS), 100, 111, ItemInit.GOBBER2_INGOT_END));
-        gobber_end_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("gobber2", "gobber2_ingot_end"), false, ItemTags.PLANKS.getId(), true, gobber_shield.getIdentifier());
+        gobber_end_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("gobber2", "gobber2_ingot_end"), false, new Identifier("gobber2", "gobber2_ingot_end"), false, gobber_end_shield.getIdentifier());
     }
 }

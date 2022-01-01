@@ -22,7 +22,7 @@ public class AdabraniumModule extends ContentModule {
         //Adabranium recipes
     public JsonObject adamantium_shield_recipe;
     public JsonObject vibranium_shield_recipe;
-    //public JsonObject nether_shield_recipe;
+    public JsonObject nether_shield_recipe;
 
     public AdabraniumModule(String...requiredIds) {
         super(requiredIds);
@@ -33,14 +33,14 @@ public class AdabraniumModule extends ContentModule {
         
         //Adamantium
         adamantium_shield = new ModItem("adamantium_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(504).group(BasicShields.SHIELDS), 100, 6, ModItems.ADAMANTIUM_INGOT));
-        adamantium_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("adabranium", "adamantium_ingot"), false, ItemTags.PLANKS.getId(), true, adamantium_shield.getIdentifier());
+        adamantium_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("adabraniummod", "adamantium_ingot"), false, ItemTags.PLANKS.getId(), true, adamantium_shield.getIdentifier());
 
         //Vibranium
         vibranium_shield = new ModItem("vibranium_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(504).group(BasicShields.SHIELDS), 100, 6, ModItems.VIBRANIUM_INGOT));
-        vibranium_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("adabranium", "vibranium_ingot"), false, ItemTags.PLANKS.getId(), true, vibranium_shield.getIdentifier());
+        vibranium_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("adabraniummod", "vibranium_ingot"), false, ItemTags.PLANKS.getId(), true, vibranium_shield.getIdentifier());
 
         //Nether
         nether_shield = new ModItem("nether_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(504).group(BasicShields.SHIELDS).fireproof(), 100, 6, Items.NETHER_BRICK));
-        //TODO: ADD SPECIAL RECIPE
+        nether_shield_recipe = RecipeHelper.createSmithingRecipe(new Identifier("minecraft", "shield"), false, new Identifier("minecraft", "nether_brick"), false, nether_shield.getIdentifier());
     }
 }

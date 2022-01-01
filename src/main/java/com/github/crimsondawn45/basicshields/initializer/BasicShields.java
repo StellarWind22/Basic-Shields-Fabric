@@ -35,7 +35,7 @@ public class BasicShields implements ModInitializer {
 		//Initialize Modules
 		vanilla = 		new VanillaModule();
 		techReborn = 	new TechRebornModule("techreborn", "reborncore");
-		adabranium = 	new AdabraniumModule("adabranium");
+		adabranium = 	new AdabraniumModule("adabraniummod");
 		gobber =		new GobberModule("gobber2");
 
 		LOGGER.info("Basic Shields initialized!");

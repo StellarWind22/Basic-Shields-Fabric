@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
@@ -27,5 +28,9 @@ public class BasicShields implements ModInitializer {
 		ModItems.Init();
 
 		LOGGER.info("Basic Shields initialized!");
+	}
+
+	public static boolean isLoaded(String modId) {
+		return FabricLoader.getInstance().isModLoaded(modId);
 	}
 }

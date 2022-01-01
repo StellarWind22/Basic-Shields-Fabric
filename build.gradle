@@ -41,7 +41,6 @@ dependencies {
 
 	//DragonLoot
 	modCompileOnly "curse.maven:dragonloot-424480:3543499"		//1.0.9
-
 }
 
 processResources {

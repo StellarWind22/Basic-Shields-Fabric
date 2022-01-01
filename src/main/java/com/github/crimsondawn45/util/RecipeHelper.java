@@ -20,7 +20,7 @@ public class RecipeHelper {
 			itemType = "item";
 		}
 
-		return createShapedRecipeJson(
+		return createShapedRecipe(
 			//Keys
 			Lists.newArrayList('#','i'),
 			//Items
@@ -34,7 +34,7 @@ public class RecipeHelper {
 				" # "
 			),
 			//Output
-			output);
+			output, 1);
 	}
 
     //TODO: make method "createSmithingRecipeJson"
@@ -43,7 +43,7 @@ public class RecipeHelper {
 
     //TODO: find a way to dynamically add an item to a tag
 
-	private static JsonObject createShapedRecipeJson(ArrayList<Character> keys, ArrayList<Identifier> items, ArrayList<String> type, ArrayList<String> pattern, Identifier output) {
+	public static JsonObject createShapedRecipe(ArrayList<Character> keys, ArrayList<Identifier> items, ArrayList<String> type, ArrayList<String> pattern, Identifier output, int count) {
         //Creating a new json object, where we will store our recipe.
         JsonObject json = new JsonObject();
         //The "type" of the recipe we are creating. In this case, a shaped recipe.
@@ -94,7 +94,7 @@ public class RecipeHelper {
         //Finally, we define our result object
         JsonObject result = new JsonObject();
         result.addProperty("item", output.toString());
-        result.addProperty("count", 1);
+        result.addProperty("count", count);
         json.add("result", result);
         //This creates:
         //"result": {
@@ -103,5 +103,14 @@ public class RecipeHelper {
         //}
  
         return json;
+    }
+
+    public static JsonObject createSmithingRecipe() {
+         //Creating a new json object, where we will store our recipe.
+         JsonObject json = new JsonObject();
+           //The "type" of the recipe we are creating. In this case, a smithing recipe.
+        json.addProperty("type", "minecraft:crafting_shaped");
+
+        return null;
     }
 }

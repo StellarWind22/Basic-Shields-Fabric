@@ -6,27 +6,33 @@ import com.google.common.collect.Lists;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-import net.minecraft.tag.ItemTags;
 import net.minecraft.util.Identifier;
 
 public class RecipeHelper {
 
-    public static JsonObject createShieldRecipe(Identifier CraftingItemIdentifier, boolean isTag, Identifier output) {
-		String itemType;
+    public static JsonObject createShieldRecipe(Identifier mainItemId, boolean isMainTag, Identifier plankItemId, boolean isPlankTag, Identifier output) {
+		String mainType;
+        String plankType;
 
-		if(isTag) {
-			itemType = "tag";
+		if(isMainTag) {
+			mainType = "tag";
 		} else {
-			itemType = "item";
+			mainType = "item";
+		}
+
+        if(isPlankTag) {
+			plankType = "tag";
+		} else {
+			plankType = "item";
 		}
 
 		return createShapedRecipe(
 			//Keys
 			Lists.newArrayList('#','i'),
 			//Items
-			Lists.newArrayList(ItemTags.PLANKS.getId(), CraftingItemIdentifier), 
+			Lists.newArrayList(plankItemId, mainItemId), 
 			//Types
-			Lists.newArrayList("tag", itemType),
+			Lists.newArrayList(plankType, mainType),
 			//Pattern
 			Lists.newArrayList(
 				"#i#",

@@ -11,7 +11,8 @@ version = project.mod_version + "-${project.minecraft_version}"
 group = project.maven_group
 
 repositories {
-	maven { url 'https://maven.modmuss50.me/' }
+	maven { url "https://maven.modmuss50.me/" }
+	maven { url "https://cursemaven.com" }
 }
 
 dependencies {
@@ -19,12 +20,18 @@ dependencies {
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:0.45.0+1.18"
 
 	modImplementation "com.github.CrimsonDawn45:Fabric-Shield-Lib:v${project.fabric_shield_lib_version}"
 
-	modImplementation "RebornCore:RebornCore-1.18:${project.reborncore_version}"
-	modImplementation "TechReborn:TechReborn-1.18:${project.techreborn_version}"
+	//Integrations
+
+	//Tech Reborn
+	modCompileOnly "RebornCore:RebornCore-1.18:${project.reborncore_version}"
+	modCompileOnly "TechReborn:TechReborn-1.18:${project.techreborn_version}"
+
+	//Gobber
+	modCompileOnly "curse.maven:gobber-fabric-427177:3587109"	//2.5.57
 }
 
 processResources {

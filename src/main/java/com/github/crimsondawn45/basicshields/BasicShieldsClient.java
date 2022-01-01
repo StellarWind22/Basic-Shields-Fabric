@@ -9,7 +9,6 @@ import net.minecraft.client.render.entity.model.ShieldEntityModel;
 import net.minecraft.client.texture.SpriteAtlasTexture;
 import net.minecraft.util.Identifier;
 
-// TODO: FIND A BETTER WAY OF FIXING DEPRECATION WARNINGS
 @SuppressWarnings("deprecation")
 public class BasicShieldsClient implements ClientModInitializer {
 

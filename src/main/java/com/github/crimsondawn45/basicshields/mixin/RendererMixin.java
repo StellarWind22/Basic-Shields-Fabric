@@ -1,7 +1,7 @@
 package com.github.crimsondawn45.basicshields.mixin;
 
-import com.github.crimsondawn45.basicshields.initializer.BasicShields;
-import com.github.crimsondawn45.basicshields.initializer.BasicShieldsClient;
+import com.github.crimsondawn45.basicshields.initializers.BasicShields;
+import com.github.crimsondawn45.basicshields.initializers.BasicShieldsClient;
 import com.github.crimsondawn45.fabricshieldlib.initializers.FabricShieldLibClient;
 
 import org.spongepowered.asm.mixin.Final;

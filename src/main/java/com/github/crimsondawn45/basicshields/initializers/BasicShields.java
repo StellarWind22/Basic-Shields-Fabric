@@ -1,4 +1,4 @@
-package com.github.crimsondawn45.basicshields.initializer;
+package com.github.crimsondawn45.basicshields.initializers;
 
 import com.github.crimsondawn45.basicshields.module.AdabraniumModule;
 import com.github.crimsondawn45.basicshields.module.GobberModule;

@@ -2,7 +2,7 @@ package com.github.crimsondawn45.basicshields.mixin;
 
 import java.util.Map;
 
-import com.github.crimsondawn45.basicshields.initializer.BasicShields;
+import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.google.gson.JsonElement;
 
 import org.spongepowered.asm.mixin.Mixin;

@@ -1,4 +1,4 @@
-package com.github.crimsondawn45.basicshields.initializer;
+package com.github.crimsondawn45.basicshields.initializers;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;

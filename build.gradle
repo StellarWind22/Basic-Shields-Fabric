@@ -24,8 +24,6 @@ dependencies {
 
 	modImplementation "com.github.CrimsonDawn45:Fabric-Shield-Lib:v${project.fabric_shield_lib_version}"
 
-	//Integrations
-
 	//TechReborn
 	modCompileOnly "TechReborn:TechReborn-1.18:${project.techreborn_version}"
 	modCompileOnly "RebornCore:RebornCore-1.18:${project.reborncore_version}"

@@ -23,7 +23,7 @@ public class VanillaModule extends ContentModule {
     public JsonObject wooden_shield_recipe;
     public JsonObject golden_shield_recipe;
     public JsonObject diamond_shield_recipe;
-    //public JsonObject netherite_shield_recipe;
+    public JsonObject netherite_shield_recipe;
 
     @Override
     public void registerContent() {
@@ -41,5 +41,6 @@ public class VanillaModule extends ContentModule {
 
         //Netherite
 		netherite_shield = new ModItem("netherite_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(2709).group(BasicShields.SHIELDS).fireproof(), 80, 15, Items.NETHERITE_INGOT));
+        netherite_shield_recipe = RecipeHelper.createSmithingRecipe(diamond_shield.getIdentifier(), false, new Identifier("minecraft","netherite_ingot"), false, netherite_shield.getIdentifier());
     }
 }

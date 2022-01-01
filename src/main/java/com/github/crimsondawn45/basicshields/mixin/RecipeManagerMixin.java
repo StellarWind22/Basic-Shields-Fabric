@@ -26,7 +26,7 @@ public class RecipeManagerMixin {
             map.put(new Identifier(BasicShields.MOD_ID, BasicShields.vanilla.wooden_shield.getName()), BasicShields.vanilla.wooden_shield_recipe);
             map.put(new Identifier(BasicShields.MOD_ID, BasicShields.vanilla.golden_shield.getName()), BasicShields.vanilla.golden_shield_recipe);
             map.put(new Identifier(BasicShields.MOD_ID, BasicShields.vanilla.diamond_shield.getName()), BasicShields.vanilla.diamond_shield_recipe);
-            //map.put(new Identifier(BasicShields.MOD_ID, BasicShields.vanilla.netherite_shield.getName()), BasicShields.vanilla.netherite_shield_recipe);
+            map.put(new Identifier(BasicShields.MOD_ID, BasicShields.vanilla.netherite_shield.getName()), BasicShields.vanilla.netherite_shield_recipe);
         }
 
         //Tech Reborn

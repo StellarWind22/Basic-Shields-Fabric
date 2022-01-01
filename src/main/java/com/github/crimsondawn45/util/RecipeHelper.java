@@ -39,8 +39,6 @@ public class RecipeHelper {
 
     //TODO: make method "createRecipeAdvancementJson"
 
-    //TODO: find a way to dynamically add an item to a tag
-
 	public static JsonObject createShapedRecipe(ArrayList<Character> keys, ArrayList<Identifier> items, ArrayList<String> type, ArrayList<String> pattern, Identifier output, int count) {
         //Creating a new json object, where we will store our recipe.
         JsonObject json = new JsonObject();
@@ -102,14 +100,59 @@ public class RecipeHelper {
  
         return json;
     }
+    public static JsonObject createSmithingRecipe(Identifier inputId, boolean isInputTag, Identifier additionId, boolean isAdditionTag, Identifier outputId) {
+        //Creating a new json object, where we will store our recipe.
+        JsonObject json = new JsonObject();
 
-    //TODO: finish
-    public static JsonObject createSmithingRecipe() {
-         //Creating a new json object, where we will store our recipe.
-         JsonObject json = new JsonObject();
-           //The "type" of the recipe we are creating. In this case, a smithing recipe.
-        json.addProperty("type", "minecraft:crafting_shaped");
+        //The "type" of the recipe we are creating. In this case, a smithing recipe.
+        json.addProperty("type", "minecraft:smithing");
+        //This creates
+        //"type":"minecraft:smithing"
 
-        return null;
+        /**
+         * * Create "base" object contains original item
+         */
+        JsonObject base = new JsonObject();
+
+        if(isInputTag) {
+            base.addProperty("tag", inputId.toString());
+        } else {
+            base.addProperty("item", inputId.toString());
+        }
+            //Add "base" object
+        json.add("base", base);
+        //This creates
+        //"base":{
+        //      "item": "minecraft:stick"
+        //}
+
+        /**
+         * *Create "addition" object contains additive
+         */
+        JsonObject addition = new JsonObject();
+
+        if(isInputTag) {
+            addition.addProperty("tag", additionId.toString());
+        } else {
+            addition.addProperty("item", additionId.toString());
+        }
+            //Add "addition" object
+        json.add("addition", addition);
+        //This creates
+        //"base":{
+        //      "item": "minecraft:stick"
+        //}
+
+
+        /**
+         * *Create "result" object contains result
+         */
+        JsonObject result = new JsonObject();
+        result.addProperty("item", outputId.toString());
+
+            //Add "result" object
+        json.add("result", result);
+
+        return json;
     }
 }

@@ -45,9 +45,14 @@ public class GobberModule extends ContentModule {
         //TODO: add check for wearing all nether armor while using
         //Nether Gobber Special Effect
         ShieldBlockCallback.EVENT.register((defender, source, amount, hand, shield) -> {
-            Entity attacker = source.getAttacker();
-            assert attacker != null;
-            attacker.setOnFireFor(8);   //Same as Fire Aspect II
+
+            if(shield.getItem().equals(gobber_nether_shield.getItem())) {
+                
+                Entity attacker = source.getAttacker();
+                assert attacker != null;
+
+                attacker.setOnFireFor(8);   //Same as Fire Aspect II
+            }
             return ActionResult.PASS;
         });
 

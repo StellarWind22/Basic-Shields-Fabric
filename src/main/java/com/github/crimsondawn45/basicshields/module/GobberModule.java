@@ -11,6 +11,7 @@ import com.kwpugh.gobber2.init.ItemInit;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
@@ -47,7 +48,7 @@ public class GobberModule extends ContentModule {
         //Nether Gobber Special Effect
         ShieldBlockCallback.EVENT.register((defender, source, amount, hand, shield) -> {
 
-            if(shield.getItem().equals(gobber_nether_shield.getItem())) {
+            if(shield.getItem().equals(gobber_nether_shield.getItem())) {   //Check for nether shield
                 
                 Entity attacker = source.getAttacker();
                 assert attacker != null;
@@ -58,10 +59,9 @@ public class GobberModule extends ContentModule {
                 //Reflect 10% damage because thats a more generic effect all gobber shields will have.
                 if(defender instanceof PlayerEntity) {
                     PlayerEntity player = (PlayerEntity) defender;
-
-
+                    attacker.damage(DamageSource.player(player), Math.round(amount * 0.1F));
                 } else {
-
+                    attacker.damage(DamageSource.mob(defender), Math.round(amount * 0.1F));
                 }
             }
             return ActionResult.PASS;

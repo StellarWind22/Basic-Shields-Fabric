@@ -18,6 +18,8 @@ import net.minecraft.util.Identifier;
 
 public class GobberModule extends ContentModule {
 
+    private static final Float GOBBER_DAMAGE_REFLECT_PERCENT = 0.1F;
+
     //Gobber Items
     public ModItem gobber_shield;
     public ModItem gobber_nether_shield;
@@ -36,6 +38,27 @@ public class GobberModule extends ContentModule {
 
     @Override
     public void registerContent() {
+
+        //Generic Gobber Event
+        ShieldBlockCallback.EVENT.register((defender, source, amount, hand, shield) -> {
+
+            //All gobber shields reflect 10% damage
+            if(shield.getItem().equals(gobber_nether_shield.getItem()) || shield.getItem().equals(gobber_shield.getItem()) || shield.getItem().equals(gobber_end_shield.getItem())) {
+                
+                Entity attacker = source.getAttacker();
+                assert attacker != null;
+
+                //Reflect 10% damage because thats a more generic effect all gobber shields will have.
+                if(defender instanceof PlayerEntity) {
+                    PlayerEntity player = (PlayerEntity) defender;
+                    attacker.damage(DamageSource.player(player), Math.round(amount * GOBBER_DAMAGE_REFLECT_PERCENT));
+                } else {
+                    attacker.damage(DamageSource.mob(defender), Math.round(amount * GOBBER_DAMAGE_REFLECT_PERCENT));
+                }
+            }
+            return ActionResult.PASS;
+        });
+
         //Gobber
         gobber_shield = new ModItem("gobber_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(3800).group(BasicShields.SHIELDS), 100, 20, ItemInit.GOBBER2_INGOT));
         gobber_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("c","emeralds"), true, new Identifier("gobber2", "gobber2_ingot"), false, gobber_shield.getIdentifier());
@@ -44,7 +67,6 @@ public class GobberModule extends ContentModule {
         gobber_nether_shield = new ModItem("gobber_nether_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(5200).group(BasicShields.SHIELDS), 100, 25, ItemInit.GOBBER2_INGOT_NETHER));
         gobber_nether_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("minecraft","nether_star"), false, new Identifier("gobber2", "gobber2_ingot_nether"), false, gobber_nether_shield.getIdentifier());
 
-        //TODO: add check for wearing all nether armor while using
         //Nether Gobber Special Effect
         ShieldBlockCallback.EVENT.register((defender, source, amount, hand, shield) -> {
 
@@ -55,14 +77,6 @@ public class GobberModule extends ContentModule {
 
                 //Burn because that's related to fire protection.
                 attacker.setOnFireFor(12);   //Equivalent to if Fire Aspect could go to level 3
-
-                //Reflect 10% damage because thats a more generic effect all gobber shields will have.
-                if(defender instanceof PlayerEntity) {
-                    PlayerEntity player = (PlayerEntity) defender;
-                    attacker.damage(DamageSource.player(player), Math.round(amount * 0.1F));
-                } else {
-                    attacker.damage(DamageSource.mob(defender), Math.round(amount * 0.1F));
-                }
             }
             return ActionResult.PASS;
         });

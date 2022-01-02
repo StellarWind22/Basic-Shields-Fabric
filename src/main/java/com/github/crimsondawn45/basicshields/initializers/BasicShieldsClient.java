@@ -24,8 +24,14 @@ public class BasicShieldsClient implements ClientModInitializer {
     public static final EntityModelLayer sapphire_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "sapphire_shield"),"main");
 
     //Adabranium
+    public static final EntityModelLayer nether_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "nether_shield"),"main");
+    public static final EntityModelLayer vibranium_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "vibranium_shield"),"main");
+    public static final EntityModelLayer adamantium_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "adamantium_shield"),"main");
 
     //Gobber
+    public static final EntityModelLayer gobber_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "gobber_shield"),"main");
+    public static final EntityModelLayer gobber_nether_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "gobber_nether_shield"),"main");
+    public static final EntityModelLayer gobber_end_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "gobber_end_shield"),"main");
 
     @Override
     public void onInitializeClient() {
@@ -106,13 +112,68 @@ public class BasicShieldsClient implements ClientModInitializer {
             });
 		}
 
+        //TODO: this is temorarily using wood textures until others are done fix later.
+
         /**
          * Adabranium
          */
+        if(BasicShields.adabranium.isLoaded()) {
+
+            //Nether
+            EntityModelLayerRegistry.registerModelLayer(nether_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+
+            ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base_nopattern"));
+            });
+
+            //Vibranium
+            EntityModelLayerRegistry.registerModelLayer(vibranium_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+
+            ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base_nopattern"));
+            });
+
+            //Adamantium
+            EntityModelLayerRegistry.registerModelLayer(adamantium_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+
+            ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base_nopattern"));
+            });
+
+        }
 
 
         /**
          * Gobber
          */
+        if(BasicShields.gobber.isLoaded()) {
+
+            //Gobber
+            EntityModelLayerRegistry.registerModelLayer(gobber_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+
+            ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base_nopattern"));
+            });
+
+            //Gobber_nether
+            EntityModelLayerRegistry.registerModelLayer(gobber_nether_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+
+            ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base_nopattern"));
+            });
+
+            //Gobber_end
+            EntityModelLayerRegistry.registerModelLayer(gobber_end_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+
+            ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base_nopattern"));
+            });
+        }
     }
 }

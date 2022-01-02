@@ -26,6 +26,9 @@ import net.minecraft.util.Identifier;
 @Mixin(BuiltinModelItemRenderer.class)
 public class RendererMixin {
 
+	/**
+	 * Vanilla
+	 */
 	//Wooden
 	private ShieldEntityModel woodenShieldModel;
 	private static final SpriteIdentifier WOODEN_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base"));
@@ -69,6 +72,44 @@ public class RendererMixin {
 	private static final SpriteIdentifier SAPPHIRE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/sapphire_shield_base"));
 	private static final SpriteIdentifier SAPPHIRE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/sapphire_shield_base_nopattern"));
 
+	//TODO: this is temorarily using wood textures until others are done fix later.
+
+	/**
+	 * Adabranium
+	 */
+	//Nether
+	private ShieldEntityModel netherShieldModel;
+	private static final SpriteIdentifier NETHER_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base"));
+	private static final SpriteIdentifier NETHER_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base_nopattern"));
+
+	//Vibranium
+	private ShieldEntityModel vibraniumShieldModel;
+	private static final SpriteIdentifier VIBRANIUM_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base"));
+	private static final SpriteIdentifier VIBRANIUM_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base_nopattern"));
+
+	//Adamantium
+	private ShieldEntityModel adamantiumShieldModel;
+	private static final SpriteIdentifier ADAMANTIUM_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base"));
+	private static final SpriteIdentifier ADAMANTIUM_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base_nopattern"));
+
+	/**
+	 * Gobber
+	 */
+	//Gobber
+	private ShieldEntityModel gobberShieldModel;
+	private static final SpriteIdentifier GOBBER_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base"));
+	private static final SpriteIdentifier GOBBER_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base_nopattern"));
+
+	//Gobber Nether
+	private ShieldEntityModel gobberNetherShieldModel;
+	private static final SpriteIdentifier GOBBER_NETHER_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base"));
+	private static final SpriteIdentifier GOBBER_NETHER_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base_nopattern"));
+
+	//Gobber End
+	private ShieldEntityModel gobberEndShieldModel;
+	private static final SpriteIdentifier GOBBER_END_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base"));
+	private static final SpriteIdentifier GOBBER_END_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base_nopattern"));
+
 	@Final
 	@Shadow
 	private EntityModelLoader entityModelLoader;
@@ -77,6 +118,9 @@ public class RendererMixin {
 	@Inject(method = "reload", at = @At("HEAD"))
 	private void setModels(CallbackInfo ci){
 
+		/**
+		 * Vanilla
+		 */
 		if(BasicShields.vanilla.isLoaded()) {
 			//Wooden
 			woodenShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.wooden_shield_model_layer));
@@ -91,6 +135,9 @@ public class RendererMixin {
 			netheriteShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.netherite_shield_model_layer));
 		}
 
+		/**
+		 * TechReborn
+		 */
 		if(BasicShields.techReborn.isLoaded()) {
 
 			//Bronze
@@ -105,11 +152,44 @@ public class RendererMixin {
 			//Sapphire
 			sapphireShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.sapphire_shield_model_layer));
 		}
+
+		/**
+		 * Adabranium
+		 */
+		if(BasicShields.adabranium.isLoaded()) {
+
+			//Nether
+			netherShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.nether_shield_model_layer));
+
+			//Vibranium
+			vibraniumShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.vibranium_shield_model_layer));
+
+			//Adamantium
+			adamantiumShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.adamantium_shield_model_layer));
+		}
+
+		/**
+		 * Gobber
+		 */
+		if(BasicShields.gobber.isLoaded()) {
+
+			//Gobber
+			gobberShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.gobber_shield_model_layer));
+
+			//Gobber Nether
+			gobberNetherShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.gobber_nether_shield_model_layer));
+
+			//Gobber End
+			gobberEndShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.gobber_end_shield_model_layer));
+		}
 	}
 
 	@Inject(method = "render", at = @At("HEAD"))
 	private void mainRender(ItemStack stack, ModelTransformation.Mode mode, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay, CallbackInfo ci) {
 
+		/**
+		 * Vanilla
+		 */
 		if(BasicShields.vanilla.isLoaded()) {
 			//Wooden
 			if (stack.isOf(BasicShields.vanilla.wooden_shield.getItem())) {
@@ -132,6 +212,9 @@ public class RendererMixin {
 			}
 		}
 
+		/**
+		 * TechReborn
+		 */
 		if(BasicShields.techReborn.isLoaded()) {
 			//Bronze
 			if (stack.isOf(BasicShields.techReborn.bronze_shield.getItem())) {
@@ -151,6 +234,48 @@ public class RendererMixin {
 			//Sapphire
 			if (stack.isOf(BasicShields.techReborn.sapphire_shield.getItem())) {
 				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, sapphireShieldModel, SAPPHIRE_SHIELD_BASE, SAPPHIRE_SHIELD_BASE_NO_PATTERN);
+			}
+		}
+
+		/**
+		 * Adabranium
+		 */
+		if(BasicShields.adabranium.isLoaded()) {
+
+			//Nether
+			if (stack.isOf(BasicShields.adabranium.nether_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, netherShieldModel, NETHER_SHIELD_BASE, NETHER_SHIELD_BASE_NO_PATTERN);
+			}
+
+			//Vibranium
+			if (stack.isOf(BasicShields.adabranium.vibranium_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, vibraniumShieldModel, VIBRANIUM_SHIELD_BASE, VIBRANIUM_SHIELD_BASE_NO_PATTERN);
+			}
+
+			//Adamantium
+			if (stack.isOf(BasicShields.adabranium.adamantium_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, adamantiumShieldModel, ADAMANTIUM_SHIELD_BASE, ADAMANTIUM_SHIELD_BASE_NO_PATTERN);
+			}
+		}
+
+		/**
+		 * Gobber
+		 */
+		if(BasicShields.gobber.isLoaded()) {
+
+			//Gobber
+			if (stack.isOf(BasicShields.gobber.gobber_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, gobberShieldModel, GOBBER_SHIELD_BASE, GOBBER_SHIELD_BASE_NO_PATTERN);
+			}
+
+			//Gobber Nether
+			if (stack.isOf(BasicShields.gobber.gobber_nether_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, gobberNetherShieldModel, GOBBER_NETHER_SHIELD_BASE, GOBBER_NETHER_SHIELD_BASE_NO_PATTERN);
+			}
+
+			//Gobber End
+			if (stack.isOf(BasicShields.gobber.gobber_end_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, gobberEndShieldModel, GOBBER_END_SHIELD_BASE, GOBBER_END_SHIELD_BASE_NO_PATTERN);
 			}
 		}
 	}

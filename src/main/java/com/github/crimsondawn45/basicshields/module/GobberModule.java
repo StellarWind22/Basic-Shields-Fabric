@@ -18,7 +18,7 @@ import net.minecraft.util.Identifier;
 
 public class GobberModule extends ContentModule {
 
-    private static final Float GOBBER_DAMAGE_REFLECT_PERCENT = 0.1F;
+    private static final Float GOBBER_DAMAGE_REFLECT_PERCENT = 0.2F;    //Currently at 20% reflection
 
     //Gobber Items
     public ModItem gobber_shield;
@@ -42,13 +42,13 @@ public class GobberModule extends ContentModule {
         //Generic Gobber Event
         ShieldBlockCallback.EVENT.register((defender, source, amount, hand, shield) -> {
 
-            //All gobber shields reflect 10% damage
+            //All gobber shields reflect damage
             if(shield.getItem().equals(gobber_nether_shield.getItem()) || shield.getItem().equals(gobber_shield.getItem()) || shield.getItem().equals(gobber_end_shield.getItem())) {
                 
                 Entity attacker = source.getAttacker();
                 assert attacker != null;
 
-                //Reflect 10% damage because thats a more generic effect all gobber shields will have.
+                //Reflect damage because thats a more generic effect all gobber shields will have.
                 if(defender instanceof PlayerEntity) {
                     PlayerEntity player = (PlayerEntity) defender;
                     attacker.damage(DamageSource.player(player), Math.round(amount * GOBBER_DAMAGE_REFLECT_PERCENT));

@@ -31,6 +31,7 @@ public class TechRebornModule extends ContentModule {
 
     @Override
     public void registerContent() {
+
         //Bronze
         bronze_shield = new ModItem("bronze_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(504).group(BasicShields.SHIELDS), 100, 6, TRContent.Ingots.BRONZE.asItem()));
         bronze_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("c", "bronze_ingots"), true, ItemTags.PLANKS.getId(), true, bronze_shield.getIdentifier());

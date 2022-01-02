@@ -11,6 +11,7 @@ import com.kwpugh.gobber2.init.ItemInit;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 
@@ -35,11 +36,11 @@ public class GobberModule extends ContentModule {
     @Override
     public void registerContent() {
         //Gobber
-        gobber_shield = new ModItem("gobber_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(1111).group(BasicShields.SHIELDS), 100, 111, ItemInit.GOBBER2_INGOT));
+        gobber_shield = new ModItem("gobber_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(3800).group(BasicShields.SHIELDS), 100, 20, ItemInit.GOBBER2_INGOT));
         gobber_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("c","emeralds"), true, new Identifier("gobber2", "gobber2_ingot"), false, gobber_shield.getIdentifier());
 
         //Nether Gobber
-        gobber_nether_shield = new ModItem("gobber_nether_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(1111).group(BasicShields.SHIELDS), 100, 111, ItemInit.GOBBER2_INGOT_NETHER));
+        gobber_nether_shield = new ModItem("gobber_nether_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(5200).group(BasicShields.SHIELDS), 100, 25, ItemInit.GOBBER2_INGOT_NETHER));
         gobber_nether_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("minecraft","nether_star"), false, new Identifier("gobber2", "gobber2_ingot_nether"), false, gobber_nether_shield.getIdentifier());
 
         //TODO: add check for wearing all nether armor while using
@@ -51,13 +52,23 @@ public class GobberModule extends ContentModule {
                 Entity attacker = source.getAttacker();
                 assert attacker != null;
 
-                attacker.setOnFireFor(8);   //Same as Fire Aspect II
+                //Burn because that's related to fire protection.
+                attacker.setOnFireFor(12);   //Equivalent to if Fire Aspect could go to level 3
+
+                //Reflect 10% damage because thats a more generic effect all gobber shields will have.
+                if(defender instanceof PlayerEntity) {
+                    PlayerEntity player = (PlayerEntity) defender;
+
+
+                } else {
+
+                }
             }
             return ActionResult.PASS;
         });
 
         //End Gobber
-        gobber_end_shield = new ModItem("gobber_end_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(1111).group(BasicShields.SHIELDS), 100, 111, ItemInit.GOBBER2_INGOT_END));
+        gobber_end_shield = new ModItem("gobber_end_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(8000).group(BasicShields.SHIELDS), 100, 30, ItemInit.GOBBER2_INGOT_END));
         gobber_end_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("gobber2", "gobber2_ingot_end"), false, new Identifier("gobber2", "gobber2_ingot_end"), false, gobber_end_shield.getIdentifier());
     }
 }

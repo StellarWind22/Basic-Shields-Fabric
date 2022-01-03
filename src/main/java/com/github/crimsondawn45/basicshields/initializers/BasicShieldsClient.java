@@ -123,16 +123,16 @@ public class BasicShieldsClient implements ClientModInitializer {
             EntityModelLayerRegistry.registerModelLayer(nether_shield_model_layer, ShieldEntityModel::getTexturedModelData);
 
             ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
-                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base"));
-                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base_nopattern"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/nether_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/nether_shield_base_nopattern"));
             });
 
             //Vibranium
             EntityModelLayerRegistry.registerModelLayer(vibranium_shield_model_layer, ShieldEntityModel::getTexturedModelData);
 
             ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
-                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base"));
-                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base_nopattern"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/vibranium_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/vibranium_shield_base_nopattern"));
             });
 
             //Adamantium

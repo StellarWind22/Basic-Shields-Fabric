@@ -139,8 +139,8 @@ public class BasicShieldsClient implements ClientModInitializer {
             EntityModelLayerRegistry.registerModelLayer(adamantium_shield_model_layer, ShieldEntityModel::getTexturedModelData);
 
             ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
-                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base"));
-                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base_nopattern"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/adamantium_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/adamantium_shield_base_nopattern"));
             });
 
         }

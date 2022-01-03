@@ -155,8 +155,8 @@ public class BasicShieldsClient implements ClientModInitializer {
             EntityModelLayerRegistry.registerModelLayer(gobber_shield_model_layer, ShieldEntityModel::getTexturedModelData);
 
             ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
-                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base"));
-                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base_nopattern"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/gobber_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/gobber_shield_base_nopattern"));
             });
 
             //Gobber_nether

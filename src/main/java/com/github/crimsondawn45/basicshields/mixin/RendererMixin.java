@@ -102,8 +102,8 @@ public class RendererMixin {
 
 	//Gobber Nether
 	private ShieldEntityModel gobberNetherShieldModel;
-	private static final SpriteIdentifier GOBBER_NETHER_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base"));
-	private static final SpriteIdentifier GOBBER_NETHER_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base_nopattern"));
+	private static final SpriteIdentifier GOBBER_NETHER_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/gobber_nether_shield_base"));
+	private static final SpriteIdentifier GOBBER_NETHER_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/gobber_nether_shield_base_nopattern"));
 
 	//Gobber End
 	private ShieldEntityModel gobberEndShieldModel;

@@ -265,5 +265,24 @@
   "item.basicshields.gobber_end_shield.dark_gray": "Dark Gray End Shield",
   "item.basicshields.gobber_end_shield.black": "Black End Shield",
 
+  "item.basicshields.gobber_dragon_shield": "Dragon Shield",
+  "item.basicshields.gobber_dragon_shield.red": "Red Dragon Shield",
+  "item.basicshields.gobber_dragon_shield.orange": "Orange Dragon Shield",
+  "item.basicshields.gobber_dragon_shield.yellow": "Yellow Dragon Shield",
+  "item.basicshields.gobber_dragon_shield.lime": "Lime Dragon Shield",
+  "item.basicshields.gobber_dragon_shield.green": "Green Dragon Shield",
+  "item.basicshields.gobber_dragon_shield.light_blue": "Light Blue Dragon Shield",
+  "item.basicshields.gobber_dragon_shield.cyan": "Cyan Dragon Shield",
+  "item.basicshields.gobber_dragon_shield.blue": "Blue Dragon Shield",
+  "item.basicshields.gobber_dragon_shield.purple": "Purple Dragon Shield",
+  "item.basicshields.gobber_dragon_shield.magenta": "Magenta Dragon Shield",
+  "item.basicshields.gobber_dragon_shield.pink": "Pink Dragon Shield",
+  "item.basicshields.gobber_dragon_shield.brown": "Brown Dragon Shield",
+  "item.basicshields.gobber_dragon_shield.white": "White Dragon Shield",
+  "item.basicshields.gobber_dragon_shield.light_gray": "Light Gray Dragon Shield",
+  "item.basicshields.gobber_dragon_shield.gray": "Gray Dragon Shield",
+  "item.basicshields.gobber_dragon_shield.dark_gray": "Dark Gray Dragon Shield",
+  "item.basicshields.gobber_dragon_shield.black": "Black Dragon Shield",
+
   "itemGroup.basicshields.shields": "Basic Shields"
 }

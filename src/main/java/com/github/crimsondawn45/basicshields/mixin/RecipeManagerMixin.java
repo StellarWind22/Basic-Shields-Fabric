@@ -49,6 +49,7 @@ public class RecipeManagerMixin {
             map.put(new Identifier(BasicShields.MOD_ID, BasicShields.gobber.gobber_shield.getName()), BasicShields.gobber.gobber_shield_recipe);
             map.put(new Identifier(BasicShields.MOD_ID, BasicShields.gobber.gobber_nether_shield.getName()), BasicShields.gobber.gobber_nether_shield_recipe);
             map.put(new Identifier(BasicShields.MOD_ID, BasicShields.gobber.gobber_end_shield.getName()), BasicShields.gobber.gobber_end_shield_recipe);
+            map.put(new Identifier(BasicShields.MOD_ID, BasicShields.gobber.gobber_dragon_shield.getName()), BasicShields.gobber.gobber_dragon_shield_recipe);
         }
     }
 }

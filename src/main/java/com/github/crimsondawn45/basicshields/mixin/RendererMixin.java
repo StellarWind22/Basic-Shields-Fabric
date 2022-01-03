@@ -110,6 +110,12 @@ public class RendererMixin {
 	private static final SpriteIdentifier GOBBER_END_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base"));
 	private static final SpriteIdentifier GOBBER_END_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base_nopattern"));
 
+	//Gobber Dragon
+	private ShieldEntityModel gobberDragonShieldModel;
+	private static final SpriteIdentifier GOBBER_DRAGON_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base"));
+	private static final SpriteIdentifier GOBBER_DRAGON_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/wooden_shield_base_nopattern"));
+
+
 	@Final
 	@Shadow
 	private EntityModelLoader entityModelLoader;
@@ -181,6 +187,9 @@ public class RendererMixin {
 
 			//Gobber End
 			gobberEndShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.gobber_end_shield_model_layer));
+
+			//Gobber Dragon
+			gobberDragonShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.gobber_dragon_shield_model_layer));
 		}
 	}
 
@@ -276,6 +285,11 @@ public class RendererMixin {
 			//Gobber End
 			if (stack.isOf(BasicShields.gobber.gobber_end_shield.getItem())) {
 				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, gobberEndShieldModel, GOBBER_END_SHIELD_BASE, GOBBER_END_SHIELD_BASE_NO_PATTERN);
+			}
+
+			//Gobber Dragon
+			if (stack.isOf(BasicShields.gobber.gobber_dragon_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, gobberDragonShieldModel, GOBBER_DRAGON_SHIELD_BASE, GOBBER_DRAGON_SHIELD_BASE_NO_PATTERN);
 			}
 		}
 	}

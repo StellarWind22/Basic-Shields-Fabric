@@ -32,6 +32,7 @@ public class BasicShieldsClient implements ClientModInitializer {
     public static final EntityModelLayer gobber_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "gobber_shield"),"main");
     public static final EntityModelLayer gobber_nether_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "gobber_nether_shield"),"main");
     public static final EntityModelLayer gobber_end_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "gobber_end_shield"),"main");
+    public static final EntityModelLayer gobber_dragon_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "gobber_dragon_shield"),"main");
 
     @Override
     public void onInitializeClient() {
@@ -159,7 +160,7 @@ public class BasicShieldsClient implements ClientModInitializer {
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/gobber_shield_base_nopattern"));
             });
 
-            //Gobber_nether
+            //Gobber Nether
             EntityModelLayerRegistry.registerModelLayer(gobber_nether_shield_model_layer, ShieldEntityModel::getTexturedModelData);
 
             ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
@@ -167,8 +168,16 @@ public class BasicShieldsClient implements ClientModInitializer {
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/gobber_nether_shield_base_nopattern"));
             });
 
-            //Gobber_end
+            //Gobber End
             EntityModelLayerRegistry.registerModelLayer(gobber_end_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+
+            ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base_nopattern"));
+            });
+
+            //Gobber Dragon
+            EntityModelLayerRegistry.registerModelLayer(gobber_dragon_shield_model_layer, ShieldEntityModel::getTexturedModelData);
 
             ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base"));

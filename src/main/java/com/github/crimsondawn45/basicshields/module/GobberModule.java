@@ -67,20 +67,6 @@ public class GobberModule extends ContentModule {
         gobber_nether_shield = new ModItem("gobber_nether_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(5200).group(BasicShields.SHIELDS), 100, 25, ItemInit.GOBBER2_INGOT_NETHER));
         gobber_nether_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("minecraft","nether_star"), false, new Identifier("gobber2", "gobber2_ingot_nether"), false, gobber_nether_shield.getIdentifier());
 
-        //Nether Gobber Special Effect
-        ShieldBlockCallback.EVENT.register((defender, source, amount, hand, shield) -> {
-
-            if(shield.getItem().equals(gobber_nether_shield.getItem())) {   //Check for nether shield
-                
-                Entity attacker = source.getAttacker();
-                assert attacker != null;
-
-                //Burn because that's related to fire protection.
-                attacker.setOnFireFor(12);   //Equivalent to if Fire Aspect could go to level 3
-            }
-            return ActionResult.PASS;
-        });
-
         //End Gobber
         gobber_end_shield = new ModItem("gobber_end_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(8000).group(BasicShields.SHIELDS), 100, 30, ItemInit.GOBBER2_INGOT_END));
         gobber_end_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("gobber2", "gobber2_ingot_end"), false, new Identifier("gobber2", "gobber2_ingot_end"), false, gobber_end_shield.getIdentifier());

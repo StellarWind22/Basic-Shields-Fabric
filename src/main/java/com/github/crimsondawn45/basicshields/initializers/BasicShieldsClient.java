@@ -113,8 +113,6 @@ public class BasicShieldsClient implements ClientModInitializer {
             });
 		}
 
-        //TODO: this is temorarily using wood textures until others are done fix later.
-
         /**
          * Adabranium
          */
@@ -172,16 +170,16 @@ public class BasicShieldsClient implements ClientModInitializer {
             EntityModelLayerRegistry.registerModelLayer(gobber_end_shield_model_layer, ShieldEntityModel::getTexturedModelData);
 
             ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
-                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base"));
-                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base_nopattern"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/gobber_end_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/gobber_end_shield_base_nopattern"));
             });
 
             //Gobber Dragon
             EntityModelLayerRegistry.registerModelLayer(gobber_dragon_shield_model_layer, ShieldEntityModel::getTexturedModelData);
 
             ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
-                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base"));
-                registry.register(new Identifier(BasicShields.MOD_ID, "entity/wooden_shield_base_nopattern"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/gobber_dragon_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/gobber_dragon_shield_base_nopattern"));
             });
         }
     }

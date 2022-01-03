@@ -1,8 +1,8 @@
 package com.github.crimsondawn45.basicshields.module;
 
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
+import com.github.crimsondawn45.basicshields.item.GobberShield;
 import com.github.crimsondawn45.fabricshieldlib.lib.event.ShieldBlockCallback;
-import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 import com.github.crimsondawn45.util.ContentModule;
 import com.github.crimsondawn45.util.ModItem;
 import com.github.crimsondawn45.util.RecipeHelper;
@@ -35,9 +35,6 @@ public class GobberModule extends ContentModule {
         super(requiredIds);
     }
 
-    //TODO: make overworld gobber INSERT COOL THING HERE
-    //TODO: make end gobber give attacking enemies levitation
-
     @Override
     public void registerContent() {
 
@@ -45,7 +42,7 @@ public class GobberModule extends ContentModule {
         ShieldBlockCallback.EVENT.register((defender, source, amount, hand, shield) -> {
 
             //All gobber shields reflect damage
-            if(shield.getItem().equals(gobber_nether_shield.getItem()) || shield.getItem().equals(gobber_shield.getItem()) || shield.getItem().equals(gobber_end_shield.getItem())) {
+            if(shield.getItem().equals(gobber_nether_shield.getItem()) || shield.getItem().equals(gobber_shield.getItem()) || shield.getItem().equals(gobber_end_shield.getItem()) || shield.getItem().equals(gobber_dragon_shield.getItem())) {
                 
                 Entity attacker = source.getAttacker();
                 assert attacker != null;
@@ -62,19 +59,19 @@ public class GobberModule extends ContentModule {
         });
 
         //Gobber
-        gobber_shield = new ModItem("gobber_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(3800).group(BasicShields.SHIELDS), 70, 20, ItemInit.GOBBER2_INGOT));
+        gobber_shield = new ModItem("gobber_shield", new GobberShield(new FabricItemSettings().maxDamage(3800).group(BasicShields.SHIELDS), 70, 20, ItemInit.GOBBER2_INGOT));
         gobber_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("gobber2","gobber2_ingot"), false, new Identifier("minecraft", "planks"), true, gobber_shield.getIdentifier());
 
         //Nether Gobber
-        gobber_nether_shield = new ModItem("gobber_nether_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(5200).group(BasicShields.SHIELDS), 60, 25, ItemInit.GOBBER2_INGOT_NETHER));
+        gobber_nether_shield = new ModItem("gobber_nether_shield", new GobberShield(new FabricItemSettings().maxDamage(5200).group(BasicShields.SHIELDS), 60, 25, ItemInit.GOBBER2_INGOT_NETHER));
         gobber_nether_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("gobber2","gobber2_ingot_nether"), false, new Identifier("minecraft", "planks"), true, gobber_nether_shield.getIdentifier());
 
         //End Gobber
-        gobber_end_shield = new ModItem("gobber_end_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(8000).group(BasicShields.SHIELDS), 50, 30, ItemInit.GOBBER2_INGOT_END));
+        gobber_end_shield = new ModItem("gobber_end_shield", new GobberShield(new FabricItemSettings().maxDamage(8000).group(BasicShields.SHIELDS), 50, 30, ItemInit.GOBBER2_INGOT_END));
         gobber_end_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("gobber2", "gobber2_ingot_end"), false, new Identifier("minecraft", "planks"), true, gobber_end_shield.getIdentifier());
 
         //Dragon Gobber
-        gobber_dragon_shield = new ModItem("gobber_dragon_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(8000).group(BasicShields.SHIELDS), 50, 30, ItemInit.DRAGON_STAR));
+        gobber_dragon_shield = new ModItem("gobber_dragon_shield", new GobberShield(new FabricItemSettings().maxDamage(8000).group(BasicShields.SHIELDS), 50, 30, ItemInit.DRAGON_STAR));
         gobber_dragon_shield_recipe = RecipeHelper.createSmithingRecipe(gobber_end_shield.getIdentifier(), false, new Identifier("gobber2", "dragon_star"), false, gobber_dragon_shield.getIdentifier());
     }
 }

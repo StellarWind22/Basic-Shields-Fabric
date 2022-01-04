@@ -1,10 +1,10 @@
 package com.github.crimsondawn45.basicshields.module;
 
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
+import com.github.crimsondawn45.basicshields.util.ContentModule;
+import com.github.crimsondawn45.basicshields.util.ModItem;
+import com.github.crimsondawn45.basicshields.util.RecipeHelper;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
-import com.github.crimsondawn45.util.ContentModule;
-import com.github.crimsondawn45.util.ModItem;
-import com.github.crimsondawn45.util.RecipeHelper;
 import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;

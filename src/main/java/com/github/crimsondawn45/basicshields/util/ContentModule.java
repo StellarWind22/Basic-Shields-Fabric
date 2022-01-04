@@ -1,4 +1,4 @@
-package com.github.crimsondawn45.util;
+package com.github.crimsondawn45.basicshields.util;
 
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 

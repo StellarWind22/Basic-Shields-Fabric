@@ -1,10 +1,10 @@
 package com.github.crimsondawn45.basicshields.module;
 
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
+import com.github.crimsondawn45.basicshields.util.ContentModule;
+import com.github.crimsondawn45.basicshields.util.ModItem;
+import com.github.crimsondawn45.basicshields.util.RecipeHelper;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
-import com.github.crimsondawn45.util.ContentModule;
-import com.github.crimsondawn45.util.ModItem;
-import com.github.crimsondawn45.util.RecipeHelper;
 import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -28,11 +28,11 @@ public class VanillaModule extends ContentModule {
     @Override
     public void registerContent() {
         //Wood
-        wooden_shield = new ModItem("wooden_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(80).group(BasicShields.SHIELDS), 110, 15, ItemTags.PLANKS));
+        wooden_shield = new ModItem("wooden_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(104).group(BasicShields.SHIELDS), 110, 15, ItemTags.PLANKS));
         wooden_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("c", "wood_sticks"), true, ItemTags.PLANKS.getId(), true, wooden_shield.getIdentifier());
 
         //Gold
-		golden_shield = new ModItem("golden_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(44).group(BasicShields.SHIELDS), 100, 22, Items.GOLD_INGOT));
+		golden_shield = new ModItem("golden_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(44).group(BasicShields.SHIELDS), 100, 22));
         golden_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("c", "gold_ingots"), true, ItemTags.PLANKS.getId(), true, golden_shield.getIdentifier());
 
         //Diamond

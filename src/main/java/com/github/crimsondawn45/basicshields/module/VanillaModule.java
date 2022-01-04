@@ -32,7 +32,7 @@ public class VanillaModule extends ContentModule {
         wooden_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("c", "wood_sticks"), true, ItemTags.PLANKS.getId(), true, wooden_shield.getIdentifier());
 
         //Gold
-		golden_shield = new ModItem("golden_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(44).group(BasicShields.SHIELDS), 100, 22));
+		golden_shield = new ModItem("golden_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(44).group(BasicShields.SHIELDS), 100, 22, Items.GOLD_INGOT));
         golden_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("c", "gold_ingots"), true, ItemTags.PLANKS.getId(), true, golden_shield.getIdentifier());
 
         //Diamond

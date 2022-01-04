@@ -35,7 +35,7 @@ public class GobberShield extends FabricBannerShieldItem {
 
 		if(unbreakable)
 		{
-			stack.getOrCreateNbt().putBoolean("Unbreakable", true);
+			stack.getOrCreateTag().putBoolean("Unbreakable", true);
 		}
 	}
 }

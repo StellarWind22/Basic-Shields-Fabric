@@ -8,7 +8,6 @@ import net.minecraft.client.render.entity.model.ShieldEntityModel;
 import net.minecraft.client.texture.SpriteAtlasTexture;
 import net.minecraft.util.Identifier;
 
-@SuppressWarnings("deprecation")
 public class BasicShieldsClient implements ClientModInitializer {
 
     //Vanilla

@@ -3,8 +3,8 @@ plugins {
 	id 'maven-publish'
 }
 
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
+sourceCompatibility = JavaVersion.VERSION_16
+targetCompatibility = JavaVersion.VERSION_16
 
 archivesBaseName = project.archives_base_name
 version = project.mod_version + "-${project.minecraft_version}"
@@ -20,25 +20,25 @@ dependencies {
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-	modImplementation "net.fabricmc.fabric-api:fabric-api:0.45.0+1.18"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	modImplementation "com.github.CrimsonDawn45:Fabric-Shield-Lib:v${project.fabric_shield_lib_version}"
 
 	//TechReborn
-	modCompileOnly "TechReborn:TechReborn-1.18:${project.techreborn_version}"
-	modCompileOnly "RebornCore:RebornCore-1.18:${project.reborncore_version}"
+	modCompileOnly "TechReborn:TechReborn-1.17:${project.techreborn_version}"
+	modCompileOnly "RebornCore:RebornCore-1.17:${project.reborncore_version}"
 
 	//Adabranium
-	modCompileOnly "curse.maven:adabranium-361599:3540158"		//2.2.0
+	modCompileOnly "curse.maven:adabranium-361599:3378780"		//2.1.1
 
 	//Gobber[Fabric]
-	modCompileOnly "curse.maven:gobber-fabric-427177:3587109"	//2.5.57
+	modCompileOnly "curse.maven:gobber-fabric-427177:3533409"	//2.4.61
 
 	//MythicMetals
-	modCompileOnly "curse.maven:mythicmetals-410127:3548273"	//0.11.0
+	//modCompileOnly "curse.maven:mythicmetals-410127:3548273"	//0.11.0
 
 	//DragonLoot
-	modCompileOnly "curse.maven:dragonloot-424480:3543499"		//1.0.9
+	//modCompileOnly "curse.maven:dragonloot-424480:3543499"	//1.0.9
 }
 
 processResources {
@@ -51,7 +51,7 @@ processResources {
 
 tasks.withType(JavaCompile).configureEach {
 	it.options.encoding = "UTF-8"
-	it.options.release = 17
+	it.options.release = 16
 }
 
 java {

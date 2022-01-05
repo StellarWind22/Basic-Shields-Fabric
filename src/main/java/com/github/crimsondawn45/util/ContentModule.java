@@ -1,8 +1,7 @@
 package com.github.crimsondawn45.util;
 
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
-
-import net.minecraft.tag.Tag.Identified;
+import com.mojang.datafixers.types.templates.Tag;
 
 public class ContentModule {
 
@@ -33,8 +32,8 @@ public class ContentModule {
      * 
      * @param requiredTag tag that must contain at least one object to load.
      */
-    public ContentModule(Identified<Object> requiredTag) {
-        this.isLoaded = !requiredTag.values().isEmpty();
+    public ContentModule(Tag requiredTag) {
+        this.isLoaded = !(requiredTag.size() <= 0);
 
         if(this.isLoaded) {
             registerContent();

@@ -28,7 +28,7 @@ public class VanillaModule extends ContentModule {
     @Override
     public void registerContent() {
         //Wood
-        wooden_shield = new ModItem("wooden_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(80).group(BasicShields.SHIELDS), 110, 15, ItemTags.PLANKS));
+        wooden_shield = new ModItem("wooden_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(104).group(BasicShields.SHIELDS), 110, 15, ItemTags.PLANKS));
         wooden_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("c", "wood_sticks"), true, ItemTags.PLANKS.getId(), true, wooden_shield.getIdentifier());
 
         //Gold
@@ -40,7 +40,7 @@ public class VanillaModule extends ContentModule {
         diamond_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("minecraft", "diamond"), false, ItemTags.PLANKS.getId(), true, diamond_shield.getIdentifier());
 
         //Netherite
-		netherite_shield = new ModItem("netherite_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(2730).group(BasicShields.SHIELDS).fireproof(), 80, 15, Items.NETHERITE_INGOT));
-        netherite_shield_recipe = RecipeHelper.createSmithingRecipe(diamond_shield.getIdentifier(), false, new Identifier("minecraft","netherite_ingot"), false, netherite_shield.getIdentifier());
+		//netherite_shield = new ModItem("netherite_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(2730).group(BasicShields.SHIELDS).fireproof(), 80, 15, Items.NETHERITE_INGOT));
+        //netherite_shield_recipe = RecipeHelper.createSmithingRecipe(diamond_shield.getIdentifier(), false, new Identifier("minecraft","netherite_ingot"), false, netherite_shield.getIdentifier());
     }
 }

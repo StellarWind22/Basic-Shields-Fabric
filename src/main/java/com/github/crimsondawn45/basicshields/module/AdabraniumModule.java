@@ -32,7 +32,7 @@ public class AdabraniumModule extends ContentModule {
     public void registerContent() {
         
         //Nether
-        nether_shield = new ModItem("nether_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(511).group(BasicShields.SHIELDS).fireproof(), 100, 15, Items.NETHER_BRICK));
+        nether_shield = new ModItem("nether_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(511).group(BasicShields.SHIELDS), 100, 15, Items.NETHER_BRICK));
         nether_shield_recipe = RecipeHelper.createSmithingRecipe(new Identifier("minecraft", "shield"), false, new Identifier("minecraft", "nether_brick"), false, nether_shield.getIdentifier());
        
         //Vibranium

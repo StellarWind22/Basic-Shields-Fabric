@@ -2,10 +2,10 @@ package com.github.crimsondawn45.basicshields.module;
 
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.item.GobberShield;
+import com.github.crimsondawn45.basicshields.util.ContentModule;
+import com.github.crimsondawn45.basicshields.util.ModItem;
+import com.github.crimsondawn45.basicshields.util.RecipeHelper;
 import com.github.crimsondawn45.fabricshieldlib.lib.event.ShieldBlockCallback;
-import com.github.crimsondawn45.util.ContentModule;
-import com.github.crimsondawn45.util.ModItem;
-import com.github.crimsondawn45.util.RecipeHelper;
 import com.google.gson.JsonObject;
 import com.kwpugh.gobber2.Gobber2;
 import com.kwpugh.gobber2.init.ItemInit;

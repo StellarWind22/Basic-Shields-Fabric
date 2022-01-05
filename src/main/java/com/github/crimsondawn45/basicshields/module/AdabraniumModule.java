@@ -1,11 +1,12 @@
 package com.github.crimsondawn45.basicshields.module;
 
-import com.brand.adabraniummod.content.ModItems;
+import com.brand.adabraniummod.items.ModItems;
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 import com.github.crimsondawn45.util.ContentModule;
 import com.github.crimsondawn45.util.ModItem;
 import com.github.crimsondawn45.util.RecipeHelper;
+import com.google.common.collect.Lists;
 import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -33,7 +34,24 @@ public class AdabraniumModule extends ContentModule {
         
         //Nether
         nether_shield = new ModItem("nether_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(511).group(BasicShields.SHIELDS), 100, 15, Items.NETHER_BRICK));
-        nether_shield_recipe = RecipeHelper.createSmithingRecipe(new Identifier("minecraft", "shield"), false, new Identifier("minecraft", "nether_brick"), false, nether_shield.getIdentifier());
+
+        //Surround the vanilla shield
+        nether_shield_recipe = RecipeHelper.createShapedRecipe(
+			//Keys
+			Lists.newArrayList('#','i'),
+			//Items
+			Lists.newArrayList(new Identifier("minecraft","nether_brick"), new Identifier("minecraft","shield")), 
+			//Types
+			Lists.newArrayList("item", "item"),
+			//Pattern
+			Lists.newArrayList(
+				"###",
+				"#i#",
+				"###"
+			),
+			//Output
+			nether_shield.getIdentifier(), 1
+        );
        
         //Vibranium
         vibranium_shield = new ModItem("vibranium_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(4019).group(BasicShields.SHIELDS), 70, 12, ModItems.VIBRANIUM_INGOT));

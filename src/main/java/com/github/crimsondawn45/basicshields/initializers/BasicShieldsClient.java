@@ -34,10 +34,12 @@ public class BasicShieldsClient implements ClientModInitializer {
             });
 
             //Netherite
+            /*
             ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEX).register((atlasTexture, registry) -> {
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/netherite_shield_base"));
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/netherite_shield_base_nopattern"));
             });
+            */
         }
 
         /**

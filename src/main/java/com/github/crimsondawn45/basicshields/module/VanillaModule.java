@@ -18,12 +18,12 @@ public class VanillaModule extends ContentModule {
     public ModItem wooden_shield;
 	public ModItem golden_shield;
 	public ModItem diamond_shield;
-	public ModItem netherite_shield;
+	//public ModItem netherite_shield;
         //Regular recipes
     public JsonObject wooden_shield_recipe;
     public JsonObject golden_shield_recipe;
     public JsonObject diamond_shield_recipe;
-    public JsonObject netherite_shield_recipe;
+    //public JsonObject netherite_shield_recipe;
 
     @Override
     public void registerContent() {

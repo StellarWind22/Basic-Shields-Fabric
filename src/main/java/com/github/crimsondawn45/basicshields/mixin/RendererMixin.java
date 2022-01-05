@@ -36,8 +36,8 @@ public class RendererMixin {
 	private static final SpriteIdentifier DIAMOND_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEX, new Identifier(BasicShields.MOD_ID,"entity/diamond_shield_base_nopattern"));
 
 	//Netherite
-	private static final SpriteIdentifier NETHERITE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEX, new Identifier(BasicShields.MOD_ID,"entity/netherite_shield_base"));
-	private static final SpriteIdentifier NETHERITE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEX, new Identifier(BasicShields.MOD_ID,"entity/netherite_shield_base_nopattern"));
+	//private static final SpriteIdentifier NETHERITE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEX, new Identifier(BasicShields.MOD_ID,"entity/netherite_shield_base"));
+	//private static final SpriteIdentifier NETHERITE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEX, new Identifier(BasicShields.MOD_ID,"entity/netherite_shield_base_nopattern"));
 
 	/**
 	 * Tech Reborn
@@ -115,9 +115,11 @@ public class RendererMixin {
 			}
 
 			//Netherite
+			/*
 			if (stack.getItem() == BasicShields.vanilla.netherite_shield.getItem()) {
 				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, new ShieldEntityModel(), NETHERITE_SHIELD_BASE, NETHERITE_SHIELD_BASE_NO_PATTERN);
 			}
+			*/
 		}
 
 		/**

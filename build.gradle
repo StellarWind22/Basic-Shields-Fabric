@@ -29,7 +29,7 @@ dependencies {
 	modCompileOnly "RebornCore:RebornCore-1.15:${project.reborncore_version}"
 
 	//Adabranium
-	modCompileOnly "curse.maven:adabranium-361599:3294200"		//1.4.0
+	modCompileOnly "curse.maven:adabranium-361599:2994175"		//1.4.0
 
 	//Gobber[Fabric]
 	modCompileOnly "curse.maven:gobber-fabric-427177:3478624"	//2.3.79

@@ -1,7 +1,6 @@
 package com.github.crimsondawn45.basicshields.util;
 
-import com.github.crimsondawn45.basicshields.initializers.BasicShields;
-
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.tag.Tag.Identified;
 
 public class ContentModule {
@@ -18,7 +17,7 @@ public class ContentModule {
         //Check the id's
         for(String id : requiredIds) {
 
-            if(BasicShields.isLoaded(id)) { //If any detected load module
+            if(FabricLoader.getInstance().isModLoaded(id)) { //If any detected load module
 
                 this.isLoaded = true;
                 break;

@@ -36,7 +36,7 @@ public class SapphireModule extends ContentModule {
         sapphire_tag_list = Lists.newArrayList(
             TagFactory.ITEM.create(new Identifier("c","sapphires")),
             TagFactory.ITEM.create(new Identifier("c","sapphire"))
-            );
+        );
 
         //Item
         sapphire_shield = new ModItem("sapphire_shield", new BasicShieldItem(new FabricItemSettings().maxDamage(1344).group(BasicShields.SHIELDS), 90, 12, sapphire_tag_list));

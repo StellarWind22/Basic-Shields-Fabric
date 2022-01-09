@@ -34,8 +34,9 @@ public class PeridotModule extends ContentModule {
 
         //Tag
         peridot_tag_list = Lists.newArrayList(
-            TagFactory.ITEM.create(new Identifier("c","peridot_gems")),
-            TagFactory.ITEM.create(new Identifier("c","peridots"))
+            TagFactory.ITEM.create(new Identifier("c","peridots")),
+            TagFactory.ITEM.create(new Identifier("c","peridot")),
+            TagFactory.ITEM.create(new Identifier("c","peridot_gem"))
         );
 
         //Item

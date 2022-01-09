@@ -35,7 +35,8 @@ public class SapphireModule extends ContentModule {
         //Tag
         sapphire_tag_list = Lists.newArrayList(
             TagFactory.ITEM.create(new Identifier("c","sapphires")),
-            TagFactory.ITEM.create(new Identifier("c","sapphire"))
+            TagFactory.ITEM.create(new Identifier("c","sapphire")),
+            TagFactory.ITEM.create(new Identifier("c","sapphire_gem"))
         );
 
         //Item

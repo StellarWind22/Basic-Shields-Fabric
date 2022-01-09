@@ -1,10 +1,13 @@
 package com.github.crimsondawn45.basicshields.module;
 
+import java.util.ArrayList;
+
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
+import com.github.crimsondawn45.basicshields.object.BasicShieldItem;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.RecipeHelper;
-import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
+import com.google.common.collect.Lists;
 import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -20,7 +23,7 @@ public class BronzeModule extends ContentModule {
     public JsonObject bronze_shield_recipe;
 
     //Tag
-    public Identified<Item> bronze_tag;
+    public ArrayList<Identified<Item>> bronze_tag_list;
 
     public BronzeModule(String...requiredIds) {
         super(requiredIds);
@@ -30,12 +33,15 @@ public class BronzeModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        bronze_tag = TagFactory.ITEM.create(new Identifier("c", "bronze_ingots"));
+        bronze_tag_list = Lists.newArrayList(
+            TagFactory.ITEM.create(new Identifier("c","bronze_ingots")),
+            TagFactory.ITEM.create(new Identifier("c","bronze_ingot"))
+        );
 
         //Item
-        bronze_shield = new ModItem("bronze_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(504).group(BasicShields.SHIELDS), 100, 6, bronze_tag));
+        bronze_shield = new ModItem("bronze_shield", new BasicShieldItem(new FabricItemSettings().maxDamage(504).group(BasicShields.SHIELDS), 100, 6, bronze_tag_list));
 
         //Recipe
-        bronze_shield_recipe = RecipeHelper.createShieldRecipe(bronze_tag.getId(), true, bronze_shield.getIdentifier());
+        bronze_shield_recipe = RecipeHelper.createShieldRecipe(bronze_tag_list, bronze_shield.getIdentifier());
     }
 }

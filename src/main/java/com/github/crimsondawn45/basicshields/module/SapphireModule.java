@@ -1,7 +1,6 @@
 package com.github.crimsondawn45.basicshields.module;
 
 import java.util.ArrayList;
-
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.object.BasicShieldItem;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
@@ -18,19 +17,19 @@ import net.minecraft.util.Identifier;
 
 public class SapphireModule extends ContentModule {
 
-     //Peridot Stuff
-     public ModItem sapphire_shield;
-     public JsonObject sapphire_shield_recipe;
+    //Peridot Stuff
+    public ModItem sapphire_shield;
+    public JsonObject sapphire_shield_recipe;
+
+    //Peridot tag
+    public ArrayList<Identified<Item>> sapphire_tag_list;
+
+    public SapphireModule(String...requiredIds) {
+        super(requiredIds);
+    }
  
-     //Peridot tag
-     public ArrayList<Identified<Item>> sapphire_tag_list;
- 
-     public SapphireModule(String...requiredIds) {
-         super(requiredIds);
-     }
- 
-     @Override
-     public void registerContent() {
+    @Override
+    public void registerContent() {
  
         //Tag
         sapphire_tag_list = Lists.newArrayList(

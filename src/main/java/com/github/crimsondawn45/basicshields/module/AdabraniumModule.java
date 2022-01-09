@@ -23,8 +23,8 @@ public class AdabraniumModule extends ContentModule {
     public JsonObject vibranium_shield_recipe;
     public JsonObject nether_shield_recipe;
 
-    public AdabraniumModule(String...requiredIds) {
-        super(requiredIds);
+    public AdabraniumModule(String modId) {
+        super(modId);
     }
 
     @Override

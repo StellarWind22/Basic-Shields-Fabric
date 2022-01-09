@@ -1,7 +1,6 @@
 package com.github.crimsondawn45.basicshields.util;
 
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.tag.Tag.Identified;
 
 public class ContentModule {
 
@@ -12,30 +11,14 @@ public class ContentModule {
      * 
      * @param requiredIds list of modId's that any being detected will load module.
      */
-    public ContentModule(String...requiredIds) {
+    public ContentModule(String...ids) {
 
-        //Check the id's
-        for(String id : requiredIds) {
-
-            if(FabricLoader.getInstance().isModLoaded(id)) { //If any detected load module
-
+        //Check the id
+        for(String id : ids) {
+            if(FabricLoader.getInstance().isModLoaded(id)) {
                 this.isLoaded = true;
-                break;
             }
         }
-
-        if(this.isLoaded) {
-            registerContent();
-        }
-    }
-
-    /**
-     * * modules without arguments are always loaded.
-     * 
-     * @param requiredTag tag that must contain at least one object to load.
-     */
-    public ContentModule(Identified<Object> requiredTag) {
-        this.isLoaded = !requiredTag.values().isEmpty();
 
         if(this.isLoaded) {
             registerContent();

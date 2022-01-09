@@ -32,8 +32,8 @@ public class GobberModule extends ContentModule {
     public JsonObject gobber_end_shield_recipe;
     public JsonObject gobber_dragon_shield_recipe;
 
-    public GobberModule(String...requiredIds) {
-        super(requiredIds);
+    public GobberModule(String modId) {
+        super(modId);
     }
 
     @Override

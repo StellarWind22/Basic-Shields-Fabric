@@ -1,7 +1,6 @@
 package com.github.crimsondawn45.basicshields.module;
 
 import java.util.ArrayList;
-
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.object.BasicShieldItem;
 import com.github.crimsondawn45.basicshields.util.ContentModule;

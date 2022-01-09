@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "Basic Shields [Fabric]",
-  "description": "Adds shields for all the vanilla materials with full banner support!",
+  "description": "Adds shields for all the vanilla materials & more with full banner support!",
   "authors": [
     "CrimsonDawn45"
   ],
@@ -12,7 +12,7 @@
     "Felix14-v2"
   ],
   "contact": {
-    "sources": "https://github.com/CrimsonDawn45/Basic-Shields-Fabric-"
+    "sources": "https://github.com/CrimsonDawn45/Basic-Shields-Fabric"
   },
 
   "license": "CC0-1.0",
@@ -37,10 +37,5 @@
     "fabric": "*",
     "minecraft": "1.18.x",
     "java": ">=17"
-  },
-  "suggests": {
-    "flamingo": "*",
-    "techreborn": ">=5.1.0-beta.4",
-    "reborncore": ">=5.1.0-beta.4"
   }
 }

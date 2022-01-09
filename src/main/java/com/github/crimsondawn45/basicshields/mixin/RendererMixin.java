@@ -50,24 +50,30 @@ public class RendererMixin {
 	private static final SpriteIdentifier NETHERITE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/netherite_shield_base_nopattern"));
 
 	/**
-	 * Tech Reborn
+	 * Bronze
 	 */
-	//Bronze
 	private ShieldEntityModel bronzeShieldModel;
 	private static final SpriteIdentifier BRONZE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/bronze_shield_base"));
 	private static final SpriteIdentifier BRONZE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/bronze_shield_base_nopattern"));
 
-	//Ruby
+	
+	/**
+	 * Ruby
+	 */
 	private ShieldEntityModel rubyShieldModel;
 	private static final SpriteIdentifier RUBY_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/ruby_shield_base"));
 	private static final SpriteIdentifier RUBY_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/ruby_shield_base_nopattern"));
 
-	//Peridot
+	/**
+	 * Peridot
+	 */
 	private ShieldEntityModel peridotShieldModel;
 	private static final SpriteIdentifier PERIDOT_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/peridot_shield_base"));
 	private static final SpriteIdentifier PERIDOT_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/peridot_shield_base_nopattern"));
 
-	//Sapphire
+	/**
+	 * Sapphire
+	 */
 	private ShieldEntityModel sapphireShieldModel;
 	private static final SpriteIdentifier SAPPHIRE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/sapphire_shield_base"));
 	private static final SpriteIdentifier SAPPHIRE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/sapphire_shield_base_nopattern"));
@@ -140,20 +146,30 @@ public class RendererMixin {
 		}
 
 		/**
-		 * TechReborn
+		 * Bronze
 		 */
-		if(BasicShields.techReborn.isLoaded()) {
-
-			//Bronze
+		if(BasicShields.bronze.isLoaded()) {
 			bronzeShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.bronze_shield_model_layer));
-
-			//Ruby
+		}
+		
+		/**
+		 * Ruby
+		 */
+		if(BasicShields.ruby.isLoaded()) {
 			rubyShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.ruby_shield_model_layer));
+		}
 
-			//Peridot
+		/**
+		 * Peridot
+		 */
+		if(BasicShields.peridot.isLoaded()) {
 			peridotShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.peridot_shield_model_layer));
+		}
 
-			//Sapphire
+		/**
+		 * Sapphire
+		 */
+		if(BasicShields.sapphire.isLoaded()) {
 			sapphireShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.sapphire_shield_model_layer));
 		}
 
@@ -220,26 +236,37 @@ public class RendererMixin {
 		}
 
 		/**
-		 * TechReborn
+		 * Bronze
 		 */
-		if(BasicShields.techReborn.isLoaded()) {
-			//Bronze
-			if (stack.isOf(BasicShields.techReborn.bronze_shield.getItem())) {
+		if(BasicShields.bronze.isLoaded()) {
+			if (stack.isOf(BasicShields.bronze.bronze_shield.getItem())) {
 				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, bronzeShieldModel, BRONZE_SHIELD_BASE, BRONZE_SHIELD_BASE_NO_PATTERN);
 			}
+		}
 
-			//Ruby
-			if (stack.isOf(BasicShields.techReborn.ruby_shield.getItem())) {
+		/**
+		 * Ruby
+		 */
+		if(BasicShields.ruby.isLoaded()) {
+			if (stack.isOf(BasicShields.ruby.ruby_shield.getItem())) {
 				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, rubyShieldModel, RUBY_SHIELD_BASE, RUBY_SHIELD_BASE_NO_PATTERN);
 			}
+		}
 
-			//Peridot
-			if (stack.isOf(BasicShields.techReborn.peridot_shield.getItem())) {
+		/**
+		 * Peridot
+		 */
+		if(BasicShields.peridot.isLoaded()) {
+			if (stack.isOf(BasicShields.peridot.peridot_shield.getItem())) {
 				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, peridotShieldModel, PERIDOT_SHIELD_BASE, PERIDOT_SHIELD_BASE_NO_PATTERN);
 			}
+		}
 
-			//Sapphire
-			if (stack.isOf(BasicShields.techReborn.sapphire_shield.getItem())) {
+		/**
+		 * Sapphire
+		 */
+		if(BasicShields.sapphire.isLoaded()) {
+			if (stack.isOf(BasicShields.sapphire.sapphire_shield.getItem())) {
 				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, sapphireShieldModel, SAPPHIRE_SHIELD_BASE, SAPPHIRE_SHIELD_BASE_NO_PATTERN);
 			}
 		}

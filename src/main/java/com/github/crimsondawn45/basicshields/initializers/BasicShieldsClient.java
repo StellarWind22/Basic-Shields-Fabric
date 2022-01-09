@@ -17,10 +17,13 @@ public class BasicShieldsClient implements ClientModInitializer {
     public static final EntityModelLayer diamond_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "diamond_shield"),"main");
     public static final EntityModelLayer netherite_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "netherite_shield"),"main");
 
-    //Techreborn
+    //Bronze
     public static final EntityModelLayer bronze_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "bronze_shield"),"main");
+    //Ruby
     public static final EntityModelLayer ruby_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "ruby_shield"),"main");
+    //Peridot
     public static final EntityModelLayer peridot_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "peridot_shield"),"main");
+    //Sapphire
     public static final EntityModelLayer sapphire_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "sapphire_shield"),"main");
 
     //Adabranium
@@ -76,9 +79,9 @@ public class BasicShieldsClient implements ClientModInitializer {
         }
 
         /**
-         * Techreborn
+         * Bronze
          */
-        if(BasicShields.techReborn.isLoaded()) {
+        if(BasicShields.bronze.isLoaded()) {
 
             //Bronze
             EntityModelLayerRegistry.registerModelLayer(bronze_shield_model_layer, ShieldEntityModel::getTexturedModelData);
@@ -87,6 +90,12 @@ public class BasicShieldsClient implements ClientModInitializer {
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/bronze_shield_base"));
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/bronze_shield_base_nopattern"));
             });
+		}
+
+        /**
+         * Ruby
+         */
+        if(BasicShields.ruby.isLoaded()) {
 
             //Ruby
             EntityModelLayerRegistry.registerModelLayer(ruby_shield_model_layer, ShieldEntityModel::getTexturedModelData);
@@ -95,6 +104,12 @@ public class BasicShieldsClient implements ClientModInitializer {
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/ruby_shield_base"));
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/ruby_shield_base_nopattern"));
             });
+        }
+
+        /**
+         * Peridot
+         */
+        if(BasicShields.peridot.isLoaded()) {
 
             //Peridot
             EntityModelLayerRegistry.registerModelLayer(peridot_shield_model_layer, ShieldEntityModel::getTexturedModelData);
@@ -103,6 +118,12 @@ public class BasicShieldsClient implements ClientModInitializer {
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/peridot_shield_base"));
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/peridot_shield_base_nopattern"));
             });
+        }
+
+        /**
+         * Sapphire
+         */
+        if(BasicShields.sapphire.isLoaded()) {
 
             //Sapphire
             EntityModelLayerRegistry.registerModelLayer(sapphire_shield_model_layer, ShieldEntityModel::getTexturedModelData);
@@ -111,7 +132,7 @@ public class BasicShieldsClient implements ClientModInitializer {
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/sapphire_shield_base"));
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/sapphire_shield_base_nopattern"));
             });
-		}
+        }
 
         /**
          * Adabranium

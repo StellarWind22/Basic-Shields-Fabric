@@ -1,8 +1,11 @@
 package com.github.crimsondawn45.basicshields.initializers;
 
 import com.github.crimsondawn45.basicshields.module.AdabraniumModule;
+import com.github.crimsondawn45.basicshields.module.BronzeModule;
 import com.github.crimsondawn45.basicshields.module.GobberModule;
-import com.github.crimsondawn45.basicshields.module.TechRebornModule;
+import com.github.crimsondawn45.basicshields.module.PeridotModule;
+import com.github.crimsondawn45.basicshields.module.RubyModule;
+import com.github.crimsondawn45.basicshields.module.SapphireModule;
 import com.github.crimsondawn45.basicshields.module.VanillaModule;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,7 +25,10 @@ public class BasicShields implements ModInitializer {
 
 	//Modules
 	public static VanillaModule vanilla;
-	public static TechRebornModule techReborn;
+	public static BronzeModule bronze;
+	public static RubyModule ruby;
+	public static PeridotModule peridot;
+	public static SapphireModule sapphire;
 	public static AdabraniumModule adabranium;
 	public static GobberModule gobber;
 
@@ -31,10 +37,13 @@ public class BasicShields implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-
+		
 		//Initialize Modules
 		vanilla = 		new VanillaModule();
-		techReborn = 	new TechRebornModule("techreborn", "reborncore");
+		bronze = 		new BronzeModule("techreborn", "astromine", "mythicmetals", "texp", "mw", "modern_industrialization", "indrev");
+		ruby =			new RubyModule("techreborn", "more_gems");
+		peridot = 		new PeridotModule("techreborn");
+		sapphire = 		new SapphireModule("techreborn");
 		adabranium = 	new AdabraniumModule("adabraniummod");
 		gobber =		new GobberModule("gobber2");
 

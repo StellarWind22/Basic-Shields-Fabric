@@ -176,7 +176,7 @@ public class RecipeHelper {
          */
         JsonObject addition = new JsonObject();
 
-        if(isInputTag) {
+        if(isAdditionTag) {
             addition.addProperty("tag", additionId.toString());
         } else {
             addition.addProperty("item", additionId.toString());

@@ -24,10 +24,6 @@ dependencies {
 
 	modImplementation "com.github.CrimsonDawn45:Fabric-Shield-Lib:v${project.fabric_shield_lib_version}"
 
-	//TechReborn
-	modCompileOnly "TechReborn:TechReborn-1.18:${project.techreborn_version}"
-	modCompileOnly "RebornCore:RebornCore-1.18:${project.reborncore_version}"
-
 	//Adabranium
 	modCompileOnly "curse.maven:adabranium-361599:3540158"		//2.2.0
 

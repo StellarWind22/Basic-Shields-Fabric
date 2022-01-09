@@ -29,13 +29,25 @@ public class RecipeManagerMixin {
             map.put(new Identifier(BasicShields.MOD_ID, BasicShields.vanilla.netherite_shield.getName()), BasicShields.vanilla.netherite_shield_recipe);
         }
 
-        //Tech Reborn
-        if(BasicShields.techReborn.isLoaded()) {
-            map.put(new Identifier(BasicShields.MOD_ID, BasicShields.techReborn.bronze_shield.getName()), BasicShields.techReborn.bronze_shield_recipe);
-            map.put(new Identifier(BasicShields.MOD_ID, BasicShields.techReborn.ruby_shield.getName()), BasicShields.techReborn.ruby_shield_recipe);
-            map.put(new Identifier(BasicShields.MOD_ID, BasicShields.techReborn.peridot_shield.getName()), BasicShields.techReborn.peridot_shield_recipe);
-            map.put(new Identifier(BasicShields.MOD_ID, BasicShields.techReborn.sapphire_shield.getName()), BasicShields.techReborn.sapphire_shield_recipe);
+        //Bronze
+        if(BasicShields.bronze.isLoaded()) {
+            map.put(new Identifier(BasicShields.MOD_ID, BasicShields.bronze.bronze_shield.getName()), BasicShields.bronze.bronze_shield_recipe);
 		}
+
+        //Ruby
+        if(BasicShields.ruby.isLoaded()) {
+            map.put(new Identifier(BasicShields.MOD_ID, BasicShields.ruby.ruby_shield.getName()), BasicShields.ruby.ruby_shield_recipe);
+        }
+
+        //Peridot
+        if(BasicShields.peridot.isLoaded()) {
+            map.put(new Identifier(BasicShields.MOD_ID, BasicShields.peridot.peridot_shield.getName()), BasicShields.peridot.peridot_shield_recipe);
+        }
+
+        //Sapphires
+        if(BasicShields.sapphire.isLoaded()) {
+            map.put(new Identifier(BasicShields.MOD_ID, BasicShields.sapphire.sapphire_shield.getName()), BasicShields.sapphire.sapphire_shield_recipe);
+        }
 
         //Adabranium
         if(BasicShields.adabranium.isLoaded()) {

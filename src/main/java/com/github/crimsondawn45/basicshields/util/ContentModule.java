@@ -6,20 +6,22 @@ import net.minecraft.tag.Tag.Identified;
 
 public class ContentModule {
 
-    private boolean isLoaded = true;
+    private boolean isLoaded;
 
     /**
      * * modules without arguments are always loaded.
      * 
-     * @param requiredIds list of modId's that must all be detected to load.
+     * @param requiredIds list of modId's that any being detected will load module.
      */
     public ContentModule(String...requiredIds) {
 
         //Check the id's
         for(String id : requiredIds) {
 
-            if(!BasicShields.isLoaded(id)) {
-                this.isLoaded = false;
+            if(BasicShields.isLoaded(id)) { //If any detected load module
+
+                this.isLoaded = true;
+                break;
             }
         }
 

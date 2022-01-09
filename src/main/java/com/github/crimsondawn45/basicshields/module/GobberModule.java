@@ -1,7 +1,7 @@
 package com.github.crimsondawn45.basicshields.module;
 
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
-import com.github.crimsondawn45.basicshields.item.GobberShield;
+import com.github.crimsondawn45.basicshields.object.GobberShieldItem;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.RecipeHelper;
@@ -60,19 +60,19 @@ public class GobberModule extends ContentModule {
         });
 
         //Gobber
-        gobber_shield = new ModItem("gobber_shield", new GobberShield(new FabricItemSettings().maxDamage(3800).group(BasicShields.SHIELDS), 70, 20, false, ItemInit.GOBBER2_INGOT));
-        gobber_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("gobber2","gobber2_ingot"), false, new Identifier("minecraft", "planks"), true, gobber_shield.getIdentifier());
+        gobber_shield = new ModItem("gobber_shield", new GobberShieldItem(new FabricItemSettings().maxDamage(3800).group(BasicShields.SHIELDS), 70, 20, false, ItemInit.GOBBER2_INGOT));
+        gobber_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("gobber2","gobber2_ingot"), false, gobber_shield.getIdentifier());
 
         //Nether Gobber
-        gobber_nether_shield = new ModItem("gobber_nether_shield", new GobberShield(new FabricItemSettings().maxDamage(5200).group(BasicShields.SHIELDS), 60, 25, false, ItemInit.GOBBER2_INGOT_NETHER));
-        gobber_nether_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("gobber2","gobber2_ingot_nether"), false, new Identifier("minecraft", "planks"), true, gobber_nether_shield.getIdentifier());
+        gobber_nether_shield = new ModItem("gobber_nether_shield", new GobberShieldItem(new FabricItemSettings().maxDamage(5200).group(BasicShields.SHIELDS), 60, 25, false, ItemInit.GOBBER2_INGOT_NETHER));
+        gobber_nether_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("gobber2","gobber2_ingot_nether"), false, gobber_nether_shield.getIdentifier());
 
         //End Gobber
-        gobber_end_shield = new ModItem("gobber_end_shield", new GobberShield(new FabricItemSettings().maxDamage(8000).group(BasicShields.SHIELDS), 50, 30, Gobber2.CONFIG.GENERAL.unbreakableEndArmor, ItemInit.GOBBER2_INGOT_END));
-        gobber_end_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("gobber2", "gobber2_ingot_end"), false, new Identifier("minecraft", "planks"), true, gobber_end_shield.getIdentifier());
+        gobber_end_shield = new ModItem("gobber_end_shield", new GobberShieldItem(new FabricItemSettings().maxDamage(8000).group(BasicShields.SHIELDS), 50, 30, Gobber2.CONFIG.GENERAL.unbreakableEndArmor, ItemInit.GOBBER2_INGOT_END));
+        gobber_end_shield_recipe = RecipeHelper.createShieldRecipe(new Identifier("gobber2", "gobber2_ingot_end"), false, gobber_end_shield.getIdentifier());
 
         //Dragon Gobber
-        gobber_dragon_shield = new ModItem("gobber_dragon_shield", new GobberShield(new FabricItemSettings().maxDamage(8000).group(BasicShields.SHIELDS), 50, 30, Gobber2.CONFIG.GENERAL.unbreakableDragonArmor, ItemInit.DRAGON_STAR));
+        gobber_dragon_shield = new ModItem("gobber_dragon_shield", new GobberShieldItem(new FabricItemSettings().maxDamage(8000).group(BasicShields.SHIELDS), 50, 30, Gobber2.CONFIG.GENERAL.unbreakableDragonArmor, ItemInit.DRAGON_STAR));
         gobber_dragon_shield_recipe = RecipeHelper.createSmithingRecipe(gobber_end_shield.getIdentifier(), false, new Identifier("gobber2", "dragon_star"), false, gobber_dragon_shield.getIdentifier());
     }
 }

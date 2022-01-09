@@ -1,11 +1,12 @@
 package com.github.crimsondawn45.basicshields.util;
 
 import java.util.ArrayList;
-
 import com.google.common.collect.Lists;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
+import net.minecraft.item.Item;
+import net.minecraft.tag.Tag;
 import net.minecraft.util.Identifier;
 
 public class RecipeHelper {
@@ -21,9 +22,8 @@ public class RecipeHelper {
      * 
      * @return Shield recipe in JsonObject form.
      */
-    public static JsonObject createShieldRecipe(Identifier mainItemId, boolean isMainTag, Identifier plankItemId, boolean isPlankTag, Identifier output) {
+    public static JsonObject createShieldRecipe(Identifier mainItemId, boolean isMainTag, Identifier output) {
 		String mainType;
-        String plankType;
 
 		if(isMainTag) {
 			mainType = "tag";
@@ -31,19 +31,13 @@ public class RecipeHelper {
 			mainType = "item";
 		}
 
-        if(isPlankTag) {
-			plankType = "tag";
-		} else {
-			plankType = "item";
-		}
-
 		return createShapedRecipe(
 			//Keys
 			Lists.newArrayList('#','i'),
 			//Items
-			Lists.newArrayList(plankItemId, mainItemId), 
+			Lists.newArrayList(new Identifier("minecraft","planks"), mainItemId), 
 			//Types
-			Lists.newArrayList(plankType, mainType),
+			Lists.newArrayList("tag", mainType),
 			//Pattern
 			Lists.newArrayList(
 				"#i#",
@@ -52,6 +46,56 @@ public class RecipeHelper {
 			),
 			//Output
 			output, 1);
+	}
+
+    /**
+     * * generates a JsonObject for a new shield recipe
+     * 
+     * @param tags      List of main identifiers ex. ["minecraft:iron_ingot", "minecraft:logs"]
+     * @param output    Output item id.
+     * 
+     * @return a shield recipe in JsonObject form
+     */
+    public static JsonObject createShieldRecipe(ArrayList<Tag.Identified<Item>> tags, Identifier output) {
+        //Creating a new json object, where we will store our recipe.
+        JsonObject json = new JsonObject();
+        //The "type" of the recipe we are creating. In this case, a shaped recipe.
+        json.addProperty("type", "minecraft:crafting_shaped");
+        //This creates:
+        //"type": "minecraft:crafting_shaped"
+
+        //Create json element for pattern
+        JsonArray pattern = new JsonArray();
+        pattern.add("#i#");
+        pattern.add("###");
+        pattern.add(" # ");
+        json.add("pattern", pattern);
+
+        //Create JsonObject for keys
+        JsonObject keys = new JsonObject();
+        JsonObject plankKey = new JsonObject();
+        JsonArray ingotKeyList = new JsonArray();
+
+        //Create # key
+        plankKey.addProperty("tag", "minecraft:planks");
+        keys.add("#", plankKey);
+
+        //Create i key
+        for(Tag.Identified<Item> tag : tags) {
+            JsonObject entry = new JsonObject();
+            entry.addProperty("tag", tag.getId().toString());
+            ingotKeyList.add(entry);
+        }
+        keys.add("i", ingotKeyList);
+        json.add("key", keys);
+
+        //Create JsonObject for result
+        JsonObject result = new JsonObject();
+        result.addProperty("item", output.toString());
+        result.addProperty("count", 1);
+        json.add("result", result);
+        
+		return json;
 	}
 
     /**

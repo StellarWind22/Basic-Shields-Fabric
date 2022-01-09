@@ -10,7 +10,6 @@ import com.google.gson.JsonObject;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.tag.TagFactory;
 import net.minecraft.item.Item;
-import net.minecraft.tag.ItemTags;
 import net.minecraft.tag.Tag.Identified;
 import net.minecraft.util.Identifier;
 
@@ -37,6 +36,6 @@ public class PeridotModule extends ContentModule {
         peridot_shield = new ModItem("peridot_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(1008).group(BasicShields.SHIELDS), 90, 12, peridot_tag));
 
         //Recipe
-        peridot_shield_recipe = RecipeHelper.createShieldRecipe(peridot_tag.getId(), true, ItemTags.PLANKS.getId(), true, peridot_shield.getIdentifier());
+        peridot_shield_recipe = RecipeHelper.createShieldRecipe(peridot_tag.getId(), true, peridot_shield.getIdentifier());
     }
 }

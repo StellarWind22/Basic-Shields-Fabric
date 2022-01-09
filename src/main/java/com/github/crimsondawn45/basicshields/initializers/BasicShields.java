@@ -40,9 +40,9 @@ public class BasicShields implements ModInitializer {
 		//Initialize Modules
 		vanilla = 		new VanillaModule();
 		bronze = 		new BronzeModule("techreborn", "astromine", "mythicmetals", "texp", "mw", "modern_industrialization", "indrev");
-		ruby =			new RubyModule("techreborn", "more_gems");
+		ruby =			new RubyModule("techreborn");
 		peridot = 		new PeridotModule("techreborn");
-		sapphire = 		new SapphireModule("techreborn");
+		sapphire = 		new SapphireModule("techreborn", "more_gems");
 		adabranium = 	new AdabraniumModule("adabraniummod");
 		gobber =		new GobberModule("gobber2");
 

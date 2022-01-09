@@ -10,7 +10,6 @@ import com.google.gson.JsonObject;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.tag.TagFactory;
 import net.minecraft.item.Item;
-import net.minecraft.tag.ItemTags;
 import net.minecraft.tag.Tag.Identified;
 import net.minecraft.util.Identifier;
 
@@ -37,6 +36,6 @@ public class BronzeModule extends ContentModule {
         bronze_shield = new ModItem("bronze_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(504).group(BasicShields.SHIELDS), 100, 6, bronze_tag));
 
         //Recipe
-        bronze_shield_recipe = RecipeHelper.createShieldRecipe(bronze_tag.getId(), true, ItemTags.PLANKS.getId(), true, bronze_shield.getIdentifier());
+        bronze_shield_recipe = RecipeHelper.createShieldRecipe(bronze_tag.getId(), true, bronze_shield.getIdentifier());
     }
 }

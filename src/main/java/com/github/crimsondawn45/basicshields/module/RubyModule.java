@@ -9,7 +9,6 @@ import com.google.gson.JsonObject;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.tag.TagFactory;
 import net.minecraft.item.Item;
-import net.minecraft.tag.ItemTags;
 import net.minecraft.tag.Tag.Identified;
 import net.minecraft.util.Identifier;
 
@@ -36,6 +35,6 @@ public class RubyModule extends ContentModule {
         ruby_shield = new ModItem("ruby_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(1008).group(BasicShields.SHIELDS), 90, 10, ruby_tag));
 
         //Recipe
-        ruby_shield_recipe = RecipeHelper.createShieldRecipe(ruby_tag.getId(), true, ItemTags.PLANKS.getId(), true, ruby_shield.getIdentifier());
+        ruby_shield_recipe = RecipeHelper.createShieldRecipe(ruby_tag.getId(), true, ruby_shield.getIdentifier());
     }
 }

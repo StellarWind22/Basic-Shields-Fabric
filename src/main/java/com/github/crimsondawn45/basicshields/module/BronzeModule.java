@@ -34,8 +34,7 @@ public class BronzeModule extends ContentModule {
 
         //Tag
         bronze_tag_list = Lists.newArrayList(
-            TagFactory.ITEM.create(new Identifier("c","bronze_ingots")),
-            TagFactory.ITEM.create(new Identifier("c","bronze_ingot"))
+            TagFactory.ITEM.create(new Identifier("c","bronze_ingots"))
         );
 
         //Item

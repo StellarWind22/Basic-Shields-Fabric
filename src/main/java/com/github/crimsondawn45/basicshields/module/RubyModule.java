@@ -32,9 +32,7 @@ public class RubyModule extends ContentModule {
 
         //Tag
         ruby_tag_list = Lists.newArrayList(
-            TagFactory.ITEM.create(new Identifier("c","rubies")),
-            TagFactory.ITEM.create(new Identifier("c","ruby")),
-            TagFactory.ITEM.create(new Identifier("c","ruby_gem"))
+            TagFactory.ITEM.create(new Identifier("c","rubies"))
         );
         
         //Item

@@ -1,0 +1,21 @@
+{
+    "replace": false,
+    "values": [
+      "minecraft:shield",
+      "basicshields:wooden_shield",
+      "basicshields:golden_shield",
+      "basicshields:diamond_shield",
+      "basicshields:netherite_shield",
+      "basicshields:bronze_shield",
+      "basicshields:ruby_shield",
+      "basicshields:peridot_shield",
+      "basicshields:sapphire_shield",
+      "basicshields:nether_shield",
+      "basicshields:vibranium_shield",
+      "basicshields:adamantium_shield",
+      "basicshields:gobber_shield",
+      "basicshields:gobber_nether_shield",
+      "basicshields:gobber_end_shield"
+    ],
+    "required": false
+}

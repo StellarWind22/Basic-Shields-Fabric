@@ -7,8 +7,8 @@ import com.github.crimsondawn45.basicshields.module.PeridotModule;
 import com.github.crimsondawn45.basicshields.module.RubyModule;
 import com.github.crimsondawn45.basicshields.module.SapphireModule;
 import com.github.crimsondawn45.basicshields.module.VanillaModule;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
@@ -20,7 +20,7 @@ public class BasicShields implements ModInitializer {
 
 	public static final String MOD_ID = "basicshields";
 
-	public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
+	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	//Modules
 	public static VanillaModule vanilla;

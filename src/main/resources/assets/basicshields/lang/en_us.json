@@ -287,5 +287,9 @@
   "item.basicshields.gobber.tooltip.start":"Reflects ",
   "item.basicshields.gobber.tooltip.end":"% of damage.",
 
-  "itemGroup.basicshields.shields": "Basic Shields"
+  "itemGroup.basicshields.shields": "Basic Shields",
+
+  "text.autoconfig.basicshields.title":"Basic Shields: Config",
+  "text.autoconfig.basicshields.option.vanilla_wooden_shield_durability":"Wooden Shield Durability"
+
 }

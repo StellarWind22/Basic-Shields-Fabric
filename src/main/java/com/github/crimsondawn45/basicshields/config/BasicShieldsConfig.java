@@ -9,9 +9,6 @@ import me.shedaniel.autoconfig.annotation.Config;
 public class BasicShieldsConfig implements ConfigData {
 
     //Vanilla
-    @Comment("***********************"
-		    +"\nVanilla Module"
-			+"\n***********************")
         //Wooden
     public int vanilla_wooden_shield_durability =           104;
     public int vanilla_wooden_shield_enchantability =       15;
@@ -30,9 +27,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int vanilla_netherite_shield_cooldown =          80;
 
     //Adabranium
-    @Comment("***********************"
-		    +"\nAdabranium Module"
-			+"\n***********************")
+    @Comment("Force loads module crafting recipes will not be ingame")
     public boolean always_load_adabranium =                 false;
         //Nether
     public int adabranium_nether_shield_durability =        511;
@@ -48,9 +43,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int adabranium_adamantium_shield_cooldown =      70;
 
     //Bronze
-    @Comment("***********************"
-		    +"\nBronze Module"
-			+"\n***********************")
+    @Comment("Force loads module crafting recipes will not be ingame")
     public boolean always_load_bronze =                     false;
         //Bronze
     public int bronze_shield_durability =                   504;
@@ -58,9 +51,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int bronze_shield_cooldown =                     100;
 
     //Citrine
-    @Comment("***********************"
-		    +"\nCitrine Module"
-			+"\n***********************")
+    @Comment("Force loads module crafting recipes will not be ingame")
     public boolean always_load_citrine =                    false;
         //Citrine
     public int citrine_shield_durability =                  1109;
@@ -68,9 +59,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int citrine_shield_cooldown =                    90;
 
     //Tourmaline
-    @Comment("***********************"
-		    +"\nTourmaline Module"
-			+"\n***********************")
+    @Comment("Force loads module crafting recipes will not be ingame")
     public boolean always_load_tourmaline =                 false;
         //Tourmaline
     public int tourmaline_shield_durability =               1258;
@@ -78,9 +67,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int tourmaline_shield_cooldown =                 90;
 
     //Kunzite
-    @Comment("***********************"
-		    +"\nKunzite Module"
-			+"\n***********************")
+    @Comment("Force loads module crafting recipes will not be ingame")
     public boolean always_load_kunzite =                    false;
         //Kunzite
     public int kunzite_shield_durability =                  1468;
@@ -88,69 +75,55 @@ public class BasicShieldsConfig implements ConfigData {
     public int kunzite_shield_cooldown =                    90;
 
     //Topaz
-    @Comment("***********************"
-		    +"\nTopaz Module"
-			+"\n***********************")
-    public boolean always_load_topaz =                    false;
+    @Comment("Force loads module crafting recipes will not be ingame")
+    public boolean always_load_topaz =                      false;
         //Topaz
-    public int topaz_shield_durability =                  1678;
-    public int topaz_shield_enchantability =              14;
-    public int topaz_shield_cooldown =                    90;
+    public int topaz_shield_durability =                    1678;
+    public int topaz_shield_enchantability =                14;
+    public int topaz_shield_cooldown =                      90;
 
     //Alexandrite
-    @Comment("***********************"
-		    +"\nAlexandrite Module"
-			+"\n***********************")
-    public boolean always_load_alexandrite =                    false;
+    @Comment("Force loads module crafting recipes will not be ingame")
+    public boolean always_load_alexandrite =                false;
         //Alexandrite
-    public int alexandrite_shield_durability =                  1783;
-    public int alexandrite_shield_enchantability =              14;
-    public int alexandrite_shield_cooldown =                    90;
+    public int alexandrite_shield_durability =              1783;
+    public int alexandrite_shield_enchantability =          14;
+    public int alexandrite_shield_cooldown =                90;
 
     //Corundum
-    @Comment("***********************"
-		    +"\nCorundum Module"
-			+"\n***********************")
-    public boolean always_load_corundum =                    false;
+    @Comment("Force loads module crafting recipes will not be ingame")
+    public boolean always_load_corundum =                   false;
         //Corundum
-    public int corundum_shield_durability =                  1887;
-    public int corundum_shield_enchantability =              14;
-    public int corundum_shield_cooldown =                    90;
+    public int corundum_shield_durability =                 1887;
+    public int corundum_shield_enchantability =             14;
+    public int corundum_shield_cooldown =                   90;
 
     //Spinel
-    @Comment("***********************"
-		    +"\nSpinel Module"
-			+"\n***********************")
-    public boolean always_load_spinel =                    false;
+    @Comment("Force loads module crafting recipes will not be ingame")
+    public boolean always_load_spinel =                     false;
         //Spinel
-    public int spinel_shield_durability =                  1887;
-    public int spinel_shield_enchantability =              14;
-    public int spinel_shield_cooldown =                    90;
+    public int spinel_shield_durability =                   1887;
+    public int spinel_shield_enchantability =               14;
+    public int spinel_shield_cooldown =                     90;
 
     //Carbonado
-    @Comment("***********************"
-		    +"\nCarbonado Module"
-			+"\n***********************")
-    public boolean always_load_carbonado =                    false;
+    @Comment("Force loads module crafting recipes will not be ingame")
+    public boolean always_load_carbonado =                  false;
         //Carbonado
-    public int carbonado_shield_durability =                  2098;
-    public int carbonado_shield_enchantability =              24;
-    public int carbonado_shield_cooldown =                    90;
+    public int carbonado_shield_durability =                2098;
+    public int carbonado_shield_enchantability =            24;
+    public int carbonado_shield_cooldown =                  90;
 
     //Moissanite
-    @Comment("***********************"
-		    +"\nMoissanite Module"
-			+"\n***********************")
-    public boolean always_load_moissanite =                    false;
+    @Comment("Force loads module crafting recipes will not be ingame")
+    public boolean always_load_moissanite =                 false;
         //Moissanite
-    public int moissanite_shield_durability =                  2730;
-    public int moissanite_shield_enchantability =              24;
-    public int moissanite_shield_cooldown =                    90;
+    public int moissanite_shield_durability =               2730;
+    public int moissanite_shield_enchantability =           24;
+    public int moissanite_shield_cooldown =                 90;
 
     //Gobber
-    @Comment("***********************"
-		    +"\nGobber2 Module"
-			+"\n***********************")
+    @Comment("Force loads module crafting recipes will not be ingame")
     public boolean always_load_gobber =                     false;
     public float gobber_reflect_percentage =                0.2F;       //TODO: make the tooltip match current setting
         //Overworld
@@ -175,9 +148,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int gobber_dragon_shield_cooldown =              50;
 
     //Peridot
-    @Comment("***********************"
-		    +"\nPeridot Module"
-			+"\n***********************")
+    @Comment("Force loads module crafting recipes will not be ingame")
     public boolean always_load_peridot =                    false;
         //Peridot
     public int peridot_shield_durability =                  1008;
@@ -185,9 +156,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int peridot_shield_cooldown =                    90;
 
     //Ruby
-    @Comment("***********************"
-		    +"\nRuby Module"
-			+"\n***********************")
+    @Comment("Force loads module crafting recipes will not be ingame")
     public boolean always_load_ruby =                       false;
         //Ruby
     public int ruby_shield_durability =                     1008;
@@ -195,9 +164,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int ruby_shield_cooldown =                       90;
 
     //Sapphire
-    @Comment("***********************"
-		    +"\nSapphire Module"
-			+"\n***********************")
+    @Comment("Force loads module crafting recipes will not be ingame")
     public boolean always_load_sapphire =                   false;
         //Sapphire
     public int sapphire_shield_durability =                 1344;

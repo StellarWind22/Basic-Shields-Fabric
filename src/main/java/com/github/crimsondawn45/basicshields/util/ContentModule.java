@@ -5,12 +5,14 @@ import net.fabricmc.loader.api.FabricLoader;
 public class ContentModule {
 
     private boolean isLoaded;
+    private boolean isForceLoaded;
 
     /**
      * @param alwaysLoad whether or not to ignore requried modId's
      * @param requiredIds list of modId's that any being detected will load module.
      */
     public ContentModule(boolean alwaysLoad, String...ids) {
+        this.isForceLoaded = alwaysLoad;
 
         //If module is force enabled don't bother checking loaded mods
         if(alwaysLoad) {
@@ -38,6 +40,11 @@ public class ContentModule {
 
     public boolean isLoaded() {
        return this.isLoaded;
+    }
+
+    public boolean isForceLoaded() {
+        this.isForceLoaded = false;
+        return this.isForceLoaded;
     }
 
     /**

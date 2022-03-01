@@ -13,16 +13,16 @@ import net.minecraft.item.Item;
 import net.minecraft.tag.Tag.Identified;
 import net.minecraft.util.Identifier;
 
-public class CitrineModule extends ContentModule {
+public class TourmalineModule extends ContentModule {
 
     //Bronze Stuff
-    public ModItem citrine_shield;
-    public JsonObject citrine_shield_recipe;
+    public ModItem tourmaline_shield;
+    public JsonObject tourmaline_shield_recipe;
 
     //Tag
-    public Identified<Item> citrine_tag;
+    public Identified<Item> tourmaline_tag;
 
-    public CitrineModule(boolean alwaysLoad, String...ids) {
+    public TourmalineModule(boolean alwaysLoad, String...ids) {
         super(alwaysLoad, ids);
     }
 
@@ -30,17 +30,17 @@ public class CitrineModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        citrine_tag = TagFactory.ITEM.create(new Identifier("c","citrines"));
+        tourmaline_tag = TagFactory.ITEM.create(new Identifier("c","tourmalines"));
 
         //Item
-        citrine_shield = new ModItem("citrine_shield",
-        new BasicShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.citrine_shield_durability).group(BasicShields.SHIELDS),
-        BasicShields.CONFIG.citrine_shield_cooldown,
-        BasicShields.CONFIG.citrine_shield_enchantability,
-        citrine_tag));
+        tourmaline_shield = new ModItem("tourmaline_shield",
+        new BasicShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.tourmaline_shield_durability).group(BasicShields.SHIELDS),
+        BasicShields.CONFIG.tourmaline_shield_cooldown,
+        BasicShields.CONFIG.tourmaline_shield_enchantability,
+        tourmaline_tag));
 
         //Recipe
-        citrine_shield_recipe = RecipeHelper.createShieldRecipe(citrine_tag.getId(), true, citrine_shield.getIdentifier());
+        tourmaline_shield_recipe = RecipeHelper.createShieldRecipe(tourmaline_tag.getId(), true, tourmaline_shield.getIdentifier());
     }
     
 }

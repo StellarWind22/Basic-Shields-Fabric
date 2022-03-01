@@ -284,7 +284,8 @@
   "item.basicshields.gobber_dragon_shield.dark_gray": "Dark Gray Dragon Shield",
   "item.basicshields.gobber_dragon_shield.black": "Black Dragon Shield",
 
-  "item.basicshields.gobber.tooltip":"Reflects 20% of damage.",
+  "item.basicshields.gobber.tooltip.start":"Reflects ",
+  "item.basicshields.gobber.tooltip.end":"% of damage.",
 
   "itemGroup.basicshields.shields": "Basic Shields"
 }

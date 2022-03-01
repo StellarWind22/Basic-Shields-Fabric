@@ -67,6 +67,86 @@ public class BasicShieldsConfig implements ConfigData {
     public int citrine_shield_enchantability =              14;
     public int citrine_shield_cooldown =                    90;
 
+    //Tourmaline
+    @Comment("***********************"
+		    +"\nTourmaline Module"
+			+"\n***********************")
+    public boolean always_load_tourmaline =                 false;
+        //Tourmaline
+    public int tourmaline_shield_durability =               1258;
+    public int tourmaline_shield_enchantability =           14;
+    public int tourmaline_shield_cooldown =                 90;
+
+    //Kunzite
+    @Comment("***********************"
+		    +"\nKunzite Module"
+			+"\n***********************")
+    public boolean always_load_kunzite =                    false;
+        //Kunzite
+    public int kunzite_shield_durability =                  1468;
+    public int kunzite_shield_enchantability =              14;
+    public int kunzite_shield_cooldown =                    90;
+
+    //Topaz
+    @Comment("***********************"
+		    +"\nTopaz Module"
+			+"\n***********************")
+    public boolean always_load_topaz =                    false;
+        //Topaz
+    public int topaz_shield_durability =                  1678;
+    public int topaz_shield_enchantability =              14;
+    public int topaz_shield_cooldown =                    90;
+
+    //Alexandrite
+    @Comment("***********************"
+		    +"\nAlexandrite Module"
+			+"\n***********************")
+    public boolean always_load_alexandrite =                    false;
+        //Alexandrite
+    public int alexandrite_shield_durability =                  1783;
+    public int alexandrite_shield_enchantability =              14;
+    public int alexandrite_shield_cooldown =                    90;
+
+    //Corundum
+    @Comment("***********************"
+		    +"\nCorundum Module"
+			+"\n***********************")
+    public boolean always_load_corundum =                    false;
+        //Corundum
+    public int corundum_shield_durability =                  1887;
+    public int corundum_shield_enchantability =              14;
+    public int corundum_shield_cooldown =                    90;
+
+    //Spinel
+    @Comment("***********************"
+		    +"\nSpinel Module"
+			+"\n***********************")
+    public boolean always_load_spinel =                    false;
+        //Spinel
+    public int spinel_shield_durability =                  1887;
+    public int spinel_shield_enchantability =              14;
+    public int spinel_shield_cooldown =                    90;
+
+    //Carbonado
+    @Comment("***********************"
+		    +"\nCarbonado Module"
+			+"\n***********************")
+    public boolean always_load_carbonado =                    false;
+        //Carbonado
+    public int carbonado_shield_durability =                  2098;
+    public int carbonado_shield_enchantability =              24;
+    public int carbonado_shield_cooldown =                    90;
+
+    //Moissanite
+    @Comment("***********************"
+		    +"\nMoissanite Module"
+			+"\n***********************")
+    public boolean always_load_moissanite =                    false;
+        //Moissanite
+    public int moissanite_shield_durability =                  2730;
+    public int moissanite_shield_enchantability =              24;
+    public int moissanite_shield_cooldown =                    90;
+
     //Gobber
     @Comment("***********************"
 		    +"\nGobber2 Module"

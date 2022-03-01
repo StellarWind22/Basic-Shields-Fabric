@@ -13,16 +13,16 @@ import net.minecraft.item.Item;
 import net.minecraft.tag.Tag.Identified;
 import net.minecraft.util.Identifier;
 
-public class CitrineModule extends ContentModule {
+public class CorundumModule extends ContentModule {
 
     //Bronze Stuff
-    public ModItem citrine_shield;
-    public JsonObject citrine_shield_recipe;
+    public ModItem corundum_shield;
+    public JsonObject corundum_shield_recipe;
 
     //Tag
-    public Identified<Item> citrine_tag;
+    public Identified<Item> corundum_tag;
 
-    public CitrineModule(boolean alwaysLoad, String...ids) {
+    public CorundumModule(boolean alwaysLoad, String...ids) {
         super(alwaysLoad, ids);
     }
 
@@ -30,17 +30,17 @@ public class CitrineModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        citrine_tag = TagFactory.ITEM.create(new Identifier("c","citrines"));
+        corundum_tag = TagFactory.ITEM.create(new Identifier("c","corundums"));
 
         //Item
-        citrine_shield = new ModItem("citrine_shield",
-        new BasicShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.citrine_shield_durability).group(BasicShields.SHIELDS),
-        BasicShields.CONFIG.citrine_shield_cooldown,
-        BasicShields.CONFIG.citrine_shield_enchantability,
-        citrine_tag));
+        corundum_shield = new ModItem("corundum_shield",
+        new BasicShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.corundum_shield_durability).group(BasicShields.SHIELDS),
+        BasicShields.CONFIG.corundum_shield_cooldown,
+        BasicShields.CONFIG.corundum_shield_enchantability,
+        corundum_tag));
 
         //Recipe
-        citrine_shield_recipe = RecipeHelper.createShieldRecipe(citrine_tag.getId(), true, citrine_shield.getIdentifier());
+        corundum_shield_recipe = RecipeHelper.createShieldRecipe(corundum_tag.getId(), true, corundum_shield.getIdentifier());
     }
     
 }

@@ -13,16 +13,16 @@ import net.minecraft.item.Item;
 import net.minecraft.tag.Tag.Identified;
 import net.minecraft.util.Identifier;
 
-public class CitrineModule extends ContentModule {
+public class SpinelModule extends ContentModule {
 
     //Bronze Stuff
-    public ModItem citrine_shield;
-    public JsonObject citrine_shield_recipe;
+    public ModItem spinel_shield;
+    public JsonObject spinel_shield_recipe;
 
     //Tag
-    public Identified<Item> citrine_tag;
+    public Identified<Item> spinel_tag;
 
-    public CitrineModule(boolean alwaysLoad, String...ids) {
+    public SpinelModule(boolean alwaysLoad, String...ids) {
         super(alwaysLoad, ids);
     }
 
@@ -30,17 +30,17 @@ public class CitrineModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        citrine_tag = TagFactory.ITEM.create(new Identifier("c","citrines"));
+        spinel_tag = TagFactory.ITEM.create(new Identifier("c","spinels"));
 
         //Item
-        citrine_shield = new ModItem("citrine_shield",
-        new BasicShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.citrine_shield_durability).group(BasicShields.SHIELDS),
-        BasicShields.CONFIG.citrine_shield_cooldown,
-        BasicShields.CONFIG.citrine_shield_enchantability,
-        citrine_tag));
+        spinel_shield = new ModItem("spinel_shield",
+        new BasicShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.spinel_shield_durability).group(BasicShields.SHIELDS),
+        BasicShields.CONFIG.spinel_shield_cooldown,
+        BasicShields.CONFIG.spinel_shield_enchantability,
+        spinel_tag));
 
         //Recipe
-        citrine_shield_recipe = RecipeHelper.createShieldRecipe(citrine_tag.getId(), true, citrine_shield.getIdentifier());
+        spinel_shield_recipe = RecipeHelper.createShieldRecipe(spinel_tag.getId(), true, spinel_shield.getIdentifier());
     }
     
 }

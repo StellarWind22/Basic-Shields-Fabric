@@ -13,16 +13,16 @@ import net.minecraft.item.Item;
 import net.minecraft.tag.Tag.Identified;
 import net.minecraft.util.Identifier;
 
-public class CitrineModule extends ContentModule {
+public class CarbonadoModule extends ContentModule {
 
     //Bronze Stuff
-    public ModItem citrine_shield;
-    public JsonObject citrine_shield_recipe;
+    public ModItem carbonado_shield;
+    public JsonObject carbonado_shield_recipe;
 
     //Tag
-    public Identified<Item> citrine_tag;
+    public Identified<Item> carbonado_tag;
 
-    public CitrineModule(boolean alwaysLoad, String...ids) {
+    public CarbonadoModule(boolean alwaysLoad, String...ids) {
         super(alwaysLoad, ids);
     }
 
@@ -30,17 +30,17 @@ public class CitrineModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        citrine_tag = TagFactory.ITEM.create(new Identifier("c","citrines"));
+        carbonado_tag = TagFactory.ITEM.create(new Identifier("c","carbonados"));
 
         //Item
-        citrine_shield = new ModItem("citrine_shield",
-        new BasicShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.citrine_shield_durability).group(BasicShields.SHIELDS),
-        BasicShields.CONFIG.citrine_shield_cooldown,
-        BasicShields.CONFIG.citrine_shield_enchantability,
-        citrine_tag));
+        carbonado_shield = new ModItem("carbonado_shield",
+        new BasicShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.carbonado_shield_durability).group(BasicShields.SHIELDS),
+        BasicShields.CONFIG.carbonado_shield_cooldown,
+        BasicShields.CONFIG.carbonado_shield_enchantability,
+        carbonado_tag));
 
         //Recipe
-        citrine_shield_recipe = RecipeHelper.createShieldRecipe(citrine_tag.getId(), true, citrine_shield.getIdentifier());
+        carbonado_shield_recipe = RecipeHelper.createShieldRecipe(carbonado_tag.getId(), true, carbonado_shield.getIdentifier());
     }
     
 }

@@ -13,16 +13,16 @@ import net.minecraft.item.Item;
 import net.minecraft.tag.Tag.Identified;
 import net.minecraft.util.Identifier;
 
-public class CitrineModule extends ContentModule {
+public class MoissaniteModule extends ContentModule {
 
     //Bronze Stuff
-    public ModItem citrine_shield;
-    public JsonObject citrine_shield_recipe;
+    public ModItem moissanite_shield;
+    public JsonObject moissanite_shield_recipe;
 
     //Tag
-    public Identified<Item> citrine_tag;
+    public Identified<Item> moissanite_tag;
 
-    public CitrineModule(boolean alwaysLoad, String...ids) {
+    public MoissaniteModule(boolean alwaysLoad, String...ids) {
         super(alwaysLoad, ids);
     }
 
@@ -30,17 +30,17 @@ public class CitrineModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        citrine_tag = TagFactory.ITEM.create(new Identifier("c","citrines"));
+        moissanite_tag = TagFactory.ITEM.create(new Identifier("c","moissanites"));
 
         //Item
-        citrine_shield = new ModItem("citrine_shield",
-        new BasicShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.citrine_shield_durability).group(BasicShields.SHIELDS),
-        BasicShields.CONFIG.citrine_shield_cooldown,
-        BasicShields.CONFIG.citrine_shield_enchantability,
-        citrine_tag));
+        moissanite_shield = new ModItem("moissanite_shield",
+        new BasicShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.moissanite_shield_durability).group(BasicShields.SHIELDS),
+        BasicShields.CONFIG.moissanite_shield_cooldown,
+        BasicShields.CONFIG.moissanite_shield_enchantability,
+        moissanite_tag));
 
         //Recipe
-        citrine_shield_recipe = RecipeHelper.createShieldRecipe(citrine_tag.getId(), true, citrine_shield.getIdentifier());
+        moissanite_shield_recipe = RecipeHelper.createShieldRecipe(moissanite_tag.getId(), true, moissanite_shield.getIdentifier());
     }
     
 }

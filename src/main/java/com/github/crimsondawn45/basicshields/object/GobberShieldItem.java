@@ -40,7 +40,7 @@ public class GobberShieldItem extends BasicShieldItem {
     //Add reflection tooltip
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
-        tooltip.add(new TranslatableText("item.basicshields.gobber.tooltip").formatted(Formatting.GREEN));
+        tooltip.add(new TranslatableText("item.basicshields.gobber.tooltip.start").formatted(Formatting.GREEN));
     }
 
     //Make Unbreakable

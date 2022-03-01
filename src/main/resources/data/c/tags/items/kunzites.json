@@ -1,0 +1,9 @@
+{
+    "replace": false,
+    "values": [
+      "#c:kunzite",
+      "#c:kunzite_gems",
+      "#c:kunzite_gem"
+    ],
+    "required": false
+}

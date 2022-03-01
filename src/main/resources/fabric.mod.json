@@ -27,7 +27,7 @@
       "com.github.crimsondawn45.basicshields.initializers.BasicShieldsClient"
     ],
     "modmenu": [
-      "com.github.crimsondawn45.basicshields.config.BasicShieldsConfig"
+      "com.github.crimsondawn45.basicshields.config.BasicShieldsModMenuIntegration"
     ]
   },
   "mixins": [

@@ -56,6 +56,12 @@ public class RendererMixin {
 	private static final SpriteIdentifier BRONZE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/bronze_shield_base"));
 	private static final SpriteIdentifier BRONZE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/bronze_shield_base_nopattern"));
 
+	/**
+	 * Citrine
+	 */
+	private ShieldEntityModel citrineShieldModel;
+	private static final SpriteIdentifier CITRINE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/citrine_shield_base"));
+	private static final SpriteIdentifier CITRINE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/citrine_shield_base_nopattern"));
 	
 	/**
 	 * Ruby
@@ -151,6 +157,13 @@ public class RendererMixin {
 		if(BasicShields.bronze.isLoaded()) {
 			bronzeShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.bronze_shield_model_layer));
 		}
+
+		/**
+		 * Citrine
+		 */
+		if(BasicShields.citrine.isLoaded()) {
+			citrineShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.citrine_shield_model_layer));
+		}
 		
 		/**
 		 * Ruby
@@ -241,6 +254,15 @@ public class RendererMixin {
 		if(BasicShields.bronze.isLoaded()) {
 			if (stack.isOf(BasicShields.bronze.bronze_shield.getItem())) {
 				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, bronzeShieldModel, BRONZE_SHIELD_BASE, BRONZE_SHIELD_BASE_NO_PATTERN);
+			}
+		}
+
+		/**
+		 * Citrine
+		 */
+		if(BasicShields.citrine.isLoaded()) {
+			if (stack.isOf(BasicShields.citrine.citrine_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, citrineShieldModel, CITRINE_SHIELD_BASE, CITRINE_SHIELD_BASE_NO_PATTERN);
 			}
 		}
 

@@ -25,6 +25,8 @@ public class BasicShieldsClient implements ClientModInitializer {
     public static final EntityModelLayer peridot_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "peridot_shield"),"main");
     //Sapphire
     public static final EntityModelLayer sapphire_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "sapphire_shield"),"main");
+    //Citrine
+    public static final EntityModelLayer citrine_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "citrine_shield"),"main");
 
     //Adabranium
     public static final EntityModelLayer nether_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "nether_shield"),"main");
@@ -133,6 +135,20 @@ public class BasicShieldsClient implements ClientModInitializer {
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/sapphire_shield_base_nopattern"));
             });
         }
+
+        /**
+         * Citrine
+         */
+        if(BasicShields.citrine.isLoaded()) {
+
+            //Citrine
+            EntityModelLayerRegistry.registerModelLayer(citrine_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+
+            ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/citrine_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/citrine_shield_base_nopattern"));
+            });
+		}
 
         /**
          * Adabranium

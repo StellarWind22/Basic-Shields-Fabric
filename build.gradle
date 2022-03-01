@@ -1,3 +1,15 @@
+buildscript {
+    dependencies {
+        classpath "de.guntram.mcmod:crowdin-translate:${project.crowdlin_version}"
+    }
+    repositories {
+        maven {
+            name = 'CrowdinTranslate source'
+            url = "https://minecraft.guntram.de/maven/"
+        }
+    }
+}
+
 plugins {
 	id 'fabric-loom' version '0.11-SNAPSHOT'
 	id 'maven-publish'
@@ -10,9 +22,16 @@ archivesBaseName = project.archives_base_name
 version = project.mod_version + "-${project.minecraft_version}"
 group = project.maven_group
 
+apply plugin: 'de.guntram.mcmod.crowdin-translate'
+crowdintranslate.crowdinProjectName = 'basic-shields'
+crowdintranslate.minecraftProjectName = "basicshields"
+crowdintranslate.verbose = false
+
 repositories {
 	maven { url "https://maven.modmuss50.me/" }
 	maven { url "https://cursemaven.com" }
+	maven { url = "https://maven.shedaniel.me/" }
+	maven { url = "https://maven.terraformersmc.com/" }
 }
 
 dependencies {
@@ -23,17 +42,15 @@ dependencies {
 
 	modImplementation "com.github.CrimsonDawn45:Fabric-Shield-Lib:v${project.fabric_shield_lib_version}"
 
-	//Adabranium
-	modCompileOnly "curse.maven:adabranium-361599:3540158"		//2.2.0
+	//Config
+	modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_version}") {
+        exclude(group: "net.fabricmc.fabric-api")
+	}
 
-	//Gobber[Fabric]
-	modCompileOnly "curse.maven:gobber-fabric-427177:3587109"	//2.5.57
-
-	//MythicMetals
-	modCompileOnly "curse.maven:mythicmetals-410127:3548273"	//0.11.0
-
-	//DragonLoot
-	modCompileOnly "curse.maven:dragonloot-424480:3543499"		//1.0.9
+	//Mod Menu
+	modCompileOnly modRuntimeOnly ("com.terraformersmc:modmenu:${project.mod_menu_version}"), {
+		exclude(group: "net.fabricmc.fabric-api")
+	}	
 }
 
 processResources {
@@ -78,4 +95,8 @@ publishing {
 			}
 		}
 	}
+}
+
+build {
+    dependsOn downloadTranslations
 }

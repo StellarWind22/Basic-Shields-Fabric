@@ -1,5 +1,6 @@
 package com.github.crimsondawn45.basicshields.initializers;
 
+import com.github.crimsondawn45.basicshields.config.BasicShieldsConfig;
 import com.github.crimsondawn45.basicshields.module.AdabraniumModule;
 import com.github.crimsondawn45.basicshields.module.BronzeModule;
 import com.github.crimsondawn45.basicshields.module.GobberModule;
@@ -10,6 +11,8 @@ import com.github.crimsondawn45.basicshields.module.VanillaModule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
@@ -34,17 +37,26 @@ public class BasicShields implements ModInitializer {
 	//Item Group
 	public static ItemGroup SHIELDS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "shields"), () -> new ItemStack(vanilla.diamond_shield.getItem()));
 
+	//Config
+	public static BasicShieldsConfig CONFIG = new BasicShieldsConfig();
+
 	@Override
 	public void onInitialize() {
+
+		/**
+		 * Register Config
+		 */
+        AutoConfig.register(BasicShieldsConfig.class, GsonConfigSerializer::new);
+        CONFIG = AutoConfig.getConfigHolder(BasicShieldsConfig.class).getConfig();   //Read config data
 		
 		//Initialize Modules
 		vanilla = 		new VanillaModule();
-		bronze = 		new BronzeModule("techreborn", "astromine", "mythicmetals", "texp", "mw", "modern_industrialization", "indrev");
-		ruby =			new RubyModule("techreborn");
-		peridot = 		new PeridotModule("techreborn");
-		sapphire = 		new SapphireModule("techreborn", "more_gems");
-		adabranium = 	new AdabraniumModule("adabraniummod");
-		gobber =		new GobberModule("gobber2");
+		bronze = 		new BronzeModule(		CONFIG.always_load_bronze, 		"techreborn", "astromine", "mythicmetals", "texp", "mw", "modern_industrialization", "indrev");
+		ruby =			new RubyModule(			CONFIG.always_load_ruby, 		"techreborn");
+		peridot = 		new PeridotModule(		CONFIG.always_load_peridot,		"techreborn");
+		sapphire = 		new SapphireModule(		CONFIG.always_load_sapphire,	"techreborn", "more_gems");
+		adabranium = 	new AdabraniumModule(	CONFIG.always_load_adabranium, 	"adabraniummod");
+		gobber =		new GobberModule(		CONFIG.always_load_gobber, 		"gobber2");
 
 		LOGGER.info("Basic Shields initialized!");
 	}

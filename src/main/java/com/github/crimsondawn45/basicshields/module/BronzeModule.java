@@ -25,8 +25,8 @@ public class BronzeModule extends ContentModule {
     //Tag
     public ArrayList<Identified<Item>> bronze_tag_list;
 
-    public BronzeModule(String...requiredIds) {
-        super(requiredIds);
+    public BronzeModule(boolean alwaysLoad, String...ids) {
+        super(alwaysLoad, ids);
     }
 
     @Override
@@ -38,7 +38,11 @@ public class BronzeModule extends ContentModule {
         );
 
         //Item
-        bronze_shield = new ModItem("bronze_shield", new BasicShieldItem(new FabricItemSettings().maxDamage(504).group(BasicShields.SHIELDS), 100, 6, bronze_tag_list));
+        bronze_shield = new ModItem("bronze_shield",
+        new BasicShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.bronze_shield_durability).group(BasicShields.SHIELDS),
+        BasicShields.CONFIG.bronze_shield_cooldown,
+        BasicShields.CONFIG.bronze_shield_enchantability,
+        bronze_tag_list));
 
         //Recipe
         bronze_shield_recipe = RecipeHelper.createShieldRecipe(bronze_tag_list, bronze_shield.getIdentifier());

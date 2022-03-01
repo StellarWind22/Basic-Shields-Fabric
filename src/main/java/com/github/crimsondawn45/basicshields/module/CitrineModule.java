@@ -25,6 +25,10 @@ public class CitrineModule extends ContentModule {
     //Tag
     public ArrayList<Identified<Item>> citrine_tag_list;
 
+    public CitrineModule(boolean alwaysLoad, String...ids) {
+        super(alwaysLoad, ids);
+    }
+
     @Override
     public void registerContent() {
 

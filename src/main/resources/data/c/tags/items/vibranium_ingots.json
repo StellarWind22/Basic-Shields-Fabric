@@ -1,7 +1,7 @@
 {
     "replace": false,
     "values": [
-      "minecraft:netherite_ingot"
+      "adabraniummod:vibranium_ingot"
     ],
     "required": false
 }

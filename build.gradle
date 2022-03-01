@@ -28,8 +28,8 @@ crowdintranslate.minecraftProjectName = "basicshields"
 crowdintranslate.verbose = false
 
 repositories {
-	maven { url "https://maven.modmuss50.me/" }
-	maven { url "https://cursemaven.com" }
+	maven { url = "https://maven.modmuss50.me/" }
+	maven { url = "https://cursemaven.com" }
 	maven { url = "https://maven.shedaniel.me/" }
 	maven { url = "https://maven.terraformersmc.com/" }
 }

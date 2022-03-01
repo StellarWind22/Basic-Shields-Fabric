@@ -24,8 +24,8 @@ public class SapphireModule extends ContentModule {
     //Peridot tag
     public ArrayList<Identified<Item>> sapphire_tag_list;
 
-    public SapphireModule(String...requiredIds) {
-        super(requiredIds);
+    public SapphireModule(boolean alwaysLoad, String...ids) {
+        super(alwaysLoad, ids);
     }
  
     @Override

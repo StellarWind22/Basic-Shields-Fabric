@@ -23,8 +23,8 @@ public class RubyModule extends ContentModule {
     //Ruby tag
     public ArrayList<Identified<Item>> ruby_tag_list;
 
-    public RubyModule(String...requiredIds) {
-        super(requiredIds);
+    public RubyModule(boolean alwaysLoad, String...ids) {
+        super(alwaysLoad, ids);
     }
 
     @Override

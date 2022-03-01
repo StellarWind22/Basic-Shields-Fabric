@@ -36,31 +36,46 @@ public class VanillaModule extends ContentModule {
     @Override
     public void registerContent() {
 
+        //Tags
+        gold_tag = TagFactory.ITEM.create(new Identifier("c", "gold_ingots"));
+        diamond_tag = TagFactory.ITEM.create(new Identifier("c","diamonds"));
+        netherite_tag = TagFactory.ITEM.create(new Identifier("c", "netherite_ingots"));
+
         //Wood
-        wooden_shield = new ModItem("wooden_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(104).group(BasicShields.SHIELDS), 110, 15, ItemTags.LOGS));
+        wooden_shield = new ModItem("wooden_shield",
+            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(104).group(BasicShields.SHIELDS),
+            110,
+            15,
+            ItemTags.LOGS));
         wooden_shield_recipe = RecipeHelper.createShieldRecipe(ItemTags.LOGS.getId(), true, wooden_shield.getIdentifier());
 
         //Gold
-            //Tag
-        gold_tag = TagFactory.ITEM.create(new Identifier("c", "gold_ingots"));
             //Item
-		golden_shield = new ModItem("golden_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(44).group(BasicShields.SHIELDS), 100, 22, gold_tag));
+		golden_shield = new ModItem("golden_shield",
+            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(44).group(BasicShields.SHIELDS),
+            100,
+            22,
+            gold_tag));
             //Recipe
         golden_shield_recipe = RecipeHelper.createShieldRecipe(gold_tag.getId(), true, golden_shield.getIdentifier());
 
         //Diamond
-            //Tag
-        diamond_tag = TagFactory.ITEM.create(new Identifier("c","diamonds"));
             //Item
-		diamond_shield = new ModItem("diamond_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(2098).group(BasicShields.SHIELDS), 90, 10, diamond_tag));
+		diamond_shield = new ModItem("diamond_shield",
+            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(2098).group(BasicShields.SHIELDS),
+            90,
+            10,
+            diamond_tag));
             //Recipe
         diamond_shield_recipe = RecipeHelper.createShieldRecipe(diamond_tag.getId(), true, diamond_shield.getIdentifier());
 
         //Netherite
-            //Tag
-        netherite_tag = TagFactory.ITEM.create(new Identifier("c", "netherite_ingots"));
             //Item
-		netherite_shield = new ModItem("netherite_shield", new FabricBannerShieldItem(new FabricItemSettings().maxDamage(2730).group(BasicShields.SHIELDS).fireproof(), 80, 15, netherite_tag));
+		netherite_shield = new ModItem("netherite_shield",
+            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(2730).group(BasicShields.SHIELDS).fireproof(),
+            80,
+            15,
+            netherite_tag));
             //Recipe
         netherite_shield_recipe = RecipeHelper.createSmithingRecipe(diamond_shield.getIdentifier(), false, netherite_tag.getId(), true, netherite_shield.getIdentifier());
     }

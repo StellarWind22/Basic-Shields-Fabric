@@ -1,7 +1,7 @@
 {
     "replace": false,
     "values": [
-      "minecraft:netherite_ingot"
+      "gobber2:dragon_star"
     ],
     "required": false
 }

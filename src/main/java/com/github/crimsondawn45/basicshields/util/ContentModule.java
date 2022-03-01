@@ -7,16 +7,22 @@ public class ContentModule {
     private boolean isLoaded;
 
     /**
-     * * modules without arguments are always loaded.
-     * 
+     * @param alwaysLoad whether or not to ignore requried modId's
      * @param requiredIds list of modId's that any being detected will load module.
      */
-    public ContentModule(String...ids) {
+    public ContentModule(boolean alwaysLoad, String...ids) {
 
-        //Check the id
-        for(String id : ids) {
-            if(FabricLoader.getInstance().isModLoaded(id)) {
-                this.isLoaded = true;
+        //If module is force enabled don't bother checking loaded mods
+        if(alwaysLoad) {
+            this.isLoaded = true;
+
+        } else {
+
+            //Check the id
+            for(String id : ids) {
+                if(FabricLoader.getInstance().isModLoaded(id)) {
+                    this.isLoaded = true;
+                }
             }
         }
 
@@ -24,10 +30,7 @@ public class ContentModule {
             registerContent();
         }
     }
-
-    /**
-     * * modules without arguments are always loaded.
-     */
+    
     public ContentModule() {
         this.isLoaded = true;
         registerContent();

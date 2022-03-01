@@ -2,5 +2,6 @@
     "replace": false,
     "values": [
       "minecraft:gold_ingot"
-    ]
+    ],
+    "required": false
 }

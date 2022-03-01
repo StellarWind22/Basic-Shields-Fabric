@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#c:sapphire",
+    "#c:sapphire_gems",
+    "#c:sapphire_gem"
+  ],
+  "required": false
+}

@@ -1,13 +1,10 @@
 package com.github.crimsondawn45.basicshields.module;
 
-import java.util.ArrayList;
-
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.object.BasicShieldItem;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.RecipeHelper;
-import com.google.common.collect.Lists;
 import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -23,7 +20,7 @@ public class CitrineModule extends ContentModule {
     public JsonObject citrine_shield_recipe;
 
     //Tag
-    public ArrayList<Identified<Item>> citrine_tag_list;
+    public Identified<Item> citrine_tag;
 
     public CitrineModule(boolean alwaysLoad, String...ids) {
         super(alwaysLoad, ids);
@@ -33,19 +30,17 @@ public class CitrineModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        citrine_tag_list = Lists.newArrayList(
-            TagFactory.ITEM.create(new Identifier("c","citrine"))
-        );
+        citrine_tag =TagFactory.ITEM.create(new Identifier("c","citrine"));
 
         //Item
         citrine_shield = new ModItem("citrine_shield",
         new BasicShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.citrine_shield_durability).group(BasicShields.SHIELDS),
         BasicShields.CONFIG.citrine_shield_cooldown,
         BasicShields.CONFIG.citrine_shield_enchantability,
-        citrine_tag_list));
+        citrine_tag));
 
         //Recipe
-        citrine_shield_recipe = RecipeHelper.createShieldRecipe(citrine_tag_list, citrine_shield.getIdentifier());
+        citrine_shield_recipe = RecipeHelper.createShieldRecipe(citrine_tag.getId(), true, citrine_shield.getIdentifier());
     }
     
 }

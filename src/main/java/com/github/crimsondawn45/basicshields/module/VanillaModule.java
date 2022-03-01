@@ -47,6 +47,8 @@ public class VanillaModule extends ContentModule {
             BasicShields.CONFIG.vanilla_wooden_shield_cooldown,
             BasicShields.CONFIG.vanilla_wooden_shield_enchantability,
             ItemTags.LOGS));
+
+        //Recipe
         wooden_shield_recipe = RecipeHelper.createShieldRecipe(ItemTags.LOGS.getId(), true, wooden_shield.getIdentifier());
 
         //Gold
@@ -55,6 +57,8 @@ public class VanillaModule extends ContentModule {
             BasicShields.CONFIG.vanilla_golden_shield_cooldown,
             BasicShields.CONFIG.vanilla_golden_shield_enchantability,
             gold_tag));
+
+        //Recipe
         golden_shield_recipe = RecipeHelper.createShieldRecipe(gold_tag.getId(), true, golden_shield.getIdentifier());
 
         //Diamond
@@ -63,6 +67,8 @@ public class VanillaModule extends ContentModule {
             BasicShields.CONFIG.vanilla_diamond_shield_cooldown,
             BasicShields.CONFIG.vanilla_diamond_shield_enchantability,
             diamond_tag));
+
+        //Recipe
         diamond_shield_recipe = RecipeHelper.createShieldRecipe(diamond_tag.getId(), true, diamond_shield.getIdentifier());
 
         //Netherite
@@ -71,6 +77,8 @@ public class VanillaModule extends ContentModule {
             BasicShields.CONFIG.vanilla_netherite_shield_cooldown,
             BasicShields.CONFIG.vanilla_netherite_shield_enchantability,
             netherite_tag));
+
+        //Recipe
         netherite_shield_recipe = RecipeHelper.createSmithingRecipe(diamond_shield.getIdentifier(), false, netherite_tag.getId(), true, netherite_shield.getIdentifier());
     }
 }

@@ -1,12 +1,10 @@
 package com.github.crimsondawn45.basicshields.module;
 
-import java.util.ArrayList;
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.object.BasicShieldItem;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.RecipeHelper;
-import com.google.common.collect.Lists;
 import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -22,7 +20,7 @@ public class SapphireModule extends ContentModule {
     public JsonObject sapphire_shield_recipe;
 
     //Peridot tag
-    public ArrayList<Identified<Item>> sapphire_tag_list;
+    public Identified<Item> sapphire_tag;
 
     public SapphireModule(boolean alwaysLoad, String...ids) {
         super(alwaysLoad, ids);
@@ -32,15 +30,16 @@ public class SapphireModule extends ContentModule {
     public void registerContent() {
  
         //Tag
-        sapphire_tag_list = Lists.newArrayList(
-            TagFactory.ITEM.create(new Identifier("c","sapphires")),
-            TagFactory.ITEM.create(new Identifier("c","sapphire"))
-        );
+        sapphire_tag = TagFactory.ITEM.create(new Identifier("c","sapphires"));
 
         //Item
-        sapphire_shield = new ModItem("sapphire_shield", new BasicShieldItem(new FabricItemSettings().maxDamage(1344).group(BasicShields.SHIELDS), 90, 12, sapphire_tag_list));
+        sapphire_shield = new ModItem("sapphire_shield",
+        new BasicShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.sapphire_shield_durability).group(BasicShields.SHIELDS),
+        BasicShields.CONFIG.sapphire_shield_cooldown,
+        BasicShields.CONFIG.sapphire_shield_enchantability,
+        sapphire_tag));
 
         //Recipe
-        sapphire_shield_recipe = RecipeHelper.createShieldRecipe(sapphire_tag_list, sapphire_shield.getIdentifier());
+        sapphire_shield_recipe = RecipeHelper.createShieldRecipe(sapphire_tag.getId(), true, sapphire_shield.getIdentifier());
     }
 }

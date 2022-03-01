@@ -1,0 +1,9 @@
+{
+    "replace": false,
+    "values": [
+      "#c:peridot",
+      "#c:peridot_gems",
+      "#c:peridot_gem"
+    ],
+    "required": false
+}

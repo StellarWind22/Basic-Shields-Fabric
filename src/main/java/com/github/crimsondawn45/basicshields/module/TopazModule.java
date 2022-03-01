@@ -30,7 +30,7 @@ public class TopazModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        topaz_tag = TagFactory.ITEM.create(new Identifier("c","topaz"));
+        topaz_tag = TagFactory.ITEM.create(new Identifier("c","topazes"));
 
         //Item
         topaz_shield = new ModItem("topaz_shield",

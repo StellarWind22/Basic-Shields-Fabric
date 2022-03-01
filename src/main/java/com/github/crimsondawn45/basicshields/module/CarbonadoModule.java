@@ -30,7 +30,7 @@ public class CarbonadoModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        carbonado_tag = TagFactory.ITEM.create(new Identifier("c","carbonados"));
+        carbonado_tag = TagFactory.ITEM.create(new Identifier("c","carbonadoes"));
 
         //Item
         carbonado_shield = new ModItem("carbonado_shield",

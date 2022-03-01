@@ -1,0 +1,9 @@
+{
+    "replace": false,
+    "values": [
+      "#c:carbonado",
+      "#c:carbonado_gems",
+      "#c:carbonado_gem"
+    ],
+    "required": false
+}

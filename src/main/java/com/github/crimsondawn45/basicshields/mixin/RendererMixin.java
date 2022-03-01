@@ -57,6 +57,13 @@ public class RendererMixin {
 	private static final SpriteIdentifier BRONZE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/bronze_shield_base_nopattern"));
 
 	/**
+	 * Carbonado
+	 */
+	private ShieldEntityModel carbonadoShieldModel;
+	private static final SpriteIdentifier CARBONADO_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/carbonado_shield_base"));
+	private static final SpriteIdentifier CARBONADO_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/carbonado_shield_base_nopattern"));
+
+	/**
 	 * Citrine
 	 */
 	private ShieldEntityModel citrineShieldModel;
@@ -159,6 +166,13 @@ public class RendererMixin {
 		}
 
 		/**
+		 * Carbonado
+		 */
+		if(BasicShields.carbonado.isLoaded()) {
+			carbonadoShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.carbonado_shield_model_layer));
+		}
+
+		/**
 		 * Citrine
 		 */
 		if(BasicShields.citrine.isLoaded()) {
@@ -254,6 +268,15 @@ public class RendererMixin {
 		if(BasicShields.bronze.isLoaded()) {
 			if (stack.isOf(BasicShields.bronze.bronze_shield.getItem())) {
 				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, bronzeShieldModel, BRONZE_SHIELD_BASE, BRONZE_SHIELD_BASE_NO_PATTERN);
+			}
+		}
+
+		/**
+		 * Carbonado
+		 */
+		if(BasicShields.carbonado.isLoaded()) {
+			if (stack.isOf(BasicShields.carbonado.carbonado_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, carbonadoShieldModel, CARBONADO_SHIELD_BASE, CARBONADO_SHIELD_BASE_NO_PATTERN);
 			}
 		}
 

@@ -69,6 +69,7 @@ public class BasicShields implements ModInitializer {
 		
 		//Initialize Modules
 		vanilla = 		new VanillaModule();
+		alexandrite =	new AlexandriteModule(	CONFIG.always_load_alexandrite, "more_gems");
 		bronze = 		new BronzeModule(		CONFIG.always_load_bronze, 		"techreborn", "astromine", "mythicmetals", "texp", "mw", "modern_industrialization", "indrev");
 		carbonado =		new CarbonadoModule(	CONFIG.always_load_carbonado, 	"more_gems");
 		citrine = 		new CitrineModule(		CONFIG.always_load_citrine, 	"more_gems");

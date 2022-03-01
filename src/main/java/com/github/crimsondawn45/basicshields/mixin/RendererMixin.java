@@ -50,6 +50,13 @@ public class RendererMixin {
 	private static final SpriteIdentifier NETHERITE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/netherite_shield_base_nopattern"));
 
 	/**
+	 * Alexandrite
+	 */
+	private ShieldEntityModel alexandriteShieldModel;
+	private static final SpriteIdentifier ALEXANDRITE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/alexandrite_shield_base"));
+	private static final SpriteIdentifier ALEXANDRITE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/alexandrite_shield_base_nopattern"));
+
+	/**
 	 * Bronze
 	 */
 	private ShieldEntityModel bronzeShieldModel;
@@ -159,6 +166,13 @@ public class RendererMixin {
 		}
 
 		/**
+		 * Alexandrite
+		 */
+		if(BasicShields.alexandrite.isLoaded()) {
+			alexandriteShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.alexandrite_shield_model_layer));
+		}
+
+		/**
 		 * Bronze
 		 */
 		if(BasicShields.bronze.isLoaded()) {
@@ -259,6 +273,15 @@ public class RendererMixin {
 			//Netherite
 			if (stack.isOf(BasicShields.vanilla.netherite_shield.getItem())) {
 				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, netheriteShieldModel, NETHERITE_SHIELD_BASE, NETHERITE_SHIELD_BASE_NO_PATTERN);
+			}
+		}
+
+		/**
+		 * Alexandrite
+		 */
+		if(BasicShields.alexandrite.isLoaded()) {
+			if (stack.isOf(BasicShields.alexandrite.alexandrite_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, alexandriteShieldModel, ALEXANDRITE_SHIELD_BASE, ALEXANDRITE_SHIELD_BASE_NO_PATTERN);
 			}
 		}
 

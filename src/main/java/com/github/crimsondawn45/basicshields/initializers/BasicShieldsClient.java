@@ -17,6 +17,8 @@ public class BasicShieldsClient implements ClientModInitializer {
     public static final EntityModelLayer diamond_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "diamond_shield"),"main");
     public static final EntityModelLayer netherite_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "netherite_shield"),"main");
 
+    //Alexandrite
+    public static final EntityModelLayer alexandrite_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "alexandrite_shield"),"main");
     //Bronze
     public static final EntityModelLayer bronze_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "bronze_shield"),"main");
     //Ruby
@@ -81,6 +83,20 @@ public class BasicShieldsClient implements ClientModInitializer {
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/netherite_shield_base_nopattern"));
             });
         }
+
+        /**
+         * Alexandrite
+         */
+        if(BasicShields.alexandrite.isLoaded()) {
+
+            //Alexandrite
+            EntityModelLayerRegistry.registerModelLayer(alexandrite_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+
+            ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/alexandrite_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/alexandrite_shield_base_nopattern"));
+            });
+		}
 
         /**
          * Bronze

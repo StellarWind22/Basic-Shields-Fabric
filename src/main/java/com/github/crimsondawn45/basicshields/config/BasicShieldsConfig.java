@@ -19,15 +19,15 @@ public class BasicShieldsConfig implements ConfigData {
         //Golden
     public int vanilla_golden_shield_durability =           44;
     public int vanilla_golden_shield_enchantability =       22;
-    public int vanilla_golden_shield_cooldown =             110;
+    public int vanilla_golden_shield_cooldown =             100;
         //Diamond
     public int vanilla_diamond_shield_durability =          2098;
     public int vanilla_diamond_shield_enchantability =      10;
-    public int vanilla_diamond_shield_cooldown =            110;
+    public int vanilla_diamond_shield_cooldown =            90;
         //Netherite
     public int vanilla_netherite_shield_durability =        2730;
     public int vanilla_netherite_shield_enchantability =    15;
-    public int vanilla_netherite_shield_cooldown =          110;
+    public int vanilla_netherite_shield_cooldown =          80;
 
     //Adabranium
     @Comment("***********************"
@@ -63,16 +63,16 @@ public class BasicShieldsConfig implements ConfigData {
 			+"\n***********************")
     public boolean always_load_citrine =                    false;
         //Citrine
-    public int citrine_shield_durability =                   504;
-    public int citrine_shield_enchantability =               6;
-    public int citrine_shield_cooldown =                     100;
+    public int citrine_shield_durability =                  1109;
+    public int citrine_shield_enchantability =              14;
+    public int citrine_shield_cooldown =                    90;
 
     //Gobber
     @Comment("***********************"
 		    +"\nGobber2 Module"
 			+"\n***********************")
     public boolean always_load_gobber =                     false;
-    public float gobber_reflect_percentage =                0.2F;
+    public float gobber_reflect_percentage =                0.2F;       //TODO: make the tooltip match current setting
         //Overworld
     public boolean unbreakable_gobber_shield =              false;
     public int gobber_shield_durability =                   5108;
@@ -99,17 +99,28 @@ public class BasicShieldsConfig implements ConfigData {
 		    +"\nPeridot Module"
 			+"\n***********************")
     public boolean always_load_peridot =                    false;
+        //Peridot
+    public int peridot_shield_durability =                  1008;
+    public int peridot_shield_enchantability =              12;
+    public int peridot_shield_cooldown =                    90;
 
     //Ruby
     @Comment("***********************"
 		    +"\nRuby Module"
 			+"\n***********************")
     public boolean always_load_ruby =                       false;
+        //Ruby
+    public int ruby_shield_durability =                     1008;
+    public int ruby_shield_enchantability =                 10;
+    public int ruby_shield_cooldown =                       90;
 
     //Sapphire
     @Comment("***********************"
 		    +"\nSapphire Module"
 			+"\n***********************")
     public boolean always_load_sapphire =                   false;
-    
+        //Sapphire
+    public int sapphire_shield_durability =                 1344;
+    public int sapphire_shield_enchantability =             12;
+    public int sapphire_shield_cooldown =                   90;
 }

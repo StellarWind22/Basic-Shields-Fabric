@@ -38,7 +38,11 @@ public class CitrineModule extends ContentModule {
         );
 
         //Item
-        citrine_shield = new ModItem("citrine_shield", new BasicShieldItem(new FabricItemSettings().maxDamage(504).group(BasicShields.SHIELDS), 100, 6, citrine_tag_list));
+        citrine_shield = new ModItem("citrine_shield",
+        new BasicShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.citrine_shield_durability).group(BasicShields.SHIELDS),
+        BasicShields.CONFIG.citrine_shield_cooldown,
+        BasicShields.CONFIG.citrine_shield_enchantability,
+        citrine_tag_list));
 
         //Recipe
         citrine_shield_recipe = RecipeHelper.createShieldRecipe(citrine_tag_list, citrine_shield.getIdentifier());

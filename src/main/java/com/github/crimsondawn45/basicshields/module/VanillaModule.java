@@ -43,40 +43,34 @@ public class VanillaModule extends ContentModule {
 
         //Wood
         wooden_shield = new ModItem("wooden_shield",
-            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(104).group(BasicShields.SHIELDS),
-            110,
-            15,
+            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.vanilla_wooden_shield_durability).group(BasicShields.SHIELDS),
+            BasicShields.CONFIG.vanilla_wooden_shield_cooldown,
+            BasicShields.CONFIG.vanilla_wooden_shield_enchantability,
             ItemTags.LOGS));
         wooden_shield_recipe = RecipeHelper.createShieldRecipe(ItemTags.LOGS.getId(), true, wooden_shield.getIdentifier());
 
         //Gold
-            //Item
 		golden_shield = new ModItem("golden_shield",
-            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(44).group(BasicShields.SHIELDS),
-            100,
-            22,
+            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.vanilla_golden_shield_durability).group(BasicShields.SHIELDS),
+            BasicShields.CONFIG.vanilla_golden_shield_cooldown,
+            BasicShields.CONFIG.vanilla_golden_shield_enchantability,
             gold_tag));
-            //Recipe
         golden_shield_recipe = RecipeHelper.createShieldRecipe(gold_tag.getId(), true, golden_shield.getIdentifier());
 
         //Diamond
-            //Item
 		diamond_shield = new ModItem("diamond_shield",
-            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(2098).group(BasicShields.SHIELDS),
-            90,
-            10,
+            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.vanilla_diamond_shield_durability).group(BasicShields.SHIELDS),
+            BasicShields.CONFIG.vanilla_diamond_shield_cooldown,
+            BasicShields.CONFIG.vanilla_diamond_shield_enchantability,
             diamond_tag));
-            //Recipe
         diamond_shield_recipe = RecipeHelper.createShieldRecipe(diamond_tag.getId(), true, diamond_shield.getIdentifier());
 
         //Netherite
-            //Item
 		netherite_shield = new ModItem("netherite_shield",
-            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(2730).group(BasicShields.SHIELDS).fireproof(),
-            80,
-            15,
+            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.vanilla_netherite_shield_durability).group(BasicShields.SHIELDS).fireproof(),
+            BasicShields.CONFIG.vanilla_netherite_shield_cooldown,
+            BasicShields.CONFIG.vanilla_netherite_shield_enchantability,
             netherite_tag));
-            //Recipe
         netherite_shield_recipe = RecipeHelper.createSmithingRecipe(diamond_shield.getIdentifier(), false, netherite_tag.getId(), true, netherite_shield.getIdentifier());
     }
 }

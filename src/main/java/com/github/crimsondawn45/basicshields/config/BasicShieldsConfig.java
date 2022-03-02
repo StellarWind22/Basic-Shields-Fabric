@@ -42,6 +42,31 @@ public class BasicShieldsConfig implements ConfigData {
     public int adabranium_adamantium_shield_enchantability= 10;
     public int adabranium_adamantium_shield_cooldown =      70;
 
+    //Gobber
+    @Comment("Force loads module crafting recipes will not be ingame")
+    public boolean always_load_gobber =                     false;
+    public float gobber_reflect_percentage =                0.2F;       //TODO: make the tooltip match current setting
+        //Overworld
+    public boolean unbreakable_gobber_shield =              false;
+    public int gobber_shield_durability =                   5108;
+    public int gobber_shield_enchantability =               20;
+    public int gobber_shield_cooldown =                     70;
+        //Nether
+    public boolean unbreakable_gobber_nether_shield =       false;
+    public int gobber_nether_shield_durability =            6989;
+    public int gobber_nether_shield_enchantability =        25;
+    public int gobber_nether_shield_cooldown =              60;
+        //End
+    public boolean unbreakable_gobber_end_shield =          true;
+    public int gobber_end_shield_durability =               10752;
+    public int gobber_end_shield_enchantability =           30;
+    public int gobber_end_shield_cooldown =                 50;
+        //Dragon
+    public boolean unbreakable_gobber_dragon_shield =       true;
+    public int gobber_dragon_shield_durability =            10752;
+    public int gobber_dragon_shield_enchantability =        30;
+    public int gobber_dragon_shield_cooldown =              50;
+
     //Bronze
     @Comment("Force loads module crafting recipes will not be ingame")
     public boolean always_load_bronze =                     false;
@@ -169,31 +194,6 @@ public class BasicShieldsConfig implements ConfigData {
     public int copper_shield_durability =                   336;
     public int copper_shield_enchantability =               18;
     public int copper_shield_cooldown =                     100;
-
-    //Gobber
-    @Comment("Force loads module crafting recipes will not be ingame")
-    public boolean always_load_gobber =                     false;
-    public float gobber_reflect_percentage =                0.2F;       //TODO: make the tooltip match current setting
-        //Overworld
-    public boolean unbreakable_gobber_shield =              false;
-    public int gobber_shield_durability =                   5108;
-    public int gobber_shield_enchantability =               20;
-    public int gobber_shield_cooldown =                     70;
-        //Nether
-    public boolean unbreakable_gobber_nether_shield =       false;
-    public int gobber_nether_shield_durability =            6989;
-    public int gobber_nether_shield_enchantability =        25;
-    public int gobber_nether_shield_cooldown =              60;
-        //End
-    public boolean unbreakable_gobber_end_shield =          true;
-    public int gobber_end_shield_durability =               10752;
-    public int gobber_end_shield_enchantability =           30;
-    public int gobber_end_shield_cooldown =                 50;
-        //Dragon
-    public boolean unbreakable_gobber_dragon_shield =       true;
-    public int gobber_dragon_shield_durability =            10752;
-    public int gobber_dragon_shield_enchantability =        30;
-    public int gobber_dragon_shield_cooldown =              50;
 
     //Peridot
     @Comment("Force loads module crafting recipes will not be ingame")

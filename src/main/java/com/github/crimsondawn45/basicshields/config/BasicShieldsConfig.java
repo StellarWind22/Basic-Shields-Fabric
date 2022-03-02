@@ -122,6 +122,46 @@ public class BasicShieldsConfig implements ConfigData {
     public int moissanite_shield_enchantability =           24;
     public int moissanite_shield_cooldown =                 90;
 
+    //Emerald
+    @Comment("Force loads module crafting recipes will not be ingame")
+    public boolean always_load_emerald =                    false;
+        //Emerald
+    public int emerald_shield_durability =                  975;
+    public int emerald_shield_enchantability =              10;
+    public int emerald_shield_cooldown =                    100;
+
+    //Obsidian
+    @Comment("Force loads module crafting recipes will not be ingame")
+    public boolean always_load_obsidian =                   false;
+        //Obsidian
+    public int obsidian_shield_durability =                 874;
+    public int obsidian_shield_enchantability =             4;
+    public int obsidian_shield_cooldown =                   100;
+
+    //Steel
+    @Comment("Force loads module crafting recipes will not be ingame")
+    public boolean always_load_steel =                      false;
+        //Steel
+    public int steel_shield_durability =                    689;
+    public int steel_shield_enchantability =                9;
+    public int steel_shield_cooldown =                      100;
+
+    //Amethyst
+    @Comment("Force loads module crafting recipes will not be ingame")
+    public boolean always_load_amethyst =                   false;
+        //Amethyst
+    public int amethyst_shield_durability =                 1129;
+    public int amethyst_shield_enchantability =             25;
+    public int amethyst_shield_cooldown =                   100;
+
+    //Copper
+    @Comment("Force loads module crafting recipes will not be ingame")
+    public boolean always_load_copper =                     false;
+        //Copper
+    public int copper_shield_durability =                   336;
+    public int copper_shield_enchantability =               18;
+    public int copper_shield_cooldown =                     100;
+
     //Gobber
     @Comment("Force loads module crafting recipes will not be ingame")
     public boolean always_load_gobber =                     false;

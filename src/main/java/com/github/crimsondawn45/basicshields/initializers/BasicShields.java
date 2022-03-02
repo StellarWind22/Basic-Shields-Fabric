@@ -41,6 +41,7 @@ public class BasicShields implements ModInitializer {
 
 	//Modules
 	public static VanillaModule vanilla;
+	public static AdabraniumModule adabranium;
 	public static AlexandriteModule alexandrite;
 	public static AmethystModule amethyst;
 	public static BronzeModule bronze;
@@ -49,18 +50,17 @@ public class BasicShields implements ModInitializer {
 	public static CopperModule copper;
 	public static CorundumModule corundum;
 	public static EmeraldModule emerald;
+	public static GobberModule gobber;
 	public static KunziteModule kunzite;
 	public static MoissaniteModule moissanite;
 	public static ObsidianModule obsidian;
-	public static RubyModule ruby;
 	public static PeridotModule peridot;
+	public static RubyModule ruby;
 	public static SapphireModule sapphire;
 	public static SpinelModule spinel;
 	public static SteelModule steel;
 	public static TopazModule topaz;
 	public static TourmalineModule tourmaline;
-	public static AdabraniumModule adabranium;
-	public static GobberModule gobber;
 
 	//Item Group
 	public static ItemGroup SHIELDS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "shields"), () -> new ItemStack(vanilla.diamond_shield.getItem()));
@@ -82,21 +82,22 @@ public class BasicShields implements ModInitializer {
 		 * Information on what mods use what materials mostly comes from here https://www.fabricmc.net/wiki/tutorial:tags
 		 */
 		vanilla = 		new VanillaModule();
+		adabranium = 	new AdabraniumModule(	CONFIG.always_load_adabranium, 	"adabraniummod");
 		alexandrite =	new AlexandriteModule(	CONFIG.always_load_alexandrite, "more_gems");
 		bronze = 		new BronzeModule(		CONFIG.always_load_bronze, 		"techreborn", "astromine", "mythicmetals", "texp", "mw", "modern_industrialization", "indrev");
 		carbonado =		new CarbonadoModule(	CONFIG.always_load_carbonado, 	"more_gems");
 		citrine = 		new CitrineModule(		CONFIG.always_load_citrine, 	"more_gems");
 		corundum = 		new CorundumModule(     CONFIG.always_load_corundum, 	"more_gems");
+		gobber =		new GobberModule(		CONFIG.always_load_gobber, 		"gobber2");
 		kunzite =		new KunziteModule(      CONFIG.always_load_kunzite, 	"more_gems");
 		moissanite = 	new MoissaniteModule(   CONFIG.always_load_moissanite, 	"more_gems");
-		ruby =			new RubyModule(			CONFIG.always_load_ruby, 		"techreborn", "emerald_tools");
 		peridot = 		new PeridotModule(		CONFIG.always_load_peridot,		"techreborn");
+		ruby =			new RubyModule(			CONFIG.always_load_ruby, 		"techreborn", "emerald_tools");
 		sapphire = 		new SapphireModule(		CONFIG.always_load_sapphire,	"techreborn", "more_gems");
 		spinel = 		new SpinelModule(       CONFIG.always_load_spinel, 		"more_gems");
+		steel =			new SteelModule(		CONFIG.always_load_steel, 		"astromine", "emerald_tools", "indrev", "modern_industrialization", "mw", "mythicmetals", "techreborn");
 		topaz =			new TopazModule(        CONFIG.always_load_topaz, 		"more_gems");
 		tourmaline =	new TourmalineModule(   CONFIG.always_load_tourmaline, 	"more_gems");
-		adabranium = 	new AdabraniumModule(	CONFIG.always_load_adabranium, 	"adabraniummod");
-		gobber =		new GobberModule(		CONFIG.always_load_gobber, 		"gobber2");
 
 		LOGGER.info("Basic Shields initialized!");
 	}

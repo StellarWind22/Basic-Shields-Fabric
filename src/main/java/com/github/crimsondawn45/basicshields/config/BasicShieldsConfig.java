@@ -8,6 +8,7 @@ import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
 @Config(name = "basicshields")
 @Config.Gui.CategoryBackground(category = "modules", background = "minecraft:textures/block/dirt.png")
 @Config.Gui.CategoryBackground(category = "stats", background = "minecraft:textures/block/dirt.png")
+@Config.Gui.CategoryBackground(category = "durability", background = "minecraft:textures/block/dirt.png")
 public class BasicShieldsConfig implements ConfigData {
 
     //Vanilla
@@ -41,7 +42,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int vanilla_netherite_shield_cooldown =          80;
 
     //Adabranium
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_adabranium =                 false;
         //Nether
@@ -67,7 +68,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int adabranium_adamantium_shield_cooldown =      70;
 
     //Gobber
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_gobber =                     false;
     @ConfigEntry.Category("stats")
@@ -110,7 +111,47 @@ public class BasicShieldsConfig implements ConfigData {
     public int gobber_dragon_shield_cooldown =              50;
 
     //Bronze
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @ConfigEntry.Category("modules")
+    public boolean always_load_aether =                     false;
+        //Zanite
+    @ConfigEntry.Category("stats")
+    public int zanite_shield_durability =                   336;
+    @ConfigEntry.Category("stats")
+    public int zanite_shield_enchantability =               14;
+    @ConfigEntry.Category("stats")
+    public int zanite_shield_cooldown =                     100;
+        //Candy
+    @ConfigEntry.Category("stats")
+    public int candy_shield_durability =                    699;
+    @ConfigEntry.Category("stats")
+    public int candy_shield_enchantability =                12;
+    @ConfigEntry.Category("stats")
+    public int candy_shield_cooldown =                      100;
+        //Gravitite
+    @ConfigEntry.Category("stats")
+    public int gravitite_shield_durability =                2098;
+    @ConfigEntry.Category("stats")
+    public int gravitite_shield_enchantability =            10;
+    @ConfigEntry.Category("stats")
+    public int gravitite_shield_cooldown =                  100;
+        //Valkyrie
+    @ConfigEntry.Category("stats")
+    public int valkyrie_shield_durability =                 2909;
+    @ConfigEntry.Category("stats")
+    public int valkyrie_shield_enchantability =             8;
+    @ConfigEntry.Category("stats")
+    public int valkyrie_shield_cooldown =                   100;
+        //Legendary
+    @ConfigEntry.Category("stats")
+    public int legendary_shield_durability =                2909;
+    @ConfigEntry.Category("stats")
+    public int legendary_shield_enchantability =            8;
+    @ConfigEntry.Category("stats")
+    public int legendary_shield_cooldown =                  100;
+
+    //Bronze
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_bronze =                     false;
         //Bronze
@@ -122,7 +163,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int bronze_shield_cooldown =                     100;
 
     //Citrine
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_citrine =                    false;
         //Citrine
@@ -134,7 +175,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int citrine_shield_cooldown =                    90;
 
     //Tourmaline
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_tourmaline =                 false;
         //Tourmaline
@@ -146,7 +187,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int tourmaline_shield_cooldown =                 90;
 
     //Kunzite
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_kunzite =                    false;
         //Kunzite
@@ -158,7 +199,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int kunzite_shield_cooldown =                    90;
 
     //Topaz
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_topaz =                      false;
         //Topaz
@@ -170,7 +211,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int topaz_shield_cooldown =                      90;
 
     //Alexandrite
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_alexandrite =                false;
         //Alexandrite
@@ -182,7 +223,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int alexandrite_shield_cooldown =                90;
 
     //Corundum
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_corundum =                   false;
         //Corundum
@@ -194,7 +235,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int corundum_shield_cooldown =                   90;
 
     //Spinel
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_spinel =                     false;
         //Spinel
@@ -206,7 +247,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int spinel_shield_cooldown =                     90;
 
     //Carbonado
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_carbonado =                  false;
         //Carbonado
@@ -218,7 +259,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int carbonado_shield_cooldown =                  90;
 
     //Moissanite
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_moissanite =                 false;
         //Moissanite
@@ -230,7 +271,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int moissanite_shield_cooldown =                 90;
 
     //Emerald
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_emerald =                    false;
         //Emerald
@@ -242,7 +283,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int emerald_shield_cooldown =                    100;
 
     //Obsidian
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_obsidian =                   false;
         //Obsidian
@@ -254,7 +295,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int obsidian_shield_cooldown =                   100;
 
     //Steel
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_steel =                      false;
         //Steel
@@ -266,7 +307,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int steel_shield_cooldown =                      100;
 
     //Tanzanite
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_tanzanite =                    false;
         //Tanzanite
@@ -278,7 +319,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int tanzanite_shield_cooldown =                    90;
 
     //Amethyst
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_amethyst =                   false;
         //Amethyst
@@ -290,7 +331,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int amethyst_shield_cooldown =                   100;
 
     //Copper
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_copper =                     false;
         //Copper
@@ -302,7 +343,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int copper_shield_cooldown =                     100;
 
     //Peridot
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_peridot =                    false;
         //Peridot
@@ -314,7 +355,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int peridot_shield_cooldown =                    90;
 
     //Quartz
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_quartz =                    false;
         //Quartz
@@ -326,7 +367,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int quartz_shield_cooldown =                    90;
 
     //Ruby
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_ruby =                       false;
         //Ruby
@@ -338,7 +379,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int ruby_shield_cooldown =                       90;
 
     //Sapphire
-    @Comment("Force loads module crafting recipes will not be ingame")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_sapphire =                   false;
         //Sapphire

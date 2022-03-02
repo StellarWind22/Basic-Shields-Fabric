@@ -28,6 +28,7 @@ crowdintranslate.minecraftProjectName = "basicshields"
 crowdintranslate.verbose = false
 
 repositories {
+	maven { url = "https://jitpack.io" }
 	maven { url = "https://maven.modmuss50.me/" }
 	maven { url = "https://cursemaven.com" }
 	maven { url = "https://maven.shedaniel.me/" }
@@ -46,6 +47,7 @@ dependencies {
 	modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_version}") {
         exclude(group: "net.fabricmc.fabric-api")
 	}
+	include "me.shedaniel.cloth:cloth-config-fabric:${project.cloth_version}"
 
 	//Mod Menu
 	modCompileOnly modRuntimeOnly ("com.terraformersmc:modmenu:${project.mod_menu_version}"), {
@@ -89,11 +91,7 @@ publishing {
 
 	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
 	repositories {
-		allprojects {
-			repositories {
-				maven { url 'https://jitpack.io' }
-			}
-		}
+		
 	}
 }
 

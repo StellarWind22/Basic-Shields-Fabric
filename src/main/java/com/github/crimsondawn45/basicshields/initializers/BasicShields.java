@@ -15,6 +15,7 @@ import com.github.crimsondawn45.basicshields.module.KunziteModule;
 import com.github.crimsondawn45.basicshields.module.MoissaniteModule;
 import com.github.crimsondawn45.basicshields.module.ObsidianModule;
 import com.github.crimsondawn45.basicshields.module.PeridotModule;
+import com.github.crimsondawn45.basicshields.module.QuartzModule;
 import com.github.crimsondawn45.basicshields.module.RubyModule;
 import com.github.crimsondawn45.basicshields.module.SapphireModule;
 import com.github.crimsondawn45.basicshields.module.SpinelModule;
@@ -40,27 +41,28 @@ public class BasicShields implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	//Modules
-	public static VanillaModule vanilla;
-	public static AdabraniumModule adabranium;
-	public static AlexandriteModule alexandrite;
-	public static AmethystModule amethyst;
-	public static BronzeModule bronze;
-	public static CarbonadoModule carbonado;
-	public static CitrineModule citrine;
-	public static CopperModule copper;
-	public static CorundumModule corundum;
-	public static EmeraldModule emerald;
-	public static GobberModule gobber;
-	public static KunziteModule kunzite;
-	public static MoissaniteModule moissanite;
-	public static ObsidianModule obsidian;
-	public static PeridotModule peridot;
-	public static RubyModule ruby;
-	public static SapphireModule sapphire;
-	public static SpinelModule spinel;
-	public static SteelModule steel;
-	public static TopazModule topaz;
-	public static TourmalineModule tourmaline;
+	public static VanillaModule 		vanilla;
+	public static AdabraniumModule 		adabranium;
+	public static AlexandriteModule 	alexandrite;
+	public static AmethystModule 		amethyst;
+	public static BronzeModule 			bronze;
+	public static CarbonadoModule 		carbonado;
+	public static CitrineModule 		citrine;
+	public static CopperModule 			copper;
+	public static CorundumModule 		corundum;
+	public static EmeraldModule 		emerald;
+	public static GobberModule 			gobber;
+	public static KunziteModule 		kunzite;
+	public static MoissaniteModule 		moissanite;
+	public static ObsidianModule 		obsidian;
+	public static PeridotModule 		peridot;
+	public static QuartzModule 			quartz;
+	public static RubyModule 			ruby;
+	public static SapphireModule 		sapphire;
+	public static SpinelModule 			spinel;
+	public static SteelModule 			steel;
+	public static TopazModule 			topaz;
+	public static TourmalineModule 		tourmaline;
 
 	//Item Group
 	public static ItemGroup SHIELDS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "shields"), () -> new ItemStack(vanilla.diamond_shield.getItem()));
@@ -92,11 +94,11 @@ public class BasicShields implements ModInitializer {
 		kunzite =		new KunziteModule(      CONFIG.always_load_kunzite, 	"more_gems");
 		moissanite = 	new MoissaniteModule(   CONFIG.always_load_moissanite, 	"more_gems");
 		peridot = 		new PeridotModule(		CONFIG.always_load_peridot,		"techreborn");
-		ruby =			new RubyModule(			CONFIG.always_load_ruby, 		"techreborn", "emerald_tools");
-		sapphire = 		new SapphireModule(		CONFIG.always_load_sapphire,	"techreborn", "more_gems");
+		ruby =			new RubyModule(			CONFIG.always_load_ruby, 		"techreborn", "emerald_tools", "gemsandcrystals");
+		sapphire = 		new SapphireModule(		CONFIG.always_load_sapphire,	"techreborn", "more_gems", "gemsandcrystals");
 		spinel = 		new SpinelModule(       CONFIG.always_load_spinel, 		"more_gems");
 		steel =			new SteelModule(		CONFIG.always_load_steel, 		"astromine", "emerald_tools", "indrev", "modern_industrialization", "mw", "mythicmetals", "techreborn");
-		topaz =			new TopazModule(        CONFIG.always_load_topaz, 		"more_gems");
+		topaz =			new TopazModule(        CONFIG.always_load_topaz, 		"more_gems", "gemsandcrystals");
 		tourmaline =	new TourmalineModule(   CONFIG.always_load_tourmaline, 	"more_gems");
 
 		LOGGER.info("Basic Shields initialized!");

@@ -1,8 +1,8 @@
 package com.github.crimsondawn45.basicshields.config;
 
-import blue.endless.jankson.Comment;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
+import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
 
 @Config(name = "basicshields")
 @Config.Gui.Background("minecraft:textures/block/dirt.png")
@@ -194,6 +194,14 @@ public class BasicShieldsConfig implements ConfigData {
     public int peridot_shield_durability =                  1008;
     public int peridot_shield_enchantability =              12;
     public int peridot_shield_cooldown =                    90;
+
+    //Quartz
+    @Comment("Force loads module crafting recipes will not be ingame")
+    public boolean always_load_quartz =                    false;
+        //Quartz
+    public int quartz_shield_durability =                  538;
+    public int quartz_shield_enchantability =              9;
+    public int quartz_shield_cooldown =                    90;
 
     //Ruby
     @Comment("Force loads module crafting recipes will not be ingame")

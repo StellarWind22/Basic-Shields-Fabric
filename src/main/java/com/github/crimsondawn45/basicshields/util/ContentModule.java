@@ -34,6 +34,7 @@ public class ContentModule {
     }
     
     public ContentModule() {
+        this.isForceLoaded = false;
         this.isLoaded = true;
         registerContent();
     }
@@ -43,7 +44,6 @@ public class ContentModule {
     }
 
     public boolean isForceLoaded() {
-        this.isForceLoaded = false;
         return this.isForceLoaded;
     }
 

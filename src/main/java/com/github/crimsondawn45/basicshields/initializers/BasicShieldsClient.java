@@ -59,6 +59,8 @@ public class BasicShieldsClient implements ClientModInitializer {
     public static final EntityModelLayer spinel_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "spinel_shield"),"main");
     //Steel
     public static final EntityModelLayer steel_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "steel_shield"),"main");
+    //Tanzanite
+    public static final EntityModelLayer tanzanite_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "tanzanite_shield"),"main");
     //Topaz
     public static final EntityModelLayer topaz_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "topaz_shield"),"main");
     //Tourmaline
@@ -245,6 +247,20 @@ public class BasicShieldsClient implements ClientModInitializer {
             ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/steel_shield_base"));
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/steel_shield_base_nopattern"));
+            });
+		}
+
+        /**
+         * Tanzanite
+         */
+        if(BasicShields.tanzanite.isLoaded()) {
+
+            //Tanzanite
+            EntityModelLayerRegistry.registerModelLayer(tanzanite_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+
+            ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/tanzanite_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/tanzanite_shield_base_nopattern"));
             });
 		}
 

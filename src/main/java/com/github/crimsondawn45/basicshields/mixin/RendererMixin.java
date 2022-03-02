@@ -148,6 +148,13 @@ public class RendererMixin {
 	private static final SpriteIdentifier STEEL_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/steel_shield_base_nopattern"));
 
 	/**
+	 * Tanzanite
+	 */
+	private ShieldEntityModel tanzaniteShieldModel;
+	private static final SpriteIdentifier TANZANITE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/tanzanite_shield_base"));
+	private static final SpriteIdentifier TANZANITE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/tanzanite_shield_base_nopattern"));
+
+	/**
 	 * Topaz
 	 */
 	private ShieldEntityModel topazShieldModel;
@@ -345,6 +352,13 @@ public class RendererMixin {
 		 */
 		if(BasicShields.steel.isLoaded()) {
 			steelShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.steel_shield_model_layer));
+		}
+
+		/**
+		 * Tanzanite
+		 */
+		if(BasicShields.tanzanite.isLoaded()) {
+			tanzaniteShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.tanzanite_shield_model_layer));
 		}
 
 		/**
@@ -567,6 +581,15 @@ public class RendererMixin {
 		if(BasicShields.steel.isLoaded()) {
 			if (stack.isOf(BasicShields.steel.steel_shield.getItem())) {
 				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, steelShieldModel, STEEL_SHIELD_BASE, STEEL_SHIELD_BASE_NO_PATTERN);
+			}
+		}
+
+		/**
+		 * Tanzanite
+		 */
+		if(BasicShields.tanzanite.isLoaded()) {
+			if (stack.isOf(BasicShields.tanzanite.tanzanite_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, tanzaniteShieldModel, TANZANITE_SHIELD_BASE, TANZANITE_SHIELD_BASE_NO_PATTERN);
 			}
 		}
 

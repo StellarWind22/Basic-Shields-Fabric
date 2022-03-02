@@ -104,6 +104,20 @@ public class RendererMixin {
 	private ShieldEntityModel spinelShieldModel;
 	private static final SpriteIdentifier SPINEL_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/spinel_shield_base"));
 	private static final SpriteIdentifier SPINEL_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/spinel_shield_base_nopattern"));
+
+	/**
+	 * Topaz
+	 */
+	private ShieldEntityModel topazShieldModel;
+	private static final SpriteIdentifier TOPAZ_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/topaz_shield_base"));
+	private static final SpriteIdentifier TOPAZ_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/topaz_shield_base_nopattern"));
+
+	/**
+	 * Tourmaline
+	 */
+	private ShieldEntityModel tourmalineShieldModel;
+	private static final SpriteIdentifier TOURMALINE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/tourmaline_shield_base"));
+	private static final SpriteIdentifier TOURMALINE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/tourmaline_shield_base_nopattern"));
 	
 	/**
 	 * Ruby
@@ -247,6 +261,20 @@ public class RendererMixin {
 		 */
 		if(BasicShields.spinel.isLoaded()) {
 			spinelShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.spinel_shield_model_layer));
+		}
+
+		/**
+		 * Topaz
+		 */
+		if(BasicShields.topaz.isLoaded()) {
+			topazShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.topaz_shield_model_layer));
+		}
+
+		/**
+		 * Tourmaline
+		 */
+		if(BasicShields.tourmaline.isLoaded()) {
+			tourmalineShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.tourmaline_shield_model_layer));
 		}
 		
 		/**
@@ -401,6 +429,24 @@ public class RendererMixin {
 		if(BasicShields.spinel.isLoaded()) {
 			if (stack.isOf(BasicShields.spinel.spinel_shield.getItem())) {
 				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, spinelShieldModel, SPINEL_SHIELD_BASE, SPINEL_SHIELD_BASE_NO_PATTERN);
+			}
+		}
+
+		/**
+		 * Topaz
+		 */
+		if(BasicShields.topaz.isLoaded()) {
+			if (stack.isOf(BasicShields.topaz.topaz_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, topazShieldModel, TOPAZ_SHIELD_BASE, TOPAZ_SHIELD_BASE_NO_PATTERN);
+			}
+		}
+
+		/**
+		 * Tourmaline
+		 */
+		if(BasicShields.tourmaline.isLoaded()) {
+			if (stack.isOf(BasicShields.tourmaline.tourmaline_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, tourmalineShieldModel, TOURMALINE_SHIELD_BASE, TOURMALINE_SHIELD_BASE_NO_PATTERN);
 			}
 		}
 

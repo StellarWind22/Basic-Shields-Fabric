@@ -83,6 +83,8 @@ public class BasicShields implements ModInitializer {
 		peridot = 		new PeridotModule(		CONFIG.always_load_peridot,		"techreborn");
 		sapphire = 		new SapphireModule(		CONFIG.always_load_sapphire,	"techreborn", "more_gems");
 		spinel = 		new SpinelModule(       CONFIG.always_load_spinel, 		"more_gems");
+		topaz =			new TopazModule(        CONFIG.always_load_topaz, 		"more_gems");
+		tourmaline =	new TourmalineModule(   CONFIG.always_load_tourmaline, 	"more_gems");
 		adabranium = 	new AdabraniumModule(	CONFIG.always_load_adabranium, 	"adabraniummod");
 		gobber =		new GobberModule(		CONFIG.always_load_gobber, 		"gobber2");
 

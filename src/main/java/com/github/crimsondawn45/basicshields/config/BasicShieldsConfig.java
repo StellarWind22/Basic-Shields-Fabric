@@ -146,6 +146,14 @@ public class BasicShieldsConfig implements ConfigData {
     public int steel_shield_enchantability =                9;
     public int steel_shield_cooldown =                      100;
 
+    //Tanzanite
+    @Comment("Force loads module crafting recipes will not be ingame")
+    public boolean always_load_tanzanite =                    false;
+        //Tanzanite
+    public int tanzanite_shield_durability =                  1008;
+    public int tanzanite_shield_enchantability =              20;
+    public int tanzanite_shield_cooldown =                    90;
+
     //Amethyst
     @Comment("Force loads module crafting recipes will not be ingame")
     public boolean always_load_amethyst =                   false;

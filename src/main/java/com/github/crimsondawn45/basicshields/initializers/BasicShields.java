@@ -20,6 +20,7 @@ import com.github.crimsondawn45.basicshields.module.RubyModule;
 import com.github.crimsondawn45.basicshields.module.SapphireModule;
 import com.github.crimsondawn45.basicshields.module.SpinelModule;
 import com.github.crimsondawn45.basicshields.module.SteelModule;
+import com.github.crimsondawn45.basicshields.module.TanzaniteModule;
 import com.github.crimsondawn45.basicshields.module.TopazModule;
 import com.github.crimsondawn45.basicshields.module.TourmalineModule;
 import com.github.crimsondawn45.basicshields.module.VanillaModule;
@@ -61,6 +62,7 @@ public class BasicShields implements ModInitializer {
 	public static SapphireModule 		sapphire;
 	public static SpinelModule 			spinel;
 	public static SteelModule 			steel;
+	public static TanzaniteModule		tanzanite;
 	public static TopazModule 			topaz;
 	public static TourmalineModule 		tourmaline;
 
@@ -103,6 +105,7 @@ public class BasicShields implements ModInitializer {
 		sapphire = 		new SapphireModule(		CONFIG.always_load_sapphire,	"techreborn", "more_gems", "gemsandcrystals", "enriched");
 		spinel = 		new SpinelModule(       CONFIG.always_load_spinel, 		"more_gems");
 		steel =			new SteelModule(		CONFIG.always_load_steel, 		"astromine", "emerald_tools", "indrev", "modern_industrialization", "mw", "mythicmetals", "techreborn", "enriched");
+		tanzanite =		new TanzaniteModule(	CONFIG.always_load_tanzanite, 	"enriched");
 		topaz =			new TopazModule(        CONFIG.always_load_topaz, 		"more_gems", "gemsandcrystals");
 		tourmaline =	new TourmalineModule(   CONFIG.always_load_tourmaline, 	"more_gems");
 

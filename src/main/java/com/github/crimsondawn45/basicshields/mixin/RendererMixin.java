@@ -57,6 +57,13 @@ public class RendererMixin {
 	private static final SpriteIdentifier ALEXANDRITE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/alexandrite_shield_base_nopattern"));
 
 	/**
+	 * Amethyst
+	 */
+	private ShieldEntityModel amethystShieldModel;
+	private static final SpriteIdentifier AMETHYST_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/amethyst_shield_base"));
+	private static final SpriteIdentifier AMETHYST_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/amethyst_shield_base_nopattern"));
+
+	/**
 	 * Bronze
 	 */
 	private ShieldEntityModel bronzeShieldModel;
@@ -78,11 +85,25 @@ public class RendererMixin {
 	private static final SpriteIdentifier CITRINE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/citrine_shield_base_nopattern"));
 
 	/**
+	 * Copper
+	 */
+	private ShieldEntityModel copperShieldModel;
+	private static final SpriteIdentifier COPPER_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/copper_shield_base"));
+	private static final SpriteIdentifier COPPER_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/copper_shield_base_nopattern"));
+
+	/**
 	 * Corundum
 	 */
 	private ShieldEntityModel corundumShieldModel;
 	private static final SpriteIdentifier CORUNDUM_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/corundum_shield_base"));
 	private static final SpriteIdentifier CORUNDUM_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/corundum_shield_base_nopattern"));
+
+	/**
+	 * Emerald
+	 */
+	private ShieldEntityModel emeraldShieldModel;
+	private static final SpriteIdentifier EMERALD_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/emerald_shield_base"));
+	private static final SpriteIdentifier EMERALD_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/emerald_shield_base_nopattern"));
 
 	/**
 	 * Kunzite
@@ -99,11 +120,32 @@ public class RendererMixin {
 	private static final SpriteIdentifier MOISSANITE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/moissanite_shield_base_nopattern"));
 
 	/**
+	 * Obsidian
+	 */
+	private ShieldEntityModel obsidianShieldModel;
+	private static final SpriteIdentifier OBSIDIAN_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/obsidian_shield_base"));
+	private static final SpriteIdentifier OBSIDIAN_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/obsidian_shield_base_nopattern"));
+
+	/**
+	 * Quartz
+	 */
+	private ShieldEntityModel quartzShieldModel;
+	private static final SpriteIdentifier QUARTZ_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/quartz_shield_base"));
+	private static final SpriteIdentifier QUARTZ_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/quartz_shield_base_nopattern"));
+
+	/**
 	 * Spinel
 	 */
 	private ShieldEntityModel spinelShieldModel;
 	private static final SpriteIdentifier SPINEL_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/spinel_shield_base"));
 	private static final SpriteIdentifier SPINEL_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/spinel_shield_base_nopattern"));
+
+	/**
+	 * Steel
+	 */
+	private ShieldEntityModel steelShieldModel;
+	private static final SpriteIdentifier STEEL_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/steel_shield_base"));
+	private static final SpriteIdentifier STEEL_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/steel_shield_base_nopattern"));
 
 	/**
 	 * Topaz
@@ -215,6 +257,13 @@ public class RendererMixin {
 		}
 
 		/**
+		 * Amethyst
+		 */
+		if(BasicShields.amethyst.isLoaded()) {
+			amethystShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.amethyst_shield_model_layer));
+		}
+
+		/**
 		 * Bronze
 		 */
 		if(BasicShields.bronze.isLoaded()) {
@@ -236,10 +285,24 @@ public class RendererMixin {
 		}
 
 		/**
+		 * Copper
+		 */
+		if(BasicShields.copper.isLoaded()) {
+			copperShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.copper_shield_model_layer));
+		}
+
+		/**
 		 * Corundum
 		 */
 		if(BasicShields.corundum.isLoaded()) {
 			corundumShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.corundum_shield_model_layer));
+		}
+
+		/**
+		 * Emerald
+		 */
+		if(BasicShields.emerald.isLoaded()) {
+			emeraldShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.emerald_shield_model_layer));
 		}
 
 		/**
@@ -257,10 +320,31 @@ public class RendererMixin {
 		}
 
 		/**
+		 * Obsidian
+		 */
+		if(BasicShields.obsidian.isLoaded()) {
+			obsidianShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.obsidian_shield_model_layer));
+		}
+
+		/**
+		 * Quartz
+		 */
+		if(BasicShields.quartz.isLoaded()) {
+			quartzShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.quartz_shield_model_layer));
+		}
+
+		/**
 		 * Spinel
 		 */
 		if(BasicShields.spinel.isLoaded()) {
 			spinelShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.spinel_shield_model_layer));
+		}
+
+		/**
+		 * Steel
+		 */
+		if(BasicShields.steel.isLoaded()) {
+			steelShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.steel_shield_model_layer));
 		}
 
 		/**
@@ -370,6 +454,15 @@ public class RendererMixin {
 		}
 
 		/**
+		 * Amethyst
+		 */
+		if(BasicShields.amethyst.isLoaded()) {
+			if (stack.isOf(BasicShields.amethyst.amethyst_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, amethystShieldModel, AMETHYST_SHIELD_BASE, AMETHYST_SHIELD_BASE_NO_PATTERN);
+			}
+		}
+
+		/**
 		 * Bronze
 		 */
 		if(BasicShields.bronze.isLoaded()) {
@@ -397,11 +490,29 @@ public class RendererMixin {
 		}
 
 		/**
+		 * Copper
+		 */
+		if(BasicShields.copper.isLoaded()) {
+			if (stack.isOf(BasicShields.copper.copper_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, copperShieldModel, COPPER_SHIELD_BASE, COPPER_SHIELD_BASE_NO_PATTERN);
+			}
+		}
+
+		/**
 		 * Corundum
 		 */
 		if(BasicShields.corundum.isLoaded()) {
 			if (stack.isOf(BasicShields.corundum.corundum_shield.getItem())) {
 				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, corundumShieldModel, CORUNDUM_SHIELD_BASE, CORUNDUM_SHIELD_BASE_NO_PATTERN);
+			}
+		}
+
+		/**
+		 * Emerald
+		 */
+		if(BasicShields.emerald.isLoaded()) {
+			if (stack.isOf(BasicShields.emerald.emerald_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, emeraldShieldModel, EMERALD_SHIELD_BASE, EMERALD_SHIELD_BASE_NO_PATTERN);
 			}
 		}
 
@@ -424,11 +535,38 @@ public class RendererMixin {
 		}
 
 		/**
+		 * Obsidian
+		 */
+		if(BasicShields.obsidian.isLoaded()) {
+			if (stack.isOf(BasicShields.obsidian.obsidian_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, obsidianShieldModel, OBSIDIAN_SHIELD_BASE, OBSIDIAN_SHIELD_BASE_NO_PATTERN);
+			}
+		}
+
+		/**
+		 * Quartz
+		 */
+		if(BasicShields.quartz.isLoaded()) {
+			if (stack.isOf(BasicShields.quartz.quartz_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, quartzShieldModel, QUARTZ_SHIELD_BASE, QUARTZ_SHIELD_BASE_NO_PATTERN);
+			}
+		}
+
+		/**
 		 * Spinel
 		 */
 		if(BasicShields.spinel.isLoaded()) {
 			if (stack.isOf(BasicShields.spinel.spinel_shield.getItem())) {
 				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, spinelShieldModel, SPINEL_SHIELD_BASE, SPINEL_SHIELD_BASE_NO_PATTERN);
+			}
+		}
+
+		/**
+		 * Steel
+		 */
+		if(BasicShields.steel.isLoaded()) {
+			if (stack.isOf(BasicShields.steel.steel_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, steelShieldModel, STEEL_SHIELD_BASE, STEEL_SHIELD_BASE_NO_PATTERN);
 			}
 		}
 

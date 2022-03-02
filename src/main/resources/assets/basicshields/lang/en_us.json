@@ -594,6 +594,9 @@
   "itemGroup.basicshields.shields": "Basic Shields",
 
   "text.autoconfig.basicshields.title":"Basic Shields: Config",
+  "text.autoconfig.basicshields.category.modules":"Modules",
+  "text.autoconfig.basicshields.category.stats":"Stats",
+
   "text.autoconfig.basicshields.option.vanilla_wooden_shield_durability":"Wooden Shield Durability",
   "text.autoconfig.basicshields.option.vanilla_wooden_shield_enchantability":"Wooden Shield Enchantability",
   "text.autoconfig.basicshields.option.vanilla_wooden_shield_cooldown":"Wooden Shield Cooldown",

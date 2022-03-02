@@ -78,9 +78,11 @@ public class BasicShields implements ModInitializer {
 		citrine = 		new CitrineModule(		CONFIG.always_load_citrine, 	"more_gems");
 		corundum = 		new CorundumModule(     CONFIG.always_load_corundum, 	"more_gems");
 		kunzite =		new KunziteModule(      CONFIG.always_load_kunzite, 	"more_gems");
+		moissanite = 	new MoissaniteModule(   CONFIG.always_load_moissanite, 	"more_gems");
 		ruby =			new RubyModule(			CONFIG.always_load_ruby, 		"techreborn", "emerald_tools");
 		peridot = 		new PeridotModule(		CONFIG.always_load_peridot,		"techreborn");
 		sapphire = 		new SapphireModule(		CONFIG.always_load_sapphire,	"techreborn", "more_gems");
+		spinel = 		new SpinelModule(       CONFIG.always_load_spinel, 		"more_gems");
 		adabranium = 	new AdabraniumModule(	CONFIG.always_load_adabranium, 	"adabraniummod");
 		gobber =		new GobberModule(		CONFIG.always_load_gobber, 		"gobber2");
 

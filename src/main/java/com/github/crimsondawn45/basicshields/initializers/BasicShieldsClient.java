@@ -35,6 +35,10 @@ public class BasicShieldsClient implements ClientModInitializer {
     public static final EntityModelLayer corundum_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "corundum_shield"),"main");
     //Kunzite
     public static final EntityModelLayer kunzite_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "kunzite_shield"),"main");
+    //Moissanite
+    public static final EntityModelLayer moissanite_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "moissanite_shield"),"main");
+    //Spinel
+    public static final EntityModelLayer spinel_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "spinel_shield"),"main");
 
     //Adabranium
     public static final EntityModelLayer nether_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "nether_shield"),"main");
@@ -211,6 +215,34 @@ public class BasicShieldsClient implements ClientModInitializer {
             ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/kunzite_shield_base"));
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/kunzite_shield_base_nopattern"));
+            });
+		}
+
+        /**
+         * Moissanite
+         */
+        if(BasicShields.moissanite.isLoaded()) {
+
+            //Moissanite
+            EntityModelLayerRegistry.registerModelLayer(moissanite_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+
+            ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/moissanite_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/moissanite_shield_base_nopattern"));
+            });
+		}
+
+        /**
+         * Spinel
+         */
+        if(BasicShields.spinel.isLoaded()) {
+
+            //Spinel
+            EntityModelLayerRegistry.registerModelLayer(spinel_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+
+            ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/spinel_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/spinel_shield_base_nopattern"));
             });
 		}
 

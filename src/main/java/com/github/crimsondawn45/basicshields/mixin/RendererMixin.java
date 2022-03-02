@@ -90,6 +90,20 @@ public class RendererMixin {
 	private ShieldEntityModel kunziteShieldModel;
 	private static final SpriteIdentifier KUNZITE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/kunzite_shield_base"));
 	private static final SpriteIdentifier KUNZITE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/kunzite_shield_base_nopattern"));
+
+	/**
+	 * Moissanite
+	 */
+	private ShieldEntityModel moissaniteShieldModel;
+	private static final SpriteIdentifier MOISSANITE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/moissanite_shield_base"));
+	private static final SpriteIdentifier MOISSANITE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/moissanite_shield_base_nopattern"));
+
+	/**
+	 * Spinel
+	 */
+	private ShieldEntityModel spinelShieldModel;
+	private static final SpriteIdentifier SPINEL_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/spinel_shield_base"));
+	private static final SpriteIdentifier SPINEL_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/spinel_shield_base_nopattern"));
 	
 	/**
 	 * Ruby
@@ -219,6 +233,20 @@ public class RendererMixin {
 		 */
 		if(BasicShields.kunzite.isLoaded()) {
 			kunziteShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.kunzite_shield_model_layer));
+		}
+
+		/**
+		 * Moissanite
+		 */
+		if(BasicShields.moissanite.isLoaded()) {
+			moissaniteShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.moissanite_shield_model_layer));
+		}
+
+		/**
+		 * Spinel
+		 */
+		if(BasicShields.spinel.isLoaded()) {
+			spinelShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.spinel_shield_model_layer));
 		}
 		
 		/**
@@ -355,6 +383,24 @@ public class RendererMixin {
 		if(BasicShields.kunzite.isLoaded()) {
 			if (stack.isOf(BasicShields.kunzite.kunzite_shield.getItem())) {
 				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, kunziteShieldModel, KUNZITE_SHIELD_BASE, KUNZITE_SHIELD_BASE_NO_PATTERN);
+			}
+		}
+
+		/**
+		 * Moissanite
+		 */
+		if(BasicShields.moissanite.isLoaded()) {
+			if (stack.isOf(BasicShields.moissanite.moissanite_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, moissaniteShieldModel, MOISSANITE_SHIELD_BASE, MOISSANITE_SHIELD_BASE_NO_PATTERN);
+			}
+		}
+
+		/**
+		 * Spinel
+		 */
+		if(BasicShields.spinel.isLoaded()) {
+			if (stack.isOf(BasicShields.spinel.spinel_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, spinelShieldModel, SPINEL_SHIELD_BASE, SPINEL_SHIELD_BASE_NO_PATTERN);
 			}
 		}
 

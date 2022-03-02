@@ -76,6 +76,20 @@ public class RendererMixin {
 	private ShieldEntityModel citrineShieldModel;
 	private static final SpriteIdentifier CITRINE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/citrine_shield_base"));
 	private static final SpriteIdentifier CITRINE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/citrine_shield_base_nopattern"));
+
+	/**
+	 * Corundum
+	 */
+	private ShieldEntityModel corundumShieldModel;
+	private static final SpriteIdentifier CORUNDUM_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/corundum_shield_base"));
+	private static final SpriteIdentifier CORUNDUM_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/corundum_shield_base_nopattern"));
+
+	/**
+	 * Kunzite
+	 */
+	private ShieldEntityModel kunziteShieldModel;
+	private static final SpriteIdentifier KUNZITE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/kunzite_shield_base"));
+	private static final SpriteIdentifier KUNZITE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID,"entity/kunzite_shield_base_nopattern"));
 	
 	/**
 	 * Ruby
@@ -191,6 +205,20 @@ public class RendererMixin {
 		 */
 		if(BasicShields.citrine.isLoaded()) {
 			citrineShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.citrine_shield_model_layer));
+		}
+
+		/**
+		 * Corundum
+		 */
+		if(BasicShields.corundum.isLoaded()) {
+			corundumShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.corundum_shield_model_layer));
+		}
+
+		/**
+		 * Kunzite
+		 */
+		if(BasicShields.kunzite.isLoaded()) {
+			kunziteShieldModel = new ShieldEntityModel(this.entityModelLoader.getModelPart(BasicShieldsClient.kunzite_shield_model_layer));
 		}
 		
 		/**
@@ -309,6 +337,24 @@ public class RendererMixin {
 		if(BasicShields.citrine.isLoaded()) {
 			if (stack.isOf(BasicShields.citrine.citrine_shield.getItem())) {
 				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, citrineShieldModel, CITRINE_SHIELD_BASE, CITRINE_SHIELD_BASE_NO_PATTERN);
+			}
+		}
+
+		/**
+		 * Corundum
+		 */
+		if(BasicShields.corundum.isLoaded()) {
+			if (stack.isOf(BasicShields.corundum.corundum_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, corundumShieldModel, CORUNDUM_SHIELD_BASE, CORUNDUM_SHIELD_BASE_NO_PATTERN);
+			}
+		}
+
+		/**
+		 * Kunzite
+		 */
+		if(BasicShields.kunzite.isLoaded()) {
+			if (stack.isOf(BasicShields.kunzite.kunzite_shield.getItem())) {
+				FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, kunziteShieldModel, KUNZITE_SHIELD_BASE, KUNZITE_SHIELD_BASE_NO_PATTERN);
 			}
 		}
 

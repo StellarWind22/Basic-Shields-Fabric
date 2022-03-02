@@ -40,7 +40,7 @@ public class BasicShields implements ModInitializer {
 	public static BronzeModule bronze;
 	public static CarbonadoModule carbonado;
 	public static CitrineModule citrine;
-	public static CorundumModule corundumModule;
+	public static CorundumModule corundum;
 	public static KunziteModule kunzite;
 	public static MoissaniteModule moissanite;
 	public static RubyModule ruby;
@@ -68,12 +68,17 @@ public class BasicShields implements ModInitializer {
         CONFIG = AutoConfig.getConfigHolder(BasicShieldsConfig.class).getConfig();   //Read config data
 		
 		//Initialize Modules
+		/**
+		 * Information on what mods use what materials mostly comes from here https://www.fabricmc.net/wiki/tutorial:tags
+		 */
 		vanilla = 		new VanillaModule();
 		alexandrite =	new AlexandriteModule(	CONFIG.always_load_alexandrite, "more_gems");
 		bronze = 		new BronzeModule(		CONFIG.always_load_bronze, 		"techreborn", "astromine", "mythicmetals", "texp", "mw", "modern_industrialization", "indrev");
 		carbonado =		new CarbonadoModule(	CONFIG.always_load_carbonado, 	"more_gems");
 		citrine = 		new CitrineModule(		CONFIG.always_load_citrine, 	"more_gems");
-		ruby =			new RubyModule(			CONFIG.always_load_ruby, 		"techreborn");
+		corundum = 		new CorundumModule(     CONFIG.always_load_corundum, 	"more_gems");
+		kunzite =		new KunziteModule(      CONFIG.always_load_kunzite, 	"more_gems");
+		ruby =			new RubyModule(			CONFIG.always_load_ruby, 		"techreborn", "emerald_tools");
 		peridot = 		new PeridotModule(		CONFIG.always_load_peridot,		"techreborn");
 		sapphire = 		new SapphireModule(		CONFIG.always_load_sapphire,	"techreborn", "more_gems");
 		adabranium = 	new AdabraniumModule(	CONFIG.always_load_adabranium, 	"adabraniummod");

@@ -31,6 +31,10 @@ public class BasicShieldsClient implements ClientModInitializer {
     public static final EntityModelLayer carbonado_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "carbonado_shield"),"main");
     //Citrine
     public static final EntityModelLayer citrine_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "citrine_shield"),"main");
+    //Corundum
+    public static final EntityModelLayer corundum_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "corundum_shield"),"main");
+    //Kunzite
+    public static final EntityModelLayer kunzite_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "kunzite_shield"),"main");
 
     //Adabranium
     public static final EntityModelLayer nether_shield_model_layer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, "nether_shield"),"main");
@@ -179,6 +183,34 @@ public class BasicShieldsClient implements ClientModInitializer {
             ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/citrine_shield_base"));
                 registry.register(new Identifier(BasicShields.MOD_ID, "entity/citrine_shield_base_nopattern"));
+            });
+		}
+
+        /**
+         * Corundum
+         */
+        if(BasicShields.corundum.isLoaded()) {
+
+            //Corundum
+            EntityModelLayerRegistry.registerModelLayer(corundum_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+
+            ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/corundum_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/corundum_shield_base_nopattern"));
+            });
+		}
+
+        /**
+         * Kunzite
+         */
+        if(BasicShields.kunzite.isLoaded()) {
+
+            //Kunzite
+            EntityModelLayerRegistry.registerModelLayer(kunzite_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+
+            ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/kunzite_shield_base"));
+                registry.register(new Identifier(BasicShields.MOD_ID, "entity/kunzite_shield_base_nopattern"));
             });
 		}
 

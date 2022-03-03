@@ -72,7 +72,7 @@ public class BasicShieldsConfig implements ConfigData {
     @ConfigEntry.Category("modules")
     public boolean always_load_gobber =                     false;
     @ConfigEntry.Category("stats")
-    public float gobber_reflect_percentage =                0.2F;       //TODO: make the tooltip match current setting
+    public float gobber_reflect_percentage =                0.2F;
         //Overworld
     @ConfigEntry.Category("stats")
     public boolean unbreakable_gobber_shield =              false;

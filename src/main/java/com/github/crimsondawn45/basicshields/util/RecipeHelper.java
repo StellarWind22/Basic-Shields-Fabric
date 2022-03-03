@@ -56,7 +56,7 @@ public class RecipeHelper {
      * 
      * @return a shield recipe in JsonObject form
      */
-    public static JsonObject createShieldRecipe(ArrayList<Tag.Identified<Item>> tags, Identifier output) {
+    public static JsonObject createShieldRecipe(ArrayList<Tag<Item>> tags, Identifier output) {
         //Creating a new json object, where we will store our recipe.
         JsonObject json = new JsonObject();
         //The "type" of the recipe we are creating. In this case, a shaped recipe.
@@ -81,9 +81,9 @@ public class RecipeHelper {
         keys.add("#", plankKey);
 
         //Create i key
-        for(Tag.Identified<Item> tag : tags) {
+        for(Tag<Item> tag : tags) {
             JsonObject entry = new JsonObject();
-            entry.addProperty("tag", tag.getId().toString());
+            entry.addProperty("tag", tag.toString());
             ingotKeyList.add(entry);
         }
         keys.add("i", ingotKeyList);

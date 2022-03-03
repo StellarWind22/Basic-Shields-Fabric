@@ -8,9 +8,8 @@ import com.github.crimsondawn45.basicshields.util.RecipeHelper;
 import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.tag.TagFactory;
 import net.minecraft.item.Item;
-import net.minecraft.tag.Tag.Identified;
+import net.minecraft.tag.Tag;
 import net.minecraft.util.Identifier;
 
 public class EmeraldModule extends ContentModule {
@@ -20,7 +19,7 @@ public class EmeraldModule extends ContentModule {
     public JsonObject emerald_shield_recipe;
 
     //Tag
-    public Identified<Item> emerald_tag;
+    public Tag<Item> emerald_tag;
 
     public EmeraldModule(boolean alwaysLoad, String...ids) {
         super(alwaysLoad, ids);

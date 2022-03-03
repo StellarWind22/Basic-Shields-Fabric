@@ -28,11 +28,10 @@ crowdintranslate.minecraftProjectName = "basicshields"
 crowdintranslate.verbose = false
 
 repositories {
-	maven { url = "https://jitpack.io" }
-	maven { url = "https://maven.modmuss50.me/" }
-	maven { url = "https://cursemaven.com" }
-	maven { url = "https://maven.shedaniel.me/" }
-	maven { url = "https://maven.terraformersmc.com/" }
+	maven { url = "https://jitpack.io" }					//Jitpack
+	maven { url = "https://maven.shedaniel.me/" }			//Cloth
+	maven { url = "https://maven.terraformersmc.com/" }		//Modmenu
+	maven { url = "https://minecraft.guntram.de/maven/"}	//Crowdlin
 }
 
 dependencies {

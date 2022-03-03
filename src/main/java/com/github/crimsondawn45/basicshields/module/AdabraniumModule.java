@@ -1,18 +1,18 @@
 package com.github.crimsondawn45.basicshields.module;
 
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
-import com.github.crimsondawn45.basicshields.object.BasicShieldItem;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.RecipeHelper;
+import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.tag.TagFactory;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
-import net.minecraft.tag.Tag.Identified;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class AdabraniumModule extends ContentModule {
 
@@ -26,8 +26,8 @@ public class AdabraniumModule extends ContentModule {
     public JsonObject nether_shield_recipe;
 
     //Tags
-    public Identified<Item> vibranium_tag;
-    public Identified<Item> adamantium_tag;
+    public TagKey<Item> vibranium_tag;
+    public TagKey<Item> adamantium_tag;
 
     public AdabraniumModule(boolean alwaysLoad, String...ids) {
         super(alwaysLoad, ids);
@@ -37,12 +37,12 @@ public class AdabraniumModule extends ContentModule {
     public void registerContent() {
 
         //Tags
-        vibranium_tag = TagFactory.ITEM.create(new Identifier("c","adabranium_vibranium_ingots"));
-        adamantium_tag = TagFactory.ITEM.create(new Identifier("c","adabranium_adamantium_ingots"));
+        vibranium_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c","vibranium_ingots"));
+        adamantium_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c","adamantium_ingots"));
         
         //Nether
         nether_shield = new ModItem("nether_shield",
-            new BasicShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.adabranium_nether_shield_durability).group(BasicShields.SHIELDS).fireproof(),
+            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.adabranium_nether_shield_durability).group(BasicShields.SHIELDS).fireproof(),
             BasicShields.CONFIG.adabranium_nether_shield_cooldown,
             BasicShields.CONFIG.adabranium_nether_shield_enchantability,
             Items.NETHER_BRICK));
@@ -50,18 +50,18 @@ public class AdabraniumModule extends ContentModule {
        
         //Vibranium
         vibranium_shield = new ModItem("vibranium_shield",
-            new BasicShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.adabranium_vibranium_shield_durability).group(BasicShields.SHIELDS),
+            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.adabranium_vibranium_shield_durability).group(BasicShields.SHIELDS),
             BasicShields.CONFIG.adabranium_vibranium_shield_cooldown,
             BasicShields.CONFIG.adabranium_vibranium_shield_enchantability,
             vibranium_tag));
-        vibranium_shield_recipe = RecipeHelper.createShieldRecipe(vibranium_tag.getId(), true, vibranium_shield.getIdentifier());
+        vibranium_shield_recipe = RecipeHelper.createShieldRecipe(vibranium_tag.id(), true, vibranium_shield.getIdentifier());
 
         //Adamantium
         adamantium_shield = new ModItem("adamantium_shield",
-            new BasicShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.adabranium_adamantium_shield_durability).group(BasicShields.SHIELDS),
+            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.adabranium_adamantium_shield_durability).group(BasicShields.SHIELDS),
             BasicShields.CONFIG.adabranium_adamantium_shield_cooldown,
             BasicShields.CONFIG.adabranium_adamantium_shield_enchantability,
             adamantium_tag));
-        adamantium_shield_recipe = RecipeHelper.createShieldRecipe(adamantium_tag.getId(), true, adamantium_shield.getIdentifier());
+        adamantium_shield_recipe = RecipeHelper.createShieldRecipe(adamantium_tag.id(), true, adamantium_shield.getIdentifier());
     }
 }

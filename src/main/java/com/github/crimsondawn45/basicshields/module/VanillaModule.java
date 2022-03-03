@@ -8,11 +8,11 @@ import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldIte
 import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.tag.TagFactory;
 import net.minecraft.item.Item;
 import net.minecraft.tag.ItemTags;
-import net.minecraft.tag.Tag.Identified;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class VanillaModule extends ContentModule {
 
@@ -29,17 +29,17 @@ public class VanillaModule extends ContentModule {
     public JsonObject netherite_shield_recipe;
 
     //Tags
-    public Identified<Item> gold_tag;
-    public Identified<Item> diamond_tag;
-    public Identified<Item> netherite_tag;
+    public TagKey<Item> gold_tag;
+    public TagKey<Item> diamond_tag;
+    public TagKey<Item> netherite_tag;
 
     @Override
     public void registerContent() {
 
         //Tags
-        gold_tag = TagFactory.ITEM.create(new Identifier("c", "gold_ingots"));
-        diamond_tag = TagFactory.ITEM.create(new Identifier("c","diamonds"));
-        netherite_tag = TagFactory.ITEM.create(new Identifier("c", "netherite_ingots"));
+        gold_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "gold_ingots"));
+        diamond_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c","diamonds"));
+        netherite_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "netherite_ingots"));
 
         //Wood
         wooden_shield = new ModItem("wooden_shield",
@@ -49,7 +49,7 @@ public class VanillaModule extends ContentModule {
             ItemTags.LOGS));
 
         //Recipe
-        wooden_shield_recipe = RecipeHelper.createShieldRecipe(ItemTags.LOGS.getId(), true, wooden_shield.getIdentifier());
+        wooden_shield_recipe = RecipeHelper.createShieldRecipe(ItemTags.LOGS.id(), true, wooden_shield.getIdentifier());
 
         //Gold
 		golden_shield = new ModItem("golden_shield",
@@ -59,7 +59,7 @@ public class VanillaModule extends ContentModule {
             gold_tag));
 
         //Recipe
-        golden_shield_recipe = RecipeHelper.createShieldRecipe(gold_tag.getId(), true, golden_shield.getIdentifier());
+        golden_shield_recipe = RecipeHelper.createShieldRecipe(gold_tag.id(), true, golden_shield.getIdentifier());
 
         //Diamond
 		diamond_shield = new ModItem("diamond_shield",
@@ -69,7 +69,7 @@ public class VanillaModule extends ContentModule {
             diamond_tag));
 
         //Recipe
-        diamond_shield_recipe = RecipeHelper.createShieldRecipe(diamond_tag.getId(), true, diamond_shield.getIdentifier());
+        diamond_shield_recipe = RecipeHelper.createShieldRecipe(diamond_tag.id(), true, diamond_shield.getIdentifier());
 
         //Netherite
 		netherite_shield = new ModItem("netherite_shield",
@@ -79,6 +79,6 @@ public class VanillaModule extends ContentModule {
             netherite_tag));
 
         //Recipe
-        netherite_shield_recipe = RecipeHelper.createSmithingRecipe(diamond_shield.getIdentifier(), false, netherite_tag.getId(), true, netherite_shield.getIdentifier());
+        netherite_shield_recipe = RecipeHelper.createSmithingRecipe(diamond_shield.getIdentifier(), false, netherite_tag.id(), true, netherite_shield.getIdentifier());
     }
 }

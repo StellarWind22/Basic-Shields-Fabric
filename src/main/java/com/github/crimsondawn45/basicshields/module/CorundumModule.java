@@ -1,17 +1,17 @@
 package com.github.crimsondawn45.basicshields.module;
 
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
-import com.github.crimsondawn45.basicshields.object.BasicShieldItem;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.RecipeHelper;
+import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.tag.TagFactory;
 import net.minecraft.item.Item;
-import net.minecraft.tag.Tag.Identified;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class CorundumModule extends ContentModule {
 
@@ -20,7 +20,7 @@ public class CorundumModule extends ContentModule {
     public JsonObject corundum_shield_recipe;
 
     //Tag
-    public Identified<Item> corundum_tag;
+    public TagKey<Item> corundum_tag;
 
     public CorundumModule(boolean alwaysLoad, String...ids) {
         super(alwaysLoad, ids);
@@ -30,17 +30,16 @@ public class CorundumModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        corundum_tag = TagFactory.ITEM.create(new Identifier("c","corundums"));
+        corundum_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "corundum"));
 
         //Item
         corundum_shield = new ModItem("corundum_shield",
-        new BasicShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.corundum_shield_durability).group(BasicShields.SHIELDS),
+        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.corundum_shield_durability).group(BasicShields.SHIELDS),
         BasicShields.CONFIG.corundum_shield_cooldown,
         BasicShields.CONFIG.corundum_shield_enchantability,
         corundum_tag));
 
         //Recipe
-        corundum_shield_recipe = RecipeHelper.createShieldRecipe(corundum_tag.getId(), true, corundum_shield.getIdentifier());
+        corundum_shield_recipe = RecipeHelper.createShieldRecipe(corundum_tag.id(), true, corundum_shield.getIdentifier());
     }
-    
 }

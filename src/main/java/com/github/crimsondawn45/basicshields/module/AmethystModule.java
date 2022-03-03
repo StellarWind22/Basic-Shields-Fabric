@@ -1,26 +1,26 @@
 package com.github.crimsondawn45.basicshields.module;
 
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
-import com.github.crimsondawn45.basicshields.object.BasicShieldItem;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.RecipeHelper;
+import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.tag.TagFactory;
 import net.minecraft.item.Item;
-import net.minecraft.tag.Tag.Identified;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class AmethystModule extends ContentModule {
 
-    //Amethyst Stuff
+    //Bronze Stuff
     public ModItem amethyst_shield;
     public JsonObject amethyst_shield_recipe;
 
     //Tag
-    public Identified<Item> amethyst_tag;
+    public TagKey<Item> amethyst_tag;
 
     public AmethystModule(boolean alwaysLoad, String...ids) {
         super(alwaysLoad, ids);
@@ -30,16 +30,16 @@ public class AmethystModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        amethyst_tag = TagFactory.ITEM.create(new Identifier("c","amethyst_ingots"));
+        amethyst_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "amethyst"));
 
         //Item
         amethyst_shield = new ModItem("amethyst_shield",
-        new BasicShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.amethyst_shield_durability).group(BasicShields.SHIELDS),
+        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.amethyst_shield_durability).group(BasicShields.SHIELDS),
         BasicShields.CONFIG.amethyst_shield_cooldown,
         BasicShields.CONFIG.amethyst_shield_enchantability,
         amethyst_tag));
 
         //Recipe
-        amethyst_shield_recipe = RecipeHelper.createShieldRecipe(amethyst_tag.getId(), true, amethyst_shield.getIdentifier());
+        amethyst_shield_recipe = RecipeHelper.createShieldRecipe(amethyst_tag.id(), true, amethyst_shield.getIdentifier());
     }
 }

@@ -10,7 +10,7 @@ import net.minecraft.item.BannerItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
-import net.minecraft.tag.Tag;
+import net.minecraft.tag.TagKey;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
@@ -28,7 +28,7 @@ public class GobberShieldItem extends FabricBannerShieldItem {
         this.reflectPercentage = reflectPercentage;
     }
 
-    public GobberShieldItem(Settings settings, int cooldownTicks, int enchantability, float reflectPercentage, boolean unbreakable, Tag<Item> repairItemTag) {
+    public GobberShieldItem(Settings settings, int cooldownTicks, int enchantability, float reflectPercentage, boolean unbreakable, TagKey<Item> repairItemTag) {
         super(settings, cooldownTicks, enchantability, repairItemTag);
         this.unbreakable = unbreakable;
         this.reflectPercentage = reflectPercentage;
@@ -40,7 +40,7 @@ public class GobberShieldItem extends FabricBannerShieldItem {
         this.reflectPercentage = reflectPercentage;
     }
 
-    public GobberShieldItem(Settings settings, int cooldownTicks, int enchantability, float reflectPercentage, boolean unbreakable, List<Tag<Item>> repairItemTags) {
+    public GobberShieldItem(Settings settings, int cooldownTicks, int enchantability, float reflectPercentage, boolean unbreakable, List<TagKey<Item>> repairItemTags) {
         super(settings, cooldownTicks, enchantability, repairItemTags);
         this.unbreakable = unbreakable;
         this.reflectPercentage = reflectPercentage;
@@ -64,4 +64,8 @@ public class GobberShieldItem extends FabricBannerShieldItem {
 			stack.getOrCreateNbt().putBoolean("Unbreakable", true);
 		}
 	}
+
+    public float getReflectPercentage() {
+        return this.reflectPercentage;
+    }
 }

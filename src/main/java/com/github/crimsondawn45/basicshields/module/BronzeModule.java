@@ -7,10 +7,8 @@ import com.github.crimsondawn45.basicshields.util.RecipeHelper;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 import com.google.gson.JsonObject;
 
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider.FabricTagBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
-import net.minecraft.tag.Tag;
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -42,6 +40,6 @@ public class BronzeModule extends ContentModule {
         bronze_tag));
 
         //Recipe
-        bronze_shield_recipe = RecipeHelper.createShieldRecipe(bronze_tag.getId(), true, bronze_shield.getIdentifier());
+        bronze_shield_recipe = RecipeHelper.createShieldRecipe(bronze_tag.id(), true, bronze_shield.getIdentifier());
     }
 }

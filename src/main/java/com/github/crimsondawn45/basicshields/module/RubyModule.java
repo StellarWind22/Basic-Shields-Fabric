@@ -1,17 +1,17 @@
 package com.github.crimsondawn45.basicshields.module;
 
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
-import com.github.crimsondawn45.basicshields.object.BasicShieldItem;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.RecipeHelper;
+import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.tag.TagFactory;
 import net.minecraft.item.Item;
-import net.minecraft.tag.Tag.Identified;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class RubyModule extends ContentModule {
 
@@ -20,7 +20,7 @@ public class RubyModule extends ContentModule {
     public JsonObject ruby_shield_recipe;
 
     //Ruby tag
-    public Identified<Item> ruby_tag;
+    public TagKey<Item> ruby_tag;
 
     public RubyModule(boolean alwaysLoad, String...ids) {
         super(alwaysLoad, ids);
@@ -30,16 +30,16 @@ public class RubyModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        ruby_tag = TagFactory.ITEM.create(new Identifier("c","rubies"));
+        ruby_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c","rubies"));
         
         //Item
         ruby_shield = new ModItem("ruby_shield",
-        new BasicShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.ruby_shield_durability).group(BasicShields.SHIELDS),
+        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.ruby_shield_durability).group(BasicShields.SHIELDS),
         BasicShields.CONFIG.ruby_shield_cooldown,
         BasicShields.CONFIG.ruby_shield_enchantability,
         ruby_tag));
 
         //Recipe
-        ruby_shield_recipe = RecipeHelper.createShieldRecipe(ruby_tag.getId(), true, ruby_shield.getIdentifier());
+        ruby_shield_recipe = RecipeHelper.createShieldRecipe(ruby_tag.id(), true, ruby_shield.getIdentifier());
     }
 }

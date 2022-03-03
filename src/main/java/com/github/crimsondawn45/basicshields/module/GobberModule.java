@@ -9,14 +9,14 @@ import com.github.crimsondawn45.fabricshieldlib.lib.event.ShieldBlockCallback;
 import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.tag.TagFactory;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
-import net.minecraft.tag.Tag.Identified;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class GobberModule extends ContentModule {
     //Gobber Items
@@ -31,10 +31,10 @@ public class GobberModule extends ContentModule {
     public JsonObject gobber_dragon_shield_recipe;
 
     //Tags
-    public Identified<Item> gobber_tag;
-    public Identified<Item> gobber_nether_tag;
-    public Identified<Item> gobber_end_tag;
-    public Identified<Item> gobber_dragon_tag;
+    public TagKey<Item> gobber_tag;
+    public TagKey<Item> gobber_nether_tag;
+    public TagKey<Item> gobber_end_tag;
+    public TagKey<Item> gobber_dragon_tag;
 
     public GobberModule(boolean alwaysLoad, String...ids) {
         super(alwaysLoad, ids);
@@ -47,27 +47,28 @@ public class GobberModule extends ContentModule {
         ShieldBlockCallback.EVENT.register((defender, source, amount, hand, shield) -> {
 
             //All gobber shields reflect damage
-            if(shield.getItem().equals(gobber_nether_shield.getItem()) || shield.getItem().equals(gobber_shield.getItem()) || shield.getItem().equals(gobber_end_shield.getItem()) || shield.getItem().equals(gobber_dragon_shield.getItem())) {
-                
+            if(shield.getItem() instanceof GobberShieldItem) {
+
+                GobberShieldItem shieldInstance = (GobberShieldItem) shield.getItem();
                 Entity attacker = source.getAttacker();
                 assert attacker != null;
 
                 //Reflect damage because thats a more generic effect all gobber shields will have.
                 if(defender instanceof PlayerEntity) {
                     PlayerEntity player = (PlayerEntity) defender;
-                    attacker.damage(DamageSource.player(player), Math.round(amount * BasicShields.CONFIG.gobber_reflect_percentage));
+                    attacker.damage(DamageSource.player(player), Math.round(amount * shieldInstance.getReflectPercentage()));
                 } else {
-                    attacker.damage(DamageSource.mob(defender), Math.round(amount * BasicShields.CONFIG.gobber_reflect_percentage));
+                    attacker.damage(DamageSource.mob(defender), Math.round(amount * shieldInstance.getReflectPercentage()));
                 }
             }
             return ActionResult.PASS;
         });
 
         //Tags
-        gobber_tag = TagFactory.ITEM.create(new Identifier("c","gobber2_ingots"));
-        gobber_nether_tag = TagFactory.ITEM.create(new Identifier("c","gobber2_ingots_nether"));
-        gobber_end_tag = TagFactory.ITEM.create(new Identifier("c","gobber2_ingots_end"));
-        gobber_dragon_tag = TagFactory.ITEM.create(new Identifier("c","gobber2_dragon_stars"));
+        gobber_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c","gobber_ingots"));
+        gobber_nether_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c","gobber_nether_ingots"));
+        gobber_end_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c","gobber_end_ingots"));
+        gobber_dragon_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c","dragon_stars"));
 
         //Gobber
         gobber_shield = new ModItem("gobber_shield",
@@ -77,7 +78,7 @@ public class GobberModule extends ContentModule {
             BasicShields.CONFIG.gobber_reflect_percentage,
             BasicShields.CONFIG.unbreakable_gobber_shield,
             gobber_tag));
-        gobber_shield_recipe = RecipeHelper.createShieldRecipe(gobber_tag.getId(), true, gobber_shield.getIdentifier());
+        gobber_shield_recipe = RecipeHelper.createShieldRecipe(gobber_tag.id(), true, gobber_shield.getIdentifier());
 
         //Nether Gobber
         gobber_nether_shield = new ModItem("gobber_nether_shield",
@@ -87,7 +88,7 @@ public class GobberModule extends ContentModule {
             BasicShields.CONFIG.gobber_reflect_percentage,
             BasicShields.CONFIG.unbreakable_gobber_nether_shield,
             gobber_nether_tag));
-        gobber_nether_shield_recipe = RecipeHelper.createShieldRecipe(gobber_nether_tag.getId(), true, gobber_nether_shield.getIdentifier());
+        gobber_nether_shield_recipe = RecipeHelper.createShieldRecipe(gobber_nether_tag.id(), true, gobber_nether_shield.getIdentifier());
 
         //End Gobber
         gobber_end_shield = new ModItem("gobber_end_shield",
@@ -97,7 +98,7 @@ public class GobberModule extends ContentModule {
             BasicShields.CONFIG.gobber_reflect_percentage,
             BasicShields.CONFIG.unbreakable_gobber_end_shield,
             gobber_end_tag));
-        gobber_end_shield_recipe = RecipeHelper.createShieldRecipe(gobber_end_tag.getId(), false, gobber_end_shield.getIdentifier());
+        gobber_end_shield_recipe = RecipeHelper.createShieldRecipe(gobber_end_tag.id(), false, gobber_end_shield.getIdentifier());
 
         //Dragon Gobber
         gobber_dragon_shield = new ModItem("gobber_dragon_shield",
@@ -107,6 +108,6 @@ public class GobberModule extends ContentModule {
             BasicShields.CONFIG.gobber_reflect_percentage,
             BasicShields.CONFIG.unbreakable_gobber_dragon_shield,
             gobber_dragon_tag));
-        gobber_dragon_shield_recipe = RecipeHelper.createSmithingRecipe(gobber_end_shield.getIdentifier(), false, gobber_dragon_tag.getId(), true, gobber_dragon_shield.getIdentifier());
+        gobber_dragon_shield_recipe = RecipeHelper.createSmithingRecipe(gobber_end_shield.getIdentifier(), false, gobber_dragon_tag.id(), true, gobber_dragon_shield.getIdentifier());
     }
 }

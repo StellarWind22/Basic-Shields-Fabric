@@ -4,10 +4,12 @@ import java.util.List;
 
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BannerItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.tag.Tag.Identified;
+import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
@@ -16,31 +18,37 @@ import net.minecraft.world.World;
 public class GobberShieldItem extends BasicShieldItem {
 
     private boolean unbreakable;
+    private float reflectPercentage;
 
-    public GobberShieldItem(Settings settings, int cooldownTicks, int enchantability, boolean unbreakable, Item... repairItems) {
+    public GobberShieldItem(Settings settings, int cooldownTicks, int enchantability, float reflectPercentage, boolean unbreakable, Item... repairItems) {
         super(settings, cooldownTicks, enchantability, repairItems);
         this.unbreakable = unbreakable;
+        this.reflectPercentage = reflectPercentage;
     }
 
-    public GobberShieldItem(Settings settings, int cooldownTicks, int enchantability, boolean unbreakable, Identified<Item> repairItemTag) {
+    public GobberShieldItem(Settings settings, int cooldownTicks, int enchantability, float reflectPercentage, boolean unbreakable, Identified<Item> repairItemTag) {
         super(settings, cooldownTicks, enchantability, repairItemTag);
         this.unbreakable = unbreakable;
+        this.reflectPercentage = reflectPercentage;
     }
 
-    public GobberShieldItem(Settings settings, int cooldownTicks, int enchantability, boolean unbreakable, ToolMaterial repairMaterial) {
+    public GobberShieldItem(Settings settings, int cooldownTicks, int enchantability, float reflectPercentage, boolean unbreakable, ToolMaterial repairMaterial) {
         super(settings, cooldownTicks, repairMaterial);
         this.unbreakable = unbreakable;
+        this.reflectPercentage = reflectPercentage;
     }
 
-    public GobberShieldItem(Settings settings, int cooldownTicks, int enchantability, boolean unbreakable, List<Identified<Item>> repairItemTags) {
+    public GobberShieldItem(Settings settings, int cooldownTicks, int enchantability, float reflectPercentage, boolean unbreakable, List<Identified<Item>> repairItemTags) {
         super(settings, cooldownTicks, enchantability, repairItemTags);
         this.unbreakable = unbreakable;
+        this.reflectPercentage = reflectPercentage;
     }
 
     //Add reflection tooltip
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
-        tooltip.add(new TranslatableText("item.basicshields.gobber.tooltip.start").formatted(Formatting.GREEN));
+        tooltip.add(new TranslatableText("item.basicshields.gobber.tooltip.start").append(new LiteralText(String.valueOf(this.reflectPercentage * 100))).append(new TranslatableText("item.basicshields.gobber.tooltip.end")).formatted(Formatting.GREEN));
+        BannerItem.appendBannerTooltip(itemStack, tooltip);
     }
 
     //Make Unbreakable

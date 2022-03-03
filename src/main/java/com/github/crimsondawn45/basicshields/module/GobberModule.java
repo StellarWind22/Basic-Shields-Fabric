@@ -74,6 +74,7 @@ public class GobberModule extends ContentModule {
             new GobberShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.gobber_dragon_shield_durability).group(BasicShields.SHIELDS),
             BasicShields.CONFIG.gobber_shield_cooldown,
             BasicShields.CONFIG.gobber_shield_enchantability,
+            BasicShields.CONFIG.gobber_reflect_percentage,
             BasicShields.CONFIG.unbreakable_gobber_shield,
             gobber_tag));
         gobber_shield_recipe = RecipeHelper.createShieldRecipe(gobber_tag.getId(), true, gobber_shield.getIdentifier());
@@ -83,6 +84,7 @@ public class GobberModule extends ContentModule {
             new GobberShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.gobber_nether_shield_durability).group(BasicShields.SHIELDS),
             BasicShields.CONFIG.gobber_nether_shield_cooldown,
             BasicShields.CONFIG.gobber_nether_shield_enchantability,
+            BasicShields.CONFIG.gobber_reflect_percentage,
             BasicShields.CONFIG.unbreakable_gobber_nether_shield,
             gobber_nether_tag));
         gobber_nether_shield_recipe = RecipeHelper.createShieldRecipe(gobber_nether_tag.getId(), true, gobber_nether_shield.getIdentifier());
@@ -92,6 +94,7 @@ public class GobberModule extends ContentModule {
             new GobberShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.gobber_end_shield_durability).group(BasicShields.SHIELDS),
             BasicShields.CONFIG.gobber_end_shield_cooldown,
             BasicShields.CONFIG.gobber_end_shield_enchantability,
+            BasicShields.CONFIG.gobber_reflect_percentage,
             BasicShields.CONFIG.unbreakable_gobber_end_shield,
             gobber_end_tag));
         gobber_end_shield_recipe = RecipeHelper.createShieldRecipe(gobber_end_tag.getId(), false, gobber_end_shield.getIdentifier());
@@ -101,6 +104,7 @@ public class GobberModule extends ContentModule {
         new GobberShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.gobber_dragon_shield_durability).group(BasicShields.SHIELDS),
             BasicShields.CONFIG.gobber_dragon_shield_cooldown,
             BasicShields.CONFIG.gobber_dragon_shield_enchantability,
+            BasicShields.CONFIG.gobber_reflect_percentage,
             BasicShields.CONFIG.unbreakable_gobber_dragon_shield,
             gobber_dragon_tag));
         gobber_dragon_shield_recipe = RecipeHelper.createSmithingRecipe(gobber_end_shield.getIdentifier(), false, gobber_dragon_tag.getId(), true, gobber_dragon_shield.getIdentifier());

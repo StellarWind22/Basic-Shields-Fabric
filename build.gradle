@@ -31,7 +31,6 @@ repositories {
 	maven { url = "https://jitpack.io" }					//Jitpack
 	maven { url = "https://maven.shedaniel.me/" }			//Cloth
 	maven { url = "https://maven.terraformersmc.com/" }		//Modmenu
-	maven { url = "https://minecraft.guntram.de/maven/"}	//Crowdlin
 }
 
 dependencies {
@@ -53,12 +52,6 @@ dependencies {
 	modCompileOnly modRuntimeOnly ("com.terraformersmc:modmenu:${project.mod_menu_version}"), {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
-
-	//Have Crowdlin auto-check for translations at runtime
-	modImplementation("de.guntram.mcmod:crowdin-translate:${project.crowdlin_version}") {
-		exclude (group: "net.fabricmc.fabric-api")
-	}
-    include("de.guntram.mcmod:crowdin-translate:${project.crowdlin_version}")
 }
 
 processResources {

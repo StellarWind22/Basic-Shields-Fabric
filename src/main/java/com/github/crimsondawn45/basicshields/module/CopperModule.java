@@ -31,6 +31,9 @@ public class CopperModule extends ContentModule {
         //Tag
         copper_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "copper_ingots"));
 
+        //TODO: make shield oxidize
+        //TODO: make a way to wax the shield
+
         //Item
         copper_shield = new ModShieldItem(
             this,

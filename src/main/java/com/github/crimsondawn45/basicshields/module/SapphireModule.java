@@ -4,6 +4,7 @@ import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.ModRecipe;
+import com.github.crimsondawn45.basicshields.util.ModRef;
 import com.github.crimsondawn45.basicshields.util.ModShieldItem;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 
@@ -25,6 +26,8 @@ public class SapphireModule extends ContentModule {
         super(alwaysLoad, ids);
     }
 
+    //TODO: add variants for non-techreborn stuff
+
     @Override
     public void registerContent() {
 
@@ -37,7 +40,8 @@ public class SapphireModule extends ContentModule {
         BasicShields.CONFIG.sapphire_shield_cooldown,
         BasicShields.CONFIG.sapphire_shield_enchantability,
         sapphire_tag),
-        "entity/sapphire_shield_base");
+        new ModRef("techreborn", "entity/sapphire_shield_base_techreborn"),
+        new ModRef("more_gems", "entity/sapphire_shield_base_more_gems"));
 
         //Recipe
         this.addRecipe(sapphire_shield, ModRecipe.createShieldRecipe(sapphire_tag.id(), true, sapphire_shield.getIdentifier()));

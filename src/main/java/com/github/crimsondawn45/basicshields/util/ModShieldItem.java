@@ -23,7 +23,7 @@ import net.minecraft.util.Identifier;
 
 public class ModShieldItem extends ModItem {
 
-    private String shieldTexurePath = null;
+    private String shieldTexurePath;
     private List<ModRef> modRefs = new ArrayList<ModRef>();
 
     @Environment(EnvType.CLIENT)
@@ -56,31 +56,17 @@ public class ModShieldItem extends ModItem {
     public ModShieldItem(ContentModule module, String name, Item item, ModRef...modReferences) {
         super(module, name, item);
         module.addShield(this);
-        this.modRefs.addAll(modRefs);
+
+        for(ModRef ref : modReferences) {
+            this.modRefs.add(ref);
+        }
     }
 
     /**
-     * Figure out which texture path to use
-     * grabs the texture of the first reference that is loaded
+     * @param string sets the texture path
      */
-    @SuppressWarnings("deprecation")
-    @Environment(EnvType.CLIENT)
-    public void clientShieldInit() {
-        this.entityModelLayer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, this.getName()),"main");
-
-        if(this.shieldTexurePath == null) {
-
-            for(ModRef ref : this.modRefs) {
-
-                if(ref.isLoaded()) {
-                    this.shieldTexurePath = ref.getTexturePath();
-                    break;
-                }
-            }
-        }
-
-        this.shieldBaseSprite = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID, this.getBaseTexturePath()));
-        this.shieldNoPatternSprite = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID, this.getNoPatternTexturePath()));
+    private void setTexturePath(String string) {
+        this.shieldTexurePath = string.trim();
     }
 
     /**
@@ -97,6 +83,36 @@ public class ModShieldItem extends ModItem {
     @Environment(EnvType.CLIENT)
     public String getNoPatternTexturePath() {
         return this.shieldTexurePath + "_nopattern";
+    }
+
+    /**
+     * Figure out which texture path to use
+     * grabs the texture of the first reference that is loaded
+     */
+    @SuppressWarnings("deprecation")
+    @Environment(EnvType.CLIENT)
+    public void clientShieldInit() {
+        this.entityModelLayer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, this.getName()),"main");
+
+        //Try to load a texture from the modRefs
+        for(ModRef ref : this.modRefs) {
+
+            if(ref.isLoaded()) {
+                this.setTexturePath(ref.getTexturePath());
+                break;
+            }
+        }
+
+        //If none of the mods are loaded
+        if(this.getBaseTexturePath() == null) {
+            for(ModRef ref : this.modRefs) {
+                this.setTexturePath(ref.getTexturePath());
+                break;
+            }
+        }
+
+        this.shieldBaseSprite = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID, this.getBaseTexturePath()));
+        this.shieldNoPatternSprite = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID, this.getNoPatternTexturePath()));
     }
 
     /**

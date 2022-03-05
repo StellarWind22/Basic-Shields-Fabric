@@ -28,6 +28,8 @@ public class TopazModule extends ContentModule {
     @Override
     public void registerContent() {
 
+        //TODO: add variants for gems and crystals
+
         //Tag
         topaz_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "topaz"));
 

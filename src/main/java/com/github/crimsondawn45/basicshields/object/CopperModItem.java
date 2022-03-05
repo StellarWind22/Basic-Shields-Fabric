@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 
 public class CopperModItem extends ModShieldItem {
 
-    public CopperModItem(ContentModule module, String name, Item item, String normalShieldTexturePath) {
+    public CopperModItem(ContentModule module, String name, Item item, String normalShieldTexturePath, String exposedShieldTexturePath, String weatheredShieldTexturePath, String oxidizedShieldTexturePath) {
         super(module, name, item, normalShieldTexturePath);
     }
 

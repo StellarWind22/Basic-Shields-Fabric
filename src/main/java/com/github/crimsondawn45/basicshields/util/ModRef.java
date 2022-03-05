@@ -9,9 +9,9 @@ public class ModRef {
     private boolean isLoaded;
 
     public ModRef(String modId, String texturePath) {
-        this.modId = modId;
-        this.texturePath = texturePath;
-        this.isLoaded = FabricLoader.getInstance().isModLoaded(modId);
+        this.modId = modId.trim();
+        this.texturePath = texturePath.trim();
+        this.isLoaded = FabricLoader.getInstance().isModLoaded(this.getModId());
     }
 
     public String getModId() {

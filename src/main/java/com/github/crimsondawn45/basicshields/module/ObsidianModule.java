@@ -25,6 +25,8 @@ public class ObsidianModule extends ContentModule {
         super(alwaysLoad, isVanillaMaterial, ids);
     }
 
+    //TODO: add aether variant
+
     @Override
     public void registerContent() {
 

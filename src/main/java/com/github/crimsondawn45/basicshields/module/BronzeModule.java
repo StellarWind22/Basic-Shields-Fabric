@@ -28,6 +28,8 @@ public class BronzeModule extends ContentModule {
     @Override
     public void registerContent() {
 
+        //TODO: add variants for non-techreborn stuff
+
         //Tag
         bronze_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "bronze_ingots"));
 

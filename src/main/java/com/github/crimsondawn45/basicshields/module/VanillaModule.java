@@ -30,6 +30,11 @@ public class VanillaModule extends ContentModule {
     @Override
     public void registerContent() {
 
+        //TODO: add shield enchantments
+        //Reflection - reflects percentage of damage based on level max is 75% reflection max level is 3
+        //Quick Recovery - reduces cooldown of shields up to 50% Max level is 2
+        //Curse of Vulnerability - lets 33% of the damage though the shield
+
         //Tags
         gold_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "gold_ingots"));
         diamond_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c","diamonds"));

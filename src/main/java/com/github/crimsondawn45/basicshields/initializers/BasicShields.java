@@ -98,7 +98,7 @@ public class BasicShields implements ModInitializer {
 		emerald =		new EmeraldModule(		CONFIG.always_load_emerald, 	true, "emerald_tools", "gemsandcrystals", "enriched", "emeraldequipment");
 		kunzite =		new KunziteModule(      CONFIG.always_load_kunzite, 	"more_gems");
 		moissanite = 	new MoissaniteModule(   CONFIG.always_load_moissanite, 	"more_gems");
-		obsidian =		new ObsidianModule(		CONFIG.always_load_obsidian, 	true, "emerald_tools");
+		obsidian =		new ObsidianModule(		CONFIG.always_load_obsidian, 	true, "emerald_tools", "the_aether");
 		peridot = 		new PeridotModule(		CONFIG.always_load_peridot,		"techreborn");
 		quartz =		new QuartzModule( 		CONFIG.always_load_quartz, 		true, "gemsandcrystals");
 		ruby =			new RubyModule(			CONFIG.always_load_ruby, 		"techreborn", "emerald_tools", "gemsandcrystals", "enriched");

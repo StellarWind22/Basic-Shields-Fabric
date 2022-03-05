@@ -1,19 +1,10 @@
 package com.github.crimsondawn45.basicshields.module;
 
-import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
-import com.github.crimsondawn45.basicshields.util.ModRecipe;
-import com.github.crimsondawn45.basicshields.util.ModShieldItem;
-import com.github.crimsondawn45.fabricshieldlib.lib.event.ShieldBlockCallback;
-import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.tag.TagKey;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class AetherModule extends ContentModule {
 
@@ -37,6 +28,7 @@ public class AetherModule extends ContentModule {
 
     @Override
     public void registerContent() {
+        /*
 
         //Aether Shield Event
         ShieldBlockCallback.EVENT.register((defender, source, amount, hand, shield) -> {
@@ -124,5 +116,6 @@ public class AetherModule extends ContentModule {
 
         //Recipe
         this.addRecipe(legendary_shield, ModRecipe.createShieldRecipe(legendary_tag.id(), true, legendary_shield.getIdentifier()));
+        */
     }
 }

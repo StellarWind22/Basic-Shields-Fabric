@@ -40,8 +40,8 @@ public class SapphireModule extends ContentModule {
         BasicShields.CONFIG.sapphire_shield_cooldown,
         BasicShields.CONFIG.sapphire_shield_enchantability,
         sapphire_tag),
-        new ModRef("techreborn", "entity/sapphire_shield_base_techreborn"),
-        new ModRef("more_gems", "entity/sapphire_shield_base_more_gems"));
+        new ModRef("more_gems", "entity/sapphire_shield_base_more_gems"),
+        new ModRef("techreborn", "entity/sapphire_shield_base_techreborn"));
 
         //Recipe
         this.addRecipe(sapphire_shield, ModRecipe.createShieldRecipe(sapphire_tag.id(), true, sapphire_shield.getIdentifier()));

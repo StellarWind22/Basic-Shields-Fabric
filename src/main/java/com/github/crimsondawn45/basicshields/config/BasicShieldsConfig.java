@@ -9,7 +9,14 @@ import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
 @Config.Gui.CategoryBackground(category = "modules", background = "minecraft:textures/block/dirt.png")
 @Config.Gui.CategoryBackground(category = "stats", background = "minecraft:textures/block/dirt.png")
 @Config.Gui.CategoryBackground(category = "textures", background = "minecraft:textures/block/dirt.png")
+@Config.Gui.CategoryBackground(category = "enchantments", background = "minecraft:textures/block/dirt.png")
 public class BasicShieldsConfig implements ConfigData {
+
+    //Enchantments
+    @ConfigEntry.Category("enchantments")
+    public float reflection_percentage_per_level =          0.25F;
+    @ConfigEntry.Category("enchantments")
+    public float curse_of_vulnerability_damage_percentage = 0.33F;
 
     //Vanilla
         //Wooden
@@ -111,6 +118,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int gobber_dragon_shield_cooldown =              40;
 
     //Aether
+    /*
     @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_aether =                     false;
@@ -149,6 +157,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int legendary_shield_enchantability =            8;
     @ConfigEntry.Category("stats")
     public int legendary_shield_cooldown =                  100;
+    */
 
     //Bronze
     @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")

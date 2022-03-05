@@ -35,11 +35,11 @@
   ],
 
   "depends": {
-    "fabricshieldlib": ">=1.4.5-1.18",
-    "fabricloader": ">=0.12.12",
+    "fabricshieldlib": ">=1.5.3-1.18",
+    "fabricloader": ">=0.13.3",
     "fabric": "*",
     "minecraft": "1.18.x",
     "java": ">=17",
-    "cloth-config":">=6.1.48"
+    "cloth-config":">=6.2.57"
   }
 }

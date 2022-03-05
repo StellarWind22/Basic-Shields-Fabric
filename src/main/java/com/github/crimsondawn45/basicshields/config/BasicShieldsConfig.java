@@ -18,7 +18,7 @@ public class BasicShieldsConfig implements ConfigData {
     @ConfigEntry.Category("stats")
     public int vanilla_wooden_shield_enchantability =       15;
     @ConfigEntry.Category("stats")
-    public int vanilla_wooden_shield_cooldown =             110;
+    public int vanilla_wooden_shield_cooldown =             120;
         //Golden
     @ConfigEntry.Category("stats")
     public int vanilla_golden_shield_durability =           44;
@@ -65,7 +65,7 @@ public class BasicShieldsConfig implements ConfigData {
     @ConfigEntry.Category("stats")
     public int adabranium_adamantium_shield_enchantability= 10;
     @ConfigEntry.Category("stats")
-    public int adabranium_adamantium_shield_cooldown =      70;
+    public int adabranium_adamantium_shield_cooldown =      60;
 
     //Gobber
     @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
@@ -108,9 +108,9 @@ public class BasicShieldsConfig implements ConfigData {
     @ConfigEntry.Category("stats")
     public int gobber_dragon_shield_enchantability =        30;
     @ConfigEntry.Category("stats")
-    public int gobber_dragon_shield_cooldown =              50;
+    public int gobber_dragon_shield_cooldown =              40;
 
-    //Bronze
+    //Aether
     @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_aether =                     false;
@@ -172,7 +172,7 @@ public class BasicShieldsConfig implements ConfigData {
     @ConfigEntry.Category("stats")
     public int citrine_shield_enchantability =              14;
     @ConfigEntry.Category("stats")
-    public int citrine_shield_cooldown =                    90;
+    public int citrine_shield_cooldown =                    95;
 
     //Tourmaline
     @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
@@ -184,7 +184,7 @@ public class BasicShieldsConfig implements ConfigData {
     @ConfigEntry.Category("stats")
     public int tourmaline_shield_enchantability =           14;
     @ConfigEntry.Category("stats")
-    public int tourmaline_shield_cooldown =                 90;
+    public int tourmaline_shield_cooldown =                 95;
 
     //Kunzite
     @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
@@ -196,7 +196,7 @@ public class BasicShieldsConfig implements ConfigData {
     @ConfigEntry.Category("stats")
     public int kunzite_shield_enchantability =              14;
     @ConfigEntry.Category("stats")
-    public int kunzite_shield_cooldown =                    90;
+    public int kunzite_shield_cooldown =                    95;
 
     //Topaz
     @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
@@ -208,7 +208,7 @@ public class BasicShieldsConfig implements ConfigData {
     @ConfigEntry.Category("stats")
     public int topaz_shield_enchantability =                14;
     @ConfigEntry.Category("stats")
-    public int topaz_shield_cooldown =                      90;
+    public int topaz_shield_cooldown =                      95;
 
     //Alexandrite
     @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
@@ -220,7 +220,7 @@ public class BasicShieldsConfig implements ConfigData {
     @ConfigEntry.Category("stats")
     public int alexandrite_shield_enchantability =          14;
     @ConfigEntry.Category("stats")
-    public int alexandrite_shield_cooldown =                90;
+    public int alexandrite_shield_cooldown =                95;
 
     //Corundum
     @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
@@ -232,7 +232,7 @@ public class BasicShieldsConfig implements ConfigData {
     @ConfigEntry.Category("stats")
     public int corundum_shield_enchantability =             14;
     @ConfigEntry.Category("stats")
-    public int corundum_shield_cooldown =                   90;
+    public int corundum_shield_cooldown =                   95;
 
     //Spinel
     @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
@@ -244,7 +244,7 @@ public class BasicShieldsConfig implements ConfigData {
     @ConfigEntry.Category("stats")
     public int spinel_shield_enchantability =               14;
     @ConfigEntry.Category("stats")
-    public int spinel_shield_cooldown =                     90;
+    public int spinel_shield_cooldown =                     95;
 
     //Carbonado
     @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
@@ -280,7 +280,7 @@ public class BasicShieldsConfig implements ConfigData {
     @ConfigEntry.Category("stats")
     public int emerald_shield_enchantability =              10;
     @ConfigEntry.Category("stats")
-    public int emerald_shield_cooldown =                    100;
+    public int emerald_shield_cooldown =                    95;
 
     //Obsidian
     @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
@@ -292,7 +292,7 @@ public class BasicShieldsConfig implements ConfigData {
     @ConfigEntry.Category("stats")
     public int obsidian_shield_enchantability =             4;
     @ConfigEntry.Category("stats")
-    public int obsidian_shield_cooldown =                   100;
+    public int obsidian_shield_cooldown =                   110;
 
     //Steel
     @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
@@ -316,7 +316,7 @@ public class BasicShieldsConfig implements ConfigData {
     @ConfigEntry.Category("stats")
     public int tanzanite_shield_enchantability =              20;
     @ConfigEntry.Category("stats")
-    public int tanzanite_shield_cooldown =                    90;
+    public int tanzanite_shield_cooldown =                    95;
 
     //Amethyst
     @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
@@ -328,7 +328,7 @@ public class BasicShieldsConfig implements ConfigData {
     @ConfigEntry.Category("stats")
     public int amethyst_shield_enchantability =             25;
     @ConfigEntry.Category("stats")
-    public int amethyst_shield_cooldown =                   100;
+    public int amethyst_shield_cooldown =                   95;
 
     //Copper
     @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
@@ -340,7 +340,7 @@ public class BasicShieldsConfig implements ConfigData {
     @ConfigEntry.Category("stats")
     public int copper_shield_enchantability =               18;
     @ConfigEntry.Category("stats")
-    public int copper_shield_cooldown =                     100;
+    public int copper_shield_cooldown =                     105;
 
     //Peridot
     @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
@@ -364,7 +364,7 @@ public class BasicShieldsConfig implements ConfigData {
     @ConfigEntry.Category("stats")
     public int quartz_shield_enchantability =              9;
     @ConfigEntry.Category("stats")
-    public int quartz_shield_cooldown =                    90;
+    public int quartz_shield_cooldown =                    95;
 
     //Ruby
     @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
@@ -376,7 +376,7 @@ public class BasicShieldsConfig implements ConfigData {
     @ConfigEntry.Category("stats")
     public int ruby_shield_enchantability =                 10;
     @ConfigEntry.Category("stats")
-    public int ruby_shield_cooldown =                       90;
+    public int ruby_shield_cooldown =                       95;
 
     //Sapphire
     @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
@@ -388,5 +388,5 @@ public class BasicShieldsConfig implements ConfigData {
     @ConfigEntry.Category("stats")
     public int sapphire_shield_enchantability =             12;
     @ConfigEntry.Category("stats")
-    public int sapphire_shield_cooldown =                   90;
+    public int sapphire_shield_cooldown =                   95;
 }

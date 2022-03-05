@@ -8,6 +8,8 @@ import net.minecraft.util.registry.Registry;
 
 public class ModItem {
 
+    //TODO: make ShieldModItem that allows you to grab the textures the shield should display methods should be calculateTexturePath getTexturePath
+
     private String name;
     private Identifier identifier;
     private Item item;

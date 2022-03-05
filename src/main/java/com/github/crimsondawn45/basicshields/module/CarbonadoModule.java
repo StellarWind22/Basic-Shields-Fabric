@@ -3,9 +3,8 @@ package com.github.crimsondawn45.basicshields.module;
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
-import com.github.crimsondawn45.basicshields.util.RecipeHelper;
+import com.github.crimsondawn45.basicshields.util.ModRecipe;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
-import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -15,9 +14,8 @@ import net.minecraft.util.registry.Registry;
 
 public class CarbonadoModule extends ContentModule {
 
-    //Bronze Stuff
+    //Carbonado Stuff
     public ModItem carbonado_shield;
-    public JsonObject carbonado_shield_recipe;
 
     //Tag
     public TagKey<Item> carbonado_tag;
@@ -40,7 +38,6 @@ public class CarbonadoModule extends ContentModule {
         carbonado_tag));
 
         //Recipe
-        carbonado_shield_recipe = RecipeHelper.createShieldRecipe(carbonado_tag.id(), true, carbonado_shield.getIdentifier());
+        this.addRecipe(carbonado_shield, ModRecipe.createShieldRecipe(carbonado_tag.id(), true, carbonado_shield.getIdentifier()));
     }
-    
 }

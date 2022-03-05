@@ -2,31 +2,31 @@
   "replace": false,
   "values": [
     {
-      "id": "astromine:bronze_ingot",
+      "id": "astromine:steel_ingot",
       "required": false
     },
     {
-      "id": "indrev:bronze_ingot",
+      "id": "indrev:steel_ingot",
       "required": false
     },
     {
-      "id": "modern_industrialization:bronze_ingot",
+      "id": "modern_industrialization:steel_ingot",
       "required": false
     },
     {
-      "id": "mw:bronze_ingot",
+      "id": "mw:steel_ingot",
       "required": false
     },
     {
-      "id": "mythicmetals:bronze_ingot",
+      "id": "mythicmetals:steel_ingot",
       "required": false
     },
     {
-      "id": "techreborn:bronze_ingot",
+      "id": "techreborn:steel_ingot",
       "required": false
     },
     {
-      "id": "texp:bronze_ingot",
+      "id": "enriched:steel_ingot",
       "required": false
     }
   ]

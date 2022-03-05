@@ -3,9 +3,8 @@ package com.github.crimsondawn45.basicshields.module;
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
-import com.github.crimsondawn45.basicshields.util.RecipeHelper;
+import com.github.crimsondawn45.basicshields.util.ModRecipe;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
-import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -17,13 +16,12 @@ public class ObsidianModule extends ContentModule {
 
     //Obsidian Stuff
     public ModItem obsidian_shield;
-    public JsonObject obsidian_shield_recipe;
 
     //Tag
     public TagKey<Item> obsidian_tag;
 
-    public ObsidianModule(boolean alwaysLoad, String...ids) {
-        super(alwaysLoad, ids);
+    public ObsidianModule(boolean forceLoad, boolean isVanillaMaterial, String...ids) {
+        super(forceLoad, isVanillaMaterial, ids);
     }
 
     @Override
@@ -40,6 +38,6 @@ public class ObsidianModule extends ContentModule {
         obsidian_tag));
 
         //Recipe
-        obsidian_shield_recipe = RecipeHelper.createShieldRecipe(obsidian_tag.id(), true, obsidian_shield.getIdentifier());
+        this.addRecipe(obsidian_shield, ModRecipe.createShieldRecipe(obsidian_tag.id(), true, obsidian_shield.getIdentifier()));
     }
 }

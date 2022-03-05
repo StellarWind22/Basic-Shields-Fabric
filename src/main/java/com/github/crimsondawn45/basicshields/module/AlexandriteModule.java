@@ -3,9 +3,8 @@ package com.github.crimsondawn45.basicshields.module;
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
-import com.github.crimsondawn45.basicshields.util.RecipeHelper;
+import com.github.crimsondawn45.basicshields.util.ModRecipe;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
-import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -15,9 +14,8 @@ import net.minecraft.util.registry.Registry;
 
 public class AlexandriteModule extends ContentModule {
 
-    //Bronze Stuff
+    //Alexandrite Stuff
     public ModItem alexandrite_shield;
-    public JsonObject alexandrite_shield_recipe;
 
     //Tag
     public TagKey<Item> alexandrite_tag;
@@ -40,6 +38,6 @@ public class AlexandriteModule extends ContentModule {
         alexandrite_tag));
 
         //Recipe
-        alexandrite_shield_recipe = RecipeHelper.createShieldRecipe(alexandrite_tag.id(), true, alexandrite_shield.getIdentifier());
+        this.addRecipe(alexandrite_shield, ModRecipe.createShieldRecipe(alexandrite_tag.id(), true, alexandrite_shield.getIdentifier()));
     }
 }

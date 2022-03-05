@@ -3,9 +3,8 @@ package com.github.crimsondawn45.basicshields.module;
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
-import com.github.crimsondawn45.basicshields.util.RecipeHelper;
+import com.github.crimsondawn45.basicshields.util.ModRecipe;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
-import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -15,9 +14,8 @@ import net.minecraft.util.registry.Registry;
 
 public class MoissaniteModule extends ContentModule {
 
-    //Bronze Stuff
+    //Moissanite Stuff
     public ModItem moissanite_shield;
-    public JsonObject moissanite_shield_recipe;
 
     //Tag
     public TagKey<Item> moissanite_tag;
@@ -40,7 +38,6 @@ public class MoissaniteModule extends ContentModule {
         moissanite_tag));
 
         //Recipe
-        moissanite_shield_recipe = RecipeHelper.createShieldRecipe(moissanite_tag.id(), true, moissanite_shield.getIdentifier());
+        this.addRecipe(moissanite_shield, ModRecipe.createShieldRecipe(moissanite_tag.id(), true, moissanite_shield.getIdentifier()));
     }
-    
 }

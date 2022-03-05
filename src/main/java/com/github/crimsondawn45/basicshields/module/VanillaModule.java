@@ -3,9 +3,8 @@ package com.github.crimsondawn45.basicshields.module;
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
-import com.github.crimsondawn45.basicshields.util.RecipeHelper;
+import com.github.crimsondawn45.basicshields.util.ModRecipe;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
-import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -21,12 +20,6 @@ public class VanillaModule extends ContentModule {
 	public ModItem golden_shield;
 	public ModItem diamond_shield;
 	public ModItem netherite_shield;
-
-    //Regular recipes
-    public JsonObject wooden_shield_recipe;
-    public JsonObject golden_shield_recipe;
-    public JsonObject diamond_shield_recipe;
-    public JsonObject netherite_shield_recipe;
 
     //Tags
     public TagKey<Item> gold_tag;
@@ -49,7 +42,7 @@ public class VanillaModule extends ContentModule {
             ItemTags.LOGS));
 
         //Recipe
-        wooden_shield_recipe = RecipeHelper.createShieldRecipe(ItemTags.LOGS.id(), true, wooden_shield.getIdentifier());
+        this.addRecipe(wooden_shield, ModRecipe.createShieldRecipe(ItemTags.LOGS.id(), true, wooden_shield.getIdentifier()));
 
         //Gold
 		golden_shield = new ModItem("golden_shield",
@@ -59,7 +52,7 @@ public class VanillaModule extends ContentModule {
             gold_tag));
 
         //Recipe
-        golden_shield_recipe = RecipeHelper.createShieldRecipe(gold_tag.id(), true, golden_shield.getIdentifier());
+        this.addRecipe(golden_shield, ModRecipe.createShieldRecipe(gold_tag.id(), true, golden_shield.getIdentifier()));
 
         //Diamond
 		diamond_shield = new ModItem("diamond_shield",
@@ -69,7 +62,7 @@ public class VanillaModule extends ContentModule {
             diamond_tag));
 
         //Recipe
-        diamond_shield_recipe = RecipeHelper.createShieldRecipe(diamond_tag.id(), true, diamond_shield.getIdentifier());
+        this.addRecipe(diamond_shield, ModRecipe.createShieldRecipe(diamond_tag.id(), true, diamond_shield.getIdentifier()));
 
         //Netherite
 		netherite_shield = new ModItem("netherite_shield",
@@ -79,6 +72,6 @@ public class VanillaModule extends ContentModule {
             netherite_tag));
 
         //Recipe
-        netherite_shield_recipe = RecipeHelper.createSmithingRecipe(diamond_shield.getIdentifier(), false, netherite_tag.id(), true, netherite_shield.getIdentifier());
+        this.addRecipe(netherite_shield, ModRecipe.createSmithingRecipe(diamond_shield.getIdentifier(), false, netherite_tag.id(), true, netherite_shield.getIdentifier()));
     }
 }

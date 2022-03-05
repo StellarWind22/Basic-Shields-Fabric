@@ -3,7 +3,7 @@ package com.github.crimsondawn45.basicshields.module;
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
-import com.github.crimsondawn45.basicshields.util.RecipeHelper;
+import com.github.crimsondawn45.basicshields.util.ModRecipe;
 import com.github.crimsondawn45.fabricshieldlib.lib.event.ShieldBlockCallback;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 import com.google.gson.JsonObject;
@@ -85,7 +85,7 @@ public class AetherModule extends ContentModule {
         zanite_tag));
 
         //Recipe
-        zanite_shield_recipe = RecipeHelper.createShieldRecipe(zanite_tag.id(), true, zanite_shield.getIdentifier());
+        this.addRecipe(zanite_shield, ModRecipe.createShieldRecipe(zanite_tag.id(), true, zanite_shield.getIdentifier()));
 
         //Item
         candy_shield = new ModItem("candy_shield",
@@ -95,7 +95,7 @@ public class AetherModule extends ContentModule {
         candy_tag));
 
         //Recipe
-        gravitite_shield_recipe = RecipeHelper.createShieldRecipe(gravitite_tag.id(), true, gravitite_shield.getIdentifier());
+        this.addRecipe(candy_shield, ModRecipe.createShieldRecipe(candy_tag.id(), true, candy_shield.getIdentifier()));
 
         //Item
         gravitite_shield = new ModItem("gravitite_shield",
@@ -105,7 +105,7 @@ public class AetherModule extends ContentModule {
         gravitite_tag));
 
         //Recipe
-        gravitite_shield_recipe = RecipeHelper.createShieldRecipe(gravitite_tag.id(), true, gravitite_shield.getIdentifier());
+        this.addRecipe(gravitite_shield, ModRecipe.createShieldRecipe(gravitite_tag.id(), true, gravitite_shield.getIdentifier()));
 
         //Item
         valkyrie_shield = new ModItem("valkyrie_shield",
@@ -115,7 +115,7 @@ public class AetherModule extends ContentModule {
         valkyrie_tag));
 
         //Recipe
-        valkyrie_shield_recipe = RecipeHelper.createShieldRecipe(valkyrie_tag.id(), true, valkyrie_shield.getIdentifier());
+        this.addRecipe(valkyrie_shield, ModRecipe.createShieldRecipe(valkyrie_tag.id(), true, valkyrie_shield.getIdentifier()));
 
         //Item
         legendary_shield = new ModItem("legendary_shield",
@@ -125,6 +125,6 @@ public class AetherModule extends ContentModule {
         legendary_tag));
 
         //Recipe
-        legendary_shield_recipe = RecipeHelper.createShieldRecipe(legendary_tag.id(), true, legendary_shield.getIdentifier());
+        this.addRecipe(legendary_shield, ModRecipe.createShieldRecipe(legendary_tag.id(), true, legendary_shield.getIdentifier()));
     }
 }

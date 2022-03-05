@@ -1,9 +1,0 @@
-{
-    "replace": false,
-    "values": [
-      "#c:topaz",
-      "#c:topaz_gems",
-      "#c:topaz_gem"
-    ],
-    "required": false
-}

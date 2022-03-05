@@ -1,7 +1,6 @@
 {
-    "replace": false,
-    "values": [
-      "minecraft:diamond"
-    ],
-    "required": false
+  "replace": false,
+  "values": [
+    "minecraft:diamond"
+  ]
 }

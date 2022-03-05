@@ -1,9 +1,0 @@
-{
-    "replace": false,
-    "values": [
-      "#c:spinel",
-      "#c:spinel_gems",
-      "#c:spinel_gem"
-    ],
-    "required": false
-}

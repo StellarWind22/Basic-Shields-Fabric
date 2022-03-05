@@ -3,9 +3,8 @@ package com.github.crimsondawn45.basicshields.module;
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
-import com.github.crimsondawn45.basicshields.util.RecipeHelper;
+import com.github.crimsondawn45.basicshields.util.ModRecipe;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
-import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -17,20 +16,19 @@ public class QuartzModule extends ContentModule {
 
     //Quartz Stuff
     public ModItem quartz_shield;
-    public JsonObject quartz_shield_recipe;
 
     //Tag
     public TagKey<Item> quartz_tag;
 
-    public QuartzModule(boolean alwaysLoad, String...ids) {
-        super(alwaysLoad, ids);
+    public QuartzModule(boolean forceLoad, boolean isVanillaMaterial, String...ids) {
+        super(forceLoad, isVanillaMaterial, ids);
     }
 
     @Override
     public void registerContent() {
 
         //Tag
-        quartz_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c","quartz"));
+        quartz_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "quartz"));
 
         //Item
         quartz_shield = new ModItem("quartz_shield",
@@ -40,6 +38,6 @@ public class QuartzModule extends ContentModule {
         quartz_tag));
 
         //Recipe
-        quartz_shield_recipe = RecipeHelper.createShieldRecipe(quartz_tag.id(), true, quartz_shield.getIdentifier());
+        this.addRecipe(quartz_shield, ModRecipe.createShieldRecipe(quartz_tag.id(), true, quartz_shield.getIdentifier()));
     }
 }

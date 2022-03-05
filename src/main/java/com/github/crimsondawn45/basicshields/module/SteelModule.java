@@ -3,9 +3,8 @@ package com.github.crimsondawn45.basicshields.module;
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
-import com.github.crimsondawn45.basicshields.util.RecipeHelper;
+import com.github.crimsondawn45.basicshields.util.ModRecipe;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
-import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -17,7 +16,6 @@ public class SteelModule extends ContentModule {
 
     //Steel Stuff
     public ModItem steel_shield;
-    public JsonObject steel_shield_recipe;
 
     //Tag
     public TagKey<Item> steel_tag;
@@ -30,7 +28,7 @@ public class SteelModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        steel_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c","steel_ingots"));
+        steel_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "steel_ingots"));
 
         //Item
         steel_shield = new ModItem("steel_shield",
@@ -40,6 +38,6 @@ public class SteelModule extends ContentModule {
         steel_tag));
 
         //Recipe
-        steel_shield_recipe = RecipeHelper.createShieldRecipe(steel_tag.id(), true, steel_shield.getIdentifier());
+        this.addRecipe(steel_shield, ModRecipe.createShieldRecipe(steel_tag.id(), true, steel_shield.getIdentifier()));
     }
 }

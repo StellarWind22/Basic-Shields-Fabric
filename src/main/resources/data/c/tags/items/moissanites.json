@@ -1,9 +1,0 @@
-{
-    "replace": false,
-    "values": [
-      "#c:moissanite",
-      "#c:moissanite_gems",
-      "#c:moissanite_gem"
-    ],
-    "required": false
-}

@@ -4,9 +4,8 @@ import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.object.GobberShieldItem;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
-import com.github.crimsondawn45.basicshields.util.RecipeHelper;
+import com.github.crimsondawn45.basicshields.util.ModRecipe;
 import com.github.crimsondawn45.fabricshieldlib.lib.event.ShieldBlockCallback;
-import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.Entity;
@@ -24,11 +23,6 @@ public class GobberModule extends ContentModule {
     public ModItem gobber_nether_shield;
     public ModItem gobber_end_shield;
     public ModItem gobber_dragon_shield;
-    //Gobber recipes
-    public JsonObject gobber_shield_recipe;
-    public JsonObject gobber_nether_shield_recipe;
-    public JsonObject gobber_end_shield_recipe;
-    public JsonObject gobber_dragon_shield_recipe;
 
     //Tags
     public TagKey<Item> gobber_tag;
@@ -78,7 +72,9 @@ public class GobberModule extends ContentModule {
             BasicShields.CONFIG.gobber_reflect_percentage,
             BasicShields.CONFIG.unbreakable_gobber_shield,
             gobber_tag));
-        gobber_shield_recipe = RecipeHelper.createShieldRecipe(gobber_tag.id(), true, gobber_shield.getIdentifier());
+
+        //Recipe
+        this.addRecipe(gobber_shield, ModRecipe.createShieldRecipe(gobber_tag.id(), true, gobber_shield.getIdentifier()));
 
         //Nether Gobber
         gobber_nether_shield = new ModItem("gobber_nether_shield",
@@ -88,7 +84,9 @@ public class GobberModule extends ContentModule {
             BasicShields.CONFIG.gobber_reflect_percentage,
             BasicShields.CONFIG.unbreakable_gobber_nether_shield,
             gobber_nether_tag));
-        gobber_nether_shield_recipe = RecipeHelper.createShieldRecipe(gobber_nether_tag.id(), true, gobber_nether_shield.getIdentifier());
+
+        //Recipe
+        this.addRecipe(gobber_nether_shield, ModRecipe.createShieldRecipe(gobber_nether_tag.id(), true, gobber_nether_shield.getIdentifier()));
 
         //End Gobber
         gobber_end_shield = new ModItem("gobber_end_shield",
@@ -98,7 +96,9 @@ public class GobberModule extends ContentModule {
             BasicShields.CONFIG.gobber_reflect_percentage,
             BasicShields.CONFIG.unbreakable_gobber_end_shield,
             gobber_end_tag));
-        gobber_end_shield_recipe = RecipeHelper.createShieldRecipe(gobber_end_tag.id(), false, gobber_end_shield.getIdentifier());
+
+        //Recipe
+        this.addRecipe(gobber_end_shield, ModRecipe.createShieldRecipe(gobber_end_tag.id(), true, gobber_end_shield.getIdentifier()));
 
         //Dragon Gobber
         gobber_dragon_shield = new ModItem("gobber_dragon_shield",
@@ -108,6 +108,8 @@ public class GobberModule extends ContentModule {
             BasicShields.CONFIG.gobber_reflect_percentage,
             BasicShields.CONFIG.unbreakable_gobber_dragon_shield,
             gobber_dragon_tag));
-        gobber_dragon_shield_recipe = RecipeHelper.createSmithingRecipe(gobber_end_shield.getIdentifier(), false, gobber_dragon_tag.id(), true, gobber_dragon_shield.getIdentifier());
+
+        //Recipe
+        this.addRecipe(gobber_dragon_shield, ModRecipe.createSmithingRecipe(gobber_end_shield.getIdentifier(), false, gobber_dragon_tag.id(), true, gobber_dragon_shield.getIdentifier()));
     }
 }

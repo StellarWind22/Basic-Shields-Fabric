@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "more_gems:topaz",
+      "required": false
+    },
+    {
+      "id": "gemsandcrystals:topaz",
+      "required": false
+    }
+  ]
+}

@@ -3,9 +3,8 @@ package com.github.crimsondawn45.basicshields.module;
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
-import com.github.crimsondawn45.basicshields.util.RecipeHelper;
+import com.github.crimsondawn45.basicshields.util.ModRecipe;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
-import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -15,15 +14,14 @@ import net.minecraft.util.registry.Registry;
 
 public class EmeraldModule extends ContentModule {
 
-    //Bronze Stuff
+    //Emerald Stuff
     public ModItem emerald_shield;
-    public JsonObject emerald_shield_recipe;
 
     //Tag
     public TagKey<Item> emerald_tag;
 
-    public EmeraldModule(boolean alwaysLoad, String...ids) {
-        super(alwaysLoad, ids);
+    public EmeraldModule(boolean forceLoad, boolean isVanillaMaterial, String...ids) {
+        super(forceLoad, isVanillaMaterial, ids);
     }
 
     @Override
@@ -40,6 +38,6 @@ public class EmeraldModule extends ContentModule {
         emerald_tag));
 
         //Recipe
-        emerald_shield_recipe = RecipeHelper.createShieldRecipe(emerald_tag.id(), true, emerald_shield.getIdentifier());
+        this.addRecipe(emerald_shield, ModRecipe.createShieldRecipe(emerald_tag.id(), true, emerald_shield.getIdentifier()));
     }
 }

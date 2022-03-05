@@ -3,9 +3,8 @@ package com.github.crimsondawn45.basicshields.module;
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
-import com.github.crimsondawn45.basicshields.util.RecipeHelper;
+import com.github.crimsondawn45.basicshields.util.ModRecipe;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
-import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -15,22 +14,21 @@ import net.minecraft.util.registry.Registry;
 
 public class SapphireModule extends ContentModule {
 
-    //Peridot Stuff
+    //Sapphire Stuff
     public ModItem sapphire_shield;
-    public JsonObject sapphire_shield_recipe;
 
-    //Peridot tag
+    //Tag
     public TagKey<Item> sapphire_tag;
 
     public SapphireModule(boolean alwaysLoad, String...ids) {
         super(alwaysLoad, ids);
     }
- 
+
     @Override
     public void registerContent() {
- 
+
         //Tag
-        sapphire_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c","sapphires"));
+        sapphire_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "sapphires"));
 
         //Item
         sapphire_shield = new ModItem("sapphire_shield",
@@ -40,6 +38,6 @@ public class SapphireModule extends ContentModule {
         sapphire_tag));
 
         //Recipe
-        sapphire_shield_recipe = RecipeHelper.createShieldRecipe(sapphire_tag.id(), true, sapphire_shield.getIdentifier());
+        this.addRecipe(sapphire_shield, ModRecipe.createShieldRecipe(sapphire_tag.id(), true, sapphire_shield.getIdentifier()));
     }
 }

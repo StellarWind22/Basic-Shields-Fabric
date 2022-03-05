@@ -42,7 +42,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int vanilla_netherite_shield_cooldown =          80;
 
     //Adabranium
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_adabranium =                 false;
         //Nether
@@ -68,7 +68,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int adabranium_adamantium_shield_cooldown =      70;
 
     //Gobber
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_gobber =                     false;
     @ConfigEntry.Category("stats")
@@ -111,7 +111,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int gobber_dragon_shield_cooldown =              50;
 
     //Bronze
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_aether =                     false;
         //Zanite
@@ -151,7 +151,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int legendary_shield_cooldown =                  100;
 
     //Bronze
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_bronze =                     false;
         //Bronze
@@ -163,7 +163,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int bronze_shield_cooldown =                     100;
 
     //Citrine
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_citrine =                    false;
         //Citrine
@@ -175,7 +175,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int citrine_shield_cooldown =                    90;
 
     //Tourmaline
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_tourmaline =                 false;
         //Tourmaline
@@ -187,7 +187,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int tourmaline_shield_cooldown =                 90;
 
     //Kunzite
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_kunzite =                    false;
         //Kunzite
@@ -199,7 +199,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int kunzite_shield_cooldown =                    90;
 
     //Topaz
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_topaz =                      false;
         //Topaz
@@ -211,7 +211,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int topaz_shield_cooldown =                      90;
 
     //Alexandrite
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_alexandrite =                false;
         //Alexandrite
@@ -223,7 +223,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int alexandrite_shield_cooldown =                90;
 
     //Corundum
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_corundum =                   false;
         //Corundum
@@ -235,7 +235,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int corundum_shield_cooldown =                   90;
 
     //Spinel
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_spinel =                     false;
         //Spinel
@@ -247,7 +247,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int spinel_shield_cooldown =                     90;
 
     //Carbonado
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_carbonado =                  false;
         //Carbonado
@@ -259,7 +259,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int carbonado_shield_cooldown =                  90;
 
     //Moissanite
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_moissanite =                 false;
         //Moissanite
@@ -271,7 +271,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int moissanite_shield_cooldown =                 90;
 
     //Emerald
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_emerald =                    false;
         //Emerald
@@ -283,7 +283,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int emerald_shield_cooldown =                    100;
 
     //Obsidian
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_obsidian =                   false;
         //Obsidian
@@ -295,7 +295,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int obsidian_shield_cooldown =                   100;
 
     //Steel
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_steel =                      false;
         //Steel
@@ -307,7 +307,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int steel_shield_cooldown =                      100;
 
     //Tanzanite
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_tanzanite =                    false;
         //Tanzanite
@@ -319,7 +319,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int tanzanite_shield_cooldown =                    90;
 
     //Amethyst
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_amethyst =                   false;
         //Amethyst
@@ -331,7 +331,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int amethyst_shield_cooldown =                   100;
 
     //Copper
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_copper =                     false;
         //Copper
@@ -343,7 +343,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int copper_shield_cooldown =                     100;
 
     //Peridot
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_peridot =                    false;
         //Peridot
@@ -355,7 +355,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int peridot_shield_cooldown =                    90;
 
     //Quartz
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_quartz =                    false;
         //Quartz
@@ -367,7 +367,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int quartz_shield_cooldown =                    90;
 
     //Ruby
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_ruby =                       false;
         //Ruby
@@ -379,7 +379,7 @@ public class BasicShieldsConfig implements ConfigData {
     public int ruby_shield_cooldown =                       90;
 
     //Sapphire
-    @Comment("Module will always be loaded. Crafting will be\ndisabled as to not spam errors for missing items.")
+    @Comment("Module will always be loaded. Crafting will be\ndisabled if it was not a vanilla material\nas to not spam errors for missing items.")
     @ConfigEntry.Category("modules")
     public boolean always_load_sapphire =                   false;
         //Sapphire

@@ -3,9 +3,8 @@ package com.github.crimsondawn45.basicshields.module;
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
-import com.github.crimsondawn45.basicshields.util.RecipeHelper;
+import com.github.crimsondawn45.basicshields.util.ModRecipe;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
-import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -15,15 +14,14 @@ import net.minecraft.util.registry.Registry;
 
 public class AmethystModule extends ContentModule {
 
-    //Bronze Stuff
+    //Amethyst Stuff
     public ModItem amethyst_shield;
-    public JsonObject amethyst_shield_recipe;
 
     //Tag
     public TagKey<Item> amethyst_tag;
 
-    public AmethystModule(boolean alwaysLoad, String...ids) {
-        super(alwaysLoad, ids);
+    public AmethystModule(boolean forceLoad, boolean isVanillaMaterial, String...ids) {
+        super(forceLoad, isVanillaMaterial, ids);
     }
 
     @Override
@@ -40,6 +38,6 @@ public class AmethystModule extends ContentModule {
         amethyst_tag));
 
         //Recipe
-        amethyst_shield_recipe = RecipeHelper.createShieldRecipe(amethyst_tag.id(), true, amethyst_shield.getIdentifier());
+        this.addRecipe(amethyst_shield, ModRecipe.createShieldRecipe(amethyst_tag.id(), true, amethyst_shield.getIdentifier()));
     }
 }

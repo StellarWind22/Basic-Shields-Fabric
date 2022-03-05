@@ -1,9 +1,21 @@
 {
-    "replace": false,
-    "values": [
-      "#c:ruby",
-      "#c:ruby_gems",
-      "#c:ruby_gem"
-    ],
-    "required": false
+  "replace": false,
+  "values": [
+    {
+      "id": "techreborn:ruby",
+      "required": false
+    },
+    {
+      "id": "gemsandcrystals:ruby",
+      "required": false
+    },
+    {
+      "id": "emerald_tools:ruby",
+      "required": false
+    },
+    {
+      "id": "enriched:ruby",
+      "required": false
+    }
+  ]
 }

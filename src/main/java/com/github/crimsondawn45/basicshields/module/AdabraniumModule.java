@@ -3,9 +3,8 @@ package com.github.crimsondawn45.basicshields.module;
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
-import com.github.crimsondawn45.basicshields.util.RecipeHelper;
+import com.github.crimsondawn45.basicshields.util.ModRecipe;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
-import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -20,10 +19,6 @@ public class AdabraniumModule extends ContentModule {
     public ModItem adamantium_shield;
     public ModItem vibranium_shield;
     public ModItem nether_shield;
-    //Adabranium recipes
-    public JsonObject adamantium_shield_recipe;
-    public JsonObject vibranium_shield_recipe;
-    public JsonObject nether_shield_recipe;
 
     //Tags
     public TagKey<Item> vibranium_tag;
@@ -46,7 +41,7 @@ public class AdabraniumModule extends ContentModule {
             BasicShields.CONFIG.adabranium_nether_shield_cooldown,
             BasicShields.CONFIG.adabranium_nether_shield_enchantability,
             Items.NETHER_BRICK));
-        nether_shield_recipe = RecipeHelper.createSmithingRecipe(new Identifier("minecraft", "shield"), false, new Identifier("minecraft", "nether_brick"), false, nether_shield.getIdentifier());
+        this.addRecipe(nether_shield, ModRecipe.createSmithingRecipe(new Identifier("minecraft", "shield"), false, new Identifier("minecraft", "nether_brick"), false, nether_shield.getIdentifier()));
        
         //Vibranium
         vibranium_shield = new ModItem("vibranium_shield",
@@ -54,7 +49,7 @@ public class AdabraniumModule extends ContentModule {
             BasicShields.CONFIG.adabranium_vibranium_shield_cooldown,
             BasicShields.CONFIG.adabranium_vibranium_shield_enchantability,
             vibranium_tag));
-        vibranium_shield_recipe = RecipeHelper.createShieldRecipe(vibranium_tag.id(), true, vibranium_shield.getIdentifier());
+        this.addRecipe(vibranium_shield, ModRecipe.createShieldRecipe(vibranium_tag.id(), true, vibranium_shield.getIdentifier()));
 
         //Adamantium
         adamantium_shield = new ModItem("adamantium_shield",
@@ -62,6 +57,6 @@ public class AdabraniumModule extends ContentModule {
             BasicShields.CONFIG.adabranium_adamantium_shield_cooldown,
             BasicShields.CONFIG.adabranium_adamantium_shield_enchantability,
             adamantium_tag));
-        adamantium_shield_recipe = RecipeHelper.createShieldRecipe(adamantium_tag.id(), true, adamantium_shield.getIdentifier());
+        this.addRecipe(adamantium_shield, ModRecipe.createShieldRecipe(adamantium_tag.id(), true, adamantium_shield.getIdentifier()));
     }
 }

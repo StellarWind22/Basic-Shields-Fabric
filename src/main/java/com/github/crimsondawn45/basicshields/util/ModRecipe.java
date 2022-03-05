@@ -1,6 +1,7 @@
 package com.github.crimsondawn45.basicshields.util;
 
 import java.util.ArrayList;
+
 import com.google.common.collect.Lists;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -9,7 +10,23 @@ import net.minecraft.item.Item;
 import net.minecraft.tag.Tag;
 import net.minecraft.util.Identifier;
 
-public class RecipeHelper {
+public class ModRecipe {
+
+    private ModItem item;
+    private JsonObject recipe;
+
+    public ModRecipe(ModItem item, JsonObject recipe) {
+        this.item = item;
+        this.recipe = recipe;
+    }
+
+    public ModItem getModItem() {
+        return this.item;
+    }
+
+    public JsonObject getRecipe() {
+        return this.recipe;
+    }
 
     /**
      * * generates a JsonObject for a new shield recipe

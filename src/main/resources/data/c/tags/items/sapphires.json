@@ -1,9 +1,21 @@
 {
   "replace": false,
   "values": [
-    "#c:sapphire",
-    "#c:sapphire_gems",
-    "#c:sapphire_gem"
-  ],
-  "required": false
+    {
+      "id":  "techreborn:sapphire_gem",
+      "required": false
+    },
+    {
+      "id": "more_gems:sapphire",
+      "required": false
+    },
+    {
+      "id": "gemsandcrystals:sapphire",
+      "required": false
+    },
+    {
+      "id": "enriched:sapphire",
+      "required": false
+    }
+  ]
 }

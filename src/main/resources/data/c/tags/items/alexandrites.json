@@ -1,9 +1,0 @@
-{
-    "replace": false,
-    "values": [
-      "#c:alexandrite",
-      "#c:alexandrite_gems",
-      "#c:alexandrite_gem"
-    ],
-    "required": false
-}

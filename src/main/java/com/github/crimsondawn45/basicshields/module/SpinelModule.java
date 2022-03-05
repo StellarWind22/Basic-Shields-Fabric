@@ -3,9 +3,8 @@ package com.github.crimsondawn45.basicshields.module;
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
-import com.github.crimsondawn45.basicshields.util.RecipeHelper;
+import com.github.crimsondawn45.basicshields.util.ModRecipe;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
-import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -15,9 +14,8 @@ import net.minecraft.util.registry.Registry;
 
 public class SpinelModule extends ContentModule {
 
-    //Bronze Stuff
+    //Spinel Stuff
     public ModItem spinel_shield;
-    public JsonObject spinel_shield_recipe;
 
     //Tag
     public TagKey<Item> spinel_tag;
@@ -40,7 +38,6 @@ public class SpinelModule extends ContentModule {
         spinel_tag));
 
         //Recipe
-        spinel_shield_recipe = RecipeHelper.createShieldRecipe(spinel_tag.id(), true, spinel_shield.getIdentifier());
+        this.addRecipe(spinel_shield, ModRecipe.createShieldRecipe(spinel_tag.id(), true, spinel_shield.getIdentifier()));
     }
-    
 }

@@ -3,9 +3,8 @@ package com.github.crimsondawn45.basicshields.module;
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
-import com.github.crimsondawn45.basicshields.util.RecipeHelper;
+import com.github.crimsondawn45.basicshields.util.ModRecipe;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
-import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -15,9 +14,8 @@ import net.minecraft.util.registry.Registry;
 
 public class KunziteModule extends ContentModule {
 
-    //Bronze Stuff
+    //Kunzite Stuff
     public ModItem kunzite_shield;
-    public JsonObject kunzite_shield_recipe;
 
     //Tag
     public TagKey<Item> kunzite_tag;
@@ -40,6 +38,6 @@ public class KunziteModule extends ContentModule {
         kunzite_tag));
 
         //Recipe
-        kunzite_shield_recipe = RecipeHelper.createShieldRecipe(kunzite_tag.id(), true, kunzite_shield.getIdentifier());
+        this.addRecipe(kunzite_shield, ModRecipe.createShieldRecipe(kunzite_tag.id(), true, kunzite_shield.getIdentifier()));
     }
 }

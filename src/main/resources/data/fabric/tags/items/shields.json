@@ -1,21 +1,138 @@
 {
-    "replace": false,
-    "values": [
-      "minecraft:shield",
-      "basicshields:wooden_shield",
-      "basicshields:golden_shield",
-      "basicshields:diamond_shield",
-      "basicshields:netherite_shield",
-      "basicshields:bronze_shield",
-      "basicshields:ruby_shield",
-      "basicshields:peridot_shield",
-      "basicshields:sapphire_shield",
-      "basicshields:nether_shield",
-      "basicshields:vibranium_shield",
-      "basicshields:adamantium_shield",
-      "basicshields:gobber_shield",
-      "basicshields:gobber_nether_shield",
-      "basicshields:gobber_end_shield"
-    ],
-    "required": false
+  "replace": false,
+  "values": [
+    "minecraft:shield",
+    "basicshields:wooden_shield",
+    "basicshields:golden_shield",
+    "basicshields:diamond_shield",
+    "basicshields:netherite_shield",
+    {
+      "id":  "basicshields:bronze_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:ruby_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:peridot_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:sapphire_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:nether_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:vibranium_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:adamantium_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:gobber_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:gobber_nether_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:gobber_end_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:gobber_dragon_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:citrine_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:tourmaline_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:kunzite_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:topaz_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:alexandrite_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:corundum_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:spinel_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:carbonado_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:moissanite_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:emerald_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:obsidian_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:steel_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:tanzanite_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:amethyst_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:copper_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:quartz_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:zanite_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:candy_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:gravitite_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:valkyrie_shield",
+      "required": false
+    },
+    {
+      "id": "basicshields:legendary_shield",
+      "required": false
+    }
+  ]
 }

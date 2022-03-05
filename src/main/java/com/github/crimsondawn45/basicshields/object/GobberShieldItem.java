@@ -6,7 +6,6 @@ import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldIte
 
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.BannerItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
@@ -50,7 +49,6 @@ public class GobberShieldItem extends FabricBannerShieldItem {
     @Override
     public void appendShieldTooltip(ItemStack stack, List<Text> tooltip, TooltipContext context) {
         tooltip.add(new TranslatableText("item.basicshields.gobber.tooltip.start").append(new LiteralText(String.valueOf(this.reflectPercentage * 100))).append(new TranslatableText("item.basicshields.gobber.tooltip.end")).formatted(Formatting.GREEN));
-        BannerItem.appendBannerTooltip(stack, tooltip);
     }
 
     //Make Unbreakable

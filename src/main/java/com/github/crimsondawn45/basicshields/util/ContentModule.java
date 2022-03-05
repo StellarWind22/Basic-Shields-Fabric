@@ -12,6 +12,8 @@ public class ContentModule {
     public static List<ContentModule> loadedModules = new ArrayList<ContentModule>();
 
     private List<ModRecipe> recipes = new ArrayList<ModRecipe>();
+    private List<ModShieldItem> shields = new ArrayList<ModShieldItem>();
+
     private boolean isLoaded = false;
     private boolean forceLoaded = false;
 
@@ -105,5 +107,19 @@ public class ContentModule {
      */
     public ModRecipe[] getRecipes() {
         return this.recipes.stream().toArray(ModRecipe[]::new);
+    }
+
+    /**
+     * Registers a new shield to the module
+     */
+    public void addShield(ModShieldItem shield) {
+        this.shields.add(shield);
+    }
+
+    /**
+     * Return unmutable array of loaded shields
+     */
+    public ModShieldItem[] getShieldItems() {
+        return this.shields.stream().toArray(ModShieldItem[]::new);
     }
 }

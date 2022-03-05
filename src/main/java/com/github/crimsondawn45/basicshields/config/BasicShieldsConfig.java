@@ -8,7 +8,7 @@ import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
 @Config(name = "basicshields")
 @Config.Gui.CategoryBackground(category = "modules", background = "minecraft:textures/block/dirt.png")
 @Config.Gui.CategoryBackground(category = "stats", background = "minecraft:textures/block/dirt.png")
-@Config.Gui.CategoryBackground(category = "durability", background = "minecraft:textures/block/dirt.png")
+@Config.Gui.CategoryBackground(category = "textures", background = "minecraft:textures/block/dirt.png")
 public class BasicShieldsConfig implements ConfigData {
 
     //Vanilla

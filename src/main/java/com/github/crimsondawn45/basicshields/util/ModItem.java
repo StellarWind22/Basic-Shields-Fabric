@@ -8,13 +8,13 @@ import net.minecraft.util.registry.Registry;
 
 public class ModItem {
 
-    //TODO: make ShieldModItem that allows you to grab the textures the shield should display methods should be calculateTexturePath getTexturePath
-
     private String name;
     private Identifier identifier;
     private Item item;
+    private ContentModule module;
 
-    public ModItem(String name, Item item) {
+    public ModItem(ContentModule module, String name, Item item) {
+        this.module = module;
         this.name = name;
         this.identifier = new Identifier(BasicShields.MOD_ID, name);
         this.item = item;
@@ -32,5 +32,9 @@ public class ModItem {
 
     public String getName() {
         return this.name;
+    }
+
+    public ContentModule getModule() {
+        return this.module;
     }
 }

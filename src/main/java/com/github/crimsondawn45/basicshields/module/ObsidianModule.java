@@ -4,6 +4,7 @@ import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.ModRecipe;
+import com.github.crimsondawn45.basicshields.util.ModRef;
 import com.github.crimsondawn45.basicshields.util.ModShieldItem;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 
@@ -39,7 +40,8 @@ public class ObsidianModule extends ContentModule {
         BasicShields.CONFIG.obsidian_shield_cooldown,
         BasicShields.CONFIG.obsidian_shield_enchantability,
         obsidian_tag),
-        "entity/obsidian_shield_base");
+        new ModRef("the_aether", "entity/obsidian_shield_base_the_aether"),
+        new ModRef("emerald_tools", "entity/obsidian_shield_base_emerald_tools"));
 
         //Recipe
         this.addRecipe(obsidian_shield, ModRecipe.createShieldRecipe(obsidian_tag.id(), true, obsidian_shield.getIdentifier()));

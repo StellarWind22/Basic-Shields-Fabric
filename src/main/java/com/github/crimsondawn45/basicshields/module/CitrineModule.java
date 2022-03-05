@@ -4,6 +4,7 @@ import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.ModRecipe;
+import com.github.crimsondawn45.basicshields.util.ModShieldItem;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -31,11 +32,12 @@ public class CitrineModule extends ContentModule {
         citrine_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "citrine"));
 
         //Item
-        citrine_shield = new ModItem("citrine_shield",
+        citrine_shield = new ModShieldItem(this,"citrine_shield",
         new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.citrine_shield_durability).group(BasicShields.SHIELDS),
         BasicShields.CONFIG.citrine_shield_cooldown,
         BasicShields.CONFIG.citrine_shield_enchantability,
-        citrine_tag));
+        citrine_tag),
+        "entity/citrine_shield_base");
 
         //Recipe
         this.addRecipe(citrine_shield, ModRecipe.createShieldRecipe(citrine_tag.id(), true, citrine_shield.getIdentifier()));

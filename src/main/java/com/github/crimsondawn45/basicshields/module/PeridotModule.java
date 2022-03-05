@@ -4,6 +4,7 @@ import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.ModRecipe;
+import com.github.crimsondawn45.basicshields.util.ModShieldItem;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -31,11 +32,12 @@ public class PeridotModule extends ContentModule {
         peridot_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "peridots"));
 
         //Item
-        peridot_shield = new ModItem("peridot_shield",
+        peridot_shield = new ModShieldItem(this,"peridot_shield",
         new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.peridot_shield_durability).group(BasicShields.SHIELDS),
         BasicShields.CONFIG.peridot_shield_cooldown,
         BasicShields.CONFIG.peridot_shield_enchantability,
-        peridot_tag));
+        peridot_tag),
+        "entity/peridot_shield_base");
 
         //Recipe
         this.addRecipe(peridot_shield, ModRecipe.createShieldRecipe(peridot_tag.id(), true, peridot_shield.getIdentifier()));

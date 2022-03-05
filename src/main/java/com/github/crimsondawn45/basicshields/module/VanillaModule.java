@@ -4,6 +4,7 @@ import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.ModRecipe;
+import com.github.crimsondawn45.basicshields.util.ModShieldItem;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -35,41 +36,45 @@ public class VanillaModule extends ContentModule {
         netherite_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "netherite_ingots"));
 
         //Wood
-        wooden_shield = new ModItem("wooden_shield",
+        wooden_shield = new ModShieldItem(this, "wooden_shield",
             new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.vanilla_wooden_shield_durability).group(BasicShields.SHIELDS),
             BasicShields.CONFIG.vanilla_wooden_shield_cooldown,
             BasicShields.CONFIG.vanilla_wooden_shield_enchantability,
-            ItemTags.LOGS));
+            ItemTags.LOGS),
+            "entity/wooden_shield_base");
 
         //Recipe
         this.addRecipe(wooden_shield, ModRecipe.createShieldRecipe(ItemTags.LOGS.id(), true, wooden_shield.getIdentifier()));
 
         //Gold
-		golden_shield = new ModItem("golden_shield",
+		golden_shield = new ModShieldItem(this, "golden_shield",
             new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.vanilla_golden_shield_durability).group(BasicShields.SHIELDS),
             BasicShields.CONFIG.vanilla_golden_shield_cooldown,
             BasicShields.CONFIG.vanilla_golden_shield_enchantability,
-            gold_tag));
+            gold_tag),
+            "entity/golden_shield_base");
 
         //Recipe
         this.addRecipe(golden_shield, ModRecipe.createShieldRecipe(gold_tag.id(), true, golden_shield.getIdentifier()));
 
         //Diamond
-		diamond_shield = new ModItem("diamond_shield",
+		diamond_shield = new ModShieldItem(this, "diamond_shield",
             new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.vanilla_diamond_shield_durability).group(BasicShields.SHIELDS),
             BasicShields.CONFIG.vanilla_diamond_shield_cooldown,
             BasicShields.CONFIG.vanilla_diamond_shield_enchantability,
-            diamond_tag));
+            diamond_tag),
+            "entity/diamond_shield_base");
 
         //Recipe
         this.addRecipe(diamond_shield, ModRecipe.createShieldRecipe(diamond_tag.id(), true, diamond_shield.getIdentifier()));
 
         //Netherite
-		netherite_shield = new ModItem("netherite_shield",
+		netherite_shield = new ModShieldItem(this, "netherite_shield",
             new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.vanilla_netherite_shield_durability).group(BasicShields.SHIELDS).fireproof(),
             BasicShields.CONFIG.vanilla_netherite_shield_cooldown,
             BasicShields.CONFIG.vanilla_netherite_shield_enchantability,
-            netherite_tag));
+            netherite_tag),
+            "entity/netherite_shield_base");
 
         //Recipe
         this.addRecipe(netherite_shield, ModRecipe.createSmithingRecipe(diamond_shield.getIdentifier(), false, netherite_tag.id(), true, netherite_shield.getIdentifier()));

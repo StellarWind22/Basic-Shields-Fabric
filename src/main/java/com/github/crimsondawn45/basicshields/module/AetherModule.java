@@ -4,9 +4,9 @@ import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.ModRecipe;
+import com.github.crimsondawn45.basicshields.util.ModShieldItem;
 import com.github.crimsondawn45.fabricshieldlib.lib.event.ShieldBlockCallback;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
-import com.google.gson.JsonObject;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -23,13 +23,6 @@ public class AetherModule extends ContentModule {
     public ModItem gravitite_shield;
     public ModItem valkyrie_shield;
     public ModItem legendary_shield;
-
-    //Recipes
-    public JsonObject zanite_shield_recipe;
-    public JsonObject candy_shield_recipe;
-    public JsonObject gravitite_shield_recipe;
-    public JsonObject valkyrie_shield_recipe;
-    public JsonObject legendary_shield_recipe;
 
     //Tag
     public TagKey<Item> zanite_tag;
@@ -78,51 +71,56 @@ public class AetherModule extends ContentModule {
         legendary_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c","legendary_ingots"));
 
         //Item
-        zanite_shield = new ModItem("zanite_shield",
+        zanite_shield = new ModShieldItem(this, "zanite_shield",
         new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.zanite_shield_durability).group(BasicShields.SHIELDS),
         BasicShields.CONFIG.zanite_shield_cooldown,
         BasicShields.CONFIG.zanite_shield_enchantability,
-        zanite_tag));
+        zanite_tag),
+        "entity/adamantium_shield_base");
 
         //Recipe
         this.addRecipe(zanite_shield, ModRecipe.createShieldRecipe(zanite_tag.id(), true, zanite_shield.getIdentifier()));
 
         //Item
-        candy_shield = new ModItem("candy_shield",
+        candy_shield = new ModShieldItem(this, "candy_shield",
         new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.candy_shield_durability).group(BasicShields.SHIELDS),
         BasicShields.CONFIG.candy_shield_cooldown,
         BasicShields.CONFIG.candy_shield_enchantability,
-        candy_tag));
+        candy_tag),
+        "entity/adamantium_shield_base");
 
         //Recipe
         this.addRecipe(candy_shield, ModRecipe.createShieldRecipe(candy_tag.id(), true, candy_shield.getIdentifier()));
 
         //Item
-        gravitite_shield = new ModItem("gravitite_shield",
+        gravitite_shield = new ModShieldItem(this, "gravitite_shield",
         new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.gravitite_shield_durability).group(BasicShields.SHIELDS),
         BasicShields.CONFIG.gravitite_shield_cooldown,
         BasicShields.CONFIG.gravitite_shield_enchantability,
-        gravitite_tag));
+        gravitite_tag),
+        "entity/adamantium_shield_base");
 
         //Recipe
         this.addRecipe(gravitite_shield, ModRecipe.createShieldRecipe(gravitite_tag.id(), true, gravitite_shield.getIdentifier()));
 
         //Item
-        valkyrie_shield = new ModItem("valkyrie_shield",
+        valkyrie_shield = new ModShieldItem(this, "valkyrie_shield",
         new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.valkyrie_shield_durability).group(BasicShields.SHIELDS),
         BasicShields.CONFIG.valkyrie_shield_cooldown,
         BasicShields.CONFIG.valkyrie_shield_enchantability,
-        valkyrie_tag));
+        valkyrie_tag),
+        "entity/adamantium_shield_base");
 
         //Recipe
         this.addRecipe(valkyrie_shield, ModRecipe.createShieldRecipe(valkyrie_tag.id(), true, valkyrie_shield.getIdentifier()));
 
         //Item
-        legendary_shield = new ModItem("legendary_shield",
+        legendary_shield = new ModShieldItem(this, "legendary_shield",
         new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.legendary_shield_durability).group(BasicShields.SHIELDS),
         BasicShields.CONFIG.legendary_shield_cooldown,
         BasicShields.CONFIG.legendary_shield_enchantability,
-        legendary_tag));
+        legendary_tag),
+        "entity/adamantium_shield_base");
 
         //Recipe
         this.addRecipe(legendary_shield, ModRecipe.createShieldRecipe(legendary_tag.id(), true, legendary_shield.getIdentifier()));

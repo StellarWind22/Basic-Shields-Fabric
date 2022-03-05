@@ -4,6 +4,7 @@ import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.ModRecipe;
+import com.github.crimsondawn45.basicshields.util.ModShieldItem;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -20,8 +21,8 @@ public class EmeraldModule extends ContentModule {
     //Tag
     public TagKey<Item> emerald_tag;
 
-    public EmeraldModule(boolean forceLoad, boolean isVanillaMaterial, String...ids) {
-        super(forceLoad, isVanillaMaterial, ids);
+    public EmeraldModule(boolean alwaysLoad, boolean isVanillaMaterial, String...ids) {
+        super(alwaysLoad, isVanillaMaterial, ids);
     }
 
     @Override
@@ -31,11 +32,12 @@ public class EmeraldModule extends ContentModule {
         emerald_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "emeralds"));
 
         //Item
-        emerald_shield = new ModItem("emerald_shield",
+        emerald_shield = new ModShieldItem(this,"emerald_shield",
         new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.emerald_shield_durability).group(BasicShields.SHIELDS),
         BasicShields.CONFIG.emerald_shield_cooldown,
         BasicShields.CONFIG.emerald_shield_enchantability,
-        emerald_tag));
+        emerald_tag),
+        "entity/emerald_shield_base");
 
         //Recipe
         this.addRecipe(emerald_shield, ModRecipe.createShieldRecipe(emerald_tag.id(), true, emerald_shield.getIdentifier()));

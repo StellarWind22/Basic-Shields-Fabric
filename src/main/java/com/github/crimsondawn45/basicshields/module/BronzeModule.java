@@ -4,6 +4,7 @@ import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.ModRecipe;
+import com.github.crimsondawn45.basicshields.util.ModShieldItem;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -31,11 +32,12 @@ public class BronzeModule extends ContentModule {
         bronze_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "bronze_ingots"));
 
         //Item
-        bronze_shield = new ModItem("bronze_shield",
+        bronze_shield = new ModShieldItem(this,"bronze_shield",
         new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.bronze_shield_durability).group(BasicShields.SHIELDS),
         BasicShields.CONFIG.bronze_shield_cooldown,
         BasicShields.CONFIG.bronze_shield_enchantability,
-        bronze_tag));
+        bronze_tag),
+        "entity/bronze_shield_base");
 
         //Recipe
         this.addRecipe(bronze_shield, ModRecipe.createShieldRecipe(bronze_tag.id(), true, bronze_shield.getIdentifier()));

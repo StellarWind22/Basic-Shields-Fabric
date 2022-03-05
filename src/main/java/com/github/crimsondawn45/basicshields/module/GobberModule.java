@@ -5,6 +5,7 @@ import com.github.crimsondawn45.basicshields.object.GobberShieldItem;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.ModRecipe;
+import com.github.crimsondawn45.basicshields.util.ModShieldItem;
 import com.github.crimsondawn45.fabricshieldlib.lib.event.ShieldBlockCallback;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -65,49 +66,53 @@ public class GobberModule extends ContentModule {
         gobber_dragon_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c","dragon_stars"));
 
         //Gobber
-        gobber_shield = new ModItem("gobber_shield",
+        gobber_shield = new ModShieldItem(this, "gobber_shield",
             new GobberShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.gobber_dragon_shield_durability).group(BasicShields.SHIELDS),
             BasicShields.CONFIG.gobber_shield_cooldown,
             BasicShields.CONFIG.gobber_shield_enchantability,
             BasicShields.CONFIG.gobber_reflect_percentage,
             BasicShields.CONFIG.unbreakable_gobber_shield,
-            gobber_tag));
+            gobber_tag),
+            "entity/gobber_shield_base");
 
         //Recipe
         this.addRecipe(gobber_shield, ModRecipe.createShieldRecipe(gobber_tag.id(), true, gobber_shield.getIdentifier()));
 
         //Nether Gobber
-        gobber_nether_shield = new ModItem("gobber_nether_shield",
+        gobber_nether_shield = new ModShieldItem(this, "gobber_nether_shield",
             new GobberShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.gobber_nether_shield_durability).group(BasicShields.SHIELDS),
             BasicShields.CONFIG.gobber_nether_shield_cooldown,
             BasicShields.CONFIG.gobber_nether_shield_enchantability,
             BasicShields.CONFIG.gobber_reflect_percentage,
             BasicShields.CONFIG.unbreakable_gobber_nether_shield,
-            gobber_nether_tag));
+            gobber_nether_tag),
+            "entity/gobber_nether_shield_base");
 
         //Recipe
         this.addRecipe(gobber_nether_shield, ModRecipe.createShieldRecipe(gobber_nether_tag.id(), true, gobber_nether_shield.getIdentifier()));
 
         //End Gobber
-        gobber_end_shield = new ModItem("gobber_end_shield",
+        gobber_end_shield = new ModShieldItem(this, "gobber_end_shield",
             new GobberShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.gobber_end_shield_durability).group(BasicShields.SHIELDS),
             BasicShields.CONFIG.gobber_end_shield_cooldown,
             BasicShields.CONFIG.gobber_end_shield_enchantability,
             BasicShields.CONFIG.gobber_reflect_percentage,
             BasicShields.CONFIG.unbreakable_gobber_end_shield,
-            gobber_end_tag));
+            gobber_end_tag),
+            "entity/gobber_end_shield_base");
 
         //Recipe
         this.addRecipe(gobber_end_shield, ModRecipe.createShieldRecipe(gobber_end_tag.id(), true, gobber_end_shield.getIdentifier()));
 
         //Dragon Gobber
-        gobber_dragon_shield = new ModItem("gobber_dragon_shield",
+        gobber_dragon_shield = new ModShieldItem(this, "gobber_dragon_shield",
         new GobberShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.gobber_dragon_shield_durability).group(BasicShields.SHIELDS),
             BasicShields.CONFIG.gobber_dragon_shield_cooldown,
             BasicShields.CONFIG.gobber_dragon_shield_enchantability,
             BasicShields.CONFIG.gobber_reflect_percentage,
             BasicShields.CONFIG.unbreakable_gobber_dragon_shield,
-            gobber_dragon_tag));
+            gobber_dragon_tag),
+            "entity/gobber_dragon_shield_base");
 
         //Recipe
         this.addRecipe(gobber_dragon_shield, ModRecipe.createSmithingRecipe(gobber_end_shield.getIdentifier(), false, gobber_dragon_tag.id(), true, gobber_dragon_shield.getIdentifier()));

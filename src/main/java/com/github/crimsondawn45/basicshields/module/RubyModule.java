@@ -4,6 +4,7 @@ import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.ModRecipe;
+import com.github.crimsondawn45.basicshields.util.ModShieldItem;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -31,11 +32,12 @@ public class RubyModule extends ContentModule {
         ruby_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "rubies"));
 
         //Item
-        ruby_shield = new ModItem("ruby_shield",
+        ruby_shield = new ModShieldItem(this,"ruby_shield",
         new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.ruby_shield_durability).group(BasicShields.SHIELDS),
         BasicShields.CONFIG.ruby_shield_cooldown,
         BasicShields.CONFIG.ruby_shield_enchantability,
-        ruby_tag));
+        ruby_tag),
+        "entity/ruby_shield_base");
 
         //Recipe
         this.addRecipe(ruby_shield, ModRecipe.createShieldRecipe(ruby_tag.id(), true, ruby_shield.getIdentifier()));

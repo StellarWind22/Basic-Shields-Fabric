@@ -4,6 +4,7 @@ import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.ModRecipe;
+import com.github.crimsondawn45.basicshields.util.ModShieldItem;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -31,11 +32,12 @@ public class TopazModule extends ContentModule {
         topaz_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "topaz"));
 
         //Item
-        topaz_shield = new ModItem("topaz_shield",
+        topaz_shield = new ModShieldItem(this,"topaz_shield",
         new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.topaz_shield_durability).group(BasicShields.SHIELDS),
         BasicShields.CONFIG.topaz_shield_cooldown,
         BasicShields.CONFIG.topaz_shield_enchantability,
-        topaz_tag));
+        topaz_tag),
+        "entity/topaz_shield_base");
 
         //Recipe
         this.addRecipe(topaz_shield, ModRecipe.createShieldRecipe(topaz_tag.id(), true, topaz_shield.getIdentifier()));

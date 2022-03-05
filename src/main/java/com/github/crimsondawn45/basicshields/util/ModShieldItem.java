@@ -3,12 +3,33 @@ package com.github.crimsondawn45.basicshields.util;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.github.crimsondawn45.basicshields.initializers.BasicShields;
+
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
+import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
+import net.minecraft.client.render.entity.model.EntityModelLayer;
+import net.minecraft.client.render.entity.model.EntityModelLoader;
+import net.minecraft.client.render.entity.model.ShieldEntityModel;
+import net.minecraft.client.texture.SpriteAtlasTexture;
+import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.item.Item;
+import net.minecraft.util.Identifier;
 
 public class ModShieldItem extends ModItem {
 
     private String shieldTexurePath = null;
     private List<ModRef> modRefs = new ArrayList<ModRef>();
+
+    @Environment(EnvType.CLIENT)
+    private EntityModelLayer entityModelLayer;
+    @Environment(EnvType.CLIENT)
+    private ShieldEntityModel shieldEntityModel;
+    @Environment(EnvType.CLIENT)
+    private SpriteIdentifier shieldBaseSprite;
+    @Environment(EnvType.CLIENT)
+    private SpriteIdentifier shieldNoPatternSprite;
 
     /**
      * @param module ContentModule that the shield will belong to.
@@ -38,7 +59,10 @@ public class ModShieldItem extends ModItem {
      * Figure out which texture path to use
      * grabs the texture of the first reference that is loaded
      */
-    public void calculateTexturePath() {
+    @SuppressWarnings("deprecation")
+    @Environment(EnvType.CLIENT)
+    public void clientShieldInit() {
+        this.entityModelLayer = new EntityModelLayer(new Identifier(BasicShields.MOD_ID, this.getName()),"main");
 
         if(this.shieldTexurePath == null) {
 
@@ -50,19 +74,75 @@ public class ModShieldItem extends ModItem {
                 }
             }
         }
+
+        this.shieldBaseSprite = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID, this.getBaseTexturePath()));
+        this.shieldNoPatternSprite = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(BasicShields.MOD_ID, this.getNoPatternTexturePath()));
     }
 
+    /**
+     * @return texture path for the base version of the texture
+     */
+    @Environment(EnvType.CLIENT)
     public String getBaseTexturePath() {
-        if(this.shieldTexurePath == null) {
-            this.calculateTexturePath();
-        }
         return this.shieldTexurePath;
     }
 
+    /**
+     * @return texture path for the no pattern version of the shield texuture
+     */
+    @Environment(EnvType.CLIENT)
     public String getNoPatternTexturePath() {
-        if(this.shieldTexurePath == null) {
-            this.calculateTexturePath();
-        }
         return this.shieldTexurePath + "_nopattern";
+    }
+
+    /**
+     * @return sprite identifier for no pattern version of the shield texture
+     */
+    public SpriteIdentifier getBaseSpriteIdentifier() {
+        return this.shieldBaseSprite;
+    }
+
+    /**
+     * @return sprite identifier for no pattern version of the shield texture
+     */
+    public SpriteIdentifier getNoPatternSpriteIdentifier() {
+        return this.shieldNoPatternSprite;
+    }
+
+    @Environment(EnvType.CLIENT)
+    public EntityModelLayer getEntityModelLayer() {
+        return this.entityModelLayer;
+    }
+
+    /**
+     * Handles registering the model layer & setting up the client sprite registry callback
+     */
+    @SuppressWarnings("deprecation")
+    @Environment(EnvType.CLIENT)
+    public void RegisterModelLayer(){
+
+        EntityModelLayerRegistry.registerModelLayer(this.getEntityModelLayer(), ShieldEntityModel::getTexturedModelData);
+
+        ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
+            registry.register(new Identifier(BasicShields.MOD_ID, this.getBaseTexturePath()));
+            registry.register(new Identifier(BasicShields.MOD_ID, this.getNoPatternTexturePath()));
+        });
+    }
+
+    /**
+     * Handles setting the shieldEntity model
+     * @param modelLoader an instance of the entiyModelLoader.
+     */
+    @Environment(EnvType.CLIENT)
+    public void setShieldEntityModel(EntityModelLoader modelLoader) {
+        this.shieldEntityModel = new ShieldEntityModel(modelLoader.getModelPart(this.getEntityModelLayer()));
+    }
+
+    /**
+     * @return the shieldEntityModel
+     */
+    @Environment(EnvType.CLIENT)
+    public ShieldEntityModel getShieldEntityModel() {
+        return this.shieldEntityModel;
     }
 }

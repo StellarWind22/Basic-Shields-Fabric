@@ -4,6 +4,7 @@ import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.ModRecipe;
+import com.github.crimsondawn45.basicshields.util.ModShieldItem;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -31,11 +32,12 @@ public class CorundumModule extends ContentModule {
         corundum_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "corundum"));
 
         //Item
-        corundum_shield = new ModItem("corundum_shield",
+        corundum_shield = new ModShieldItem(this,"corundum_shield",
         new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.corundum_shield_durability).group(BasicShields.SHIELDS),
         BasicShields.CONFIG.corundum_shield_cooldown,
         BasicShields.CONFIG.corundum_shield_enchantability,
-        corundum_tag));
+        corundum_tag),
+        "entity/corundum_shield_base");
 
         //Recipe
         this.addRecipe(corundum_shield, ModRecipe.createShieldRecipe(corundum_tag.id(), true, corundum_shield.getIdentifier()));

@@ -4,17 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
+import com.github.crimsondawn45.fabricshieldlib.initializers.FabricShieldLibClient;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
+import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.render.entity.model.EntityModelLoader;
 import net.minecraft.client.render.entity.model.ShieldEntityModel;
 import net.minecraft.client.texture.SpriteAtlasTexture;
 import net.minecraft.client.util.SpriteIdentifier;
+import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 
 public class ModShieldItem extends ModItem {
@@ -144,5 +148,21 @@ public class ModShieldItem extends ModItem {
     @Environment(EnvType.CLIENT)
     public ShieldEntityModel getShieldEntityModel() {
         return this.shieldEntityModel;
+    }
+
+    /**
+     * Handles rendering the banner for the shield
+     * @param stack ItemStack of the shield
+     * @param matrices matrix stack
+     * @param vertexConsumers vertex consumers
+     * @param light light level
+     * @param overlay overlay
+     */
+    @Environment(EnvType.CLIENT)
+    public void renderBanner(ItemStack stack, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
+
+        if(stack.isOf(this.getItem())) {
+            FabricShieldLibClient.renderBanner(stack, matrices, vertexConsumers, light, overlay, this.getShieldEntityModel(), this.getBaseSpriteIdentifier(), this.getNoPatternSpriteIdentifier());
+        }
     }
 }

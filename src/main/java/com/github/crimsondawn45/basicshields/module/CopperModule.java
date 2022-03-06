@@ -1,10 +1,10 @@
 package com.github.crimsondawn45.basicshields.module;
 
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
+import com.github.crimsondawn45.basicshields.object.CopperModItem;
 import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.ModRecipe;
-import com.github.crimsondawn45.basicshields.util.ModShieldItem;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -31,18 +31,20 @@ public class CopperModule extends ContentModule {
         //Tag
         copper_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "copper_ingots"));
 
-        //TODO: make shield oxidize
         //TODO: make a way to wax the shield
 
         //Item
-        copper_shield = new ModShieldItem(
+        copper_shield = new CopperModItem(
             this,
             "copper_shield",
             new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.copper_shield_durability).group(BasicShields.SHIELDS),
             BasicShields.CONFIG.copper_shield_cooldown,
             BasicShields.CONFIG.copper_shield_enchantability,
             copper_tag),
-            "entity/copper_shield_base");
+            "entity/copper_shield_base_normal",
+            "entity/copper_shield_base_exposed",
+            "entity/copper_shield_base_weathered",
+            "entity/copper_shield_base_oxidized");
 
         //Recipe
         this.addRecipe(copper_shield, ModRecipe.createShieldRecipe(copper_tag.id(), true, copper_shield.getIdentifier()));

@@ -26,8 +26,6 @@ public class SapphireModule extends ContentModule {
         super(alwaysLoad, ids);
     }
 
-    //TODO: add variants for non-techreborn stuff
-
     @Override
     public void registerContent() {
 

@@ -13,6 +13,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -71,7 +72,16 @@ public class VanillaModule extends ContentModule {
              * Handles vulnerability curse
              */
             if(curse_of_vulnerability.hasEnchantment(shield)) {
-                defender.damage(source, (int)Math.round(amount * BasicShields.CONFIG.curse_of_vulnerability_damage_percentage));
+
+                //Grab attacker
+                Entity attacker = source.getAttacker();
+                assert attacker != null;
+
+                if(attacker instanceof PlayerEntity) {
+                    defender.damage(DamageSource.player((PlayerEntity) attacker), (int)Math.round(amount * BasicShields.CONFIG.curse_of_vulnerability_damage_percentage));
+                } else {
+                    defender.damage(DamageSource.mob((LivingEntity) attacker), (int)Math.round(amount * BasicShields.CONFIG.curse_of_vulnerability_damage_percentage));
+                }
             }
 
             return ActionResult.PASS;

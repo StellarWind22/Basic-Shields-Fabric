@@ -47,7 +47,9 @@ public class VanillaModule extends ContentModule {
 
         //Enchantments
         reflection = new BasicShieldEnchantment("reflection", Rarity.UNCOMMON, false, false, 3);
-        curse_of_vulnerability = new BasicShieldEnchantment("curse_of_vulnerability", Rarity.RARE, true, true, 1);
+
+        //TODO: fix this enchantment
+        //curse_of_vulnerability = new BasicShieldEnchantment("curse_of_vulnerability", Rarity.RARE, true, true, 1);
 
         //Enchantment Event
         ShieldBlockCallback.EVENT.register((defender, source, amount, hand, shield) -> {

@@ -588,6 +588,8 @@
   "item.basicshields.gobber_dragon_shield.dark_gray": "Dark Gray Dragon Shield",
   "item.basicshields.gobber_dragon_shield.black": "Black Dragon Shield",
 
+  "enchantment.basicshields.reflection":"Reflection",
+
   "item.basicshields.gobber.tooltip.start":"Reflects ",
   "item.basicshields.gobber.tooltip.end":"% of damage.",
 
@@ -600,7 +602,6 @@
   "text.autoconfig.basicshields.category.textures":"Textures",
 
   "text.autoconfig.basicshields.option.reflection_percentage_per_level":"Reflection Enchant: Damage percent reflected per level",
-  "text.autoconfig.basicshields.option.curse_of_vulnerability_damage_percentage":"Curse Of Vulnerability: Damage percent",
 
   "text.autoconfig.basicshields.option.vanilla_wooden_shield_durability":"Wooden Shield Durability",
   "text.autoconfig.basicshields.option.vanilla_wooden_shield_enchantability":"Wooden Shield Enchantability",

@@ -10,10 +10,9 @@ import com.github.crimsondawn45.fabricshieldlib.lib.event.ShieldBlockCallback;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantment.Rarity;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -29,7 +28,7 @@ public class VanillaModule extends ContentModule {
     //Reflection - reflects percentage of damage based on level max is 75% reflection max level is 3
     public BasicShieldEnchantment reflection;
     //Curse of Vulnerability - lets 33% of the damage though the shield
-    public BasicShieldEnchantment curse_of_vulnerability;
+    //public BasicShieldEnchantment curse_of_vulnerability;
 
     //Regular Items
     public ModItem wooden_shield;
@@ -67,22 +66,6 @@ public class VanillaModule extends ContentModule {
                     attacker.damage(DamageSource.player((PlayerEntity) defender), (int)Math.round(amount * (BasicShields.CONFIG.reflection_percentage_per_level * EnchantmentHelper.getLevel(reflection, shield))));
                 } else {
                     attacker.damage(DamageSource.mob(defender), (int)Math.round(amount * (BasicShields.CONFIG.reflection_percentage_per_level * EnchantmentHelper.getLevel(reflection, shield))));
-                }
-            }
-
-            /**
-             * Handles vulnerability curse
-             */
-            if(curse_of_vulnerability.hasEnchantment(shield)) {
-
-                //Grab attacker
-                Entity attacker = source.getAttacker();
-                assert attacker != null;
-
-                if(attacker instanceof PlayerEntity) {
-                    defender.damage(DamageSource.player((PlayerEntity) attacker), (int)Math.round(amount * BasicShields.CONFIG.curse_of_vulnerability_damage_percentage));
-                } else {
-                    defender.damage(DamageSource.mob((LivingEntity) attacker), (int)Math.round(amount * BasicShields.CONFIG.curse_of_vulnerability_damage_percentage));
                 }
             }
 

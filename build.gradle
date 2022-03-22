@@ -31,7 +31,7 @@ repositories {
 	maven { url = "https://jitpack.io" }					//Jitpack
 	maven { url = "https://maven.shedaniel.me/" }			//Cloth
 	maven { url = "https://maven.terraformersmc.com/" }		//Modmenu
-	maven { url = "https://minecraft.guntram.de/maven/"}
+	maven { url = "https://minecraft.guntram.de/maven/"}	//Crowdlin
 }
 
 dependencies {

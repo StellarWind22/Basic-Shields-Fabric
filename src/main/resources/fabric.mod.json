@@ -6,10 +6,12 @@
   "name": "Basic Shields [Fabric]",
   "description": "Adds shields for all the vanilla materials & more with full banner support!",
   "authors": [
-    "CrimsonDawn45"
+    "CrimsonDawn45 - Maintainer"
   ],
   "contributors":[
-    "Felix14-v2"
+    "Felix14-v2 - Russian Translation",
+    "cowsha - Russian Translation",
+    "ogpaulw - Fixed some tags"
   ],
   "contact": {
     "sources": "https://github.com/CrimsonDawn45/Basic-Shields-Fabric"

@@ -22,9 +22,14 @@ public class ShieldItemMixin extends Item {
 
     @Override
     public String getTranslationKey(ItemStack stack) {
+
+        /*
+            Check for it being the vanilla shield bc some mods extend this class
+        */
         if (BlockItem.getBlockEntityNbt(stack) != null && stack.getItem().equals(Items.SHIELD)) {
             return TRANSLATION_KEY + "." + ShieldItem.getColor(stack).getName();
         }
+
         return TRANSLATION_KEY;
     }
 }

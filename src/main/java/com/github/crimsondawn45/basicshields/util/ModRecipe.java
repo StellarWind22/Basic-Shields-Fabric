@@ -7,7 +7,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import net.minecraft.item.Item;
-import net.minecraft.tag.Tag;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 
 public class ModRecipe {
@@ -73,7 +73,7 @@ public class ModRecipe {
      * 
      * @return a shield recipe in JsonObject form
      */
-    public static JsonObject createShieldRecipe(ArrayList<Tag<Item>> tags, Identifier output) {
+    public static JsonObject createShieldRecipe(ArrayList<TagKey<Item>> tags, Identifier output) {
         //Creating a new json object, where we will store our recipe.
         JsonObject json = new JsonObject();
         //The "type" of the recipe we are creating. In this case, a shaped recipe.
@@ -98,7 +98,7 @@ public class ModRecipe {
         keys.add("#", plankKey);
 
         //Create i key
-        for(Tag<Item> tag : tags) {
+        for(TagKey<Item> tag : tags) {
             JsonObject entry = new JsonObject();
             entry.addProperty("tag", tag.toString());
             ingotKeyList.add(entry);

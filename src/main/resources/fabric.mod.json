@@ -11,7 +11,8 @@
   "contributors":[
     "Felix14-v2 - Russian Translation",
     "cowsha - Russian Translation",
-    "ogpaulw - Fixed some tags"
+    "ogpaulw - Fixed some tags",
+    "bvhfve - Helped port to 1.19"
   ],
   "contact": {
     "sources": "https://github.com/CrimsonDawn45/Basic-Shields-Fabric"
@@ -37,10 +38,10 @@
   ],
 
   "depends": {
-    "fabricshieldlib": ">=1.5.3-1.18",
+    "fabricshieldlib": ">=1.6.0-1.19",
     "fabricloader": ">=0.13.3",
     "fabric": "*",
-    "minecraft": "1.18.x",
+    "minecraft": "1.19.x",
     "java": ">=17",
     "cloth-config":">=6.2.57"
   }

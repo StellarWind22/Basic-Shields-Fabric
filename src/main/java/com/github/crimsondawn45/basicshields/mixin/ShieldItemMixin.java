@@ -5,6 +5,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.item.ShieldItem;
 
 /**
@@ -21,7 +22,7 @@ public class ShieldItemMixin extends Item {
 
     @Override
     public String getTranslationKey(ItemStack stack) {
-        if (BlockItem.getBlockEntityNbt(stack) != null) {
+        if (BlockItem.getBlockEntityNbt(stack) != null && stack.getItem().equals(Items.SHIELD)) {
             return TRANSLATION_KEY + "." + ShieldItem.getColor(stack).getName();
         }
         return TRANSLATION_KEY;

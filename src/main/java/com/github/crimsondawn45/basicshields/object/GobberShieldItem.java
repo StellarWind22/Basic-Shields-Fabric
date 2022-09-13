@@ -11,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.tag.TagKey;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 
 public class GobberShieldItem extends FabricBannerShieldItem {
@@ -45,9 +46,8 @@ public class GobberShieldItem extends FabricBannerShieldItem {
     //Add reflection tooltip
     @Override
     public void appendShieldTooltip(ItemStack stack, List<Text> tooltip, TooltipContext context) {
-
-        //TODO: Fix this stuff later
-        //tooltip.add(new TranslatableTextContent("item.basicshields.gobber.tooltip.start").append(new LiteralMessage(String.valueOf(this.reflectPercentage * 100))).append(new TranslatableText("item.basicshields.gobber.tooltip.end")).formatted(Formatting.GREEN));
+        
+        tooltip.add(Text.translatable("item.basicshields.gobber.tooltip.start").append(Text.literal(String.valueOf(this.reflectPercentage * 100))).append(Text.translatable("item.basicshields.gobber.tooltip.end")).formatted(Formatting.GREEN));
     }
 
     //Make Unbreakable

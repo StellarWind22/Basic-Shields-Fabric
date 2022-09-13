@@ -9,14 +9,16 @@ import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
 @Config.Gui.CategoryBackground(category = "modules", background = "minecraft:textures/block/dirt.png")
 @Config.Gui.CategoryBackground(category = "stats", background = "minecraft:textures/block/dirt.png")
 @Config.Gui.CategoryBackground(category = "textures", background = "minecraft:textures/block/dirt.png")
-@Config.Gui.CategoryBackground(category = "enchantments", background = "minecraft:textures/block/dirt.png")
+@Config.Gui.CategoryBackground(category = "misc", background = "minecraft:textures/block/dirt.png")
 public class BasicShieldsConfig implements ConfigData {
 
-    //Enchantments
-    @ConfigEntry.Category("enchantments")
+    //Misc
+    @ConfigEntry.Category("misc")
     public float reflection_percentage_per_level =          0.25F;
-    //@ConfigEntry.Category("enchantments")
+    //@ConfigEntry.Category("misc")
     //public float curse_of_vulnerability_damage_percentage = 0.33F;
+    @ConfigEntry.Category("misc")
+    public boolean rename_vanilla_shield =                  true;
 
     //Vanilla
         //Wooden

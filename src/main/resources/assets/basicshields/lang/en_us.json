@@ -617,10 +617,11 @@
   "text.autoconfig.basicshields.title":"Basic Shields: Config",
   "text.autoconfig.basicshields.category.modules":"Modules",
   "text.autoconfig.basicshields.category.stats":"Stats",
-  "text.autoconfig.basicshields.category.enchantments":"Enchantments",
+  "text.autoconfig.basicshields.category.misc":"Misc",
   "text.autoconfig.basicshields.category.textures":"Textures",
 
   "text.autoconfig.basicshields.option.reflection_percentage_per_level":"Reflection Enchant: Damage percent reflected per level",
+  "text.autoconfig.basicshields.option.rename_vanilla_shield":"Rename vanilla shield",
 
   "text.autoconfig.basicshields.option.vanilla_wooden_shield_durability":"Wooden Shield Durability",
   "text.autoconfig.basicshields.option.vanilla_wooden_shield_enchantability":"Wooden Shield Enchantability",

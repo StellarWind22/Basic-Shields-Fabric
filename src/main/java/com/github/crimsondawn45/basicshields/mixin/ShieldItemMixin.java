@@ -1,11 +1,13 @@
 package com.github.crimsondawn45.basicshields.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.item.ShieldItem;
 
 /**
@@ -20,16 +22,15 @@ public class ShieldItemMixin extends Item {
         super(settings);
     }
 
-    @Override
-    public String getTranslationKey(ItemStack stack) {
+    @Inject(method = "getTranslationKey", at = @At("TAIL"), cancellable = true)
+    private void getTranslationKey(ItemStack stack, CallbackInfoReturnable<String> info) {
 
-        /*
-            Check for it being the vanilla shield bc some mods extend this class
-        */
-        if (BlockItem.getBlockEntityNbt(stack) != null && stack.getItem().equals(Items.SHIELD)) {
-            return TRANSLATION_KEY + "." + ShieldItem.getColor(stack).getName();
+        if(info.getReturnValue().startsWith("item.minecraft.shield")) {
+            if (BlockItem.getBlockEntityNbt(stack) != null) {
+                info.setReturnValue(TRANSLATION_KEY + "." + ShieldItem.getColor(stack).getName());
+            }
+
+            info.setReturnValue(TRANSLATION_KEY);
         }
-
-        return TRANSLATION_KEY;
     }
 }

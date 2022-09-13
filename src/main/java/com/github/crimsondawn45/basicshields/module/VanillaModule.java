@@ -6,19 +6,12 @@ import com.github.crimsondawn45.basicshields.util.ContentModule;
 import com.github.crimsondawn45.basicshields.util.ModItem;
 import com.github.crimsondawn45.basicshields.util.ModRecipe;
 import com.github.crimsondawn45.basicshields.util.ModShieldItem;
-import com.github.crimsondawn45.fabricshieldlib.lib.event.ShieldBlockCallback;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldItem;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.enchantment.Enchantment.Rarity;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.tag.ItemTags;
 import net.minecraft.tag.TagKey;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -44,18 +37,17 @@ public class VanillaModule extends ContentModule {
     @Override
     public void registerContent() {
 
+        //TODO: fix this enchantment
         //Enchantments
-        reflection = new BasicShieldEnchantment("reflection", Rarity.UNCOMMON, false, false, 3);
+        //reflection = new BasicShieldEnchantment("reflection", Rarity.UNCOMMON, false, false, 3);
 
         //TODO: fix this enchantment
         //curse_of_vulnerability = new BasicShieldEnchantment("curse_of_vulnerability", Rarity.RARE, true, true, 1);
 
         //Enchantment Event
+        /*
         ShieldBlockCallback.EVENT.register((defender, source, amount, hand, shield) -> {
 
-            /**
-             * Handles reflection enchantment
-             */
             if(reflection.hasEnchantment(shield)) {
 
                 //Grab attacker
@@ -71,6 +63,7 @@ public class VanillaModule extends ContentModule {
 
             return ActionResult.PASS;
         });
+        */
 
         //Tags
         gold_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "gold_ingots"));

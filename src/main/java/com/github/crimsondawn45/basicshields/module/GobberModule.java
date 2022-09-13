@@ -46,7 +46,11 @@ public class GobberModule extends ContentModule {
 
                 GobberShieldItem shieldInstance = (GobberShieldItem) shield.getItem();
                 Entity attacker = source.getAttacker();
-                assert attacker != null;
+
+                //Null Check
+                if(attacker == null) {
+                    return ActionResult.PASS;
+                }
 
                 //Reflect damage because thats a more generic effect all gobber shields will have.
                 if(defender instanceof PlayerEntity) {

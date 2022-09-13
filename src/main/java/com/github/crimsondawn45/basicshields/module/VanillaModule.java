@@ -51,7 +51,6 @@ public class VanillaModule extends ContentModule {
         //curse_of_vulnerability = new BasicShieldEnchantment("curse_of_vulnerability", Rarity.RARE, true, true, 1);
 
         //Enchantment Event
-        
         ShieldBlockCallback.EVENT.register((defender, source, amount, hand, shield) -> {
 
             if(reflection.hasEnchantment(shield)) {
@@ -59,7 +58,7 @@ public class VanillaModule extends ContentModule {
                 //Grab attacker
                 Entity attacker = source.getAttacker();
 
-                //Null check
+                //Null Check
                 if(attacker == null) {
                     return ActionResult.PASS;
                 }

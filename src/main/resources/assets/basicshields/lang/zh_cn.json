@@ -575,7 +575,7 @@
     "item.basicshields.gobber_dragon_shield.gray": "灰色戈伯龙盾牌",
     "item.basicshields.gobber_dragon_shield.dark_gray": "深灰色戈伯龙盾牌",
     "item.basicshields.gobber_dragon_shield.black": "黑色戈伯龙盾牌",
-    "enchantment.basicshields.reflection": "反射",
+    "enchantment.basicshields.reflection": "反弹",
     "item.basicshields.gobber.tooltip.start": "反弹",
     "item.basicshields.gobber.tooltip.end": "%的伤害。",
     "itemGroup.basicshields.shields": "盾牌基础",

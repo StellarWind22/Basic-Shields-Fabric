@@ -3,12 +3,13 @@
   "id": "basicshields",
   "version": "${version}",
 
-  "name": "Basic Shields [Fabric]",
-  "description": "Adds shields for all the vanilla materials & more with full banner support!",
+  "name": "Basic Shields - Enchantless Fork [Fabric]",
+  "description": "An updated fork of the Basic Shields mod that aims to fix crashing issues in the 1.18.2 version of the mod.",
   "authors": [
-    "CrimsonDawn45"
+    "HaXr"
   ],
   "contributors":[
+    "CrimsonDawn45 - Original Author",
     "Felix14-v2"
   ],
   "contact": {

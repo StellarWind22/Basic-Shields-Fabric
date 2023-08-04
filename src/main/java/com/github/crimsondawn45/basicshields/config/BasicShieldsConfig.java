@@ -12,12 +12,6 @@ import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
 @Config.Gui.CategoryBackground(category = "enchantments", background = "minecraft:textures/block/dirt.png")
 public class BasicShieldsConfig implements ConfigData {
 
-    //Enchantments
-    @ConfigEntry.Category("enchantments")
-    public float reflection_percentage_per_level =          0.25F;
-    //@ConfigEntry.Category("enchantments")
-    //public float curse_of_vulnerability_damage_percentage = 0.33F;
-
     //Vanilla
         //Wooden
     @ConfigEntry.Category("stats")

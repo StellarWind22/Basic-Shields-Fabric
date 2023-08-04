@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "basicshields",
+  "id": "basicshieldsfork",
   "version": "${version}",
 
   "name": "Basic Shields - Enchantless Fork [Fabric]",

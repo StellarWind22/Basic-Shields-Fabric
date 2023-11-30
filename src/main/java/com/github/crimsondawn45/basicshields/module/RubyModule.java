@@ -9,9 +9,9 @@ import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldIte
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
-import net.minecraft.tag.TagKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class RubyModule extends ContentModule {
 
@@ -25,17 +25,15 @@ public class RubyModule extends ContentModule {
         super(alwaysLoad, ids);
     }
 
-    //TODO: add variants for non-techreborn stuff
-
     @Override
     public void registerContent() {
 
         //Tag
-        ruby_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "rubies"));
+        ruby_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "ruby"));
 
         //Item
         ruby_shield = new ModShieldItem(this,"ruby_shield",
-        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.ruby_shield_durability).group(BasicShields.SHIELDS),
+        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.ruby_shield_durability),
         BasicShields.CONFIG.ruby_shield_cooldown,
         BasicShields.CONFIG.ruby_shield_enchantability,
         ruby_tag),
@@ -43,5 +41,10 @@ public class RubyModule extends ContentModule {
 
         //Recipe
         this.addRecipe(ruby_shield, ModRecipe.createShieldRecipe(ruby_tag.id(), true, ruby_shield.getIdentifier()));
+
+        //Group
+        BasicShields.SHIELDS.entries((context, entries) -> {
+            entries.add(ruby_shield.getItem());
+        });
     }
 }

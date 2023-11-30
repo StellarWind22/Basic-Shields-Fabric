@@ -10,9 +10,9 @@ import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldIte
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
-import net.minecraft.tag.TagKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class AdabraniumModule extends ContentModule {
 
@@ -33,12 +33,12 @@ public class AdabraniumModule extends ContentModule {
     public void registerContent() {
 
         //Tags
-        vibranium_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c","vibranium_ingots"));
-        adamantium_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c","adamantium_ingots"));
+        vibranium_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c","vibranium_ingots"));
+        adamantium_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c","adamantium_ingots"));
         
         //Nether
         nether_shield = new ModShieldItem(this, "nether_shield",
-            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.adabranium_nether_shield_durability).group(BasicShields.SHIELDS).fireproof(),
+            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.adabranium_nether_shield_durability).fireproof(),
             BasicShields.CONFIG.adabranium_nether_shield_cooldown,
             BasicShields.CONFIG.adabranium_nether_shield_enchantability,
             Items.NETHER_BRICK),
@@ -49,7 +49,7 @@ public class AdabraniumModule extends ContentModule {
        
         //Vibranium
         vibranium_shield = new ModShieldItem(this, "vibranium_shield",
-            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.adabranium_vibranium_shield_durability).group(BasicShields.SHIELDS),
+            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.adabranium_vibranium_shield_durability),
             BasicShields.CONFIG.adabranium_vibranium_shield_cooldown,
             BasicShields.CONFIG.adabranium_vibranium_shield_enchantability,
             vibranium_tag),
@@ -60,7 +60,7 @@ public class AdabraniumModule extends ContentModule {
 
         //Adamantium
         adamantium_shield = new ModShieldItem(this, "adamantium_shield",
-            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.adabranium_adamantium_shield_durability).group(BasicShields.SHIELDS),
+            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.adabranium_adamantium_shield_durability),
             BasicShields.CONFIG.adabranium_adamantium_shield_cooldown,
             BasicShields.CONFIG.adabranium_adamantium_shield_enchantability,
             adamantium_tag),
@@ -68,5 +68,12 @@ public class AdabraniumModule extends ContentModule {
 
         //Recipe
         this.addRecipe(adamantium_shield, ModRecipe.createShieldRecipe(adamantium_tag.id(), true, adamantium_shield.getIdentifier()));
+
+        //Item Group
+        BasicShields.SHIELDS.entries((context, entries) -> {
+            entries.add(nether_shield.getItem());
+            entries.add(vibranium_shield.getItem());
+            entries.add(adamantium_shield.getItem());
+        });
     }
 }

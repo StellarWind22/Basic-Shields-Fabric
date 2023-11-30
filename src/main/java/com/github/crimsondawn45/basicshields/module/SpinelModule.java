@@ -9,9 +9,9 @@ import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldIte
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
-import net.minecraft.tag.TagKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class SpinelModule extends ContentModule {
 
@@ -29,11 +29,11 @@ public class SpinelModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        spinel_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "spinel"));
+        spinel_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "spinel"));
 
         //Item
         spinel_shield = new ModShieldItem(this,"spinel_shield",
-        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.spinel_shield_durability).group(BasicShields.SHIELDS),
+        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.spinel_shield_durability),
         BasicShields.CONFIG.spinel_shield_cooldown,
         BasicShields.CONFIG.spinel_shield_enchantability,
         spinel_tag),
@@ -41,5 +41,10 @@ public class SpinelModule extends ContentModule {
 
         //Recipe
         this.addRecipe(spinel_shield, ModRecipe.createShieldRecipe(spinel_tag.id(), true, spinel_shield.getIdentifier()));
+
+        //Group
+        BasicShields.SHIELDS.entries((context, entries) -> {
+            entries.add(spinel_shield.getItem());
+        });
     }
 }

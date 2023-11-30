@@ -9,9 +9,9 @@ import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldIte
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
-import net.minecraft.tag.TagKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class MoissaniteModule extends ContentModule {
 
@@ -29,11 +29,11 @@ public class MoissaniteModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        moissanite_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "moissanite"));
+        moissanite_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "moissanite"));
 
         //Item
         moissanite_shield = new ModShieldItem(this,"moissanite_shield",
-        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.moissanite_shield_durability).group(BasicShields.SHIELDS),
+        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.moissanite_shield_durability),
         BasicShields.CONFIG.moissanite_shield_cooldown,
         BasicShields.CONFIG.moissanite_shield_enchantability,
         moissanite_tag),
@@ -41,5 +41,10 @@ public class MoissaniteModule extends ContentModule {
 
         //Recipe
         this.addRecipe(moissanite_shield, ModRecipe.createShieldRecipe(moissanite_tag.id(), true, moissanite_shield.getIdentifier()));
+
+        //Group
+        BasicShields.SHIELDS.entries((context, entries) -> {
+            entries.add(moissanite_shield.getItem());
+        });
     }
 }

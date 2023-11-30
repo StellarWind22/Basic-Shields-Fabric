@@ -9,9 +9,9 @@ import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldIte
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
-import net.minecraft.tag.TagKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class EmeraldModule extends ContentModule {
 
@@ -19,7 +19,7 @@ public class EmeraldModule extends ContentModule {
     public ModItem emerald_shield;
 
     //Tag
-    public TagKey<Item> emerald_tag;
+    public net.minecraft.registry.tag.TagKey<Item> emerald_tag;
 
     public EmeraldModule(boolean alwaysLoad, boolean isVanillaMaterial, String...ids) {
         super(alwaysLoad, isVanillaMaterial, ids);
@@ -29,11 +29,11 @@ public class EmeraldModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        emerald_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "emeralds"));
+        emerald_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "emeralds"));
 
         //Item
         emerald_shield = new ModShieldItem(this,"emerald_shield",
-        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.emerald_shield_durability).group(BasicShields.SHIELDS),
+        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.emerald_shield_durability),
         BasicShields.CONFIG.emerald_shield_cooldown,
         BasicShields.CONFIG.emerald_shield_enchantability,
         emerald_tag),

@@ -9,9 +9,9 @@ import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldIte
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
-import net.minecraft.tag.TagKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class BronzeModule extends ContentModule {
 
@@ -28,14 +28,12 @@ public class BronzeModule extends ContentModule {
     @Override
     public void registerContent() {
 
-        //TODO: add variants for non-techreborn stuff
-
         //Tag
-        bronze_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "bronze_ingots"));
+        bronze_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "bronze_ingots"));
 
         //Item
         bronze_shield = new ModShieldItem(this,"bronze_shield",
-        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.bronze_shield_durability).group(BasicShields.SHIELDS),
+        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.bronze_shield_durability),
         BasicShields.CONFIG.bronze_shield_cooldown,
         BasicShields.CONFIG.bronze_shield_enchantability,
         bronze_tag),
@@ -43,5 +41,10 @@ public class BronzeModule extends ContentModule {
 
         //Recipe
         this.addRecipe(bronze_shield, ModRecipe.createShieldRecipe(bronze_tag.id(), true, bronze_shield.getIdentifier()));
+
+        //Group
+        BasicShields.SHIELDS.entries((context, entries) -> {
+            entries.add(bronze_shield.getItem());
+        });
     }
 }

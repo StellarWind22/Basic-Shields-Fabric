@@ -9,9 +9,9 @@ import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldIte
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
-import net.minecraft.tag.TagKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class AmethystModule extends ContentModule {
 
@@ -19,7 +19,7 @@ public class AmethystModule extends ContentModule {
     public ModItem amethyst_shield;
 
     //Tag
-    public TagKey<Item> amethyst_tag;
+    public net.minecraft.registry.tag.TagKey<Item> amethyst_tag;
 
     public AmethystModule(boolean alwaysLoad, boolean isVanillaMaterial, String...ids) {
         super(alwaysLoad, isVanillaMaterial, ids);
@@ -29,11 +29,11 @@ public class AmethystModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        amethyst_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "amethyst"));
+        amethyst_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "amethyst"));
 
         //Item
         amethyst_shield = new ModShieldItem(this,"amethyst_shield",
-        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.amethyst_shield_durability).group(BasicShields.SHIELDS),
+        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.amethyst_shield_durability),
         BasicShields.CONFIG.amethyst_shield_cooldown,
         BasicShields.CONFIG.amethyst_shield_enchantability,
         amethyst_tag),

@@ -9,9 +9,9 @@ import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldIte
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
-import net.minecraft.tag.TagKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class CarbonadoModule extends ContentModule {
 
@@ -29,11 +29,11 @@ public class CarbonadoModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        carbonado_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "carbonado"));
+        carbonado_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "carbonado"));
 
         //Item
         carbonado_shield = new ModShieldItem(this,"carbonado_shield",
-        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.carbonado_shield_durability).group(BasicShields.SHIELDS),
+        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.carbonado_shield_durability),
         BasicShields.CONFIG.carbonado_shield_cooldown,
         BasicShields.CONFIG.carbonado_shield_enchantability,
         carbonado_tag),
@@ -41,5 +41,10 @@ public class CarbonadoModule extends ContentModule {
 
         //Recipe
         this.addRecipe(carbonado_shield, ModRecipe.createShieldRecipe(carbonado_tag.id(), true, carbonado_shield.getIdentifier()));
+
+        //Group
+        BasicShields.SHIELDS.entries((context, entries) -> {
+            entries.add(carbonado_shield.getItem());
+        });
     }
 }

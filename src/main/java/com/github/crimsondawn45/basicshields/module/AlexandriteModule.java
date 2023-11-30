@@ -9,9 +9,9 @@ import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldIte
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
-import net.minecraft.tag.TagKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class AlexandriteModule extends ContentModule {
 
@@ -29,11 +29,11 @@ public class AlexandriteModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        alexandrite_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "alexandrite"));
+        alexandrite_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "alexandrite"));
 
         //Item
         alexandrite_shield = new ModShieldItem(this,"alexandrite_shield",
-        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.alexandrite_shield_durability).group(BasicShields.SHIELDS),
+        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.alexandrite_shield_durability),
         BasicShields.CONFIG.alexandrite_shield_cooldown,
         BasicShields.CONFIG.alexandrite_shield_enchantability,
         alexandrite_tag),
@@ -41,5 +41,10 @@ public class AlexandriteModule extends ContentModule {
 
         //Recipe
         this.addRecipe(alexandrite_shield, ModRecipe.createShieldRecipe(alexandrite_tag.id(), true, alexandrite_shield.getIdentifier()));
+
+        //Group
+        BasicShields.SHIELDS.entries((context, entries) -> {
+            entries.add(alexandrite_shield.getItem());
+        });
     }
 }

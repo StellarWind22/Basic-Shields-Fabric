@@ -9,9 +9,9 @@ import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldIte
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
-import net.minecraft.tag.TagKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class SteelModule extends ContentModule {
 
@@ -29,11 +29,11 @@ public class SteelModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        steel_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "steel_ingots"));
+        steel_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "steel_ingots"));
 
         //Item
         steel_shield = new ModShieldItem(this,"steel_shield",
-        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.steel_shield_durability).group(BasicShields.SHIELDS),
+        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.steel_shield_durability),
         BasicShields.CONFIG.steel_shield_cooldown,
         BasicShields.CONFIG.steel_shield_enchantability,
         steel_tag),
@@ -41,5 +41,10 @@ public class SteelModule extends ContentModule {
 
         //Recipe
         this.addRecipe(steel_shield, ModRecipe.createShieldRecipe(steel_tag.id(), true, steel_shield.getIdentifier()));
+
+        //Group
+        BasicShields.SHIELDS.entries((context, entries) -> {
+            entries.add(steel_shield.getItem());
+        });
     }
 }

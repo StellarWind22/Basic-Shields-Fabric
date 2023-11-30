@@ -10,13 +10,13 @@ import com.github.crimsondawn45.fabricshieldlib.lib.event.ShieldBlockCallback;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
-import net.minecraft.tag.TagKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.world.World;
 
 public class GobberModule extends ContentModule {
     //Gobber Items
@@ -46,32 +46,32 @@ public class GobberModule extends ContentModule {
 
                 GobberShieldItem shieldInstance = (GobberShieldItem) shield.getItem();
                 Entity attacker = source.getAttacker();
+                World world = attacker.getWorld();
 
-                //Null Check
-                if(attacker == null) {
-                    return ActionResult.PASS;
+                //Null check
+                if(attacker.equals(null)) {
+                    return ActionResult.CONSUME;
                 }
 
                 //Reflect damage because thats a more generic effect all gobber shields will have.
                 if(defender instanceof PlayerEntity) {
-                    PlayerEntity player = (PlayerEntity) defender;
-                    attacker.damage(DamageSource.player(player), Math.round(amount * shieldInstance.getReflectPercentage()));
+                    attacker.damage(world.getDamageSources().playerAttack((PlayerEntity) defender), Math.round(amount * shieldInstance.getReflectPercentage()));
                 } else {
-                    attacker.damage(DamageSource.mob(defender), Math.round(amount * shieldInstance.getReflectPercentage()));
+                    attacker.damage(world.getDamageSources().mobAttack(defender), Math.round(amount * shieldInstance.getReflectPercentage()));
                 }
             }
             return ActionResult.PASS;
         });
 
         //Tags
-        gobber_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c","gobber_ingots"));
-        gobber_nether_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c","gobber_nether_ingots"));
-        gobber_end_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c","gobber_end_ingots"));
-        gobber_dragon_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c","dragon_stars"));
+        gobber_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c","gobber_ingots"));
+        gobber_nether_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c","gobber_nether_ingots"));
+        gobber_end_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c","gobber_end_ingots"));
+        gobber_dragon_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c","dragon_stars"));
 
         //Gobber
         gobber_shield = new ModShieldItem(this, "gobber_shield",
-            new GobberShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.gobber_dragon_shield_durability).group(BasicShields.SHIELDS),
+            new GobberShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.gobber_dragon_shield_durability),
             BasicShields.CONFIG.gobber_shield_cooldown,
             BasicShields.CONFIG.gobber_shield_enchantability,
             BasicShields.CONFIG.gobber_reflect_percentage,
@@ -84,7 +84,7 @@ public class GobberModule extends ContentModule {
 
         //Nether Gobber
         gobber_nether_shield = new ModShieldItem(this, "gobber_nether_shield",
-            new GobberShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.gobber_nether_shield_durability).group(BasicShields.SHIELDS),
+            new GobberShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.gobber_nether_shield_durability),
             BasicShields.CONFIG.gobber_nether_shield_cooldown,
             BasicShields.CONFIG.gobber_nether_shield_enchantability,
             BasicShields.CONFIG.gobber_reflect_percentage,
@@ -97,7 +97,7 @@ public class GobberModule extends ContentModule {
 
         //End Gobber
         gobber_end_shield = new ModShieldItem(this, "gobber_end_shield",
-            new GobberShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.gobber_end_shield_durability).group(BasicShields.SHIELDS),
+            new GobberShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.gobber_end_shield_durability),
             BasicShields.CONFIG.gobber_end_shield_cooldown,
             BasicShields.CONFIG.gobber_end_shield_enchantability,
             BasicShields.CONFIG.gobber_reflect_percentage,
@@ -110,7 +110,7 @@ public class GobberModule extends ContentModule {
 
         //Dragon Gobber
         gobber_dragon_shield = new ModShieldItem(this, "gobber_dragon_shield",
-        new GobberShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.gobber_dragon_shield_durability).group(BasicShields.SHIELDS),
+        new GobberShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.gobber_dragon_shield_durability),
             BasicShields.CONFIG.gobber_dragon_shield_cooldown,
             BasicShields.CONFIG.gobber_dragon_shield_enchantability,
             BasicShields.CONFIG.gobber_reflect_percentage,
@@ -120,5 +120,13 @@ public class GobberModule extends ContentModule {
 
         //Recipe
         this.addRecipe(gobber_dragon_shield, ModRecipe.createSmithingRecipe(gobber_end_shield.getIdentifier(), false, gobber_dragon_tag.id(), true, gobber_dragon_shield.getIdentifier()));
+
+        //Item Group
+        BasicShields.SHIELDS.entries((context, entries) -> {
+            entries.add(gobber_shield.getItem());
+            entries.add(gobber_nether_shield.getItem());
+            entries.add(gobber_end_shield.getItem());
+            entries.add(gobber_dragon_shield.getItem());
+        });
     }
 }

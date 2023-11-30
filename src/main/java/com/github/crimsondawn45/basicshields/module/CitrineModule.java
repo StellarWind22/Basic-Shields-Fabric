@@ -9,9 +9,9 @@ import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldIte
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
-import net.minecraft.tag.TagKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class CitrineModule extends ContentModule {
 
@@ -29,11 +29,11 @@ public class CitrineModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        citrine_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "citrine"));
+        citrine_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "citrine"));
 
         //Item
         citrine_shield = new ModShieldItem(this,"citrine_shield",
-        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.citrine_shield_durability).group(BasicShields.SHIELDS),
+        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.citrine_shield_durability),
         BasicShields.CONFIG.citrine_shield_cooldown,
         BasicShields.CONFIG.citrine_shield_enchantability,
         citrine_tag),
@@ -41,5 +41,10 @@ public class CitrineModule extends ContentModule {
 
         //Recipe
         this.addRecipe(citrine_shield, ModRecipe.createShieldRecipe(citrine_tag.id(), true, citrine_shield.getIdentifier()));
+
+        //Group
+        BasicShields.SHIELDS.entries((context, entries) -> {
+            entries.add(citrine_shield.getItem());
+        });
     }
 }

@@ -42,7 +42,7 @@
     "fabricshieldlib": ">=1.6.0-1.19",
     "fabricloader": ">=0.13.3",
     "fabric": "*",
-    "minecraft": "1.19.x",
+    "minecraft": "1.20.x",
     "java": ">=17",
     "cloth-config":">=6.2.57"
   }

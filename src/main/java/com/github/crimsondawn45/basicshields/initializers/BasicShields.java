@@ -32,7 +32,7 @@ import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemGroup.Builder;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 
@@ -68,12 +68,11 @@ public class BasicShields implements ModInitializer {
 	public static TourmalineModule 		tourmaline;
 
 	//Item Group
-	public static final ItemGroup SHIELDS = FabricItemGroup.builder()
+	public static final Builder SHIELDS = FabricItemGroup.builder()
 	.icon(() -> new ItemStack(vanilla.diamond_shield.getItem()))
 	.displayName(Text.translatable("itemGroup.tutorial.test_group"))
         .entries((context, entries) -> {
-	})
-	.build();
+	});
 
 	//Config
 	public static BasicShieldsConfig CONFIG = new BasicShieldsConfig();
@@ -114,6 +113,9 @@ public class BasicShields implements ModInitializer {
 		tanzanite =		new TanzaniteModule(	CONFIG.always_load_tanzanite, 	"enriched");
 		topaz =			new TopazModule(        CONFIG.always_load_topaz, 		"more_gems", "gemsandcrystals");
 		tourmaline =	new TourmalineModule(   CONFIG.always_load_tourmaline, 	"more_gems");
+
+		//Build item group
+		SHIELDS.build();
 
 		LOGGER.info("Basic Shields initialized!");
 	}

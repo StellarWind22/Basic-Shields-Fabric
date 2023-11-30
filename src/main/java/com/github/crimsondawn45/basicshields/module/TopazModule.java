@@ -9,9 +9,9 @@ import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldIte
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
-import net.minecraft.tag.TagKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class TopazModule extends ContentModule {
 
@@ -28,14 +28,12 @@ public class TopazModule extends ContentModule {
     @Override
     public void registerContent() {
 
-        //TODO: add variants for gems and crystals
-
         //Tag
-        topaz_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "topaz"));
+        topaz_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "topaz"));
 
         //Item
         topaz_shield = new ModShieldItem(this,"topaz_shield",
-        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.topaz_shield_durability).group(BasicShields.SHIELDS),
+        new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.topaz_shield_durability),
         BasicShields.CONFIG.topaz_shield_cooldown,
         BasicShields.CONFIG.topaz_shield_enchantability,
         topaz_tag),
@@ -43,5 +41,10 @@ public class TopazModule extends ContentModule {
 
         //Recipe
         this.addRecipe(topaz_shield, ModRecipe.createShieldRecipe(topaz_tag.id(), true, topaz_shield.getIdentifier()));
+
+        //Group
+        BasicShields.SHIELDS.entries((context, entries) -> {
+            entries.add(topaz_shield.getItem());
+        });
     }
 }

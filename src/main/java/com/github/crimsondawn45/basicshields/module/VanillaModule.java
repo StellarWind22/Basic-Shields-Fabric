@@ -9,10 +9,10 @@ import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricBannerShieldIte
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
-import net.minecraft.tag.ItemTags;
-import net.minecraft.tag.TagKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.ItemTags;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class VanillaModule extends ContentModule {
 
@@ -31,13 +31,13 @@ public class VanillaModule extends ContentModule {
     public void registerContent() {
 
         //Tags
-        gold_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "gold_ingots"));
-        diamond_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c","diamonds"));
-        netherite_tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "netherite_ingots"));
+        gold_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "gold_ingots"));
+        diamond_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c","diamonds"));
+        netherite_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "netherite_ingots"));
 
         //Wood
         wooden_shield = new ModShieldItem(this, "wooden_shield",
-            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.vanilla_wooden_shield_durability).group(BasicShields.SHIELDS),
+            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.vanilla_wooden_shield_durability),
             BasicShields.CONFIG.vanilla_wooden_shield_cooldown,
             BasicShields.CONFIG.vanilla_wooden_shield_enchantability,
             ItemTags.LOGS),
@@ -48,7 +48,7 @@ public class VanillaModule extends ContentModule {
 
         //Gold
 		golden_shield = new ModShieldItem(this, "golden_shield",
-            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.vanilla_golden_shield_durability).group(BasicShields.SHIELDS),
+            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.vanilla_golden_shield_durability),
             BasicShields.CONFIG.vanilla_golden_shield_cooldown,
             BasicShields.CONFIG.vanilla_golden_shield_enchantability,
             gold_tag),
@@ -59,7 +59,7 @@ public class VanillaModule extends ContentModule {
 
         //Diamond
 		diamond_shield = new ModShieldItem(this, "diamond_shield",
-            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.vanilla_diamond_shield_durability).group(BasicShields.SHIELDS),
+            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.vanilla_diamond_shield_durability),
             BasicShields.CONFIG.vanilla_diamond_shield_cooldown,
             BasicShields.CONFIG.vanilla_diamond_shield_enchantability,
             diamond_tag),
@@ -70,7 +70,7 @@ public class VanillaModule extends ContentModule {
 
         //Netherite
 		netherite_shield = new ModShieldItem(this, "netherite_shield",
-            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.vanilla_netherite_shield_durability).group(BasicShields.SHIELDS).fireproof(),
+            new FabricBannerShieldItem(new FabricItemSettings().maxDamage(BasicShields.CONFIG.vanilla_netherite_shield_durability).fireproof(),
             BasicShields.CONFIG.vanilla_netherite_shield_cooldown,
             BasicShields.CONFIG.vanilla_netherite_shield_enchantability,
             netherite_tag),
@@ -78,5 +78,13 @@ public class VanillaModule extends ContentModule {
 
         //Recipe
         this.addRecipe(netherite_shield, ModRecipe.createSmithingRecipe(diamond_shield.getIdentifier(), false, netherite_tag.id(), true, netherite_shield.getIdentifier()));
+
+        //Item Group
+        BasicShields.SHIELDS.entries((context, entries) -> {
+            entries.add(wooden_shield.getItem());
+            entries.add(golden_shield.getItem());
+            entries.add(diamond_shield.getItem());
+            entries.add(netherite_shield.getItem());
+        });
     }
 }

@@ -8,8 +8,6 @@ import com.github.crimsondawn45.fabricshieldlib.initializers.FabricShieldLibClie
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
-import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.render.entity.model.EntityModelLoader;
@@ -132,21 +130,6 @@ public class ModShieldItem extends ModItem {
     @Environment(EnvType.CLIENT)
     public EntityModelLayer getEntityModelLayer() {
         return this.entityModelLayer;
-    }
-
-    /**
-     * Handles registering the model layer & setting up the client sprite registry callback
-     */
-    @SuppressWarnings("deprecation")
-    @Environment(EnvType.CLIENT)
-    public void RegisterModelLayer(){
-
-        EntityModelLayerRegistry.registerModelLayer(this.getEntityModelLayer(), ShieldEntityModel::getTexturedModelData);
-
-        ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
-            registry.register(new Identifier(BasicShields.MOD_ID, this.getBaseTexturePath()));
-            registry.register(new Identifier(BasicShields.MOD_ID, this.getNoPatternTexturePath()));
-        });
     }
 
     /**

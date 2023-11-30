@@ -1,5 +1,8 @@
 package com.github.crimsondawn45.basicshields.initializers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.github.crimsondawn45.basicshields.config.BasicShieldsConfig;
 import com.github.crimsondawn45.basicshields.module.AdabraniumModule;
 import com.github.crimsondawn45.basicshields.module.AlexandriteModule;
@@ -24,16 +27,14 @@ import com.github.crimsondawn45.basicshields.module.TanzaniteModule;
 import com.github.crimsondawn45.basicshields.module.TopazModule;
 import com.github.crimsondawn45.basicshields.module.TourmalineModule;
 import com.github.crimsondawn45.basicshields.module.VanillaModule;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Identifier;
+import net.minecraft.text.Text;
 
 public class BasicShields implements ModInitializer {
 
@@ -67,7 +68,12 @@ public class BasicShields implements ModInitializer {
 	public static TourmalineModule 		tourmaline;
 
 	//Item Group
-	public static ItemGroup SHIELDS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "shields"), () -> new ItemStack(vanilla.diamond_shield.getItem()));
+	public static final ItemGroup SHIELDS = FabricItemGroup.builder()
+	.icon(() -> new ItemStack(vanilla.diamond_shield.getItem()))
+	.displayName(Text.translatable("itemGroup.tutorial.test_group"))
+        .entries((context, entries) -> {
+	})
+	.build();
 
 	//Config
 	public static BasicShieldsConfig CONFIG = new BasicShieldsConfig();

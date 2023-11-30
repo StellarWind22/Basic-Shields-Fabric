@@ -9,7 +9,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
-import net.minecraft.tag.TagKey;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
@@ -33,12 +33,6 @@ public class GobberShieldItem extends FabricBannerShieldItem {
 
     public GobberShieldItem(Settings settings, int cooldownTicks, int enchantability, float reflectPercentage, boolean unbreakable, ToolMaterial repairMaterial) {
         super(settings, cooldownTicks, repairMaterial);
-        this.unbreakable = unbreakable;
-        this.reflectPercentage = reflectPercentage;
-    }
-
-    public GobberShieldItem(Settings settings, int cooldownTicks, int enchantability, float reflectPercentage, boolean unbreakable, List<TagKey<Item>> repairItemTags) {
-        super(settings, cooldownTicks, enchantability, repairItemTags);
         this.unbreakable = unbreakable;
         this.reflectPercentage = reflectPercentage;
     }

@@ -3,8 +3,9 @@ package com.github.crimsondawn45.basicshields.util;
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 
 import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class ModItem {
 
@@ -19,7 +20,7 @@ public class ModItem {
         this.identifier = new Identifier(BasicShields.MOD_ID, name);
         this.item = item;
 
-        Registry.register(Registry.ITEM, this.identifier, this.item);
+        Registry.register(Registries.ITEM, this.identifier, this.item);
     }
 
     public Item getItem() {

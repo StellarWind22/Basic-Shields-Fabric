@@ -14,6 +14,7 @@ public class BasicShieldsClient implements ClientModInitializer {
 
             for(ModShieldItem shield : module.getShieldItems()) {
                 shield.clientShieldInit();
+                shield.RegisterModelLayer();
             }
         }
     }

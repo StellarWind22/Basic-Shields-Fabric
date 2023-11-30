@@ -8,6 +8,7 @@ import com.github.crimsondawn45.fabricshieldlib.initializers.FabricShieldLibClie
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.render.entity.model.EntityModelLoader;
@@ -147,6 +148,14 @@ public class ModShieldItem extends ModItem {
     @Environment(EnvType.CLIENT)
     public ShieldEntityModel getShieldEntityModel() {
         return this.shieldEntityModel;
+    }
+
+     /**
+     * Handles registering the model layer & setting up the client sprite registry callback
+     */
+    @Environment(EnvType.CLIENT)
+    public void RegisterModelLayer(){
+        EntityModelLayerRegistry.registerModelLayer(this.getEntityModelLayer(), ShieldEntityModel::getTexturedModelData);
     }
 
     /**

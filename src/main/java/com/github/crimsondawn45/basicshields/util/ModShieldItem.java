@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.github.crimsondawn45.basicshields.initializers.BasicShields;
 import com.github.crimsondawn45.fabricshieldlib.initializers.FabricShieldLibClient;
+import com.github.crimsondawn45.fabricshieldlib.lib.event.ShieldSetModelCallback;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -18,6 +19,7 @@ import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 
 public class ModShieldItem extends ModItem {
@@ -156,6 +158,12 @@ public class ModShieldItem extends ModItem {
     @Environment(EnvType.CLIENT)
     public void RegisterModelLayer(){
         EntityModelLayerRegistry.registerModelLayer(this.getEntityModelLayer(), ShieldEntityModel::getTexturedModelData);
+
+        //Set model
+        ShieldSetModelCallback.EVENT.register((loader) -> {
+            this.shieldEntityModel = new ShieldEntityModel(loader.getModelPart(this.getEntityModelLayer()));
+            return ActionResult.PASS;
+        });
     }
 
     /**

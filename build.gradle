@@ -1,15 +1,3 @@
-buildscript {
-    dependencies {
-        classpath "de.guntram.mcmod:crowdin-translate:${project.crowdlin_version}"
-    }
-    repositories {
-        maven {
-            name = 'CrowdinTranslate source'
-            url = "https://minecraft.guntram.de/maven/"
-        }
-    }
-}
-
 plugins {
 	id 'fabric-loom' version '0.12-SNAPSHOT'
 	id 'maven-publish'
@@ -21,11 +9,6 @@ targetCompatibility = JavaVersion.VERSION_17
 archivesBaseName = project.archives_base_name
 version = project.mod_version + "-${project.minecraft_version}"
 group = project.maven_group
-
-apply plugin: 'de.guntram.mcmod.crowdin-translate'
-crowdintranslate.crowdinProjectName = 'basic-shields'
-crowdintranslate.minecraftProjectName = "basicshields"
-crowdintranslate.verbose = false
 
 repositories {
 	maven {url = "https://minecraft.guntram.de/maven/"}
@@ -54,10 +37,6 @@ dependencies {
 	modCompileOnly modRuntimeOnly ("com.terraformersmc:modmenu:${project.mod_menu_version}"), {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
-
-	//Crowdlin
-	modImplementation "de.guntram.mcmod:crowdin-translate:${project.crowdlin_version}"
-    include "de.guntram.mcmod:crowdin-translate:${project.crowdlin_version}"
 }
 
 processResources {
@@ -96,8 +75,4 @@ publishing {
 
 	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
 	repositories {}
-}
-
-build {
-    dependsOn downloadTranslations
 }

@@ -29,7 +29,7 @@ public class SapphireModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        sapphire_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "sapphire"));
+        sapphire_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "sapphires"));
 
         //Item
         sapphire_shield = new ModShieldItem(this,"sapphire_shield",

@@ -29,7 +29,7 @@ public class RubyModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        ruby_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "ruby"));
+        ruby_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "rubies"));
 
         //Item
         ruby_shield = new ModShieldItem(this,"ruby_shield",

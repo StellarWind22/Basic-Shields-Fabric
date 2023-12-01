@@ -55,6 +55,54 @@
       {
         "type": "single",
         "resource": "basicshields:entity/vibranium_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/sapphire_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/sapphire_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/ruby_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/ruby_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/topaz_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/topaz_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/amethyst_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/amethyst_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/emerald_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/emerald_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/quartz_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/quartz_shield_base_nopattern"
       }
     ]
   }

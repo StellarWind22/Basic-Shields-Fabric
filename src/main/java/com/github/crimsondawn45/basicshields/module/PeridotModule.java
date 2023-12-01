@@ -29,7 +29,7 @@ public class PeridotModule extends ContentModule {
     public void registerContent() {
 
         //Tag
-        peridot_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "peridot"));
+        peridot_tag = TagKey.of(RegistryKeys.ITEM, new Identifier("c", "peridots"));
 
         //Item
         peridot_shield = new ModShieldItem(this,"peridot_shield",

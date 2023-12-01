@@ -58,11 +58,11 @@
       },
       {
         "type": "single",
-        "resource": "basicshields:entity/sapphire_shield_base"
+        "resource": "basicshields:entity/sapphire_shield_base_more_gems"
       },
       {
         "type": "single",
-        "resource": "basicshields:entity/sapphire_shield_base_nopattern"
+        "resource": "basicshields:entity/sapphire_shield_base_nopattern_more_gems"
       },
       {
         "type": "single",
@@ -103,6 +103,38 @@
       {
         "type": "single",
         "resource": "basicshields:entity/quartz_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/bronze_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/bronze_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/peridot_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/peridot_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/sapphire_shield_base_techreborn"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/sapphire_shield_base_nopattern_techreborn"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/steel_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/steel_shield_base_nopattern"
       }
     ]
   }

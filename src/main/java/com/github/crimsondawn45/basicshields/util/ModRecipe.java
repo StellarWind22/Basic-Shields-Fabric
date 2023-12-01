@@ -206,12 +206,96 @@ public class ModRecipe {
      * 
      * @return Smithing Recipe in JsonObject Form
      */
-    public static JsonObject createSmithingRecipe(Identifier inputId, boolean isInputTag, Identifier additionId, boolean isAdditionTag, Identifier outputId) {
+    public static JsonObject createSmithingRecipe(Identifier templateId, boolean isTemplateTag, Identifier inputId, boolean isInputTag, Identifier additionId, boolean isAdditionTag, Identifier outputId) {
         //Creating a new json object, where we will store our recipe.
         JsonObject json = new JsonObject();
 
         //The "type" of the recipe we are creating. In this case, a smithing recipe.
-        json.addProperty("type", "minecraft:smithing");
+        json.addProperty("type", "minecraft:smithing_transform");
+        //This creates
+        //"type":"minecraft:smithing"
+
+        /**
+         * * Create "template" object contains original item
+         */
+        JsonObject template = new JsonObject();
+
+        if(isTemplateTag) {
+            template.addProperty("tag", templateId.toString());
+        } else {
+            template.addProperty("item", templateId.toString());
+        }
+            //Add "base" object
+        json.add("template", template);
+        //This creates
+        //"base":{
+        //      "item": "minecraft:stick"
+        //}
+
+        /**
+         * * Create "base" object contains original item
+         */
+        JsonObject base = new JsonObject();
+
+        if(isInputTag) {
+            base.addProperty("tag", inputId.toString());
+        } else {
+            base.addProperty("item", inputId.toString());
+        }
+            //Add "base" object
+        json.add("base", base);
+        //This creates
+        //"base":{
+        //      "item": "minecraft:stick"
+        //}
+
+        /**
+         * *Create "addition" object contains additive
+         */
+        JsonObject addition = new JsonObject();
+
+        if(isAdditionTag) {
+            addition.addProperty("tag", additionId.toString());
+        } else {
+            addition.addProperty("item", additionId.toString());
+        }
+            //Add "addition" object
+        json.add("addition", addition);
+        //This creates
+        //"base":{
+        //      "item": "minecraft:stick"
+        //}
+
+
+        /**
+         * *Create "result" object contains result
+         */
+        JsonObject result = new JsonObject();
+        result.addProperty("item", outputId.toString());
+
+            //Add "result" object
+        json.add("result", result);
+
+        return json;
+    }
+
+    /**
+     * * generates a JsonObject for a new smithing recipe
+     * 
+     * @param inputId Identifier of the input
+     * @param isInputTag Is input a tag?
+     * @param additionId Identifier of the addition
+     * @param isAdditionTag Is addition a tag?
+     * @param outputId Output item Identifier
+     * 
+     * @return Smithing Recipe in JsonObject Form
+     */
+    public static JsonObject createSmithingRecipeNoTemplate(Identifier inputId, boolean isInputTag, Identifier additionId, boolean isAdditionTag, Identifier outputId) {
+        //Creating a new json object, where we will store our recipe.
+        JsonObject json = new JsonObject();
+
+        //The "type" of the recipe we are creating. In this case, a smithing recipe.
+        json.addProperty("type", "minecraft:smithing_transform");
         //This creates
         //"type":"minecraft:smithing"
 

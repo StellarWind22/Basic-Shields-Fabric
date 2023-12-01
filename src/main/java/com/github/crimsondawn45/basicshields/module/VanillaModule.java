@@ -77,6 +77,6 @@ public class VanillaModule extends ContentModule {
             "entity/netherite_shield_base");
 
         //Recipe
-        this.addRecipe(netherite_shield, ModRecipe.createSmithingRecipe(diamond_shield.getIdentifier(), false, netherite_tag.id(), true, netherite_shield.getIdentifier()));
+        this.addRecipe(netherite_shield, ModRecipe.createSmithingRecipe(new Identifier("minecraft", "netherite_upgrade_smithing_template"), false, diamond_shield.getIdentifier(), false, netherite_tag.id(), true, netherite_shield.getIdentifier()));
     }
 }

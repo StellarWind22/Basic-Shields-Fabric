@@ -31,7 +31,7 @@ public class ContentModule {
         }
 
         //If always load is true force module to load if it isn't
-        if(forceLoad && !this.isLoaded) {
+        if(forceLoad && !this.isLoaded || FabricLoader.getInstance().isDevelopmentEnvironment()) {
             this.isLoaded = true;
             this.forceLoaded = true;
         }
@@ -58,7 +58,7 @@ public class ContentModule {
         if(forceLoad && !this.isLoaded) {
             this.isLoaded = true;
 
-            if(!isVanillaMaterial) {
+            if(!isVanillaMaterial || FabricLoader.getInstance().isDevelopmentEnvironment()) {
                 this.forceLoaded = true;
             }
         }

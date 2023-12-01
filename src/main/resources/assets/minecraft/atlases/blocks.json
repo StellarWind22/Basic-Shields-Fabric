@@ -58,14 +58,6 @@
       },
       {
         "type": "single",
-        "resource": "basicshields:entity/sapphire_shield_base_more_gems"
-      },
-      {
-        "type": "single",
-        "resource": "basicshields:entity/sapphire_shield_base_nopattern_more_gems"
-      },
-      {
-        "type": "single",
         "resource": "basicshields:entity/ruby_shield_base"
       },
       {
@@ -122,11 +114,11 @@
       },
       {
         "type": "single",
-        "resource": "basicshields:entity/sapphire_shield_base_techreborn"
+        "resource": "basicshields:entity/sapphire_shield_base"
       },
       {
         "type": "single",
-        "resource": "basicshields:entity/sapphire_shield_base_nopattern_techreborn"
+        "resource": "basicshields:entity/sapphire_shield_base_nopattern"
       },
       {
         "type": "single",

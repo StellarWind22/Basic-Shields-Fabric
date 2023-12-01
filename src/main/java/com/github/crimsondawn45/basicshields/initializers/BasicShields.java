@@ -94,7 +94,7 @@ public class BasicShields implements ModInitializer {
 		 * Information on what mods use what materials mostly comes from here https://www.fabricmc.net/wiki/tutorial:tags
 		 */
 		vanilla = 		new VanillaModule();
-		adabranium = 	new AdabraniumModule(	CONFIG.always_load_adabranium, 	"adabraniummod");
+		adabranium = 	new AdabraniumModule(	CONFIG.always_load_adabranium, 	"adabranium");
 		gobber =		new GobberModule(		CONFIG.always_load_gobber, 		"gobber2");
 		alexandrite =	new AlexandriteModule(	CONFIG.always_load_alexandrite, "more_gems");
 		amethyst =		new AmethystModule(     CONFIG.always_load_amethyst,	true, "emerald_tools", "gemsandcrystals", "amethystequipment");

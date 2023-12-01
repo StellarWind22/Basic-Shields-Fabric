@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     {
-      "id": "adabraniummod:adamantium_ingot",
+      "id": "adabranium:adamantium_ingot",
       "required": false
     }
   ]

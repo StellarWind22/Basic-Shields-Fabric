@@ -31,6 +31,30 @@
       {
         "type": "single",
         "resource": "basicshields:entity/netherite_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/nether_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/nether_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/adamantium_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/adamantium_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/vibranium_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/vibranium_shield_base_nopattern"
       }
     ]
   }

@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     {
-      "id":  "adabraniummod:vibranium_ingot",
+      "id":  "adabranium:vibranium_ingot",
       "required": false
     }
   ]

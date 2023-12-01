@@ -135,6 +135,110 @@
       {
         "type": "single",
         "resource": "basicshields:entity/steel_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/gobber_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/gobber_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/gobber_nether_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/gobber_nether_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/gobber_end_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/gobber_end_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/gobber_dragon_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/gobber_dragon_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/alexandrite_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/alexandrite_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/carbonado_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/carbonado_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/citrine_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/citrine_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/corundum_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/corundum_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/kunzite_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/kunzite_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/moissanite_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/moissanite_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/spinel_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/spinel_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/tanzanite_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/tanzanite_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/tourmaline_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/tourmaline_shield_base_nopattern"
       }
     ]
   }

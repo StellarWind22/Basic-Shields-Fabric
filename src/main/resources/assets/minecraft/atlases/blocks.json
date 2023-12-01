@@ -1,0 +1,36 @@
+{
+    "sources": [
+      {
+        "type": "single",
+        "resource": "basicshields:entity/wooden_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/wooden_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/golden_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/golden_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/diamond_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/diamond_shield_base_nopattern"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/netherite_shield_base"
+      },
+      {
+        "type": "single",
+        "resource": "basicshields:entity/netherite_shield_base_nopattern"
+      }
+    ]
+  }

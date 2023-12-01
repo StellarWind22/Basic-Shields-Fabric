@@ -41,10 +41,5 @@ public class MoissaniteModule extends ContentModule {
 
         //Recipe
         this.addRecipe(moissanite_shield, ModRecipe.createShieldRecipe(moissanite_tag.id(), true, moissanite_shield.getIdentifier()));
-
-        //Group
-        BasicShields.SHIELDS.entries((context, entries) -> {
-            entries.add(moissanite_shield.getItem());
-        });
     }
 }

@@ -41,10 +41,5 @@ public class SteelModule extends ContentModule {
 
         //Recipe
         this.addRecipe(steel_shield, ModRecipe.createShieldRecipe(steel_tag.id(), true, steel_shield.getIdentifier()));
-
-        //Group
-        BasicShields.SHIELDS.entries((context, entries) -> {
-            entries.add(steel_shield.getItem());
-        });
     }
 }

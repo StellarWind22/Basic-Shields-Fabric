@@ -41,10 +41,5 @@ public class SapphireModule extends ContentModule {
 
         //Recipe
         this.addRecipe(sapphire_shield, ModRecipe.createShieldRecipe(sapphire_tag.id(), true, sapphire_shield.getIdentifier()));
-
-        //Group
-        BasicShields.SHIELDS.entries((context, entries) -> {
-            entries.add(sapphire_shield.getItem());
-        });
     }
 }

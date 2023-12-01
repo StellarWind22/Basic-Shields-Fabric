@@ -41,10 +41,5 @@ public class CorundumModule extends ContentModule {
 
         //Recipe
         this.addRecipe(corundum_shield, ModRecipe.createShieldRecipe(corundum_tag.id(), true, corundum_shield.getIdentifier()));
-
-        //Group
-        BasicShields.SHIELDS.entries((context, entries) -> {
-            entries.add(corundum_shield.getItem());
-        });
     }
 }

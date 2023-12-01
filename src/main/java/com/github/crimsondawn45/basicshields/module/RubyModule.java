@@ -41,10 +41,5 @@ public class RubyModule extends ContentModule {
 
         //Recipe
         this.addRecipe(ruby_shield, ModRecipe.createShieldRecipe(ruby_tag.id(), true, ruby_shield.getIdentifier()));
-
-        //Group
-        BasicShields.SHIELDS.entries((context, entries) -> {
-            entries.add(ruby_shield.getItem());
-        });
     }
 }

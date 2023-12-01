@@ -41,10 +41,5 @@ public class TanzaniteModule extends ContentModule {
 
         //Recipe
         this.addRecipe(tanzanite_shield, ModRecipe.createShieldRecipe(tanzanite_tag.id(), true, tanzanite_shield.getIdentifier()));
-
-        //Group
-        BasicShields.SHIELDS.entries((context, entries) -> {
-            entries.add(tanzanite_shield.getItem());
-        });
     }
 }

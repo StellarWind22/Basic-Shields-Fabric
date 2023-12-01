@@ -27,6 +27,8 @@ import com.github.crimsondawn45.basicshields.module.TanzaniteModule;
 import com.github.crimsondawn45.basicshields.module.TopazModule;
 import com.github.crimsondawn45.basicshields.module.TourmalineModule;
 import com.github.crimsondawn45.basicshields.module.VanillaModule;
+import com.github.crimsondawn45.basicshields.util.ContentModule;
+import com.github.crimsondawn45.basicshields.util.ModShieldItem;
 
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
@@ -116,6 +118,17 @@ public class BasicShields implements ModInitializer {
 		tanzanite =		new TanzaniteModule(	CONFIG.always_load_tanzanite, 	"enriched");
 		topaz =			new TopazModule(        CONFIG.always_load_topaz, 		"more_gems", "gemsandcrystals");
 		tourmaline =	new TourmalineModule(   CONFIG.always_load_tourmaline, 	"more_gems");
+
+		//Register items to group
+		BasicShields.SHIELDS.entries((context, entries) -> {
+
+			for(ContentModule module : ContentModule.loadedModules) {
+
+				for(ModShieldItem shield : module.getShieldItems()) {
+					entries.add(shield.getItem());
+				}
+			}
+        });
 
 		//Build item group
 		Registry.register(Registries.ITEM_GROUP, new Identifier(MOD_ID, "shields"), SHIELDS.build());

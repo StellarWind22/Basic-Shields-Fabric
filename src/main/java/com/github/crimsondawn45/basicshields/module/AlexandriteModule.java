@@ -41,10 +41,5 @@ public class AlexandriteModule extends ContentModule {
 
         //Recipe
         this.addRecipe(alexandrite_shield, ModRecipe.createShieldRecipe(alexandrite_tag.id(), true, alexandrite_shield.getIdentifier()));
-
-        //Group
-        BasicShields.SHIELDS.entries((context, entries) -> {
-            entries.add(alexandrite_shield.getItem());
-        });
     }
 }

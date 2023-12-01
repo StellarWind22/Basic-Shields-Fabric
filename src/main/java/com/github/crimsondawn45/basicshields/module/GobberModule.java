@@ -120,13 +120,5 @@ public class GobberModule extends ContentModule {
 
         //Recipe
         this.addRecipe(gobber_dragon_shield, ModRecipe.createSmithingRecipe(gobber_end_shield.getIdentifier(), false, gobber_dragon_tag.id(), true, gobber_dragon_shield.getIdentifier()));
-
-        //Item Group
-        BasicShields.SHIELDS.entries((context, entries) -> {
-            entries.add(gobber_shield.getItem());
-            entries.add(gobber_nether_shield.getItem());
-            entries.add(gobber_end_shield.getItem());
-            entries.add(gobber_dragon_shield.getItem());
-        });
     }
 }

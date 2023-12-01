@@ -68,12 +68,5 @@ public class AdabraniumModule extends ContentModule {
 
         //Recipe
         this.addRecipe(adamantium_shield, ModRecipe.createShieldRecipe(adamantium_tag.id(), true, adamantium_shield.getIdentifier()));
-
-        //Item Group
-        BasicShields.SHIELDS.entries((context, entries) -> {
-            entries.add(nether_shield.getItem());
-            entries.add(vibranium_shield.getItem());
-            entries.add(adamantium_shield.getItem());
-        });
     }
 }

@@ -41,10 +41,5 @@ public class BronzeModule extends ContentModule {
 
         //Recipe
         this.addRecipe(bronze_shield, ModRecipe.createShieldRecipe(bronze_tag.id(), true, bronze_shield.getIdentifier()));
-
-        //Group
-        BasicShields.SHIELDS.entries((context, entries) -> {
-            entries.add(bronze_shield.getItem());
-        });
     }
 }

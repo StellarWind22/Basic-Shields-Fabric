@@ -41,10 +41,5 @@ public class KunziteModule extends ContentModule {
 
         //Recipe
         this.addRecipe(kunzite_shield, ModRecipe.createShieldRecipe(kunzite_tag.id(), true, kunzite_shield.getIdentifier()));
-
-        //Group
-        BasicShields.SHIELDS.entries((context, entries) -> {
-            entries.add(kunzite_shield.getItem());
-        });
     }
 }

@@ -41,10 +41,5 @@ public class PeridotModule extends ContentModule {
 
         //Recipe
         this.addRecipe(peridot_shield, ModRecipe.createShieldRecipe(peridot_tag.id(), true, peridot_shield.getIdentifier()));
-
-        //Group
-        BasicShields.SHIELDS.entries((context, entries) -> {
-            entries.add(peridot_shield.getItem());
-        });
     }
 }

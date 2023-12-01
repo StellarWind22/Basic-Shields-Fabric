@@ -78,13 +78,5 @@ public class VanillaModule extends ContentModule {
 
         //Recipe
         this.addRecipe(netherite_shield, ModRecipe.createSmithingRecipe(diamond_shield.getIdentifier(), false, netherite_tag.id(), true, netherite_shield.getIdentifier()));
-
-        //Item Group
-        BasicShields.SHIELDS.entries((context, entries) -> {
-            entries.add(wooden_shield.getItem());
-            entries.add(golden_shield.getItem());
-            entries.add(diamond_shield.getItem());
-            entries.add(netherite_shield.getItem());
-        });
     }
 }

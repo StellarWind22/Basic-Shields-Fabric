@@ -41,10 +41,5 @@ public class TourmalineModule extends ContentModule {
 
         //Recipe
         this.addRecipe(tourmaline_shield, ModRecipe.createShieldRecipe(tourmaline_tag.id(), true, tourmaline_shield.getIdentifier()));
-
-        //Group
-        BasicShields.SHIELDS.entries((context, entries) -> {
-            entries.add(tourmaline_shield.getItem());
-        });
     }
 }

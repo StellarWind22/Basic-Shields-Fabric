@@ -41,10 +41,5 @@ public class SpinelModule extends ContentModule {
 
         //Recipe
         this.addRecipe(spinel_shield, ModRecipe.createShieldRecipe(spinel_tag.id(), true, spinel_shield.getIdentifier()));
-
-        //Group
-        BasicShields.SHIELDS.entries((context, entries) -> {
-            entries.add(spinel_shield.getItem());
-        });
     }
 }

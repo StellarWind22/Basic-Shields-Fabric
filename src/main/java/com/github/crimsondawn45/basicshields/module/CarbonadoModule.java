@@ -41,10 +41,5 @@ public class CarbonadoModule extends ContentModule {
 
         //Recipe
         this.addRecipe(carbonado_shield, ModRecipe.createShieldRecipe(carbonado_tag.id(), true, carbonado_shield.getIdentifier()));
-
-        //Group
-        BasicShields.SHIELDS.entries((context, entries) -> {
-            entries.add(carbonado_shield.getItem());
-        });
     }
 }

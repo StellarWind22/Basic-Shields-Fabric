@@ -41,10 +41,5 @@ public class TopazModule extends ContentModule {
 
         //Recipe
         this.addRecipe(topaz_shield, ModRecipe.createShieldRecipe(topaz_tag.id(), true, topaz_shield.getIdentifier()));
-
-        //Group
-        BasicShields.SHIELDS.entries((context, entries) -> {
-            entries.add(topaz_shield.getItem());
-        });
     }
 }

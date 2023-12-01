@@ -41,10 +41,5 @@ public class CitrineModule extends ContentModule {
 
         //Recipe
         this.addRecipe(citrine_shield, ModRecipe.createShieldRecipe(citrine_tag.id(), true, citrine_shield.getIdentifier()));
-
-        //Group
-        BasicShields.SHIELDS.entries((context, entries) -> {
-            entries.add(citrine_shield.getItem());
-        });
     }
 }

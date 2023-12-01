@@ -45,7 +45,7 @@ public class AdabraniumModule extends ContentModule {
             "entity/nether_shield_base");
 
         //Recipe
-        this.addRecipe(nether_shield, ModRecipe.createSmithingRecipeNoTemplate(new Identifier("minecraft", "shield"), false, new Identifier("minecraft", "nether_brick"), false, nether_shield.getIdentifier()));
+        this.addRecipe(nether_shield, ModRecipe.createSmithingRecipe(new Identifier("minecraft","nether_brick"), false, new Identifier("minecraft", "shield"), false, new Identifier("minecraft", "nether_brick"), false, nether_shield.getIdentifier()));
        
         //Vibranium
         vibranium_shield = new ModShieldItem(this, "vibranium_shield",

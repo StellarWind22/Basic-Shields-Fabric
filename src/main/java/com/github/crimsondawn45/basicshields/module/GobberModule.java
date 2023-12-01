@@ -119,6 +119,6 @@ public class GobberModule extends ContentModule {
             "entity/gobber_dragon_shield_base");
 
         //Recipe
-        this.addRecipe(gobber_dragon_shield, ModRecipe.createSmithingRecipeNoTemplate(gobber_end_shield.getIdentifier(), false, gobber_dragon_tag.id(), true, gobber_dragon_shield.getIdentifier()));
+        //this.addRecipe(gobber_dragon_shield, ModRecipe.createSmithingRecipeNoTemplate(gobber_end_shield.getIdentifier(), false, gobber_dragon_tag.id(), true, gobber_dragon_shield.getIdentifier()));
     }
 }
